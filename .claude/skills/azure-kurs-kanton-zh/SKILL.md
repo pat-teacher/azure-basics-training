@@ -37,6 +37,7 @@ Microsoft-Learn-Module gezielt einbinden (vertraglich vorgesehen), ergänzt durc
 - **Hands-on zuerst:** ca. 70 % der Zeit arbeiten die Lernenden selbst an Aufträgen. Die Kursleitung coacht.
 - **Inputs nur zu wichtigen Themen:** 2–3 pro Tag, höchstens 20 Minuten, immer mit Live-Demo. Die Inputs stehen in der Tagesplanung, nicht als eigene Lernenden-Dokumente.
 - **Azure for Students ist bereits aktiv.** Zusätzlich setzt die Kursleitung Labs im Azure Education Hub ein.
+- **Entra ID nur über Challenge Labs:** Themen mit Microsoft Entra ID (RBAC, Conditional Access, Benutzer, Gruppen) nie im Student-Abo üben, sondern über die Challenge Labs von Microsoft Learn for Educators (Learn on Demand / Skillable, Trainingsschlüssel der Kursleitung). Vorbild: TBZ-Auftrag «Role based access control». Da Identity nicht im Vertragsumfang ist: nur als ⭐-Zusatz.
 - **Lösungen getrennt:** Lösungen liegen nie im selben Ordner wie die Aufträge, sondern unter `loesungen/`.
 - **Branding:** Der Kurs ist von PAT Cloud Solutions und soll das zeigen (siehe unten).
 
@@ -66,6 +67,12 @@ assets/branding/         Logo, Banner, Wolke
 - **TBZ-Material (M346, M347)** darf übernommen werden (Erlaubnis liegt vor). Ausnahme: Bilder, die erkennbar von Dritten stammen (fremde Logos, Wasserzeichen, bekannte Web-Grafiken) – diese selbst neu zeichnen. Immer Herkunft unter der Grafik (`<sub>Grafik: TBZ M346</sub>`) und in den Quellen angeben. AWS-Begriffe auf Azure umschreiben.
 - **Eigene Diagramme** als SVG im PAT-Stil, erzeugt mit `tools/diagramme.py` (`python tools/diagramme.py theorie/img`; weisser Hintergrund, Markenfarben, blauer Balken unten). Vor dem Einbinden mit `tools/render.sh <ausgabeordner> <svg>…` (headless Chrome) als PNG rendern und visuell prüfen. PNGs nicht ins Repo.
 - Bilder von Microsoft Learn nicht kopieren, nur verlinken.
+
+## Präsentationen
+- Pro Tag eine Präsentation (`praesentationen/tag-<n>-<thema>.pptx`): Titel, Rückblick-Quiz, Ziele, Ablauf, Aufträge, Abschluss mit Exit-Ticket, Ausblick.
+- Pro Theorie-Kapitel eine Input-Präsentation (`praesentationen/input-<nn>-<thema>.pptx`): Diagramme aus `theorie/img`, Alltagsvergleich, Selbsttest (Antworten in den Sprechernotizen), Quellen, «Jetzt du»-Folie.
+- Nie von Hand bearbeiten: Inhalte in `tools/praesentationen-inhalt.js` ändern und neu erzeugen (Anleitung `tools/README.md`). Danach PNG-Export mit PowerPoint und Sichtprüfung.
+- Folienregeln: Titel links, keine Akzentlinien unter Titeln, Fliesstext mind. 16 pt, eine Botschaft pro Folie, Sprechernotizen für die Kursleitung.
 
 ## Branding PAT Cloud Solutions
 - README und Seiten in `kurs/` beginnen mit dem Banner `assets/branding/kurs-banner.svg`.

@@ -27,6 +27,11 @@ Stand: 19.10.2026 · 8 Lektionen · ohne Azure
 | L8 | **I**nformieren 3 (15') | **Vom Hypervisor zum Hyperscaler:** Was passiert, wenn man tausende Hypervisoren zusammenschaltet? Brücke zu Tag 2 | Input | [Theorie 2](../theorie/02-cloud-grundlagen.md) |
 | L8 | **A**uswerten | Aufräumen (Auftrag 1.4, Schritt 7), Quiz *(folgt)*, Exit-Ticket: «Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?» | Einzel | |
 
+## Präsentationen
+- Tagesablauf: [tag-1-virtualisierung.pptx](../praesentationen/tag-1-virtualisierung.pptx)
+- Input: [input-01-virtualisierung.pptx](../praesentationen/input-01-virtualisierung.pptx)
+- Input: [input-02-cloud-grundlagen.pptx](../praesentationen/input-02-cloud-grundlagen.pptx)
+
 ## Vorbereitung Kursleitung
 - VirtualBox oder Hyper-V auf den Laptops <!-- prüfen: mit Auftraggeber klären, ob Installationsrechte vorhanden sind -->
 - ISO-Datei Ubuntu Server LTS auf USB-Sticks (ca. 3 GB)

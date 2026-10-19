@@ -31,6 +31,17 @@ Jeder Tag hat 8 Lektionen à 45 Minuten. Ungefähr so verteilt:
   - Nur eine VM gleichzeitig laufen lassen.
   - Am Ende jedes Auftrags die Ressourcengruppe löschen.
 
+## Themen mit Microsoft Entra ID: Challenge Labs
+Mit Azure for Students hast du keine Rechte in Microsoft Entra ID. Themen wie **Rollenbasierte Zugriffssteuerung (RBAC)** oder **bedingter Zugriff (Conditional Access)** übst du deshalb in den **Challenge Labs** von Microsoft Learn for Educators (Plattform [Learn on Demand / Skillable](https://msle.learnondemand.net/)):
+1. Mit dem Trainingsschlüssel der Kursleitung anmelden und ein Skillable-Konto registrieren.
+2. Unter **Meine Schulung** die Klasse öffnen und das angegebene Challenge Lab starten.
+3. Du arbeitest in einer vorbereiteten Umgebung mit einem temporären Konto. Die Anleitung erscheint im zweiten Fenster.
+
+> [!IMPORTANT]
+> Challenge Labs sind zeitlich begrenzt und lassen sich nur wenige Male starten (meist 3). Starte ein Lab erst, wenn du Zeit hast, es fertig zu machen.
+
+<!-- prüfen: Trainingsschlüssel und Lab-Auswahl im Microsoft Learn for Educators Portal bereitstellen; Themen ausserhalb des Vertragsumfangs nur als Zusatz (⭐) -->
+
 ## Namen und Tags
 | Ressource | Schema | Beispiel (Kürzel `mm`) |
 |-----------|--------|------------------------|

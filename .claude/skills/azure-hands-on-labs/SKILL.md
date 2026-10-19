@@ -135,7 +135,7 @@ az deployment group create --resource-group rg-tag5-<kuerzel> --template-file ma
 - **VM-Grössen:** Nicht alle Grössen verfügbar. B-Serie (z. B. `Standard_B1s`, `Standard_B2s`) zuerst versuchen; bei Fehler `az vm list-skus --location <region> --size Standard_B --output table`.
 - **vCPU-Quota:** Begrenzte Anzahl Kerne pro Region. Nur eine VM gleichzeitig laufen lassen, nach dem Lab löschen.
 - **Guthaben:** Begrenztes Startguthaben. Public IPs, VMs und App Service Plans über F1 kosten laufend; immer aufräumen.
-- **Entra ID:** Lernende haben im Schul-Tenant oft keine Rechte für Benutzer- oder App-Registrierungen. Identity ist nicht im Vertragsumfang; höchstens als Ausblick.
+- **Entra ID:** Lernende haben mit Azure for Students keine Rechte in Entra ID. RBAC, Conditional Access usw. nur über Challenge Labs (Learn on Demand / Skillable) aus Microsoft Learn for Educators. Auftrag dann: Anmeldung mit Trainingsschlüssel, Lab-Name, Hinweis auf begrenzte Starts (meist 3), Ergebnis ins Lernjournal. Keine eigene Musterlösung nötig – das Lab enthält die Anleitung.
 
 ## Regeln
 - Jeder Befehl wird erklärt, bevor er ausgeführt wird.

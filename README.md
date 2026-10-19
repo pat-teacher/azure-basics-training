@@ -28,6 +28,7 @@ Der Kurs ist **hands-on**: Du arbeitest den grössten Teil der Zeit selbst an Au
 ```
 kurs/          Tagesplanung: Was passiert wann?
 theorie/       Theorie zum Nachlesen, mit Grafiken und Selbsttest
+praesentationen/  PowerPoint-Folien: Tagesablauf und Inputs
 auftraege/     Deine Aufträge, pro Tag nummeriert
 loesungen/     Lösungen – erst anschauen, wenn du es selbst versucht hast
 assets/        Bilder und Branding

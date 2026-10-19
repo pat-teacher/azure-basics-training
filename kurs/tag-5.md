@@ -22,6 +22,10 @@ Stand: 19.10.2026 · 8 Lektionen
 | L5–L7 | Abschlussprojekt | **Webserver der «Velo Zürich AG»:** VNet, NSG und VM mit cloud-init vollständig per Bicep, dokumentiert | Partner |
 | L8 | Abschluss | Kurzpräsentationen (5' pro Team), Kursfeedback, Aufräumen | Plenum |
 
+## Präsentationen
+- Tagesablauf: [tag-5-automatisierung.pptx](../praesentationen/tag-5-automatisierung.pptx)
+- Input: [input-07-automatisierung.pptx](../praesentationen/input-07-automatisierung.pptx)
+
 ## Theorie
 - [7 Automatisierung: Bicep und cloud-init](../theorie/07-automatisierung.md) (Input 1)
 

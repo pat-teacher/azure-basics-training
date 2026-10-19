@@ -23,7 +23,12 @@ Stand: 19.10.2026 · 8 Lektionen
 | L6 | Hands-on | Auftrag 4.4: NSG-Regeln – HTTP für alle, SSH nur von der Schul-IP, intern gesperrt | Partner |
 | L7 | Hands-on | Auftrag 4.5: Fehlersuche – «Warum komme ich nicht auf meine VM?» (vorbereitete Fehler) | Partner |
 | L7 | ⭐ Hands-on | Auftrag 4.6: IP-Flussüberprüfung (Network Watcher) und effektive Sicherheitsregeln | Einzel |
+| L7 | ⭐ Hands-on | Auftrag 4.7: Challenge Lab zu bedingtem Zugriff (Conditional Access) (Learn on Demand, siehe [Organisation](organisation.md#themen-mit-microsoft-entra-id-challenge-labs)) <!-- prüfen: passendes Lab im Katalog wählen --> | Partner |
 | L8 | Abschluss | Netzplan der eigenen Umgebung zeichnen, aufräumen, Exit-Ticket | Einzel |
+
+## Präsentationen
+- Tagesablauf: [tag-4-networking.pptx](../praesentationen/tag-4-networking.pptx)
+- Input: [input-06-azure-networking.pptx](../praesentationen/input-06-azure-networking.pptx)
 
 ## Theorie
 - [6 Azure Networking](../theorie/06-azure-networking.md) (Inputs 1 und 2)

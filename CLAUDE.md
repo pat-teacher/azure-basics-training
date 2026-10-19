@@ -29,6 +29,7 @@ Siehe Skill `azure-kurs-kanton-zh`. Kurz:
 ```
 kurs/                Organisation und Tagesplanung tag-1.md … tag-5.md
 theorie/             Theorie-Kapitel mit Grafiken (img/, img/tbz/ = übernommen aus TBZ M346/M347)
+praesentationen/     PowerPoint: tag-<n>-*.pptx (Tagesablauf), input-<nn>-*.pptx (Theorie-Inputs); erzeugt mit tools/praesentationen.js
 auftraege/tag-<n>/   Aufträge für Lernende (hands-on)
 loesungen/tag-<n>/   Lösungen, getrennt von den Aufträgen
 abschlussprojekt/    Auftrag und Bewertungsraster

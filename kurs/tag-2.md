@@ -23,7 +23,13 @@ Stand: 19.10.2026 · 8 Lektionen
 | L5–L6 | Hands-on | Auftrag 2.4: Dieselbe Ressourcengruppe mit der Azure CLI | Einzel |
 | L7 | Hands-on | Auftrag 2.5: Azure-Regionen recherchieren (Switzerland North, Latenz, Region Pairs) | Partner |
 | L7 | ⭐ Hands-on | Auftrag 2.6: Microsoft-Learn-Modul «Beschreiben der Kernkomponenten der Azure-Architektur» | Einzel |
+| L7 | ⭐ Hands-on | Auftrag 2.7: Challenge Lab «Azure RBAC konfigurieren» (Learn on Demand, siehe [Organisation](organisation.md#themen-mit-microsoft-entra-id-challenge-labs)) | Partner |
 | L8 | Abschluss | Aufräumen kontrollieren, Quiz, Exit-Ticket | Einzel |
+
+## Präsentationen
+- Tagesablauf: [tag-2-azure-grundlagen.pptx](../praesentationen/tag-2-azure-grundlagen.pptx)
+- Input: [input-02-cloud-grundlagen.pptx](../praesentationen/input-02-cloud-grundlagen.pptx)
+- Input: [input-03-azure-aufbau.pptx](../praesentationen/input-03-azure-aufbau.pptx)
 
 ## Theorie
 - [2 Cloud-Grundlagen](../theorie/02-cloud-grundlagen.md) (Input 1)

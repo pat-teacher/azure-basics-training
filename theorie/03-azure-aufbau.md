@@ -81,6 +81,13 @@ Nützliche Helfer:
 | `az account show` | Mit welchem Konto und Abonnement bin ich verbunden? |
 | `az group list -o table` | Welche Ressourcengruppen habe ich? |
 
+## Ausblick: Identität und Zugriff
+Wer darf was in Azure? Das regeln zwei Werkzeuge in **Microsoft Entra ID**:
+- **Rollenbasierte Zugriffssteuerung (RBAC):** Eine **Rolle** (z. B. Leser, Mitwirkender, Besitzer) wird einer Person für einen **Bereich** (Scope) zugewiesen, z. B. für eine Ressourcengruppe. Merksatz: *wer* – *was* – *wo*.
+- **Bedingter Zugriff (Conditional Access):** Regeln für die Anmeldung, z. B. «Zugriff aufs Portal nur mit Multi-Faktor-Authentifizierung» oder «nicht aus bestimmten Ländern».
+
+Mit Azure for Students hast du dafür keine Rechte. Du übst diese Themen in den **Challenge Labs** von Microsoft Learn for Educators (siehe [Organisation](../kurs/organisation.md#themen-mit-microsoft-entra-id-challenge-labs)).
+
 ## Kosten im Griff
 - In der **Kostenanalyse** des Abonnements siehst du, was welche Ressource kostet (mit etwas Verzögerung).
 - Dein Guthaben bei Azure for Students ist begrenzt. <!-- prüfen: aktuelle Höhe und Laufzeit des Guthabens --> Ist es aufgebraucht, werden deine Ressourcen gestoppt.

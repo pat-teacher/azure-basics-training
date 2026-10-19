@@ -25,6 +25,11 @@ Stand: 19.10.2026 · 8 Lektionen
 | L7 | ⭐ Hands-on | Auftrag 3.6: Datei per SAS-Token zeitlich begrenzt teilen | Einzel |
 | L8 | Abschluss | Ressourcengruppen löschen, Kosten in der Kostenanalyse ansehen, Exit-Ticket | Einzel |
 
+## Präsentationen
+- Tagesablauf: [tag-3-compute-und-storage.pptx](../praesentationen/tag-3-compute-und-storage.pptx)
+- Input: [input-04-azure-compute.pptx](../praesentationen/input-04-azure-compute.pptx)
+- Input: [input-05-azure-storage.pptx](../praesentationen/input-05-azure-storage.pptx)
+
 ## Theorie
 - [4 Azure Compute](../theorie/04-azure-compute.md) (Input 1)
 - [5 Azure Storage](../theorie/05-azure-storage.md) (Input 2)
