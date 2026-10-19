@@ -67,11 +67,19 @@ Tags auf jeder Ressourcengruppe: `kurs=azure-basics`, `tag=<n>`, `owner=<kuerzel
 
 ## Beispiele pro Tag
 
-### Tag 1: Lokale VM (ohne Azure)
-- Hypervisor Typ 2 auf dem Schullaptop, z. B. VirtualBox oder Hyper-V (nur Windows Pro/Education).
-- Ubuntu-Server-ISO installieren, RAM/CPU/Disk bewusst wählen, Netzwerkmodus (NAT/Bridge) vergleichen.
-- Vorher mit dem Auftraggeber klären: Installationsrechte und Virtualisierung im BIOS aktiv. <!-- prüfen: Laptop-Setup der Lernenden -->
-- ⭐ Docker: `docker run --rm hello-world`, Unterschied Container und VM.
+### Tag 1: Lokale VMs mit Multipass (ohne Azure)
+Vorbild: TBZ M346 KN01, für ICT-Fachleute vereinfacht. **Keine ISO-Dateien verteilen** – Multipass lädt Ubuntu selbst.
+```powershell
+multipass launch --name vm1                                   # erste VM
+multipass launch --name klein --cpus 1 --memory 1G --disk 5G  # Ressourcen festlegen
+multipass exec klein -- free -h                               # Befehl in der VM
+multipass launch --name auto --cloud-init cloud-init-tag1.yaml
+multipass delete --purge --all                                # aufräumen
+```
+- Windows Pro/Education → Backend Hyper-V. Windows Home → VirtualBox + `multipass set local.driver=virtualbox` (Ausnahme, Partnerarbeit).
+- cloud-init-Datei: nur `packages`, `write_files`, `runcmd`. Dateien nach `/opt/…` schreiben, **nicht** nach `/home/ubuntu/…` (write_files läuft vor dem Anlegen des Benutzers → Home-Ordner gehört sonst root). Lernende kopieren sie in Notepad («Alle Dateien»).
+- SSH-Schlüssel (`ssh-keygen -t ed25519`) an Tag 1 erstellen, an Tag 3 in Azure verwenden.
+- ⭐ Docker in der Multipass-VM mit `sudo` (keine Gruppenänderung nötig).
 
 ### Tag 2: Ressourcengruppe und erste CLI-Befehle
 ```bash

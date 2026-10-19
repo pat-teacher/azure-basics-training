@@ -9,7 +9,7 @@ Stand: 19.10.2026 · gehört zu [Tag 4](../kurs/tag-4.md)
 - Du kannst einen Adressraum in Subnetze aufteilen. (K3)
 - Du kannst private und öffentliche IP-Adressen in Azure unterscheiden. (K2)
 - Du kannst NSG-Regeln lesen, schreiben und ihre Wirkung vorhersagen. (K3)
-- Du kannst bei einem Verbindungsproblem systematisch die Ursache finden. (K4)
+- Du kannst bei einem Verbindungsproblem mit einer Checkliste die Ursache finden. (K4)
 
 ## VNet und Subnetze
 

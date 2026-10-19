@@ -8,7 +8,7 @@ Stand: 19.10.2026 · 8 Lektionen
 - Du kannst einen Adressraum in Subnetze aufteilen (CIDR). (K3)
 - Du kannst ein VNet mit mehreren Subnetzen bereitstellen und VMs darin platzieren. (K3)
 - Du kannst mit NSG-Regeln den Verkehr nach Port und IP-Adresse filtern und die Wirkung testen. (K3)
-- Du kannst begründen, warum eine Verbindung funktioniert oder blockiert wird. (K4)
+- Du kannst mit einer Checkliste herausfinden, warum eine Verbindung blockiert wird. (K4)
 
 ## Ablauf
 

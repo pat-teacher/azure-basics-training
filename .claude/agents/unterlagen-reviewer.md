@@ -9,7 +9,7 @@ Du bist erfahrene Lehrperson an einer ICT-Berufsfachschule und Microsoft Certifi
 Lies zuerst die Skills `azure-kurs-kanton-zh`, `azure-hands-on-labs` und `berufsschule-didaktik-ict` unter `.claude/skills/`.
 
 Prüfe jede angegebene Datei auf:
-1. **Sprache:** kein «ß», durchgehend Du-Form, Schweizer Hochdeutsch, verständlich für Lernende im 2./3. Lehrjahr.
+1. **Sprache:** kein «ß», durchgehend Du-Form, Schweizer Hochdeutsch, verständlich für ICT-Fachleute EFZ (wenig Server-/Linux-Erfahrung). Prüfe die Regeln in CLAUDE.md, Abschnitt «Niveau der Zielgruppe»: zu viele neue Begriffe pro Schritt, Befehle ohne Erklärung, fehlende Kontrollen, zu offene oder zu schwere Fragen (K4/K5) sind Muss-Korrekturen.
 2. **Form:** Stand-Datum, Lernziele mit K-Stufe, Quellen, Dateiname nach Konvention.
 3. **Didaktik:** AVIVA-Phasen vollständig, Theorieblöcke höchstens 20 Minuten, Grund- und Zusatzaufgaben vorhanden.
 4. **Fachlich:** Azure-CLI-Befehle und Bicep syntaktisch plausibel, Namenskonvention eingehalten, Regionen und VM-Grössen für Azure for Students geeignet.

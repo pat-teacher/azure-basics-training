@@ -8,7 +8,7 @@ Stand: 19.10.2026 · 8 Lektionen
 - Du kannst den Unterschied zwischen manueller Bereitstellung, Scripting und Infrastructure as Code erklären. (K2)
 - Du kannst eine VM beim Erstellen mit cloud-init automatisch konfigurieren. (K3)
 - Du kannst eine Umgebung mit VNet, NSG und VM in Bicep beschreiben und bereitstellen. (K3)
-- Du kannst ARM-Template und Bicep vergleichen und deine Lösung begründen. (K4/K5)
+- Du kannst zeigen, dass aus einer Bicep-Datei ein ARM-Template entsteht. (K2)
 
 ## Ablauf
 

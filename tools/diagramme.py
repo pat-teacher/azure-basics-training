@@ -53,7 +53,7 @@ class Svg:
 
 # 1 VM-Netzwerkmodi --------------------------------------------------------
 s = Svg(1000, 470, "VM-Netzwerk: NAT und Netzwerkbrücke")
-for ox, mode, vmip, vmsub, dev, partner_ok in ((0, "NAT (Standard in VirtualBox)", "10.0.2.15", "privates NAT-Netz", "VirtualBox-NAT", False),
+for ox, mode, vmip, vmsub, dev, partner_ok in ((0, "NAT (Standard)", "172.27.0.5", "privates Netz des Hypervisors", "NAT", False),
                                                (490, "Netzwerkbrücke", "192.168.1.57", "eigene IP im WLAN", "Netzwerkbrücke", True)):
     s.text(40 + ox, 62, mode, 16, BLUE, "bold", "start")
     s.label(340 + ox, 76, 120, 40, ["Internet"], LIGHT2, BLUE)
@@ -72,8 +72,7 @@ for ox, mode, vmip, vmsub, dev, partner_ok in ((0, "NAT (Standard in VirtualBox)
     else:
         s.arrow(330 + ox, 300, 278 + ox, 345, NO, dash=True)
         s.text(395 + ox, 330, "erreicht VM nicht ✗", 12, NO, "bold")
-        s.text(200 + ox, 268, "Port-Weiterleitung", 11, GREY)
-        s.text(200 + ox, 284, "127.0.0.1:2222 → VM:22", 11, GREY)
+        s.text(200 + ox, 276, "nur dein Laptop erreicht die VM", 11, GREY)
 s.text(20, 455, "* sofern das WLAN keine Client-Isolation hat", 11, GREY, "normal", "start")
 s.save("vm-netzwerkmodi.svg", "Vergleich NAT und Netzwerkbrücke bei einer lokalen VM")
 

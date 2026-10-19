@@ -15,14 +15,14 @@ Eine Azure-VM ist nicht eine einzelne Ressource, sondern ein Verbund. Wenn du im
 
 ![Bestandteile einer Azure-VM](img/azure-vm-bestandteile.svg)
 
-| Ressource | Aufgabe | Vergleich mit Tag 1 |
-|-----------|---------|---------------------|
-| **Virtuelle Maschine** | CPU und RAM (Compute) | Einstellungen der VirtualBox-VM |
-| **OS-Datenträger** | Disk mit dem Betriebssystem (Managed Disk) | `.vdi`-Datei |
-| **Netzwerkschnittstelle (NIC)** | verbindet die VM mit einem Subnetz, private IP | Netzwerkadapter |
-| **VNet + Subnetz** | privates Netz in Azure | NAT-Netz `10.0.2.0/24` |
-| **Öffentliche IP** | macht die VM aus dem Internet erreichbar | Portweiterleitung |
-| **NSG** | Firewall-Regeln: was darf hinein, was hinaus | Portweiterleitung, nur viel feiner |
+| Ressource | Aufgabe | Vergleich mit Tag 1 (Multipass) |
+|-----------|---------|---------------------------------|
+| **Virtuelle Maschine** | CPU und RAM (Compute) | `--cpus`, `--memory` |
+| **OS-Datenträger** | Disk mit dem Betriebssystem (Managed Disk) | `--disk` |
+| **Netzwerkschnittstelle (NIC)** | verbindet die VM mit einem Subnetz, private IP | IP-Adresse in `multipass list` |
+| **VNet + Subnetz** | privates Netz in Azure | kleines privates Netz von Hyper-V |
+| **Öffentliche IP** | macht die VM aus dem Internet erreichbar | gab es nicht – die VM war nur von deinem Laptop aus erreichbar |
+| **NSG** | Firewall-Regeln: was darf hinein, was hinaus | gab es nicht |
 
 ## Grösse und Image
 **Grösse (Size):** Bestimmt vCPUs, RAM und Preis. Der Name verrät viel:
@@ -69,7 +69,7 @@ Linux-VMs in Azure meldest du mit einem **SSH-Schlüsselpaar** an, nicht mit Pas
 
 > **Merkhilfe:** Der öffentliche Schlüssel ist ein **Schloss**, das du an beliebig viele Türen montierst. Der private Schlüssel ist der einzige **Schlüssel** dazu.
 
-Beim Erstellen der VM gibst du den **öffentlichen** Schlüssel von deinem Laptop mit (aus Auftrag 1.3):
+Beim Erstellen der VM gibst du den **öffentlichen** Schlüssel von deinem Laptop mit (aus Auftrag 1.5):
 1. Zeige ihn in PowerShell an und kopiere die ganze Zeile:
    ```powershell
    Get-Content $env:USERPROFILE\.ssh\id_ed25519.pub

@@ -8,7 +8,7 @@ Hier findest du die Theorie zum Kurs, kurz zusammengefasst und mit Grafiken. Die
 
 | Kapitel | Inhalt | Kurstag |
 |---------|--------|---------|
-| [1 Virtualisierung](01-virtualisierung.md) | Hypervisor Typ 1/2, Overcommitment, VM-Netzwerk, Snapshots, Container | 1 |
+| [1 Virtualisierung](01-virtualisierung.md) | Hypervisor Typ 1/2, Hardware teilen, Multipass, cloud-init, VM-Netzwerk, Container | 1 |
 | [2 Cloud-Grundlagen](02-cloud-grundlagen.md) | Hyperscaler, Cloud-Merkmale, IaaS/PaaS/SaaS, Public/Private/Hybrid, geteilte Verantwortung | 2 |
 | [3 Aufbau von Azure](03-azure-aufbau.md) | Regionen und Zonen, Abonnement, Ressourcengruppen, Portal, Cloud Shell, Azure CLI | 2 |
 | [4 Azure Compute](04-azure-compute.md) | Bestandteile einer VM, Grössen, Images, Status und Kosten, SSH-Schlüssel | 3 |

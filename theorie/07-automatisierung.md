@@ -9,7 +9,7 @@ Stand: 19.10.2026 · gehört zu [Tag 5](../kurs/tag-5.md)
 - Du kannst imperatives und deklaratives Vorgehen unterscheiden. (K2)
 - Du kannst eine einfache Bicep-Datei lesen und bereitstellen. (K3)
 - Du kannst eine VM mit cloud-init beim ersten Start automatisch einrichten. (K3)
-- Du kannst begründen, wann du welches Werkzeug einsetzt. (K4)
+- Du kannst sagen, wann du Bicep, cloud-init oder die Azure CLI einsetzt. (K2)
 
 ## Infrastructure as Code
 Bei **Infrastructure as Code** beschreibst du deine Infrastruktur in Textdateien statt sie zusammenzuklicken. Die Dateien liegen in Git, und ein Werkzeug setzt sie automatisch um.

@@ -5,10 +5,11 @@
 Stand: 19.10.2026 · 8 Lektionen · ohne Azure
 
 ## Ziele des Tages
-- Du kannst erklären, was ein Hypervisor macht, und Typ 1 von Typ 2 unterscheiden. (K2)
-- Du kannst auf deinem Laptop eine Linux-VM installieren und ihre Ressourcen (CPU, RAM, Disk) festlegen. (K3)
-- Du kannst die Netzwerkmodi NAT und Bridge vergleichen und dich per SSH mit deiner VM verbinden. (K3/K4)
-- Du kannst mit Snapshots einen früheren Zustand der VM wiederherstellen. (K3)
+- Du kannst erklären, was ein Hypervisor macht, und Typ 1 und Typ 2 zuordnen. (K2)
+- Du kannst mit Multipass eine VM erstellen, starten, stoppen und löschen. (K3)
+- Du kannst einer VM CPU, RAM und Festplatte zuweisen und es prüfen. (K3)
+- Du kannst eine VM mit einer cloud-init-Datei automatisch einrichten. (K3)
+- Du kannst ein SSH-Schlüsselpaar erstellen. (K3)
 - ⭐ Du kannst den Unterschied zwischen VM und Container beschreiben. (K2)
 
 ## Ablauf
@@ -16,16 +17,20 @@ Stand: 19.10.2026 · 8 Lektionen · ohne Azure
 | Lektion | Phase (AVIVA) | Inhalt | Form | Material |
 |---------|---------------|--------|------|----------|
 | L1 | **A**nkommen | Begrüssung, Kursziele, Ablauf der Woche, Lernjournal einrichten | Plenum | [Organisation](organisation.md) |
-| L1 | **V**orwissen aktivieren (5') | Kurzumfrage: Wer hat schon eine VM, VirtualBox oder Docker benutzt? Wo laufen VMs in deinem Lehrbetrieb? | Plenum | Umfrage |
-| L1 | **I**nformieren 1 (15') | **Was ist Virtualisierung?** Physische Hardware vs. VM, Hypervisor Typ 1 / Typ 2, Beispiele | Input + Demo | [Theorie 1](../theorie/01-virtualisierung.md) |
+| L1 | **V**orwissen aktivieren (5') | Kurzumfrage: Wer hat schon eine VM benutzt? Wo laufen Server in deinem Lehrbetrieb? | Plenum | Umfrage |
+| L1 | **I**nformieren 1 (15') | **Was ist Virtualisierung?** Hardware, Hypervisor, VM; Typ 1 und Typ 2 | Input + Demo | [Theorie 1](../theorie/01-virtualisierung.md) |
 | L2 | **V**erarbeiten | [Auftrag 1.1: Hypervisor und dein Laptop](../auftraege/tag-1/1.1-hypervisor-und-dein-laptop.md) | Partner | Laptop |
-| L3–L4 | **V**erarbeiten | [Auftrag 1.2: Ubuntu-Server-VM installieren](../auftraege/tag-1/1.2-ubuntu-vm-installieren.md) | Einzel | ISO, VirtualBox |
-| L5 | **I**nformieren 2 (15') | **VM-Netzwerk:** NAT, Bridge, Host-only; Portweiterleitung; SSH-Schlüssel | Input + Demo | [Theorie 1](../theorie/01-virtualisierung.md#netzwerk-einer-lokalen-vm), [SSH](../theorie/04-azure-compute.md#anmelden-mit-ssh-schlüssel) |
-| L5–L6 | **V**erarbeiten | [Auftrag 1.3: Netzwerk und SSH](../auftraege/tag-1/1.3-netzwerk-und-ssh.md) | Einzel, Partner für Tests | |
-| L7 | **V**erarbeiten | [Auftrag 1.4: Snapshot, Klon und Ressourcen](../auftraege/tag-1/1.4-snapshot-und-klon.md) | Einzel | |
-| L7 | ⭐ **V**erarbeiten | [Auftrag 1.5: Container mit Docker](../auftraege/tag-1/1.5-container-mit-docker.md) | Einzel | |
-| L8 | **I**nformieren 3 (15') | **Vom Hypervisor zum Hyperscaler:** Was passiert, wenn man tausende Hypervisoren zusammenschaltet? Brücke zu Tag 2 | Input | [Theorie 2](../theorie/02-cloud-grundlagen.md) |
-| L8 | **A**uswerten | Aufräumen (Auftrag 1.4, Schritt 7), Quiz *(folgt)*, Exit-Ticket: «Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?» | Einzel | |
+| L2 | **I**nformieren 2 (10') | **Live-Demo Multipass:** `launch`, `list`, `shell`, `delete` | Demo | – |
+| L3–L4 | **V**erarbeiten | [Auftrag 1.2: Multipass und deine erste VM](../auftraege/tag-1/1.2-multipass-und-erste-vm.md) | Einzel | Multipass |
+| L4 | **V**erarbeiten | [Auftrag 1.3: Wie viel CPU und RAM bekommt eine VM?](../auftraege/tag-1/1.3-ressourcen-einer-vm.md) | Einzel | |
+| L5 | **I**nformieren 3 (15') | **Automatisch statt von Hand:** Was ist cloud-init? Aufbau der Datei | Input + Demo | [Theorie 1](../theorie/01-virtualisierung.md#automatisch-einrichten-mit-cloud-init) |
+| L5–L6 | **V**erarbeiten | [Auftrag 1.4: Deine erste automatische VM mit cloud-init](../auftraege/tag-1/1.4-erste-automatische-vm.md) | Einzel | Notepad |
+| L7 | **V**erarbeiten | [Auftrag 1.5: SSH-Schlüssel für die Cloud vorbereiten](../auftraege/tag-1/1.5-ssh-schluessel.md) | Einzel | |
+| L7 | ⭐ **V**erarbeiten | [Auftrag 1.6: Container mit Docker](../auftraege/tag-1/1.6-container-mit-docker.md) | Einzel | |
+| L8 | **I**nformieren 4 (15') | **Vom Hypervisor zum Hyperscaler:** Was passiert, wenn man tausende Hypervisoren zusammenschaltet? Brücke zu Tag 2 | Input | [Theorie 2](../theorie/02-cloud-grundlagen.md) |
+| L8 | **A**uswerten | Aufräumen, Quiz *(folgt)*, Exit-Ticket: «Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?» | Einzel | |
+
+**Aufräumen am Tagesende:** `multipass list` – alle VMs löschen mit `multipass delete --purge --all`. Den SSH-Schlüssel (`~\.ssh`) **behalten**.
 
 ## Präsentationen
 - Tagesablauf: [tag-1-virtualisierung.pptx](../praesentationen/tag-1-virtualisierung.pptx)
@@ -33,13 +38,15 @@ Stand: 19.10.2026 · 8 Lektionen · ohne Azure
 - Input: [input-02-cloud-grundlagen.pptx](../praesentationen/input-02-cloud-grundlagen.pptx)
 
 ## Vorbereitung Kursleitung
-- VirtualBox oder Hyper-V auf den Laptops <!-- prüfen: mit Auftraggeber klären, ob Installationsrechte vorhanden sind -->
-- ISO-Datei Ubuntu Server LTS auf USB-Sticks (ca. 3 GB)
-- Client-Isolation im Schul-WLAN testen (Auftrag 1.3, Teil C) <!-- prüfen -->
+Wenig Aufwand – es müssen keine Dateien verteilt werden. Multipass lädt Ubuntu selbst herunter.
+- Mit dem Auftraggeber klären: Windows **Pro/Education/Enterprise** auf den Laptops und **Adminrechte**, um Multipass zu installieren (oder Multipass vorinstallieren lassen). <!-- prüfen: mit Auftraggeber klären -->
+- Vor dem Kurs auf einem Kurs-Laptop einmal Auftrag 1.2 durchspielen (Netzwerk, Proxy, Firewall).
+- Beim ersten `launch` laden alle gleichzeitig ca. 600 MB – evtl. gestaffelt starten lassen.
 
 ## Quellen
 - Microsoft Azure: [Was ist Virtualisierung?](https://azure.microsoft.com/de-de/resources/cloud-computing-dictionary/what-is-virtualization)
-- Microsoft Learn: [Einführung in Hyper-V unter Windows](https://learn.microsoft.com/de-de/virtualization/hyper-v-on-windows/about/)
+- Canonical: [Multipass-Dokumentation](https://documentation.ubuntu.com/multipass/en/latest/)
+- TBZ M346: [KN01 Virtualisierung & erste automatisierte VM](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Kompetenznachweise/KN01.md) (Vorlage, für ICT-Fachleute vereinfacht)
 
 ## Lösungen
 Für die Kursleitung und zum Vergleichen: [loesungen/tag-1/](../loesungen/tag-1/)

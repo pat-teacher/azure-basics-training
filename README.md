@@ -17,7 +17,7 @@ Der Kurs ist **hands-on**: Du arbeitest den grössten Teil der Zeit selbst an Au
 
 | Tag | Schwerpunkt | Du baust … |
 |-----|-------------|------------|
-| [1](kurs/tag-1.md) | Grundlagen Virtualisierung | eine lokale Linux-VM mit SSH-Zugriff, ⭐ einen ersten Container |
+| [1](kurs/tag-1.md) | Grundlagen Virtualisierung | lokale VMs mit Multipass, deine erste automatische VM mit cloud-init |
 | [2](kurs/tag-2.md) | Public Cloud und Azure Grundlagen | deine ersten Azure-Ressourcen im Portal und mit der Azure CLI |
 | [3](kurs/tag-3.md) | Azure Compute und Storage | eine Linux-VM in Azure und einen Storage Account |
 | [4](kurs/tag-4.md) | Azure Networking | ein VNet mit Subnetzen und NSG-Regeln |
@@ -43,7 +43,7 @@ assets/        Bilder und Branding
 > Die [Lösungen](loesungen/) sind zum Vergleichen da, nicht zum Abschreiben. Du lernst am meisten, wenn du zuerst selbst probierst und erst bei einem Problem nachschaust.
 
 ## Voraussetzungen
-- Laptop mit Administratorrechten und aktivierter Hardware-Virtualisierung (für Tag 1)
+- Laptop mit Windows Pro oder Education, aktivierter Hardware-Virtualisierung und dem Recht, Programme zu installieren (für Multipass an Tag 1)
 - Aktives Azure-for-Students-Abonnement
 - Webbrowser, Terminal (PowerShell oder Windows Terminal), optional Visual Studio Code
 

@@ -8,7 +8,7 @@ Stand: 19.10.2026 · 8 Lektionen
 - Du kannst eine Linux-VM in Azure bereitstellen und per SSH darauf zugreifen. (K3)
 - Du kannst erklären, aus welchen Ressourcen eine Azure-VM besteht (Disk, NIC, Public IP, NSG) und was sie kostet. (K2)
 - Du kannst einen Storage Account anlegen, Dateien als Blob hochladen und den Zugriff steuern. (K3)
-- Du kannst deine lokale VM von Tag 1 mit der Azure-VM vergleichen. (K4)
+- Du kannst Gemeinsamkeiten und Unterschiede deiner VM von Tag 1 und der Azure-VM beschreiben. (K2)
 
 ## Ablauf
 

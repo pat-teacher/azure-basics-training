@@ -2,109 +2,140 @@
 
 # 1 Virtualisierung
 
-Stand: 19.10.2026 · gehört zu [Tag 1](../kurs/tag-1.md)
+Stand: 19.10.2026 · gehört zu [Tag 1](../kurs/tag-1.md) · Lesezeit ca. 15 Min.
 
 ## Lernziele
-- Du kannst erklären, was Virtualisierung ist und welche Rolle ein Hypervisor spielt. (K2)
-- Du kannst Typ-1- und Typ-2-Hypervisoren unterscheiden und Produkte zuordnen. (K2)
-- Du kannst erklären, warum man einer VM mehr Ressourcen zuweisen kann, als physisch vorhanden sind (Overcommitment). (K2)
-- Du kannst die Netzwerkmodi NAT und Netzwerkbrücke vergleichen. (K4)
+- Du kannst erklären, was ein Hypervisor macht. (K2)
+- Du kannst Hypervisoren dem Typ 1 oder Typ 2 zuordnen. (K2)
+- Du kannst erklären, warum sich VMs die Hardware teilen können. (K2)
+- Du kannst sagen, wozu Multipass und cloud-init dienen. (K1)
 - Du kannst den Unterschied zwischen VM und Container beschreiben. (K2)
 
 ## Was ist Virtualisierung?
-Virtualisierung trennt Betriebssystem und Anwendungen von der physischen Hardware. Die Software-Schicht dazwischen heisst **Hypervisor**. Er teilt CPU, RAM, Disk und Netzwerk auf mehrere **virtuelle Maschinen (VMs)** auf. Jede VM verhält sich wie ein eigener Computer mit eigenem Betriebssystem, obwohl sich alle dieselbe Hardware teilen.
+Normalerweise läuft auf einem Computer **ein** Betriebssystem. Mit Virtualisierung laufen auf **einem** Computer **mehrere** Betriebssysteme gleichzeitig. Jedes davon läuft in einer **virtuellen Maschine (VM)**: einem Computer, der nur aus Software besteht.
 
-**Wozu?** Ein physischer Server ohne Virtualisierung ist oft nur zu 10–20 % ausgelastet. Mit Virtualisierung laufen viele VMs auf derselben Maschine. VMs lassen sich in Sekunden erstellen, klonen, verschieben und löschen. Genau das macht Cloud Computing erst möglich.
+Die Software, die das möglich macht, heisst **Hypervisor**. Sie teilt die echte Hardware (Prozessor, Arbeitsspeicher, Festplatte, Netzwerk) auf die VMs auf.
 
-> **Alltagsvergleich:** Ein Mehrfamilienhaus. Das Gebäude (Hardware) ist eines, aber jede Wohnung (VM) hat eine eigene Tür, eigene Möbel und eigene Bewohner. Die Hausverwaltung (Hypervisor) teilt Wasser, Strom und Heizung zu.
+> **Alltagsvergleich:** Ein Mehrfamilienhaus. Das Gebäude ist die Hardware. Jede Wohnung ist eine VM mit eigener Tür und eigenen Möbeln. Die Hausverwaltung ist der Hypervisor: Sie teilt Wasser, Strom und Heizung zu.
+
+**Wozu das Ganze?**
+- Ein Server ohne Virtualisierung ist oft nur zu 10–20 % ausgelastet. Mit VMs wird er besser genutzt.
+- Eine VM ist in Minuten erstellt und wieder gelöscht.
+- Genau das macht Cloud Computing möglich: In Azure mietest du VMs, keine Computer.
 
 ## Typ 1 und Typ 2
 
 ![Hypervisor Typ 1 und Typ 2](img/tbz/Hypervisor.png)
 <sub>Grafik: TBZ M346</sub>
 
-| | Typ 1 (bare metal) | Typ 2 (hosted) |
+| | Typ 1 | Typ 2 |
 |---|---|---|
-| Läuft auf | direkt auf der Hardware | als Programm auf einem Betriebssystem |
-| Leistung | hoch, kein Betriebssystem dazwischen | etwas tiefer |
-| Typischer Einsatz | Rechenzentren, Cloud-Anbieter | Laptop, Tests, Schulung |
-| Beispiele | Microsoft Hyper-V, VMware ESXi, KVM, Xen | VirtualBox, VMware Workstation, Parallels |
+| Läuft … | direkt auf der Hardware | als Programm auf Windows, macOS oder Linux |
+| Typischer Einsatz | Rechenzentren, Cloud | Laptop, Tests, Schulung |
+| Beispiele | Microsoft Hyper-V, VMware ESXi, KVM | VirtualBox, VMware Workstation |
 
-Die Grenze ist nicht immer scharf. Ein Beispiel: Schaltest du Hyper-V unter Windows ein, läuft der Hypervisor direkt auf der Hardware. Windows selbst läuft danach als besondere VM darauf. Hyper-V ist deshalb Typ 1. Auch **Azure** läuft auf einer angepassten Version von Hyper-V.
+Schaltest du Hyper-V in Windows ein, startet der Hypervisor direkt auf der Hardware. Windows läuft danach selbst als besondere VM darauf. Darum ist Hyper-V Typ 1.
 
-## Overcommitment (Überbuchung): mehr zuweisen, als da ist
-Auf einem Laptop mit 8 logischen Prozessoren kannst du drei VMs mit je 4 vCPUs betreiben, zusammen also 12. Eine einzelne VM bekommt höchstens so viele vCPUs, wie der Host logische Prozessoren hat. Die Zuweisung ist ein **Versprechen, keine Reservation**.
-- **CPU:** Virtuelle CPUs sind für den Host einfach Threads. Sie teilen sich die echten Kerne in kurzen Zeitscheiben. Das funktioniert gut, solange nicht alle VMs gleichzeitig volle Last haben.
-- **RAM:** Reicht der echte Speicher nicht, lagert der Host Daten auf die Disk aus (Swap). Die Disk ist viel langsamer als der RAM. Brauchen alle VMs gleichzeitig viel Speicher, wird alles extrem langsam (Thrashing).
+**Merke:** Auch **Azure** verwendet Hyper-V, in einer angepassten Version.
 
-Cloud-Anbieter nutzen Overcommitment auch, aber kontrolliert und überwacht.
+## Die Hardware teilen
 
-## Netzwerk einer lokalen VM
+Jede VM bekommt beim Erstellen einen Teil der Hardware:
+- **vCPU** (virtueller Prozessor)
+- **Arbeitsspeicher** (RAM)
+- **Festplatte** (Disk)
+
+Die VMs teilen sich die echten Prozessoren abwechselnd, in sehr kurzen Zeitabschnitten. Darum können alle VMs zusammen mehr vCPUs haben, als der Computer Prozessoren hat. Das heisst **Überbuchung** (Overcommitment). Solange nicht alle VMs gleichzeitig voll arbeiten, merkt man nichts. Arbeiten alle gleichzeitig, wird es langsam.
+
+## Multipass: eine VM mit einem Befehl
+Eine VM von Hand zu installieren dauert lange: Installationsdatei herunterladen, Installer durchklicken, Einstellungen wählen. **Multipass** von Canonical (der Firma hinter Ubuntu) erledigt das mit einem Befehl. Im Hintergrund verwendet es den Hypervisor deines Laptops (bei Windows Pro: Hyper-V).
+
+| Befehl | Was er macht |
+|--------|--------------|
+| `multipass launch --name vm1` | VM «vm1» erstellen und starten |
+| `multipass list` | alle VMs anzeigen |
+| `multipass shell vm1` | Kommandozeile in der VM öffnen (`exit` zum Verlassen) |
+| `multipass exec vm1 -- <befehl>` | einen Befehl in der VM ausführen |
+| `multipass stop vm1` / `start vm1` | VM stoppen / starten |
+| `multipass delete --purge vm1` | VM endgültig löschen |
+
+## Automatisch einrichten mit cloud-init
+Eine neue VM ist leer. Programme und Dateien musst du noch einrichten. **cloud-init** macht das automatisch: Du schreibst in eine Textdatei, was beim **ersten Start** passieren soll.
+
+```yaml
+#cloud-config
+packages:
+  - tree
+write_files:
+  - path: /opt/willkommen.txt
+    content: |
+      Diese Datei hat cloud-init erstellt.
+```
+
+| Block | Bedeutung |
+|-------|-----------|
+| `#cloud-config` | muss die erste Zeile sein |
+| `packages` | Programme installieren |
+| `write_files` | Dateien anlegen |
+| `runcmd` | Befehle ausführen |
+
+Mit Multipass: `multipass launch --name auto --cloud-init datei.yaml`. In Azure funktioniert es genau gleich – das machst du an Tag 5.
+
+## Wie kommt die VM ins Netz?
 
 ![NAT und Netzwerkbrücke](img/vm-netzwerkmodi.svg)
 
-| Modus | Was passiert | Wann verwenden |
-|-------|--------------|----------------|
-| **NAT** | Die VM hat ein eigenes privates Netz (bei VirtualBox `10.0.2.x`). Sie erreicht das Internet, ist von aussen aber unsichtbar. Einzelne Ports kannst du gezielt weiterleiten. | Standard, sicher in fremden Netzen |
-| **Netzwerkbrücke** | Die VM hängt direkt im selben Netz wie dein Laptop und bekommt eine eigene IP vom Router. | wenn andere Geräte die VM erreichen sollen |
-| **Host-only** | Nur Laptop und VMs sehen sich, kein Internet. | isolierte Testnetze |
+- **NAT** (Standard): Die VM hat eine private Adresse in einem eigenen kleinen Netz. Sie kommt ins Internet, ist von aussen aber nicht erreichbar. Das ist sicher.
+- **Netzwerkbrücke:** Die VM bekommt eine eigene Adresse im selben Netz wie dein Laptop. Andere Geräte erreichen sie direkt.
 
-**SSH** (Secure Shell) ist der Standard, um sich auf Linux-Servern anzumelden. Wie das mit Schlüsseln funktioniert, steht in [Kapitel 4](04-azure-compute.md#anmelden-mit-ssh-schlüssel).
+Multipass mit Hyper-V verwendet NAT. Dein Laptop erreicht die VM, andere Geräte nicht.
 
-Die Portweiterleitung bei NAT ist die gleiche Idee wie eine Regel in einer Firewall: Du öffnest bewusst nur das, was nötig ist. In Azure übernimmt das die **Netzwerksicherheitsgruppe (NSG)** (Kapitel 6).
-
-## Snapshots und Klone
-- **Snapshot:** Speichert den Zustand der Disk zu einem Zeitpunkt. Stellst du ihn wieder her, ist alles weg, was danach passiert ist, auch gewollte Änderungen. Der Snapshot liegt auf demselben Laptop wie die VM. Ob er damit ein Backup ersetzt, überlegst du in Auftrag 1.4.
-- **Klon:** Eine Kopie der ganzen VM. Ein **verknüpfter Klon** speichert nur die Unterschiede zum Original und braucht deshalb wenig Platz. Achtung: Hostname, SSH-Schlüssel und Machine-ID sind gleich wie beim Original.
+In Azure regelst du später mit einer **Netzwerksicherheitsgruppe (NSG)**, wer deine VM erreichen darf (Tag 4).
 
 ## Container: die leichte Alternative
 
 ![Container und VM im Vergleich](img/vm-vs-container.svg)
 
-Eine VM virtualisiert die **Hardware** und bringt ein ganzes Betriebssystem mit. Ein **Container** virtualisiert das **Betriebssystem**: Alle Container auf einem Host teilen sich denselben Kernel. Sie enthalten nur die Anwendung und ihre Bibliotheken.
+Ein **Container** ist ein verpacktes Programm. Er bringt kein eigenes Betriebssystem mit, sondern teilt sich den Kern (Kernel) mit anderen Containern. Darum ist er klein und startet in weniger als einer Sekunde. Das bekannteste Werkzeug dafür ist **Docker**.
 
 | | VM | Container |
 |---|---|---|
-| Startzeit | Sekunden bis Minuten | Bruchteile einer Sekunde |
+| Eigenes Betriebssystem | ja | nein |
+| Startzeit | Sekunden bis Minuten | unter 1 Sekunde |
 | Grösse | mehrere GB | wenige MB bis einige 100 MB |
-| Eigener Kernel | ja | nein |
-| Isolation | stark | gut, aber geteilter Kernel |
-
-Ein **Image** ist die Vorlage, ein **Container** ist eine laufende Instanz davon. Fertige Images gibt es in **Registries** wie Docker Hub.
 
 ## Vom Hypervisor zum Hyperscaler
-Was passiert, wenn man tausende Server mit Typ-1-Hypervisoren zusammenschaltet und über eine Web-API steuert? Dann hat man eine Cloud. Mehr dazu in [Kapitel 2](02-cloud-grundlagen.md).
+Was passiert, wenn man tausende Server mit Hypervisoren zusammenschaltet und über das Internet steuert? Dann hat man eine Cloud. Mehr dazu in [Kapitel 2](02-cloud-grundlagen.md).
 
 ## Selbsttest
 
-<details><summary>1. Ein Kollege sagt: «Docker ist auch ein Hypervisor.» Stimmt das?</summary>
+<details><summary>1. Was macht ein Hypervisor?</summary>
 
-Nein. Docker isoliert Prozesse auf demselben Kernel (Container). Ein Hypervisor betreibt vollständige Gast-Betriebssysteme mit eigenem Kernel.
+Er teilt die echte Hardware (CPU, RAM, Festplatte, Netzwerk) auf mehrere virtuelle Maschinen auf.
 </details>
 
-<details><summary>2. Dein Laptop hat 8 logische Prozessoren. Du startest drei VMs mit je 4 vCPUs. Wie ist das möglich?</summary>
+<details><summary>2. Typ 1 oder Typ 2: VirtualBox, Hyper-V?</summary>
 
-Die 12 vCPUs sind für den Host Threads, die sich die 8 echten Kerne in Zeitscheiben teilen (Overcommitment). Echte Parallelität gibt es aber nur bis 8. Unter Volllast aller VMs wird es langsam.
+VirtualBox ist Typ 2 (Programm auf Windows). Hyper-V ist Typ 1 (läuft direkt auf der Hardware).
 </details>
 
-<details><summary>3. Warum setzen Cloud-Anbieter Typ-1-Hypervisoren ein?</summary>
+<details><summary>3. Dein Laptop hat 8 Prozessoren. Drei VMs haben je 4 vCPUs. Geht das?</summary>
 
-Weniger Verlust durch ein Betriebssystem dazwischen, bessere Kontrolle über die Isolation, direkte Verwaltung der Hardware. Bei zehntausenden Servern zählt jedes Prozent.
+Ja. Die VMs teilen sich die echten Prozessoren abwechselnd (Überbuchung). Arbeiten alle gleichzeitig voll, wird es langsam.
 </details>
 
-<details><summary>4. Deine VM im NAT-Modus ist von deinem Partner aus nicht erreichbar. Ist das ein Fehler?</summary>
+<details><summary>4. Wann arbeitet cloud-init die Datei ab?</summary>
 
-Nein, das ist gewollt. NAT versteckt die VM. Wenn sie erreichbar sein soll: Netzwerkbrücke, oder eine Portweiterleitung mit der WLAN-IP deines Laptops als Host-IP statt `127.0.0.1`.
+Nur beim ersten Start der VM.
 </details>
 
-<details><summary>5. Du stellst einen Snapshot von heute Morgen wieder her. Was passiert mit dem Paket, das du am Mittag installiert hast?</summary>
+<details><summary>5. Ein Kollege sagt: «Docker ist auch ein Hypervisor.» Stimmt das?</summary>
 
-Es ist weg. Der Snapshot setzt die ganze Disk auf den Zustand von heute Morgen zurück.
+Nein. Docker startet Container. Container teilen sich den Kernel und haben kein eigenes Betriebssystem. Ein Hypervisor betreibt ganze VMs.
 </details>
 
 ## Quellen
-- TBZ M346: [Virtualisierung & Hypervisor](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Virtualisierung.md) (Texte und Grafik übernommen und angepasst)
-- TBZ M347: [Docker einfach erklärt](https://gitlab.com/ch-tbz-it/Stud/m347/-/blob/main/Container/docker/Readme.md) (Texte übernommen und angepasst)
+- TBZ M346: [Virtualisierung & Hypervisor](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Virtualisierung.md), [Cloud-init](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/CloudInit.md), [Multipass](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Tools/Multipass.md) (übernommen und vereinfacht)
+- TBZ M347: [Docker einfach erklärt](https://gitlab.com/ch-tbz-it/Stud/m347/-/blob/main/Container/docker/Readme.md)
 - Microsoft: [Was ist Virtualisierung?](https://azure.microsoft.com/de-de/resources/cloud-computing-dictionary/what-is-virtualization)
 - Microsoft Learn: [Hypervisor-Sicherheit in der Azure-Flotte](https://learn.microsoft.com/de-de/azure/security/fundamentals/hypervisor)
-- Microsoft Learn: [Container im Vergleich zu virtuellen Computern](https://learn.microsoft.com/de-de/virtualization/windowscontainers/about/containers-vs-vm)

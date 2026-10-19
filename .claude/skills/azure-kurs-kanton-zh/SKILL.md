@@ -7,7 +7,7 @@ description: Kursrahmen für den 5-Tage-Kurs «Einführung in Cloud Computing mi
 
 ## Eckdaten
 - Auftraggeber: Kanton Zürich
-- Zielgruppe: ICT-Lernende (Informatiker/in EFZ), meist 2. oder 3. Lehrjahr, Grundkenntnisse in Netzwerk, Betriebssystemen und Kommandozeile.
+- Zielgruppe: ICT-Fachleute EFZ (ICT-Fachfrau/ICT-Fachmann). Stärken bei Endgeräten und Support, wenig Erfahrung mit Servern, Linux und Kommandozeile. Niveau deutlich unter Informatiker/in Plattformentwicklung (Vorlage TBZ M346 deshalb vereinfachen). Regeln siehe CLAUDE.md, Abschnitt «Niveau der Zielgruppe».
 - Dauer: 5 Tage, je ca. 8 Lektionen à 45 Minuten.
 - Azure-Zugang: Azure for Students (siehe Skill `azure-hands-on-labs` für Grenzen).
 

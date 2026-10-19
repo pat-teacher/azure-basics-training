@@ -16,7 +16,14 @@ Formuliere Lernziele als beobachtbares Verhalten mit K-Stufe (Bloom):
 | K5 | Beurteilen | bewerten, auswählen, empfehlen |
 
 Beispiel: «Du kannst eine Linux-VM mit der Azure CLI bereitstellen und per SSH darauf zugreifen. (K3)»
-Pro Tag 3 bis 5 Lernziele, Schwerpunkt K2 bis K3, am Tag 5 auch K4/K5.
+Pro Tag 3 bis 5 Lernziele, Schwerpunkt K1 bis K3. K4 nur gezielt (z. B. Fehlersuche mit Checkliste), K5 höchstens im Abschlussprojekt.
+
+## Niveau ICT-Fachleute EFZ
+- Aufträge kleinschrittig: ein Schritt = eine Handlung + Kontrolle mit erwarteter Ausgabe.
+- Befehle immer vorgeben und in einem Satz erklären. Selbst herleiten nur in ⭐-Aufgaben.
+- Fragen geschlossen (zuordnen, ankreuzen, Lückentext) oder kurz offen (1–3 Sätze).
+- Höchstens 5–6 Grundaufträge pro Tag; Vertiefung als ⭐.
+- Fachbegriffe sparsam, beim ersten Auftreten erklären; Glossar-Charakter in der Theorie.
 
 ## Lektionsplan nach AVIVA
 | Phase | Zweck | Anteil |
