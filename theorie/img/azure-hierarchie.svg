@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" width="920" height="500" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Hierarchie in Azure: Mandant, Verwaltungsgruppen, Abonnement, Ressourcengruppe, Ressourcen">
+<defs><marker id="aD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27303A"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#006FAD"/></marker><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2E7D32"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B3261E"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6F6F6F"/></marker></defs>
+<rect width="920" height="500" fill="#FFFFFF"/>
+<rect x="0" y="495" width="920" height="5" fill="#006FAD"/>
+<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Aufbau von Azure: vom Mandanten bis zur Ressource</text>
+<rect x="30" y="55" width="330" height="58" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
+<text x="195.0" y="79.16666666666667" font-size="14" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Microsoft Entra ID</text>
+<text x="195.0" y="98.16666666666667" font-size="12" fill="#FFFFFF" font-weight="normal" text-anchor="middle">Mandant (Tenant)</text>
+<text x="385" y="89" font-size="13" fill="#27303A" font-weight="normal" text-anchor="start">Identitäten: Benutzer, Gruppen, Anmeldung</text>
+<line x1="195" y1="113" x2="195" y2="140" stroke="#27303A" stroke-width="2" marker-end="url(#aD)"/>
+<rect x="30" y="140" width="330" height="58" rx="8" fill="#D5D8F4" stroke="#27303A" stroke-width="1.5"/>
+<text x="195.0" y="164.16666666666666" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">Verwaltungsgruppen</text>
+<text x="195.0" y="183.16666666666666" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Management Groups</text>
+<text x="385" y="174" font-size="13" fill="#27303A" font-weight="normal" text-anchor="start">fassen mehrere Abonnements zusammen (optional)</text>
+<line x1="195" y1="198" x2="195" y2="225" stroke="#27303A" stroke-width="2" marker-end="url(#aD)"/>
+<rect x="30" y="225" width="330" height="58" rx="8" fill="#DEE2FB" stroke="#006FAD" stroke-width="3"/>
+<text x="195.0" y="249.16666666666666" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">Abonnement</text>
+<text x="195.0" y="268.16666666666663" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Subscription</text>
+<text x="385" y="259" font-size="13" fill="#27303A" font-weight="normal" text-anchor="start">Abrechnung, Kosten- und Quotengrenze · bei dir: Azure for Students</text>
+<line x1="195" y1="283" x2="195" y2="310" stroke="#27303A" stroke-width="2" marker-end="url(#aD)"/>
+<rect x="30" y="310" width="330" height="58" rx="8" fill="#DEE2FB" stroke="#006FAD" stroke-width="3"/>
+<text x="195.0" y="334.1666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">Ressourcengruppe</text>
+<text x="195.0" y="353.1666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Resource Group</text>
+<text x="385" y="344" font-size="13" fill="#27303A" font-weight="normal" text-anchor="start">«Ordner» für alles, was zusammengehört · z. B. rg-tag3-mm</text>
+<line x1="195" y1="368" x2="195" y2="395" stroke="#27303A" stroke-width="2" marker-end="url(#aD)"/>
+<rect x="30" y="395" width="105" height="44" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="1.5"/>
+<text x="82.5" y="421.0" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">vm-web-mm</text>
+<rect x="145" y="395" width="105" height="44" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="1.5"/>
+<text x="197.5" y="421.0" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">sttag3mm</text>
+<rect x="260" y="395" width="105" height="44" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="1.5"/>
+<text x="312.5" y="421.0" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">vnet-tag4-mm</text>
+<text x="385" y="422" font-size="13" fill="#27303A" font-weight="normal" text-anchor="start">Ressourcen: VM, Storage Account, VNet … – jede gehört zu genau einer Ressourcengruppe</text>
+<text x="30" y="475" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="start">Blau umrandet: damit arbeitest du im Kurs. Löschst du eine Ressourcengruppe, löschst du alles darin.</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="VNet mit zwei Subnetzen, NSG-Regeln und erlaubten sowie blockierten Verbindungen">
+<defs><marker id="aD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27303A"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#006FAD"/></marker><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2E7D32"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B3261E"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6F6F6F"/></marker></defs>
+<rect width="1000" height="560" fill="#FFFFFF"/>
+<rect x="0" y="555" width="1000" height="5" fill="#006FAD"/>
+<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">VNet, Subnetze und NSG</text>
+<rect x="400" y="45" width="200" height="42" rx="8" fill="#D5D8F4" stroke="#006FAD" stroke-width="1.5"/>
+<text x="500.0" y="70.66666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">Internet</text>
+<rect x="20" y="110" width="960" height="410" rx="8" fill="#F7F7F7" stroke="#6F6F6F" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="35" y="132" font-size="13" fill="#27303A" font-weight="bold" text-anchor="start">VNet vnet-tag4-mm · Adressraum 10.10.0.0/16</text>
+<rect x="40" y="145" width="440" height="355" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="55" y="167" font-size="13" fill="#27303A" font-weight="bold" text-anchor="start">Subnetz snet-web · 10.10.1.0/24</text>
+<rect x="60" y="180" width="400" height="150" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="75" y="202" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="start">NSG nsg-web (eingehend)</text>
+<text x="80" y="228" font-size="12" fill="#27303A" font-weight="bold" text-anchor="start">100</text>
+<text x="140" y="228" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="start">Allow</text>
+<text x="195" y="228" font-size="12" fill="#27303A" font-weight="normal" text-anchor="start">TCP 80 von Internet</text>
+<text x="80" y="253" font-size="12" fill="#27303A" font-weight="bold" text-anchor="start">110</text>
+<text x="140" y="253" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="start">Allow</text>
+<text x="195" y="253" font-size="12" fill="#27303A" font-weight="normal" text-anchor="start">TCP 22 von &lt;Schul-IP&gt;</text>
+<text x="80" y="278" font-size="12" fill="#27303A" font-weight="bold" text-anchor="start">65000</text>
+<text x="140" y="278" font-size="12" fill="#6F6F6F" font-weight="bold" text-anchor="start">Allow</text>
+<text x="195" y="278" font-size="12" fill="#27303A" font-weight="normal" text-anchor="start">VirtualNetwork (Standard)</text>
+<text x="80" y="303" font-size="12" fill="#27303A" font-weight="bold" text-anchor="start">65500</text>
+<text x="140" y="303" font-size="12" fill="#B3261E" font-weight="bold" text-anchor="start">Deny</text>
+<text x="195" y="303" font-size="12" fill="#27303A" font-weight="normal" text-anchor="start">alles andere (Standard)</text>
+<rect x="150" y="395" width="220" height="70" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
+<text x="260.0" y="425.1666666666667" font-size="14" fill="#FFFFFF" font-weight="bold" text-anchor="middle">vm-web-mm</text>
+<text x="260.0" y="444.1666666666667" font-size="12" fill="#FFFFFF" font-weight="normal" text-anchor="middle">10.10.1.4 · öffentliche IP</text>
+<rect x="520" y="145" width="440" height="355" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="535" y="167" font-size="13" fill="#27303A" font-weight="bold" text-anchor="start">Subnetz snet-intern · 10.10.2.0/24</text>
+<rect x="540" y="180" width="400" height="150" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="555" y="202" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="start">NSG nsg-intern (eingehend)</text>
+<text x="560" y="228" font-size="12" fill="#27303A" font-weight="bold" text-anchor="start">65000</text>
+<text x="620" y="228" font-size="12" fill="#6F6F6F" font-weight="bold" text-anchor="start">Allow</text>
+<text x="675" y="228" font-size="12" fill="#27303A" font-weight="normal" text-anchor="start">VirtualNetwork (Standard)</text>
+<text x="560" y="253" font-size="12" fill="#27303A" font-weight="bold" text-anchor="start">65500</text>
+<text x="620" y="253" font-size="12" fill="#B3261E" font-weight="bold" text-anchor="start">Deny</text>
+<text x="675" y="253" font-size="12" fill="#27303A" font-weight="normal" text-anchor="start">alles andere (Standard)</text>
+<rect x="630" y="395" width="220" height="70" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
+<text x="740.0" y="425.1666666666667" font-size="14" fill="#FFFFFF" font-weight="bold" text-anchor="middle">vm-db-mm</text>
+<text x="740.0" y="444.1666666666667" font-size="12" fill="#FFFFFF" font-weight="normal" text-anchor="middle">10.10.2.4 · keine öffentliche IP</text>
+<line x1="470" y1="87" x2="260" y2="393" stroke="#2E7D32" stroke-width="2" marker-end="url(#aO)"/>
+<text x="320" y="360" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">HTTP 80 ✓</text>
+<line x1="560" y1="87" x2="850" y2="178" stroke="#B3261E" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#aN)"/>
+<text x="700" y="98" font-size="12" fill="#B3261E" font-weight="bold" text-anchor="start">aus dem Internet ✗</text>
+<line x1="372" y1="430" x2="628" y2="430" stroke="#2E7D32" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#aO)"/>
+<text x="500" y="420" font-size="12" fill="#2E7D32" font-weight="bold" text-anchor="middle">innerhalb VNet ✓</text>
+<text x="500" y="545" font-size="13" fill="#27303A" font-weight="normal" text-anchor="middle">Regeln werden nach Priorität geprüft: kleine Zahl zuerst. Die erste passende Regel entscheidet.</text>
+</svg>

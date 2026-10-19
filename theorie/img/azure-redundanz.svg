@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Vergleich der Redundanzoptionen LRS, ZRS und GRS">
+<defs><marker id="aD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27303A"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#006FAD"/></marker><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2E7D32"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B3261E"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6F6F6F"/></marker></defs>
+<rect width="1000" height="380" fill="#FFFFFF"/>
+<rect x="0" y="375" width="1000" height="5" fill="#006FAD"/>
+<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Redundanz im Storage Account: LRS, ZRS, GRS</text>
+<rect x="20" y="55" width="230" height="250" rx="8" fill="#F7F7F7" stroke="#6F6F6F" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="135" y="78" font-size="15" fill="#27303A" font-weight="bold" text-anchor="middle">LRS – lokal</text>
+<rect x="60" y="95" width="150" height="180" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="135" y="115" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">1 Rechenzentrum</text>
+<rect x="100" y="130" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="135.0" y="148.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="100" y="164" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="135.0" y="182.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="100" y="198" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="135.0" y="216.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="270" y="55" width="310" height="250" rx="8" fill="#F7F7F7" stroke="#6F6F6F" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="425" y="78" font-size="15" fill="#27303A" font-weight="bold" text-anchor="middle">ZRS – zonenredundant</text>
+<rect x="285" y="95" width="88" height="180" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="329" y="115" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Zone 1</text>
+<rect x="294" y="165" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="329.0" y="183.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="383" y="95" width="88" height="180" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="427" y="115" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Zone 2</text>
+<rect x="392" y="165" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="427.0" y="183.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="481" y="95" width="88" height="180" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="525" y="115" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Zone 3</text>
+<rect x="490" y="165" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="525.0" y="183.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="600" y="55" width="380" height="250" rx="8" fill="#F7F7F7" stroke="#6F6F6F" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="790" y="78" font-size="15" fill="#27303A" font-weight="bold" text-anchor="middle">GRS – georedundant</text>
+<rect x="615" y="95" width="150" height="180" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="690" y="115" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">primäre Region</text>
+<rect x="655" y="130" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="690.0" y="148.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="655" y="164" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="690.0" y="182.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="655" y="198" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="690.0" y="216.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="815" y="95" width="150" height="180" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="890" y="115" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">sekundäre Region</text>
+<rect x="855" y="130" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="890.0" y="148.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="855" y="164" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="890.0" y="182.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<rect x="855" y="198" width="70" height="28" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="890.0" y="216.0" font-size="12" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Kopie</text>
+<line x1="767" y1="185" x2="813" y2="185" stroke="#006FAD" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#aB)"/>
+<text x="790" y="175" font-size="10" fill="#006FAD" font-weight="normal" text-anchor="middle">asynchron</text>
+<text x="135" y="330" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">schützt vor Festplattenausfall</text>
+<text x="425" y="330" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">+ Ausfall eines Rechenzentrums</text>
+<text x="790" y="330" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">+ Ausfall einer ganzen Region</text>
+<text x="500" y="360" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Je mehr Schutz, desto teurer. Für Übungen reicht LRS.</text>
+</svg>

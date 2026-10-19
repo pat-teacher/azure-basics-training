@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Vergleich: VMs mit eigenem Betriebssystem, Container mit geteiltem Kernel">
+<defs><marker id="aD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27303A"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#006FAD"/></marker><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2E7D32"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B3261E"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6F6F6F"/></marker></defs>
+<rect width="1000" height="400" fill="#FFFFFF"/>
+<rect x="0" y="395" width="1000" height="5" fill="#006FAD"/>
+<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Virtuelle Maschinen und Container im Vergleich</text>
+<text x="250" y="62" font-size="16" fill="#006FAD" font-weight="bold" text-anchor="middle">Virtuelle Maschinen</text>
+<rect x="20" y="330" width="460" height="40" rx="8" fill="#D5D8F4" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="250.0" y="354.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Hardware</text>
+<text x="750" y="62" font-size="16" fill="#006FAD" font-weight="bold" text-anchor="middle">Container</text>
+<rect x="520" y="330" width="460" height="40" rx="8" fill="#D5D8F4" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="750.0" y="354.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Hardware</text>
+<rect x="20" y="285" width="460" height="40" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
+<text x="250.0" y="309.3333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Hypervisor</text>
+<rect x="20" y="80" width="150" height="200" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="95" y="100" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="middle">VM 1</text>
+<rect x="30" y="110" width="130" height="40" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="95.0" y="134.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">App</text>
+<rect x="30" y="158" width="130" height="40" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="95.0" y="182.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Bibliotheken</text>
+<rect x="30" y="206" width="130" height="64" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
+<text x="95.0" y="233.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Gast-OS</text>
+<text x="95.0" y="251.33333333333334" font-size="11" fill="#FFFFFF" font-weight="normal" text-anchor="middle">mit eigenem Kernel</text>
+<rect x="175" y="80" width="150" height="200" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="250" y="100" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="middle">VM 2</text>
+<rect x="185" y="110" width="130" height="40" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="250.0" y="134.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">App</text>
+<rect x="185" y="158" width="130" height="40" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="250.0" y="182.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Bibliotheken</text>
+<rect x="185" y="206" width="130" height="64" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
+<text x="250.0" y="233.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Gast-OS</text>
+<text x="250.0" y="251.33333333333334" font-size="11" fill="#FFFFFF" font-weight="normal" text-anchor="middle">mit eigenem Kernel</text>
+<rect x="330" y="80" width="150" height="200" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="405" y="100" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="middle">VM 3</text>
+<rect x="340" y="110" width="130" height="40" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="405.0" y="134.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">App</text>
+<rect x="340" y="158" width="130" height="40" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="405.0" y="182.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Bibliotheken</text>
+<rect x="340" y="206" width="130" height="64" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
+<text x="405.0" y="233.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Gast-OS</text>
+<text x="405.0" y="251.33333333333334" font-size="11" fill="#FFFFFF" font-weight="normal" text-anchor="middle">mit eigenem Kernel</text>
+<rect x="520" y="285" width="460" height="40" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
+<text x="750.0" y="309.3333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Host-Betriebssystem mit Kernel (geteilt)</text>
+<rect x="520" y="240" width="460" height="40" rx="8" fill="#D5D8F4" stroke="#27303A" stroke-width="1.5"/>
+<text x="750.0" y="264.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Container-Engine (z. B. Docker)</text>
+<rect x="520" y="130" width="150" height="105" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="595" y="148" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="middle">Container 1</text>
+<rect x="530" y="155" width="130" height="34" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="595.0" y="176.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">App</text>
+<rect x="530" y="194" width="130" height="34" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="595.0" y="215.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Bibliotheken</text>
+<rect x="675" y="130" width="150" height="105" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="750" y="148" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="middle">Container 2</text>
+<rect x="685" y="155" width="130" height="34" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="750.0" y="176.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">App</text>
+<rect x="685" y="194" width="130" height="34" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="750.0" y="215.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Bibliotheken</text>
+<rect x="830" y="130" width="150" height="105" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="905" y="148" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="middle">Container 3</text>
+<rect x="840" y="155" width="130" height="34" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="905.0" y="176.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">App</text>
+<rect x="840" y="194" width="130" height="34" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
+<text x="905.0" y="215.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Bibliotheken</text>
+<text x="250" y="390" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">jede VM bringt ein ganzes Betriebssystem mit</text>
+<text x="750" y="390" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Container teilen sich den Kernel – klein und schnell</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Verantwortung bei On Premises, IaaS, PaaS und SaaS">
+<defs><marker id="aD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27303A"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#006FAD"/></marker><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2E7D32"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B3261E"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6F6F6F"/></marker></defs>
+<rect width="1000" height="470" fill="#FFFFFF"/>
+<rect x="0" y="465" width="1000" height="5" fill="#006FAD"/>
+<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Servicemodelle: Wer verwaltet was?</text>
+<text x="145" y="70" font-size="16" fill="#27303A" font-weight="bold" text-anchor="middle">On Premises</text>
+<rect x="40" y="85" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="145.0" y="105.33333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Daten und Zugriffe</text>
+<rect x="40" y="123" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="145.0" y="143.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Anwendung</text>
+<rect x="40" y="161" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="145.0" y="181.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Laufzeit, Middleware</text>
+<rect x="40" y="199" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="145.0" y="219.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Betriebssystem</text>
+<rect x="40" y="237" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="145.0" y="257.3333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Virtualisierung</text>
+<rect x="40" y="275" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="145.0" y="295.3333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Server</text>
+<rect x="40" y="313" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="145.0" y="333.3333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Speicher</text>
+<rect x="40" y="351" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="145.0" y="371.3333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Netzwerk</text>
+<text x="380" y="70" font-size="16" fill="#27303A" font-weight="bold" text-anchor="middle">IaaS</text>
+<rect x="275" y="85" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="380.0" y="105.33333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Daten und Zugriffe</text>
+<rect x="275" y="123" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="380.0" y="143.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Anwendung</text>
+<rect x="275" y="161" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="380.0" y="181.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Laufzeit, Middleware</text>
+<rect x="275" y="199" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="380.0" y="219.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Betriebssystem</text>
+<rect x="275" y="237" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="380.0" y="257.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Virtualisierung</text>
+<rect x="275" y="275" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="380.0" y="295.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Server</text>
+<rect x="275" y="313" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="380.0" y="333.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Speicher</text>
+<rect x="275" y="351" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="380.0" y="371.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Netzwerk</text>
+<text x="615" y="70" font-size="16" fill="#27303A" font-weight="bold" text-anchor="middle">PaaS</text>
+<rect x="510" y="85" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="615.0" y="105.33333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Daten und Zugriffe</text>
+<rect x="510" y="123" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="615.0" y="143.33333333333334" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Anwendung</text>
+<rect x="510" y="161" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="615.0" y="181.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Laufzeit, Middleware</text>
+<rect x="510" y="199" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="615.0" y="219.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Betriebssystem</text>
+<rect x="510" y="237" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="615.0" y="257.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Virtualisierung</text>
+<rect x="510" y="275" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="615.0" y="295.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Server</text>
+<rect x="510" y="313" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="615.0" y="333.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Speicher</text>
+<rect x="510" y="351" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="615.0" y="371.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Netzwerk</text>
+<text x="850" y="70" font-size="16" fill="#27303A" font-weight="bold" text-anchor="middle">SaaS</text>
+<rect x="745" y="85" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
+<text x="850.0" y="105.33333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Daten und Zugriffe</text>
+<rect x="745" y="123" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="850.0" y="143.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Anwendung</text>
+<rect x="745" y="161" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="850.0" y="181.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Laufzeit, Middleware</text>
+<rect x="745" y="199" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="850.0" y="219.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Betriebssystem</text>
+<rect x="745" y="237" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="850.0" y="257.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Virtualisierung</text>
+<rect x="745" y="275" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="850.0" y="295.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Server</text>
+<rect x="745" y="313" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="850.0" y="333.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Speicher</text>
+<rect x="745" y="351" width="210" height="32" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="850.0" y="371.3333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Netzwerk</text>
+<rect x="40" y="405" width="22" height="18" rx="3" fill="#006FAD" stroke="#006FAD" stroke-width="1"/>
+<text x="70" y="419" font-size="13" fill="#27303A" font-weight="normal" text-anchor="start">du verwaltest</text>
+<rect x="200" y="405" width="22" height="18" rx="3" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1"/>
+<text x="230" y="419" font-size="13" fill="#27303A" font-weight="normal" text-anchor="start">der Anbieter verwaltet</text>
+<line x1="520" y1="414" x2="960" y2="414" stroke="#6F6F6F" stroke-width="2" marker-end="url(#aG)"/>
+<text x="520" y="440" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="start">mehr Kontrolle</text>
+<text x="960" y="440" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="end">weniger Aufwand</text>
+</svg>
