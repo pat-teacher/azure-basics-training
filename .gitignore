@@ -1,3 +1,6 @@
 # Website-Build (tools/website/build.py, mkdocs build)
 _website/
 _site/
+
+# Python
+__pycache__/

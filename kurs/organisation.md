@@ -10,7 +10,7 @@ Nach dem Kurs kannst du:
 2. die Betriebsmodelle IaaS, PaaS und SaaS unterscheiden und Beispiele zuordnen. (K2)
 3. die zentralen Azure-Ressourcen in Storage, Compute und Network erklären. (K2)
 4. einfache Azure-Umgebungen mit Storage Account, VM, VNet, Subnetzen und NSG bereitstellen, konfigurieren und wieder löschen. (K3)
-5. eine VM automatisiert mit Scripting (Azure CLI), ARM/Bicep und Cloud-Init bereitstellen. (K3)
+5. eine VM automatisiert mit Scripting (Azure CLI), ARM/Bicep und cloud-init bereitstellen. (K3)
 
 ## Tagesrhythmus
 Jeder Tag hat 8 Lektionen à 45 Minuten. Ungefähr so verteilt:

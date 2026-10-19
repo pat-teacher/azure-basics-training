@@ -35,8 +35,14 @@
 [data-md-color-scheme="slate"] .md-typeset img[src$=".svg"]:not([src$="kurs-banner.svg"]),
 [data-md-color-scheme="slate"] .md-typeset img[src$=".png"] { border-radius: 8px; }
 
-/* Tabellen-Kopf in Markenfarbe */
+/* Tabellen: Kopf in Markenfarbe, Schrift gut lesbar */
+.md-typeset table:not([class]) { font-size: 0.75rem; }
 .md-typeset table:not([class]) th { background-color: #27303A; color: #FFFFFF; }
+.md-typeset table:not([class]) code { font-size: 0.95em; color: var(--md-typeset-color); }
+.md-typeset table:not([class]) th code {
+  background-color: #DEE2FB !important;
+  color: #27303A !important;
+}
 
 /* GitHub-Hinweise [!IMPORTANT] und [!CAUTION] */
 .md-typeset .admonition.important,

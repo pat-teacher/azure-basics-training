@@ -24,14 +24,18 @@ def _hinweis(m):
 
 
 LISTENPUNKT = re.compile(r"^\s*(?:[-*+]|\d+\.)\s")
+UNTERPUNKT_2 = re.compile(r"^  (?=[-*+] )")
 
 
 def _leerzeile_vor_listen(markdown):
-    """GitHub erkennt Listen direkt nach einem Absatz, Python-Markdown braucht eine Leerzeile."""
+    """GitHub erkennt Listen direkt nach einem Absatz, Python-Markdown braucht eine Leerzeile.
+    Ausserdem: Unterlisten mit 2 Leerzeichen Einzug (GitHub) brauchen hier 4."""
     aus, im_code, vorher = [], False, ""
     for zeile in markdown.split("\n"):
         if zeile.lstrip().startswith("```"):
             im_code = not im_code
+        elif not im_code and UNTERPUNKT_2.match(zeile) and LISTENPUNKT.match(vorher):
+            zeile = "  " + zeile
         elif (not im_code and LISTENPUNKT.match(zeile) and vorher.strip()
               and not LISTENPUNKT.match(vorher) and not vorher.startswith((" ", "\t", "|", ">"))):
             aus.append("")
