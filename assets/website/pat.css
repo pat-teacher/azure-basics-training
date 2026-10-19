@@ -1,0 +1,61 @@
+/* PAT Cloud Solutions – Farben und Schrift für die Kurs-Website */
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #27303A;
+  --md-primary-fg-color--light: #3a4552;
+  --md-primary-fg-color--dark: #1c232b;
+  --md-primary-bg-color: #FFFFFF;
+  --md-accent-fg-color: #006FAD;
+  --md-typeset-a-color: #006FAD;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #27303A;
+  --md-accent-fg-color: #DEE2FB;
+  --md-typeset-a-color: #8fb8ff;
+  --md-default-bg-color: #1c232b;
+}
+
+/* Titel der Website in der Markenschrift */
+.md-header__topic:first-child,
+.md-typeset h1 {
+  font-family: "Righteous", "Segoe UI", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.md-header__button.md-logo img { height: 1.1rem; width: auto; }
+
+/* Banner auf voller Breite, abgerundet */
+.md-typeset img[src$="kurs-banner.svg"] { border-radius: 12px; }
+
+/* Diagramme: im dunklen Design leicht abgesetzt */
+[data-md-color-scheme="slate"] .md-typeset img[src$=".svg"]:not([src$="kurs-banner.svg"]),
+[data-md-color-scheme="slate"] .md-typeset img[src$=".png"] { border-radius: 8px; }
+
+/* Tabellen-Kopf in Markenfarbe */
+.md-typeset table:not([class]) th { background-color: #27303A; color: #FFFFFF; }
+
+/* GitHub-Hinweise [!IMPORTANT] und [!CAUTION] */
+.md-typeset .admonition.important,
+.md-typeset details.important { border-color: #006FAD; }
+.md-typeset .important > .admonition-title,
+.md-typeset .important > summary { background-color: rgba(0, 111, 173, 0.1); }
+.md-typeset .important > .admonition-title::before,
+.md-typeset .important > summary::before {
+  background-color: #006FAD;
+  -webkit-mask-image: var(--md-admonition-icon--info);
+  mask-image: var(--md-admonition-icon--info);
+}
+.md-typeset .admonition.caution { border-color: #B3261E; }
+.md-typeset .caution > .admonition-title { background-color: rgba(179, 38, 30, 0.1); }
+.md-typeset .caution > .admonition-title::before {
+  background-color: #B3261E;
+  -webkit-mask-image: var(--md-admonition-icon--danger);
+  mask-image: var(--md-admonition-icon--danger);
+}
+
+/* Selbsttest-Antworten */
+.md-typeset details { border-color: #006FAD; }

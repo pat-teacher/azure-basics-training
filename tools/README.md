@@ -4,6 +4,19 @@ Stand: 19.10.2026
 
 Skripte, mit denen die Grafiken und Präsentationen des Kurses erzeugt werden. Die erzeugten Dateien liegen im Repo; die Skripte brauchst du nur, wenn du etwas änderst.
 
+## Website (GitHub Pages)
+Die Website wird bei jedem Push auf `main` automatisch gebaut und veröffentlicht ([.github/workflows/pages.yml](../.github/workflows/pages.yml)).
+- Aufbau und Navigation: [mkdocs.yml](../mkdocs.yml) – neue Seiten hier unter `nav` eintragen.
+- [website/build.py](website/build.py) kopiert die Inhalte nach `_website/`, [website/hooks.py](website/hooks.py) gleicht GitHub-Markdown an (Hinweisboxen, Listen, `<details>`, Ordner-Links).
+- Farben und Schrift: [../assets/website/pat.css](../assets/website/pat.css).
+- Lösungen sind auf der Website erreichbar, aber nicht in der Navigation (nur über die Links bei den Aufträgen).
+
+Lokal testen:
+```bash
+pip install -r tools/website/requirements.txt
+python tools/website/build.py && mkdocs serve      # http://127.0.0.1:8000
+```
+
 ## Diagramme (`theorie/img/*.svg`)
 ```bash
 python tools/diagramme.py theorie/img          # alle eigenen Diagramme neu erzeugen

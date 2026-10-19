@@ -34,6 +34,7 @@ auftraege/tag-<n>/   Aufträge für Lernende (hands-on)
 loesungen/tag-<n>/   Lösungen, getrennt von den Aufträgen
 abschlussprojekt/    Auftrag und Bewertungsraster
 assets/branding/     PAT-Cloud-Solutions-Branding
+mkdocs.yml           Website (GitHub Pages); neue Seiten unter nav eintragen, Build: tools/website/
 ```
 
 ## Grenzen

@@ -9,7 +9,7 @@ Ein Hands-on-Kurs von **[PAT Cloud Solutions](https://patcloudsolutions.ch)** f�
 Stand: 19.10.2026
 
 ## Worum es geht
-In fünf Tagen baust du selbst: zuerst eine virtuelle Maschine auf deinem Laptop, dann Schritt für Schritt eine kleine Infrastruktur in Azure. Am Ende stellst du alles automatisch mit Bicep und Cloud-Init bereit.
+In fünf Tagen baust du selbst: zuerst eine virtuelle Maschine auf deinem Laptop, dann Schritt für Schritt eine kleine Infrastruktur in Azure. Am Ende stellst du alles automatisch mit Bicep und cloud-init bereit.
 
 Der Kurs ist **hands-on**: Du arbeitest den grössten Teil der Zeit selbst an Aufträgen. Zu den wichtigen Themen gibt es kurze Inputs (höchstens 20 Minuten). Bei Fragen hilft dir die Kursleitung als Coach.
 
@@ -21,7 +21,7 @@ Der Kurs ist **hands-on**: Du arbeitest den grössten Teil der Zeit selbst an Au
 | [2](kurs/tag-2.md) | Public Cloud und Azure Grundlagen | deine ersten Azure-Ressourcen im Portal und mit der Azure CLI |
 | [3](kurs/tag-3.md) | Azure Compute und Storage | eine Linux-VM in Azure und einen Storage Account |
 | [4](kurs/tag-4.md) | Azure Networking | ein VNet mit Subnetzen und NSG-Regeln |
-| [5](kurs/tag-5.md) | Automatisierung mit Bicep und Cloud-Init | eine komplette Umgebung als Code, Abschlussprojekt |
+| [5](kurs/tag-5.md) | Automatisierung mit Bicep und cloud-init | eine komplette Umgebung als Code, Abschlussprojekt |
 
 ## So arbeitest du mit diesem Repository
 
