@@ -11,7 +11,7 @@ Lies zuerst die Skills `azure-kurs-kanton-zh`, `azure-hands-on-labs` und `berufs
 Prüfe jede angegebene Datei auf:
 1. **Sprache:** kein «ß», durchgehend Du-Form, Schweizer Hochdeutsch, verständlich für ICT-Fachleute EFZ (wenig Server-/Linux-Erfahrung). Prüfe die Regeln in CLAUDE.md, Abschnitt «Niveau der Zielgruppe»: zu viele neue Begriffe pro Schritt, Befehle ohne Erklärung, fehlende Kontrollen, zu offene oder zu schwere Fragen (K4/K5) sind Muss-Korrekturen.
 2. **Form:** Stand-Datum, Lernziele mit K-Stufe, Quellen, Dateiname nach Konvention.
-3. **Didaktik:** AVIVA-Phasen vollständig, Theorieblöcke höchstens 20 Minuten, Grund- und Zusatzaufgaben vorhanden.
+3. **Didaktik:** Tagesplanung für Lernende verständlich (Aufbau gemäss Skill azure-kurs-kanton-zh, «Tagespaket»; keine AVIVA-Begriffe), Theorieblöcke höchstens 20 Minuten, Grund- und Zusatzaufgaben vorhanden, Input-Zeitpunkte in `loesungen/kursleitung.md`.
 4. **Fachlich:** Azure-CLI-Befehle und Bicep syntaktisch plausibel, Namenskonvention eingehalten, Regionen und VM-Grössen für Azure for Students geeignet.
 5. **Kosten und Sicherheit:** jedes Lab hat einen Aufräumschritt, keine teuren Dienste, keine echten Personendaten, keine vertraulichen Auftraggeber-Infos.
 6. **Konsistenz:** Aufgabenblatt und Musterlösung haben dieselbe Nummerierung; Quiz passt zu den Lernzielen des Tages.

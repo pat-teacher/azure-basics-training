@@ -29,7 +29,7 @@ Details im Skill `azure-kurs-kanton-zh`. Offerte und Vertrag liegen ausserhalb d
 ## Skills
 - `azure-kurs-kanton-zh`: Kursziele, Tagesplan, Ordnerstruktur, Dateinamen, Abgabe-Checkliste. Bei jeder Kursunterlage zuerst laden.
 - `azure-hands-on-labs`: Übungsanleitungen, Aufgabenblätter, Musterlösungen, Azure-CLI/Bicep, Grenzen von Azure for Students.
-- `berufsschule-didaktik-ict`: Lernziele, Lektionsplan (AVIVA), Theorie-Inputs, Methoden, Quiz, Bewertungsraster.
+- `berufsschule-didaktik-ict`: Lernziele, Planung (AVIVA nur für die Kursleitung), Theorie-Inputs, Methoden, Quiz, Bewertungsraster.
 
 ## Agents
 - `unterlagen-reviewer`: prüft eine fertige Unterlage gegen die Abgabe-Checkliste. Nach jedem fertigen Tagespaket aufrufen.

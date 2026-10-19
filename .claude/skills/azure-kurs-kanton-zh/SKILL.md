@@ -35,7 +35,7 @@ Microsoft-Learn-Module gezielt einbinden (vertraglich vorgesehen), ergänzt durc
 
 ## Grundsätze
 - **Hands-on zuerst:** ca. 70 % der Zeit arbeiten die Lernenden selbst an Aufträgen. Die Kursleitung coacht.
-- **Inputs nur zu wichtigen Themen:** 2–3 pro Tag, höchstens 20 Minuten, immer mit Live-Demo. Die Inputs stehen in der Tagesplanung, nicht als eigene Lernenden-Dokumente.
+- **Inputs nur zu wichtigen Themen:** 2–3 pro Tag, höchstens 20 Minuten, immer mit Live-Demo. In der Tagesplanung erscheinen sie nur als Zeile «**Input:** Thema»; Zeitpunkt, Dauer und Folien stehen in `loesungen/kursleitung.md`.
 - **Azure for Students ist bereits aktiv.** Zusätzlich setzt die Kursleitung Labs im Azure Education Hub ein.
 - **Entra ID nur über Challenge Labs:** Themen mit Microsoft Entra ID (RBAC, Conditional Access, Benutzer, Gruppen) nie im Student-Abo üben, sondern über die Challenge Labs von Microsoft Learn for Educators (Learn on Demand / Skillable, Trainingsschlüssel der Kursleitung). Vorbild: TBZ-Auftrag «Role based access control». Da Identity nicht im Vertragsumfang ist: nur als ⭐-Zusatz.
 - **Lösungen getrennt:** Lösungen liegen nie im selben Ordner wie die Aufträge, sondern unter `loesungen/`.
@@ -43,7 +43,9 @@ Microsoft-Learn-Module gezielt einbinden (vertraglich vorgesehen), ergänzt durc
 
 ## Tagespaket
 Für jeden Tag entstehen:
-1. `kurs/tag-<n>.md` – Tagesplanung: Ziele (K-Stufe), Ablauf pro Lektion mit Inputs und Aufträgen, Material
+1. `kurs/tag-<n>.md` – Tagesplanung **für die Lernenden** (Übersicht und Transparenz, keine Didaktik-Begriffe wie AVIVA). Aufbau:
+   «Darum geht es heute» (2–3 Sätze) → «Am Ende des Tages kannst du …» (K-Stufe) → «So läuft der Tag» (Lektion | Was passiert | Was du tust; Inputs fett) → «Deine Aufträge» (Tabelle mit ☐, Zeit, Form) → «Ins Lernjournal gehört heute» → «Bevor du gehst» (Aufräumen, Exit-Ticket als Checkliste) → «Das brauchst du» → «Zum Nachlesen» (Theorie, Folien, Learn).
+   Angaben nur für die Kursleitung (Input-Zeitpunkte, Folien, Vorbereitung) stehen in `loesungen/kursleitung.md`.
 2. `auftraege/tag-<n>/<n>.<m>-<kurzthema>.md` – ein Auftrag pro Datei (Vorlage im Skill `azure-hands-on-labs`)
 3. `loesungen/tag-<n>/<n>.<m>-<kurzthema>.md` – gleicher Dateiname wie der Auftrag: Lösung, typische Fehler, Hinweise für die Kursleitung
 4. später: Quiz pro Tag (8–12 Fragen)

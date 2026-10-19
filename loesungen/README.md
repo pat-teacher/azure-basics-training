@@ -7,6 +7,8 @@
 
 Die Nummern entsprechen den Aufträgen in [auftraege/](../auftraege/). Zu jeder Lösung gibt es typische Fehler und Hinweise für die Kursleitung.
 
+Input-Zeitpunkte und Vorbereitung pro Tag: [Hinweise für die Kursleitung](kursleitung.md)
+
 | Tag | Lösungen |
 |-----|----------|
 | 1 | [tag-1/](tag-1/) |

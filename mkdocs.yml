@@ -60,6 +60,8 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: false
   - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - toc:
       permalink: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify

@@ -4,34 +4,50 @@
 
 Stand: 19.10.2026 · 8 Lektionen
 
-## Ziele des Tages
-- Du kannst den Unterschied zwischen manueller Bereitstellung, Scripting und Infrastructure as Code erklären. (K2)
-- Du kannst eine VM beim Erstellen mit cloud-init automatisch konfigurieren. (K3)
-- Du kannst eine Umgebung mit VNet, NSG und VM in Bicep beschreiben und bereitstellen. (K3)
-- Du kannst zeigen, dass aus einer Bicep-Datei ein ARM-Template entsteht. (K2)
+## Darum geht es heute
+Diese Woche hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebung in Dateien und stellst sie mit einem einzigen Befehl bereit. Am Nachmittag baust du im Abschlussprojekt den Webserver der «Velo Zürich AG» und stellst ihn kurz vor.
 
-## Ablauf
+## Am Ende des Tages kannst du …
+- erklären, was «Infrastructure as Code» bedeutet. (K2)
+- eine VM in Azure beim ersten Start mit cloud-init einrichten. (K3)
+- eine Umgebung mit VNet, NSG und VM in Bicep beschreiben und bereitstellen. (K3)
+- zeigen, dass aus einer Bicep-Datei ein ARM-Template entsteht. (K2)
 
-| Lektion | Phase | Inhalt | Form |
-|---------|-------|--------|------|
-| L1 | Einstieg | Rückblick der Woche: Was hast du bisher von Hand gemacht? | Plenum |
-| L1 | Input 1 (20') | **Infrastructure as Code:** Script vs. deklarativ, ARM und Bicep, cloud-init | Input + Demo |
-| L2 | Hands-on | Auftrag 5.1: Ubuntu-VM mit cloud-init (nginx, eigene Startseite) | Partner |
-| L3 | Hands-on | Auftrag 5.2: Erstes Bicep-File – Storage Account; daraus ARM-Template erzeugen und vergleichen | Einzel |
-| L4 | Hands-on | Auftrag 5.3: Bicep für VNet, Subnetz und NSG (Infrastruktur von Tag 4 als Code) | Einzel |
-| L5–L7 | Abschlussprojekt | **Webserver der «Velo Zürich AG»:** VNet, NSG und VM mit cloud-init vollständig per Bicep, dokumentiert | Partner |
-| L8 | Abschluss | Kurzpräsentationen (5' pro Team), Kursfeedback, Aufräumen | Plenum |
+## So läuft der Tag
 
-## Präsentationen
-- Tagesablauf: [tag-5-automatisierung.pptx](../praesentationen/tag-5-automatisierung.pptx)
-- Input: [input-07-automatisierung.pptx](../praesentationen/input-07-automatisierung.pptx)
+| Lektion | Was passiert | Was du tust |
+|---------|--------------|-------------|
+| L1 | Rückblick der Woche | sammeln: Was hast du von Hand gemacht? |
+| L1 | **Input:** Infrastructure as Code, Bicep, cloud-init | zuhören, mitschauen |
+| L2 | Auftrag 5.1 | mit Partner: VM mit cloud-init in Azure |
+| L3 | Auftrag 5.2 | allein: erste Bicep-Datei |
+| L4 | Auftrag 5.3 | allein: Netzwerk von Tag 4 als Bicep |
+| L5–L7 | Abschlussprojekt | mit Partner: Webserver der «Velo Zürich AG» per Bicep |
+| L8 | Präsentationen und Abschluss | 5 Minuten präsentieren, Feedback geben, aufräumen |
 
-## Theorie
-- [7 Automatisierung: Bicep und cloud-init](../theorie/07-automatisierung.md) (Input 1)
+## Deine Aufträge
 
-## Material
-- Visual Studio Code mit Bicep-Erweiterung oder Cloud Shell Editor
-- Microsoft Learn: [Einführung in Bicep](https://learn.microsoft.com/de-de/training/modules/introduction-to-infrastructure-as-code-using-bicep/)
-- Microsoft Learn: [cloud-init-Unterstützung für VMs in Azure](https://learn.microsoft.com/de-de/azure/virtual-machines/linux/using-cloud-init)
+| ✓ | Nr. | Auftrag | Form |
+|---|-----|---------|------|
+| ☐ | 5.1 | Ubuntu-VM mit cloud-init in Azure *(folgt)* | Partner |
+| ☐ | 5.2 | Erste Bicep-Datei: Storage Account *(folgt)* | allein |
+| ☐ | 5.3 | Bicep für VNet, Subnetz und NSG *(folgt)* | allein |
+| ☐ | Projekt | Webserver der «Velo Zürich AG» *(folgt)* | Partner |
 
-> Aufträge, Abschlussprojekt und Lösungen für Tag 5 folgen.
+## Ins Lernjournal gehört heute
+- deine cloud-init-Datei und deine Bicep-Dateien
+- Screenshot der Website deines Abschlussprojekts
+- drei Sätze: Was nimmst du aus dieser Woche mit?
+
+## Bevor du gehst
+- [ ] **Alle** Ressourcengruppen der Woche gelöscht: `az group list -o table` ist leer.
+- [ ] Kursfeedback ausgefüllt.
+
+## Das brauchst du
+- dein Azure-for-Students-Konto und deinen SSH-Schlüssel
+- Visual Studio Code mit Bicep-Erweiterung oder den Editor in der Cloud Shell
+
+## Zum Nachlesen
+- Theorie: [7 Automatisierung](../theorie/07-automatisierung.md)
+- Folien: [Tag 5](../praesentationen/tag-5-automatisierung.pptx) · [Input Automatisierung](../praesentationen/input-07-automatisierung.pptx)
+- Microsoft Learn: [Einführung in Bicep](https://learn.microsoft.com/de-de/training/modules/introduction-to-infrastructure-as-code-using-bicep/) · [cloud-init in Azure](https://learn.microsoft.com/de-de/azure/virtual-machines/linux/using-cloud-init)

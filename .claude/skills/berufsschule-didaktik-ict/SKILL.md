@@ -25,7 +25,9 @@ Pro Tag 3 bis 5 Lernziele, Schwerpunkt K1 bis K3. K4 nur gezielt (z. B. Fehlersu
 - Höchstens 5–6 Grundaufträge pro Tag; Vertiefung als ⭐.
 - Fachbegriffe sparsam, beim ersten Auftreten erklären; Glossar-Charakter in der Theorie.
 
-## Lektionsplan nach AVIVA
+## Lektionsplan nach AVIVA (nur für die Planung der Kursleitung)
+AVIVA dient der eigenen Planung. In den Tagesplanungen für die Lernenden (`kurs/tag-<n>.md`) erscheinen die Phasen nicht.
+
 | Phase | Zweck | Anteil |
 |-------|-------|--------|
 | **A**nkommen/Einstimmen | Ziel und Ablauf zeigen, Bezug zur Praxis | 5–10 % |
