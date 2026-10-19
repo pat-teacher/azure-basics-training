@@ -52,7 +52,7 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 ## Bevor du gehst
 - [ ] Alle VMs gelöscht: `multipass delete --purge --all`, dann zeigt `multipass list` `No instances found.`
 - [ ] SSH-Schlüssel **nicht** gelöscht – du brauchst ihn an Tag 3.
-- [ ] Exit-Ticket ausgefüllt: «Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?»
+- [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?»
 
 ## Das brauchst du
 - Laptop mit Windows Pro oder Education, Virtualisierung aktiviert

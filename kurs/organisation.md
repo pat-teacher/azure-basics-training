@@ -60,6 +60,20 @@ Halte pro Auftrag fest:
 - einen Screenshot als Nachweis (ohne persönliche Daten wie E-Mail oder Abo-ID)
 - was nicht geklappt hat und wie du es gelöst hast
 
+## Exit-Ticket
+Am Ende jedes Kurstages beantwortest du **eine kurze Frage** zum Tag – dein «Ticket zum Ausgang». Die Frage steht in der Tagesplanung unter «Bevor du gehst».
+
+**So geht's**
+- Du hast etwa 5 Minuten Zeit.
+- Antworte in 1–3 Sätzen, in deinen eigenen Worten. Nicht nachschlagen – es geht darum, was du im Kopf hast.
+- Gib die Antwort im Formular ab, das die Kursleitung im Kurskanal teilt. <!-- prüfen: Forms-Link pro Tag bereitstellen --> Schreib sie zusätzlich als letzten Eintrag des Tages in dein Lernjournal.
+- Es gibt keine Note und keine falschen Antworten.
+
+**Wozu ist das gut?**
+- **Für dich:** Wenn du den Tag in eigenen Worten zusammenfasst, merkst du dir mehr. Und du merkst selbst, wo du noch unsicher bist.
+- **Für die Kursleitung:** Sie sieht, was angekommen ist und wo es noch hakt. Am nächsten Morgen werden einige Antworten (ohne Namen) besprochen und offene Punkte geklärt.
+- **Für den Kurs:** Ist eine Frage für viele unklar, wird der nächste Tag angepasst.
+
 ## Zusammenarbeit
 - **Partnerarbeit:** Eine Person tippt (Driver), die andere liest den Auftrag und kontrolliert (Navigator). Nach jedem Auftrag wechselt ihr.
 - **Hilfe holen:** Zuerst 10 Minuten selbst probieren, dann Partner fragen, dann Kursleitung.

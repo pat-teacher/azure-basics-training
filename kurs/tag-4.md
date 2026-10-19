@@ -47,7 +47,7 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen von heute gelöscht.
-- [ ] Exit-Ticket ausgefüllt: «Regel 100 sagt Deny, Regel 200 sagt Allow für Port 80. Ist die Website erreichbar?»
+- [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Regel 100 sagt Deny, Regel 200 sagt Allow für Port 80. Ist die Website erreichbar?»
 
 ## Das brauchst du
 - dein Azure-for-Students-Konto

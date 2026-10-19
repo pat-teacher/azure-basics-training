@@ -6,6 +6,11 @@ Stand: 19.10.2026
 
 Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernenden geschrieben. Hier stehen die Angaben, die nur die Kursleitung braucht: wann welcher Input kommt, welche Folien dazu gehören und was vorzubereiten ist.
 
+## Exit-Tickets
+- Pro Tag ein Microsoft Forms mit **einer** offenen Frage (Frage steht in der Tagesplanung unter «Bevor du gehst»). Link im Kurskanal teilen. <!-- prüfen -->
+- Am Abend kurz durchsehen: Was ist angekommen? Welche Missverständnisse gibt es?
+- Am nächsten Morgen 2–3 Antworten ohne Namen vorlesen und offene Punkte klären (Teil des Rückblicks in L1).
+
 ## Tag 1: Grundlagen Virtualisierung
 
 | Wann | Input | Dauer | Folien | Danach |

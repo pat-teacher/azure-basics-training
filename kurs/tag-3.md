@@ -45,7 +45,7 @@ Heute erstellst du deine erste VM in Azure und meldest dich mit deinem SSH-Schl�
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen von heute gelöscht – eine laufende VM kostet Guthaben.
 - [ ] In der Kostenanalyse nachgeschaut, was dein Tag gekostet hat.
-- [ ] Exit-Ticket ausgefüllt: «Nenne drei Ressourcen, die beim Erstellen einer VM zusätzlich entstehen.»
+- [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Nenne drei Ressourcen, die beim Erstellen einer VM zusätzlich entstehen.»
 
 ## Das brauchst du
 - deinen SSH-Schlüssel von Tag 1 (`~\.ssh\id_ed25519.pub`)

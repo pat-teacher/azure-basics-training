@@ -46,7 +46,7 @@ Gestern hast du VMs auf deinem Laptop gebaut. Heute siehst du, wie ein Cloud-Anb
 
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen von heute gelöscht: `az group list -o table` zeigt keine `rg-tag2-…` mehr.
-- [ ] Exit-Ticket ausgefüllt: «Erkläre in zwei Sätzen, was eine Ressourcengruppe ist.»
+- [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Erkläre in zwei Sätzen, was eine Ressourcengruppe ist.»
 
 ## Das brauchst du
 - Laptop mit Webbrowser
