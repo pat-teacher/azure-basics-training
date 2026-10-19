@@ -80,6 +80,7 @@ assets/branding/         Logo, Banner, Wolke
 - Farben: #27303A (dunkel), #006FAD (blau), #DEE2FB (hell), #6F6F6F, #F7F7F7, #0E0E0E. Schrift: Righteous (Titel).
 - Das Original-Logo ist schwarz (#0E0E0E) und im Dark Mode unsichtbar. Darum das Banner mit dunklem Hintergrund verwenden.
 - Fusszeile im README: © PAT Cloud Solutions, Nutzung gemäss Vertrag.
+- Banner und `<sub>`-Kopfzeile sind nur für die GitHub-Ansicht. Auf der Website (MkDocs) entfernt `tools/website/hooks.py` sie automatisch, weil Logo und Titel dort in der Kopfzeile stehen. Trotzdem in jede neue Datei einfügen.
 
 ## Schreibregeln
 - Schweizer Hochdeutsch mit «ss», Du-Form.

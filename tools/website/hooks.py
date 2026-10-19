@@ -44,7 +44,18 @@ def _leerzeile_vor_listen(markdown):
     return "\n".join(aus)
 
 
+BRANDING_GITHUB = re.compile(
+    r"^(?:<p[^>]*>\s*)?<img [^>]*kurs-banner\.svg[^>]*>(?:\s*</p>)?\s*\n"   # Banner (README, kurs/)
+    r"|^<p align=\"center\">\s*\n\s*<img [^>]*kurs-banner\.svg[^>]*>\s*\n</p>\s*\n"
+    r"|^<sub>PAT Cloud Solutions ·[^\n]*</sub>\s*\n",                        # Kopfzeile Aufträge/Theorie
+    re.MULTILINE,
+)
+
+
 def on_page_markdown(markdown, page, config, **kwargs):
+    # Banner und PAT-Kopfzeile nur für die GitHub-Ansicht – die Website hat Logo und Titel in der Kopfzeile
+    markdown = BRANDING_GITHUB.sub("", markdown)
+
     # <details> soll Markdown im Inhalt rendern (Selbsttests mit `Code`)
     markdown = markdown.replace("<details>", '<details markdown="1">')
     markdown = _leerzeile_vor_listen(markdown)
