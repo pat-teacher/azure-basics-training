@@ -8,7 +8,7 @@ Stand: 19.10.2026 · 8 Lektionen
 Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und legst fest, wer deine VMs erreichen darf und wer nicht. Am Nachmittag suchst du Fehler: Warum kommt eine Verbindung nicht an?
 
 ## Am Ende des Tages kannst du …
-- einen Adressbereich in Subnetze aufteilen. (K3)
+- einen Adressbereich in Subnetze (Subnet) aufteilen. (K3)
 - ein VNet mit mehreren Subnetzen bereitstellen und VMs darin platzieren. (K3)
 - mit NSG-Regeln festlegen, wer deine VM über welchen Port erreicht. (K3)
 - mit einer Checkliste herausfinden, warum eine Verbindung blockiert wird. (K4)
@@ -46,7 +46,7 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 - dein Netzplan (Abschluss)
 
 ## Bevor du gehst
-- [ ] Alle Ressourcengruppen von heute gelöscht.
+- [ ] Alle Ressourcengruppen (Resource Group) von heute gelöscht.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Regel 100 sagt Deny, Regel 200 sagt Allow für Port 80. Ist die Website erreichbar?»
 
 ## Das brauchst du

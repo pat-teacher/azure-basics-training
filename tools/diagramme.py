@@ -91,7 +91,7 @@ for i, (t, en, desc, fill, col, hl) in enumerate(rows):
     s.arrow(195, y + 58, 195, y + 85)
 for j, r in enumerate(["vm-web-mm", "sttag3mm", "vnet-tag4-mm"]):
     s.label(30 + j * 115, 395, 105, 44, [r], WHITE, BLUE, size=12)
-s.text(385, 422, "Ressourcen: VM, Storage Account, VNet … – jede gehört zu genau einer Ressourcengruppe", 13, DARK, "normal", "start")
+s.text(385, 422, "Ressourcen: VM, Speicherkonto, VNet … – jede gehört zu genau einer Ressourcengruppe", 13, DARK, "normal", "start")
 s.text(30, 475, "Blau umrandet: damit arbeitest du im Kurs. Löschst du eine Ressourcengruppe, löschst du alles darin.", 13, BLUE, "bold", "start")
 s.save("azure-hierarchie.svg", "Hierarchie in Azure: Mandant, Verwaltungsgruppen, Abonnement, Ressourcengruppe, Ressourcen")
 
@@ -121,13 +121,13 @@ s.save("azure-regionen.svg", "Region Switzerland North mit drei Verfügbarkeitsz
 s = Svg(1000, 460, "Woraus besteht eine Azure-VM?")
 s.box(20, 48, 960, 380, BG, GREY, dash=True)
 s.text(35, 70, "Ressourcengruppe rg-tag3-mm", 13, GREY, "bold", "start")
-s.label(380, 85, 240, 90, ["Virtuelle Maschine", "vm-web-mm · Standard_B1s", "CPU + RAM (Compute)"], DARK, DARK, WHITE)
-s.label(50, 225, 220, 70, ["OS-Datenträger", "Managed Disk, z. B. 30 GB"], LIGHT, DARK)
+s.label(380, 85, 240, 90, ["Virtuelle Maschine (VM)", "vm-web-mm · Standard_B1s", "CPU + RAM (Compute)"], DARK, DARK, WHITE)
+s.label(50, 225, 220, 70, ["OS-Datenträger (OS Disk)", "verwaltet, z. B. 30 GB"], LIGHT, DARK)
 s.label(50, 325, 220, 60, ["Datenträger", "optional, für Daten"], WHITE, GREY, dash=True)
-s.label(390, 230, 220, 70, ["Netzwerkschnittstelle", "NIC · private IP 10.0.0.4"], LIGHT, DARK)
-s.label(380, 345, 240, 62, ["VNet + Subnetz", "10.0.0.0/16 · 10.0.0.0/24"], LIGHT, DARK)
-s.label(740, 100, 210, 70, ["Öffentliche IP", "z. B. 20.203.x.x"], LIGHT, DARK)
-s.label(740, 230, 210, 70, ["NSG", "z. B. Port 22 erlaubt"], WHITE, BLUE, sw=2)
+s.label(390, 230, 220, 70, ["Netzwerkschnittstelle (NIC)", "private IP 10.0.0.4"], LIGHT, DARK)
+s.label(380, 345, 240, 62, ["Virtuelles Netzwerk + Subnetz", "10.0.0.0/16 · 10.0.0.0/24"], LIGHT, DARK)
+s.label(740, 100, 210, 70, ["Öffentliche IP (Public IP)", "z. B. 20.203.x.x"], LIGHT, DARK)
+s.label(740, 230, 210, 70, ["NSG", "Netzwerksicherheitsgruppe", "z. B. Port 22 erlaubt"], WHITE, BLUE, sw=2, size=14)
 s.arrow(420, 175, 270, 240)
 s.arrow(500, 175, 500, 230)
 s.arrow(500, 300, 500, 345)
@@ -139,14 +139,14 @@ s.text(960, 448, "Kostet laufend: VM (solange zugeordnet), Datenträger, öffent
 s.save("azure-vm-bestandteile.svg", "Bestandteile einer Azure-VM: Compute, Datenträger, NIC, VNet, öffentliche IP und NSG")
 
 # 5 Storage Account ----------------------------------------------------------
-s = Svg(1000, 430, "Aufbau eines Storage Accounts")
+s = Svg(1000, 430, "Aufbau eines Speicherkontos (Storage Account)")
 s.box(20, 48, 960, 360, LIGHT, BLUE, 2)
-s.text(40, 76, "Storage Account sttag3mm", 16, DARK, "bold", "start")
+s.text(40, 76, "Speicherkonto sttag3mm", 16, DARK, "bold", "start")
 s.text(40, 98, "global eindeutiger Name (3–24 Zeichen, klein) · Redundanz (LRS, ZRS, GRS …) · Zugriffsebene (Hot, Cool, Cold, Archive)", 12, DARK, "normal", "start")
-cols = [("Blob Storage", "blob", "Objekte: Bilder, Backups, Websites"),
+cols = [("Blob-Speicher", "blob", "Objekte: Bilder, Backups, Websites"),
         ("Azure Files", "file", "Netzlaufwerk (SMB/NFS)"),
-        ("Queue Storage", "queue", "Nachrichten zwischen Apps"),
-        ("Table Storage", "table", "einfache NoSQL-Tabellen")]
+        ("Warteschlangen (Queue)", "queue", "Nachrichten zwischen Apps"),
+        ("Tabellen (Table)", "table", "einfache NoSQL-Tabellen")]
 for i, (t, ep, d) in enumerate(cols):
     x = 40 + i * 235
     hl = i == 0
@@ -173,10 +173,10 @@ for i, (t, ep, d) in enumerate(cols):
             for c in range(3):
                 s.box(x + 30 + c * 52, 236 + r * 24, 50, 22, WHITE, GREY, 1, 2)
 s.text(147, 402, "★ im Kurs", 12, BLUE, "bold")
-s.save("azure-storage-aufbau.svg", "Storage Account mit Blob, Files, Queue und Table Storage")
+s.save("azure-storage-aufbau.svg", "Speicherkonto mit Blob-Speicher, Azure Files, Warteschlangen und Tabellen")
 
 # 6 Redundanz ----------------------------------------------------------------
-s = Svg(1000, 380, "Redundanz im Storage Account: LRS, ZRS, GRS")
+s = Svg(1000, 380, "Redundanz im Speicherkonto: LRS, ZRS, GRS")
 def copies(x, y, n=3):
     for k in range(n):
         s.label(x, y + k * 34, 70, 28, ["Kopie"], BLUE, BLUE, WHITE, size=12)
@@ -270,7 +270,7 @@ s.label(670, 175, 290, 56, ["VM vm-web-mm"], DARK, DARK, WHITE)
 s.arrow(580, 200, 648, 200)
 s.label(650, 340, 330, 80, ["cloud-init", "beim ersten Start der VM:", "Pakete, Dateien, Befehle"], LIGHT, BLUE, sw=2)
 s.arrow(815, 231, 815, 338, BLUE, dash=True)
-s.text(825, 290, "custom data", 11, BLUE, "normal", "start")
+s.text(825, 290, "benutzerdefinierte Daten", 11, BLUE, "normal", "start")
 s.text(500, 455, "Bicep baut das Haus – cloud-init richtet es beim Einzug ein.", 14, DARK, "bold")
 s.save("iac-ablauf.svg", "Portal, CLI und Bicep laufen über den Azure Resource Manager; cloud-init richtet die VM beim ersten Start ein")
 
@@ -279,7 +279,7 @@ print("ok")
 # 10 Servicemodelle ----------------------------------------------------------
 s = Svg(1000, 470, "Servicemodelle: Wer verwaltet was?")
 layers = ["Daten und Zugriffe", "Anwendung", "Laufzeit, Middleware", "Betriebssystem", "Virtualisierung", "Server", "Speicher", "Netzwerk"]
-models = [("On Premises", 8), ("IaaS", 4), ("PaaS", 2), ("SaaS", 1)]  # Anzahl Schichten, die du verwaltest (von oben)
+models = [("Eigenes Rechenzentrum", 8), ("IaaS", 4), ("PaaS", 2), ("SaaS", 1)]  # Anzahl Schichten, die du verwaltest (von oben)
 for i, (m, mine) in enumerate(models):
     x = 40 + i * 235
     s.text(x + 105, 70, m, 16, DARK, "bold")

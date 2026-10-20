@@ -8,7 +8,7 @@ Stand: 19.10.2026 · gehört zu [Tag 2](../kurs/tag-2.md)
 - Du kannst erklären, was ein Hyperscaler ist und wie er mit Virtualisierung zusammenhängt. (K2)
 - Du kannst die fünf Merkmale von Cloud Computing nennen. (K1)
 - Du kannst IaaS, PaaS und SaaS unterscheiden und Beispiele zuordnen. (K2)
-- Du kannst Public, Private und Hybrid Cloud unterscheiden. (K2)
+- Du kannst öffentliche, private und hybride Cloud unterscheiden. (K2)
 - Du kannst erklären, wer in der Cloud für welche Sicherheit verantwortlich ist. (K2)
 
 ## Vom Hypervisor zum Hyperscaler
@@ -26,14 +26,14 @@ Nach der Definition des NIST (US-Standardisierungsinstitut) ist etwas Cloud, wen
 | Zugriff über das Netz | Alles ist über das Internet mit Standardwerkzeugen erreichbar. | Portal, CLI, API |
 | Ressourcen-Pool | Viele Kunden teilen sich dieselbe Hardware, sauber getrennt. | Deine VM läuft neben VMs anderer Kunden. |
 | Schnelle Elastizität | Ressourcen wachsen und schrumpfen nach Bedarf. | VM-Grösse ändern, mehr Instanzen |
-| Messbarer Dienst | Du bezahlst, was du brauchst. | Kostenanalyse im Abonnement |
+| Messbarer Dienst | Du bezahlst, was du brauchst. | Kostenanalyse (Cost Analysis) im Abonnement (Subscription) |
 
 ## Servicemodelle: Wer verwaltet was?
-Bei den Servicemodellen geht es um eine Frage: **Wie viel Betriebsverantwortung gibst du an den Anbieter ab?** Je mehr du abgibst, desto weniger Kontrolle hast du, aber auch desto weniger Aufwand.
+Bei den Servicemodellen (Service Model) geht es um eine Frage: **Wie viel Betriebsverantwortung gibst du an den Anbieter ab?** Je mehr du abgibst, desto weniger Kontrolle hast du, aber auch desto weniger Aufwand.
 
 ![Servicemodelle](img/servicemodelle.svg)
 
-| Schicht | On Premises | IaaS | PaaS | SaaS |
+| Schicht | eigenes Rechenzentrum | IaaS | PaaS | SaaS |
 |---|---|---|---|---|
 | Daten und Zugriffe | du | du | du | du |
 | Anwendung | du | du | du | Anbieter |
@@ -43,14 +43,14 @@ Bei den Servicemodellen geht es um eine Frage: **Wie viel Betriebsverantwortung 
 
 | Modell | Du lieferst … | Beispiele in Azure und Microsoft |
 |--------|---------------|----------------------------------|
-| **IaaS** – Infrastructure as a Service | Betriebssystem, Software, Konfiguration | Azure Virtual Machines, Virtual Network, Managed Disks |
+| **IaaS** – Infrastructure as a Service | Betriebssystem, Software, Konfiguration | Azure Virtual Machines, Azure Virtual Network, Azure Managed Disks |
 | **PaaS** – Platform as a Service | nur deine Anwendung | Azure App Service, Azure SQL Database |
 | **SaaS** – Software as a Service | nur deine Daten | Microsoft 365, Teams, Outlook |
 
 Weitere Modelle: **FaaS** (Function as a Service, z. B. Azure Functions) führt nur einzelne Funktionen aus und kostet nur, wenn sie laufen. **CaaS** (Container as a Service) betreibt Container für dich.
 
 > **Merkhilfe Pizza:**
-> - **On Premises:** Du backst alles selbst, mit eigenem Ofen und eigener Küche.
+> - **Eigenes Rechenzentrum (On Premises):** Du backst alles selbst, mit eigenem Ofen und eigener Küche.
 > - **IaaS:** Du mietest eine Küche mit Ofen. Teig und Belag bringst du mit.
 > - **PaaS:** Der Lieferdienst backt nach deinem Rezept.
 > - **SaaS:** Du gehst ins Restaurant und isst, was auf der Karte steht.
@@ -61,11 +61,11 @@ Weitere Modelle: **FaaS** (Function as a Service, z. B. Azure Functions) führt 
 
 | Modell | Beschreibung | Typisch für |
 |--------|--------------|-------------|
-| **Public Cloud** | Infrastruktur eines öffentlichen Anbieters, geteilt mit anderen Kunden | die meisten Firmen, Start-ups |
+| **Öffentliche Cloud (Public Cloud)** | Infrastruktur eines öffentlichen Anbieters, geteilt mit anderen Kunden | die meisten Firmen, Start-ups |
 | **Private Cloud** | Cloud-Infrastruktur exklusiv für eine Organisation | Banken, Behörden, besondere Vorschriften |
-| **Hybrid Cloud** | Mischung: ein Teil im eigenen Rechenzentrum, ein Teil in der Public Cloud | heute der Normalfall |
+| **Hybride Cloud (Hybrid Cloud)** | Mischung: ein Teil im eigenen Rechenzentrum, ein Teil in der öffentlichen Cloud | heute der Normalfall |
 
-![Hybrid Cloud am Beispiel eines Webshops](img/tbz/Betriebsmodell_Hybrid_Webshop.svg)
+![Hybride Cloud am Beispiel eines Webshops](img/tbz/Betriebsmodell_Hybrid_Webshop.svg)
 <sub>Grafik: TBZ M346</sub>
 
 Das typische Muster: **Neues und Wachsendes** geht in die Cloud, **Altes und schwer Migrierbares** bleibt vorerst im Haus.
@@ -90,7 +90,7 @@ PaaS. Die App läuft auf einer verwalteten Plattform. Bei IaaS müsste sich die 
 
 <details><summary>3. Eine Treuhandfirma hat ihre Buchhaltung auf einem Server im Keller und nutzt Microsoft 365. Welches Bereitstellungsmodell ist das?</summary>
 
-Hybrid Cloud.
+Hybride Cloud.
 </details>
 
 <details><summary>4. Eine VM in Azure wird gehackt, weil der SSH-Port mit Passwort für alle offen war. Wer ist verantwortlich?</summary>

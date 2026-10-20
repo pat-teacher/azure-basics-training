@@ -6,10 +6,10 @@ Stand: 19.10.2026
 
 ## Kursziele
 Nach dem Kurs kannst du:
-1. Virtualisierung, Hypervisoren und virtuelle Maschinen erklären und die Grundprinzipien einer Cloud-Plattform beschreiben. (K2)
+1. Virtualisierung, Hypervisoren und virtuelle Maschinen (Virtual Machine) erklären und die Grundprinzipien einer Cloud-Plattform beschreiben. (K2)
 2. die Betriebsmodelle IaaS, PaaS und SaaS unterscheiden und Beispiele zuordnen. (K2)
-3. die zentralen Azure-Ressourcen in Storage, Compute und Network erklären. (K2)
-4. einfache Azure-Umgebungen mit Storage Account, VM, VNet, Subnetzen und NSG bereitstellen, konfigurieren und wieder löschen. (K3)
+3. die zentralen Azure-Ressourcen für Speicher (Storage), Rechenleistung (Compute) und Netzwerk (Network) erklären. (K2)
+4. einfache Azure-Umgebungen mit Speicherkonto (Storage Account), VM, VNet, Subnetzen (Subnet) und NSG bereitstellen, konfigurieren und wieder löschen. (K3)
 5. eine VM automatisiert mit Scripting (Azure CLI), ARM/Bicep und cloud-init bereitstellen. (K3)
 
 ## Tagesrhythmus
@@ -29,7 +29,7 @@ Jeder Tag hat 8 Lektionen à 45 Minuten. Ungefähr so verteilt:
 - Das Guthaben ist begrenzt. Deshalb gilt in jedem Azure-Auftrag:
   - VM-Grösse aus der Liste «Für kostenlose Dienste berechtigt» (Free services eligible) wählen, z. B. `Standard_B1s` oder `Standard_B2ats_v2`. <!-- prüfen: Stand 19.10.2026, Liste im Portal kontrollieren -->
   - Nur eine VM gleichzeitig laufen lassen.
-  - Am Ende jedes Auftrags die Ressourcengruppe löschen.
+  - Am Ende jedes Auftrags die Ressourcengruppe (Resource Group) löschen.
 
 ## Themen mit Microsoft Entra ID: Challenge Labs
 Mit Azure for Students hast du keine Rechte in Microsoft Entra ID. Themen wie **Rollenbasierte Zugriffssteuerung (RBAC)** oder **bedingter Zugriff (Conditional Access)** übst du deshalb in den **Challenge Labs** von Microsoft Learn for Educators (Plattform [Learn on Demand / Skillable](https://msle.learnondemand.net/)):
@@ -47,10 +47,10 @@ Mit Azure for Students hast du keine Rechte in Microsoft Entra ID. Themen wie **
 |-----------|--------|------------------------|
 | Ressourcengruppe | `rg-tag<n>-<kuerzel>` | `rg-tag3-mm` |
 | Virtuelle Maschine | `vm-<zweck>-<kuerzel>` | `vm-web-mm` |
-| Virtuelles Netzwerk | `vnet-tag<n>-<kuerzel>` | `vnet-tag4-mm` |
+| Virtuelles Netzwerk (Virtual Network) | `vnet-tag<n>-<kuerzel>` | `vnet-tag4-mm` |
 | Subnetz | `snet-<zweck>` | `snet-web` |
 | NSG | `nsg-<zweck>` | `nsg-web` |
-| Storage Account | `sttag<n><kuerzel>` (klein, ohne Bindestrich) | `sttag3mm` |
+| Speicherkonto | `sttag<n><kuerzel>` (klein, ohne Bindestrich) | `sttag3mm` |
 
 `<kuerzel>` = deine Initialen. Jede Ressourcengruppe bekommt die Tags `kurs=azure-basics`, `tag=<n>`, `owner=<kuerzel>`.
 

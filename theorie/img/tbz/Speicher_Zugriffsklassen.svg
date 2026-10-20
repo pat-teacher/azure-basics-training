@@ -17,7 +17,7 @@
   <text x="180" y="216" text-anchor="middle" font-size="13" fill="#333">Antwortzeit: Millisekunden</text>
   <text x="180" y="237" text-anchor="middle" font-size="13" fill="#333">Preis pro GB: hoch</text>
   <text x="180" y="258" text-anchor="middle" font-size="13" fill="#333">Preis pro Zugriff: sehr tief</text>
-  <text x="180" y="292" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c0392b">Disk von OS und Datenbank (Managed Disk)</text>
+  <text x="180" y="292" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c0392b">Datenträger von OS und Datenbank</text>
   <text x="180" y="310" text-anchor="middle" font-size="12.5" fill="#c0392b">laufende Applikation</text>
 
   <!-- Warm -->

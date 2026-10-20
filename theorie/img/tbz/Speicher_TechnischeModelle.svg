@@ -5,7 +5,7 @@
   <!-- Panel 1: Block -->
   <rect x="20" y="55" width="225" height="330" rx="10" fill="#eef2f7" stroke="#4a6785" stroke-width="1.5"/>
   <text x="132" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#33475b">Blockspeicher</text>
-  <text x="132" y="104" text-anchor="middle" font-size="13" fill="#33475b">Azure: Managed Disk</text>
+  <text x="132" y="104" text-anchor="middle" font-size="13" fill="#33475b">Azure: verwalteter Datenträger</text>
   <!-- Instanz -->
   <rect x="72" y="125" width="120" height="60" rx="5" fill="#ffffff" stroke="#4a6785" stroke-width="1.5"/>
   <text x="132" y="160" text-anchor="middle" font-size="13" fill="#222">Instanz</text>
@@ -43,7 +43,7 @@
   <!-- Panel 3: Objekt -->
   <rect x="510" y="55" width="225" height="330" rx="10" fill="#fdf3e7" stroke="#c07f2a" stroke-width="1.5"/>
   <text x="622" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#8a5a1d">Objektspeicher</text>
-  <text x="622" y="104" text-anchor="middle" font-size="13" fill="#8a5a1d">Azure: Blob Storage</text>
+  <text x="622" y="104" text-anchor="middle" font-size="13" fill="#8a5a1d">Azure: Blob-Speicher</text>
   <!-- Clients -->
   <rect x="530" y="125" width="90" height="50" rx="5" fill="#ffffff" stroke="#c07f2a" stroke-width="1.5"/>
   <text x="575" y="150" text-anchor="middle" font-size="12" fill="#222">Instanz /</text>

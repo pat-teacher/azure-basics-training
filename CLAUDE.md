@@ -19,7 +19,9 @@ Die Lernenden sind **ICT-Fachleute EFZ** (ICT-Fachfrau/ICT-Fachmann), nicht Info
 - Schweizer Hochdeutsch: immer «ss», nie «ß».
 - Lernende werden in der Du-Form angesprochen.
 - Kurze Sätze, aktive Formulierungen, Fachbegriffe beim ersten Auftreten erklären.
-- Azure-Begriffe so verwenden, wie sie im deutschsprachigen Azure-Portal heissen; englischen Begriff in Klammern ergänzen, wenn er im Portal oder in der CLI anders lautet.
+- **Fachbegriffe (Azure und Cloud): Deutsch mit Englisch in Klammern beim ersten Auftreten pro Seite/Präsentation**, danach nur Deutsch. Beispiel: «Ressourcengruppe (Resource Group)». Nie nur Englisch.
+  - Verbindliches Glossar: `tools/begriffe.py` (GLOSSAR). Prüfen mit `python tools/begriffe.py --pruefen <dateien>`, ergänzen ohne `--pruefen`.
+  - Ausnahmen (bleiben englisch, ohne Klammer): Produktnamen (Azure CLI, Cloud Shell, Bicep, Azure Resource Manager, Microsoft Entra ID, Multipass, Docker, cloud-init), Abkürzungen (VM, VNet, NSG, NIC, IaaS/PaaS/SaaS, SSH), eingebürgerte Wörter ohne gängige Übersetzung (Cloud, Hypervisor, Hyperscaler, Container, Image, Blob, Tags) und die Tagestitel aus dem Vertrag.
 - Jede Unterlage hat oben ein Stand-Datum (TT.MM.JJJJ) und unten eine Quellenliste (bevorzugt Microsoft Learn).
 
 ## Kursinhalt (vertraglich)

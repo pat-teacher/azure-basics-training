@@ -32,7 +32,7 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 
 | Wann | Input | Dauer | Folien |
 |------|-------|-------|--------|
-| L1, nach Rückblick | Vom Hypervisor zum Hyperscaler, Cloud-Merkmale, IaaS/PaaS/SaaS, Public/Private/Hybrid | 20' | Input 2 |
+| L1, nach Rückblick | Vom Hypervisor zum Hyperscaler, Cloud-Merkmale, IaaS/PaaS/SaaS, öffentliche/private/hybride Cloud | 20' | Input 2 |
 | L3, Beginn | Aufbau von Azure, Rundgang durchs Portal | 15' | Input 3, Teil «Aufbau» |
 | L5, Beginn | Cloud Shell und Azure CLI | 15' | Input 3, Teil «Werkzeuge» |
 
@@ -44,8 +44,8 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 
 | Wann | Input | Dauer | Folien |
 |------|-------|-------|--------|
-| L1, nach Rückblick | Virtuelle Maschinen in Azure: Bestandteile, Grössen, Kosten | 20' | Input 4 |
-| L5, Beginn | Azure Storage: Storage Account, Blob, Redundanz | 15' | Input 5 |
+| L1, nach Rückblick | Virtuelle Maschinen (Virtual Machine) in Azure: Bestandteile, Grössen, Kosten | 20' | Input 4 |
+| L5, Beginn | Azure Storage: Speicherkonto (Storage Account), Blob, Redundanz | 15' | Input 5 |
 
 **Vorbereitung**
 - Erlaubte Regionen und VM-Grössen im Student-Abo prüfen. <!-- prüfen -->
@@ -54,11 +54,11 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 
 | Wann | Input | Dauer | Folien |
 |------|-------|-------|--------|
-| L1, nach Rückblick | VNet und Subnetze, CIDR, IP-Adressen | 20' | Input 6, Teil «VNet» |
+| L1, nach Rückblick | VNet und Subnetze (Subnet), CIDR, IP-Adressen | 20' | Input 6, Teil «VNet» |
 | L4, Beginn | Netzwerksicherheitsgruppen (NSG) | 15' | Input 6, Teil «NSG» |
 
 **Vorbereitung**
-- Öffentliche IP der Schule ermitteln (für die SSH-Regel in 4.4).
+- Öffentliche IP (Public IP) der Schule ermitteln (für die SSH-Regel in 4.4).
 - Für 4.5: Umgebung mit vorbereiteten Fehlern bereitstellen.
 - Für ⭐ 4.7: passendes Challenge Lab wählen. <!-- prüfen -->
 
@@ -66,7 +66,7 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 
 | Wann | Input | Dauer | Folien |
 |------|-------|-------|--------|
-| L1, nach Rückblick | Infrastructure as Code, Bicep, cloud-init in Azure | 20' | Input 7 |
+| L1, nach Rückblick | Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init in Azure | 20' | Input 7 |
 
 **Vorbereitung**
 - Bewertungsraster für das Abschlussprojekt ausdrucken oder teilen.

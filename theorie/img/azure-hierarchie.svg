@@ -29,6 +29,6 @@
 <text x="197.5" y="421.0" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">sttag3mm</text>
 <rect x="260" y="395" width="105" height="44" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="1.5"/>
 <text x="312.5" y="421.0" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">vnet-tag4-mm</text>
-<text x="385" y="422" font-size="13" fill="#27303A" font-weight="normal" text-anchor="start">Ressourcen: VM, Storage Account, VNet … – jede gehört zu genau einer Ressourcengruppe</text>
+<text x="385" y="422" font-size="13" fill="#27303A" font-weight="normal" text-anchor="start">Ressourcen: VM, Speicherkonto, VNet … – jede gehört zu genau einer Ressourcengruppe</text>
 <text x="30" y="475" font-size="13" fill="#006FAD" font-weight="bold" text-anchor="start">Blau umrandet: damit arbeitest du im Kurs. Löschst du eine Ressourcengruppe, löschst du alles darin.</text>
 </svg>

@@ -6,8 +6,8 @@ Stand: 19.10.2026 · gehört zu [Tag 3](../kurs/tag-3.md)
 
 ## Lernziele
 - Du kannst Block-, Datei- und Objektspeicher unterscheiden und Azure-Dienste zuordnen. (K2)
-- Du kannst den Aufbau eines Storage Accounts erklären. (K2)
-- Du kannst für einen Anwendungsfall eine passende Redundanz und Zugriffsebene festlegen. (K3)
+- Du kannst den Aufbau eines Speicherkontos erklären. (K2)
+- Du kannst für einen Anwendungsfall eine passende Redundanz und Zugriffsebene (Access Tier) festlegen. (K3)
 - Du kannst erklären, welche Daten das Löschen einer VM überleben. (K2)
 
 ## Drei Fragen an jeden Speicher
@@ -22,19 +22,19 @@ Stand: 19.10.2026 · gehört zu [Tag 3](../kurs/tag-3.md)
 
 | Modell | Azure-Dienst | Zugriff | Mehrere VMs gleichzeitig? | Einsatz |
 |--------|--------------|---------|---------------------------|---------|
-| Blockspeicher | **Managed Disk** | wie eine Festplatte | nein (Normalfall) | Betriebssystem, Datenbank |
+| Blockspeicher | **verwalteter Datenträger** (Managed Disk) | wie eine Festplatte | nein (Normalfall) | Betriebssystem, Datenbank |
 | Dateispeicher | **Azure Files** | Netzlaufwerk (SMB/NFS) | ja | geteilte Dateien |
-| Objektspeicher | **Blob Storage** | HTTP/API, per URL | ja | Bilder, Backups, statische Websites |
+| Objektspeicher | **Blob-Speicher** (Blob Storage) | HTTP/API, per URL | ja | Bilder, Backups, statische Websites |
 | Flüchtiger Speicher | **temporärer Datenträger** (bei manchen VM-Grössen) | wie eine Festplatte | nein | Cache, temporäre Dateien |
 
-## Der Storage Account
+## Das Speicherkonto
 
-![Aufbau eines Storage Accounts](img/azure-storage-aufbau.svg)
+![Aufbau eines Speicherkontos](img/azure-storage-aufbau.svg)
 
-Ein **Storage Account** ist der Behälter für vier Speicherdienste: **Blob**, **Files**, **Queue** und **Table**. Im Kurs nutzt du vor allem Blob Storage.
+Ein **Speicherkonto** (Storage Account) ist der Behälter für vier Speicherdienste: **Blob**, **Files**, **Queue** und **Table**. Im Kurs nutzt du vor allem den Blob-Speicher.
 - **Name:** global eindeutig, 3–24 Zeichen, nur Kleinbuchstaben und Ziffern, z. B. `sttag3mm`. Der Name wird Teil der URL: `https://sttag3mm.blob.core.windows.net`.
-- **Blob Storage:** Ein **Container** ist wie ein Ordner, ein **Blob** ist eine Datei darin. Der Spezial-Container `$web` liefert eine **statische Website** aus.
-- **Zugriff:** Standardmässig ist alles privat. Zugriff gibt es über die **Zugriffsschlüssel** des Accounts (in der CLI `--auth-mode key`) oder über ein **SAS-Token** (zeitlich begrenzter Link). <!-- prüfen: --auth-mode login braucht die Rolle «Storage-Blob-Datenmitwirkender», im Student-Abo testen -->
+- **Blob-Speicher:** Ein **Container** ist wie ein Ordner, ein **Blob** ist eine Datei darin. Der Spezial-Container `$web` liefert eine **statische Website** (Static Website) aus.
+- **Zugriff:** Standardmässig ist alles privat. Zugriff gibt es über die **Zugriffsschlüssel** (Access Key) des Speicherkontos (in der CLI `--auth-mode key`) oder über ein **SAS-Token** (zeitlich begrenzter Link). <!-- prüfen: --auth-mode login braucht die Rolle «Storage-Blob-Datenmitwirkender», im Student-Abo testen -->
 
 ## Redundanz: Wie viele Kopien, und wo?
 
@@ -72,16 +72,16 @@ Löschst du eine Datei vor Ablauf der Mindestdauer oder verschiebst du sie in ei
 
 In der Cloud wird eine VM oft nicht repariert, sondern **ersetzt** (z. B. per Bicep neu erstellt). Darum gilt:
 - **Betriebssystem:** Kommt bei jeder neuen VM frisch aus dem Image und cloud-init.
-- **Daten:** gehören auf Speicher, der **unabhängig von der VM** existiert, z. B. einen eigenen Datenträger, Blob Storage oder eine Datenbank.
+- **Daten:** gehören auf Speicher, der **unabhängig von der VM** existiert, z. B. einen eigenen Datenträger, den Blob-Speicher oder eine Datenbank.
 
 ## Selbsttest
 
 <details><summary>1. Eine Web-App speichert hochgeladene Bilder auf dem OS-Datenträger der VM. Die VM wird neu erstellt. Was passiert?</summary>
 
-Die Bilder sind weg. Richtig wäre Blob Storage: Er existiert unabhängig von der VM.
+Die Bilder sind weg. Richtig wäre der Blob-Speicher: Er existiert unabhängig von der VM.
 </details>
 
-<details><summary>2. Warum ist `St-Tag3-MM` kein gültiger Name für einen Storage Account?</summary>
+<details><summary>2. Warum ist `St-Tag3-MM` kein gültiger Name für ein Speicherkonto?</summary>
 
 Nur Kleinbuchstaben und Ziffern sind erlaubt, keine Bindestriche und keine Grossbuchstaben. Richtig: `sttag3mm`.
 </details>
@@ -93,7 +93,7 @@ Archive. Speichern ist sehr günstig, und lange Wartezeiten beim Lesen sind kein
 
 <details><summary>4. Was ist der Unterschied zwischen LRS und ZRS?</summary>
 
-Bei LRS liegen alle drei Kopien im selben Rechenzentrum. Bei ZRS sind sie auf drei Verfügbarkeitszonen verteilt und überleben so den Ausfall eines Rechenzentrums.
+Bei LRS liegen alle drei Kopien im selben Rechenzentrum. Bei ZRS sind sie auf drei Verfügbarkeitszonen (Availability Zone) verteilt und überleben so den Ausfall eines Rechenzentrums.
 </details>
 
 ## Quellen

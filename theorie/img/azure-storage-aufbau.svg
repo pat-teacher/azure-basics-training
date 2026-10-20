@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Storage Account mit Blob, Files, Queue und Table Storage">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Speicherkonto mit Blob-Speicher, Azure Files, Warteschlangen und Tabellen">
 <defs><marker id="aD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27303A"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#006FAD"/></marker><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2E7D32"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B3261E"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6F6F6F"/></marker></defs>
 <rect width="1000" height="430" fill="#FFFFFF"/>
 <rect x="0" y="425" width="1000" height="5" fill="#006FAD"/>
-<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Aufbau eines Storage Accounts</text>
+<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Aufbau eines Speicherkontos (Storage Account)</text>
 <rect x="20" y="48" width="960" height="360" rx="8" fill="#DEE2FB" stroke="#006FAD" stroke-width="2"/>
-<text x="40" y="76" font-size="16" fill="#27303A" font-weight="bold" text-anchor="start">Storage Account sttag3mm</text>
+<text x="40" y="76" font-size="16" fill="#27303A" font-weight="bold" text-anchor="start">Speicherkonto sttag3mm</text>
 <text x="40" y="98" font-size="12" fill="#27303A" font-weight="normal" text-anchor="start">global eindeutiger Name (3–24 Zeichen, klein) · Redundanz (LRS, ZRS, GRS …) · Zugriffsebene (Hot, Cool, Cold, Archive)</text>
 <rect x="40" y="115" width="215" height="275" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="3"/>
-<text x="147" y="140" font-size="15" fill="#27303A" font-weight="bold" text-anchor="middle">Blob Storage</text>
+<text x="147" y="140" font-size="15" fill="#27303A" font-weight="bold" text-anchor="middle">Blob-Speicher</text>
 <text x="147" y="158" font-size="11" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Objekte: Bilder, Backups, Websites</text>
 <text x="147" y="176" font-size="11" fill="#006FAD" font-weight="normal" text-anchor="middle">&lt;name&gt;.blob.core.windows.net</text>
 <rect x="55" y="190" width="185" height="36" rx="8" fill="#DEE2FB" stroke="#27303A" stroke-width="1.5"/>
@@ -29,7 +29,7 @@
 <rect x="305" y="236" width="155" height="28" rx="8" fill="#FFFFFF" stroke="#6F6F6F" stroke-width="1.5"/>
 <text x="382.5" y="254.0" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">Ordner / Datei</text>
 <rect x="510" y="115" width="215" height="275" rx="8" fill="#FFFFFF" stroke="#6F6F6F" stroke-width="1.5"/>
-<text x="617" y="140" font-size="15" fill="#27303A" font-weight="bold" text-anchor="middle">Queue Storage</text>
+<text x="617" y="140" font-size="15" fill="#27303A" font-weight="bold" text-anchor="middle">Warteschlangen (Queue)</text>
 <text x="617" y="158" font-size="11" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Nachrichten zwischen Apps</text>
 <text x="617" y="176" font-size="11" fill="#006FAD" font-weight="normal" text-anchor="middle">&lt;name&gt;.queue.core.windows.net</text>
 <rect x="525" y="190" width="185" height="36" rx="8" fill="#D5D8F4" stroke="#6F6F6F" stroke-width="1.5"/>
@@ -41,7 +41,7 @@
 <rect x="650" y="240" width="45" height="26" rx="8" fill="#FFFFFF" stroke="#6F6F6F" stroke-width="1.5"/>
 <text x="672.5" y="256.6666666666667" font-size="11" fill="#27303A" font-weight="bold" text-anchor="middle">msg</text>
 <rect x="745" y="115" width="215" height="275" rx="8" fill="#FFFFFF" stroke="#6F6F6F" stroke-width="1.5"/>
-<text x="852" y="140" font-size="15" fill="#27303A" font-weight="bold" text-anchor="middle">Table Storage</text>
+<text x="852" y="140" font-size="15" fill="#27303A" font-weight="bold" text-anchor="middle">Tabellen (Table)</text>
 <text x="852" y="158" font-size="11" fill="#6F6F6F" font-weight="normal" text-anchor="middle">einfache NoSQL-Tabellen</text>
 <text x="852" y="176" font-size="11" fill="#006FAD" font-weight="normal" text-anchor="middle">&lt;name&gt;.table.core.windows.net</text>
 <rect x="760" y="190" width="185" height="36" rx="8" fill="#D5D8F4" stroke="#6F6F6F" stroke-width="1.5"/>

@@ -9,7 +9,7 @@ Gestern hast du VMs auf deinem Laptop gebaut. Heute siehst du, wie ein Cloud-Anb
 
 ## Am Ende des Tages kannst du …
 - IaaS, PaaS und SaaS unterscheiden und Beispiele zuordnen. (K2)
-- den Aufbau von Azure erklären: Region, Verfügbarkeitszone, Abonnement, Ressourcengruppe, Ressource. (K2)
+- den Aufbau von Azure erklären: Region, Verfügbarkeitszone (Availability Zone), Abonnement (Subscription), Ressourcengruppe (Resource Group), Ressource. (K2)
 - Ressourcen im Azure-Portal und mit der Azure CLI erstellen, finden und löschen. (K3)
 
 ## So läuft der Tag

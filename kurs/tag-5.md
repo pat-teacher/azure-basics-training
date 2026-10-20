@@ -8,7 +8,7 @@ Stand: 19.10.2026 · 8 Lektionen
 Diese Woche hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebung in Dateien und stellst sie mit einem einzigen Befehl bereit. Am Nachmittag baust du im Abschlussprojekt den Webserver der «Velo Zürich AG» und stellst ihn kurz vor.
 
 ## Am Ende des Tages kannst du …
-- erklären, was «Infrastructure as Code» bedeutet. (K2)
+- erklären, was «Infrastruktur als Code (Infrastructure as Code)» bedeutet. (K2)
 - eine VM in Azure beim ersten Start mit cloud-init einrichten. (K3)
 - eine Umgebung mit VNet, NSG und VM in Bicep beschreiben und bereitstellen. (K3)
 - zeigen, dass aus einer Bicep-Datei ein ARM-Template entsteht. (K2)
@@ -18,7 +18,7 @@ Diese Woche hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umg
 | Lektion | Was passiert | Was du tust |
 |---------|--------------|-------------|
 | L1 | Rückblick der Woche | sammeln: Was hast du von Hand gemacht? |
-| L1 | **Input:** Infrastructure as Code, Bicep, cloud-init | zuhören, mitschauen |
+| L1 | **Input:** Infrastruktur als Code, Bicep, cloud-init | zuhören, mitschauen |
 | L2 | Auftrag 5.1 | mit Partner: VM mit cloud-init in Azure |
 | L3 | Auftrag 5.2 | allein: erste Bicep-Datei |
 | L4 | Auftrag 5.3 | allein: Netzwerk von Tag 4 als Bicep |
@@ -30,8 +30,8 @@ Diese Woche hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umg
 | ✓ | Nr. | Auftrag | Form |
 |---|-----|---------|------|
 | ☐ | 5.1 | Ubuntu-VM mit cloud-init in Azure *(folgt)* | Partner |
-| ☐ | 5.2 | Erste Bicep-Datei: Storage Account *(folgt)* | allein |
-| ☐ | 5.3 | Bicep für VNet, Subnetz und NSG *(folgt)* | allein |
+| ☐ | 5.2 | Erste Bicep-Datei: Speicherkonto (Storage Account) *(folgt)* | allein |
+| ☐ | 5.3 | Bicep für VNet, Subnetz (Subnet) und NSG *(folgt)* | allein |
 | ☐ | Projekt | Webserver der «Velo Zürich AG» *(folgt)* | Partner |
 
 ## Ins Lernjournal gehört heute
@@ -40,7 +40,7 @@ Diese Woche hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umg
 - drei Sätze: Was nimmst du aus dieser Woche mit?
 
 ## Bevor du gehst
-- [ ] **Alle** Ressourcengruppen der Woche gelöscht: `az group list -o table` ist leer.
+- [ ] **Alle** Ressourcengruppen (Resource Group) der Woche gelöscht: `az group list -o table` ist leer.
 - [ ] Kursfeedback ausgefüllt.
 
 ## Das brauchst du

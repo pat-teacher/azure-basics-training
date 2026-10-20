@@ -10,7 +10,7 @@
   </defs>
 
   <!-- Titel -->
-  <text x="480" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#222">Hybrid Cloud – Beispiel «Möbel Muster AG»</text>
+  <text x="480" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#222">Hybride Cloud – Beispiel «Möbel Muster AG»</text>
 
   <!-- Kunden oben rechts -->
   <g>
@@ -24,7 +24,7 @@
 
   <!-- On-Premise Box -->
   <rect x="40" y="130" width="360" height="360" rx="10" fill="#eef2f7" stroke="#4a6785" stroke-width="2"/>
-  <text x="220" y="160" text-anchor="middle" font-size="17" font-weight="bold" fill="#33475b">On Premises</text>
+  <text x="220" y="160" text-anchor="middle" font-size="17" font-weight="bold" fill="#33475b">Eigenes Rechenzentrum</text>
   <text x="220" y="180" text-anchor="middle" font-size="13" fill="#33475b">Serverraum im eigenen Firmengebäude</text>
 
   <!-- ERP Server -->
@@ -49,7 +49,7 @@
 
   <!-- Cloud Box -->
   <rect x="560" y="130" width="360" height="360" rx="10" fill="#eefaf2" stroke="#2e8b57" stroke-width="2"/>
-  <text x="740" y="160" text-anchor="middle" font-size="17" font-weight="bold" fill="#1e5e3c">Public Cloud</text>
+  <text x="740" y="160" text-anchor="middle" font-size="17" font-weight="bold" fill="#1e5e3c">Öffentliche Cloud</text>
   <text x="740" y="180" text-anchor="middle" font-size="13" fill="#1e5e3c">z. B. AWS, Microsoft Azure</text>
 
   <!-- Webshop skalierende Instanzen -->
@@ -77,5 +77,5 @@
   <text x="480" y="425" text-anchor="middle" font-size="12.5" fill="#555">Zugriff übers Internet</text>
 
   <!-- Fusszeile -->
-  <text x="480" y="530" text-anchor="middle" font-size="14" fill="#333">Ein Teil läuft im Haus, ein Teil in der Cloud – zusammen ergibt das <tspan font-weight="bold">eine</tspan> Firmen-IT: Hybrid Cloud.</text>
+  <text x="480" y="530" text-anchor="middle" font-size="14" fill="#333">Ein Teil läuft im Haus, ein Teil in der Cloud – zusammen ergibt das <tspan font-weight="bold">eine</tspan> Firmen-IT: Hybride Cloud.</text>
 </svg>

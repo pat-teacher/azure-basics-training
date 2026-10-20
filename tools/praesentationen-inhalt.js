@@ -22,7 +22,7 @@ const TAGE = [
         { type: "table", title: "Die Woche im Überblick", head: ["Tag", "Schwerpunkt", "Du baust …"], colW: [1, 4, 6], rows: [
           ["1", "Grundlagen Virtualisierung", "lokale VMs mit Multipass, deine erste automatische VM"],
           ["2", "Public Cloud und Azure Grundlagen", "deine ersten Azure-Ressourcen im Portal und mit der Azure CLI"],
-          ["3", "Azure Compute und Storage", "eine Linux-VM in Azure und einen Storage Account"],
+          ["3", "Azure Compute und Storage", "eine Linux-VM in Azure und ein Speicherkonto"],
           ["4", "Azure Networking", "ein VNet mit Subnetzen und NSG-Regeln"],
           ["5", "Automatisierung mit Bicep und cloud-init", "eine komplette Umgebung als Code – Abschlussprojekt"],
         ], notes: "Roter Faden: von der VM auf dem eigenen Laptop zur automatisierten Umgebung in der Cloud." },
@@ -162,7 +162,7 @@ const TAGE = [
         { type: "cards", title: "Deine Ziele heute", cols: 2, items: [
           { icon: "FaServer", h: "VM bereitstellen (K3)", t: "Du stellst eine Linux-VM in Azure bereit und meldest dich per SSH an." },
           { icon: "FaCubes", h: "Bestandteile (K2)", t: "Du erklärst, woraus eine VM besteht und was sie kostet." },
-          { icon: "FaDatabase", h: "Storage Account (K3)", t: "Du legst einen Storage Account an und lädst Dateien als Blob hoch." },
+          { icon: "FaDatabase", h: "Speicherkonto (K3)", t: "Du legst ein Speicherkonto (Storage Account) an und lädst Dateien hoch." },
           { icon: "FaExchangeAlt", h: "Tag 1 und Azure (K2)", t: "Du beschreibst, was deine Multipass-VM und die Azure-VM gemeinsam haben." },
         ] },
         { type: "table", title: "Ablauf", head: ["Lektion", "Phase", "Inhalt"], colW: [1.2, 2.2, 7.6], rows: [
@@ -170,7 +170,7 @@ const TAGE = [
           ["L2–L3", "Hands-on", "Auftrag 3.1: VM im Portal · 3.2: Was gehört zur VM?"],
           ["L4", "Hands-on", "Auftrag 3.3: VM mit der Azure CLI, Webserver von Hand"],
           ["L5", "Input 2", "Azure Storage"],
-          ["L5–L6", "Hands-on", "Auftrag 3.4: Storage Account und Blob-Container"],
+          ["L5–L6", "Hands-on", "Auftrag 3.4: Speicherkonto und Blob-Container"],
           ["L7", "Hands-on", "Auftrag 3.5: Statische Website · ⭐ 3.6: SAS-Token"],
           ["L8", "Abschluss", "Ressourcengruppen löschen · Kostenanalyse · Exit-Ticket"],
         ] },
@@ -178,8 +178,8 @@ const TAGE = [
           ["3.1", "Linux-VM im Portal erstellen und per SSH verbinden", "Einzel"],
           ["3.2", "Was gehört alles zur VM? Ressourcen untersuchen", "Partner"],
           ["3.3", "Dieselbe VM mit der Azure CLI, Webserver von Hand installieren", "Einzel"],
-          ["3.4", "Storage Account und Blob-Container, Dateien hochladen", "Einzel"],
-          ["3.5", "Statische Website im Storage Account", "Einzel"],
+          ["3.4", "Speicherkonto und Blob-Container, Dateien hochladen", "Einzel"],
+          ["3.5", "Statische Website im Speicherkonto", "Einzel"],
           ["⭐ 3.6", "Datei per SAS-Token zeitlich begrenzt teilen", "Einzel"],
         ] },
         { type: "cards", title: "Kosten im Griff", cols: 3, items: [
@@ -223,7 +223,7 @@ const TAGE = [
           ["L1", "Einstieg, Input 1", "Rückblick · VNet und Subnetting"],
           ["L2", "Hands-on", "Auftrag 4.1: Subnetting-Training"],
           ["L3", "Hands-on", "Auftrag 4.2: VNet mit zwei Subnetzen"],
-          ["L4–L5", "Input 2, Hands-on", "Network Security Groups · Auftrag 4.3: Zwei VMs im VNet"],
+          ["L4–L5", "Input 2, Hands-on", "Netzwerksicherheitsgruppen (NSG) · Auftrag 4.3: Zwei VMs im VNet"],
           ["L6", "Hands-on", "Auftrag 4.4: NSG-Regeln"],
           ["L7", "Hands-on", "Auftrag 4.5: Fehlersuche · ⭐ 4.6 Network Watcher · ⭐ 4.7 Challenge Lab"],
           ["L8", "Abschluss", "Netzplan zeichnen · Aufräumen · Exit-Ticket"],
@@ -260,18 +260,18 @@ const TAGE = [
           { icon: "FaServer", h: "VMs erstellt", t: "lokal und in Azure – wie viele Klicks waren das?" },
           { icon: "FaNetworkWired", h: "Netzwerke gebaut", t: "VNet, Subnetze, NSG-Regeln" },
           { icon: "FaWrench", h: "Software installiert", t: "nginx, Docker – jedes Mal von Hand" },
-          { icon: "FaRedo", h: "Und jetzt für 10 Lernende?", t: "Genau dafür gibt es Infrastructure as Code." },
+          { icon: "FaRedo", h: "Und jetzt für 10 Lernende?", t: "Genau dafür gibt es Infrastruktur als Code (Infrastructure as Code)." },
         ], notes: "Einstieg: Die Lernenden sollen den Schmerz der Handarbeit selbst benennen." },
       ] },
       { title: "Heute", slides: [
         { type: "cards", title: "Deine Ziele heute", cols: 2, items: [
-          { icon: "FaCode", h: "IaC erklären (K2)", t: "Du erklärst manuell, Skript und Infrastructure as Code." },
+          { icon: "FaCode", h: "IaC erklären (K2)", t: "Du erklärst den Unterschied: von Hand, Skript, Infrastruktur als Code." },
           { icon: "FaRocket", h: "cloud-init (K3)", t: "Du richtest eine VM beim ersten Start automatisch ein." },
           { icon: "FaFileCode", h: "Bicep (K3)", t: "Du beschreibst VNet, NSG und VM in Bicep und stellst sie bereit." },
           { icon: "FaStar", h: "Bicep und ARM (K2)", t: "Du zeigst, dass aus einer Bicep-Datei ein ARM-Template entsteht." },
         ] },
         { type: "table", title: "Ablauf", head: ["Lektion", "Phase", "Inhalt"], colW: [1.2, 2.2, 7.6], rows: [
-          ["L1", "Einstieg, Input 1", "Rückblick der Woche · Infrastructure as Code, Bicep, cloud-init"],
+          ["L1", "Einstieg, Input 1", "Rückblick der Woche · Infrastruktur als Code, Bicep, cloud-init"],
           ["L2", "Hands-on", "Auftrag 5.1: Ubuntu-VM mit cloud-init"],
           ["L3", "Hands-on", "Auftrag 5.2: Erstes Bicep-File, ARM-Template vergleichen"],
           ["L4", "Hands-on", "Auftrag 5.3: Bicep für VNet, Subnetz und NSG"],
@@ -388,25 +388,25 @@ const INPUTS = [
         { type: "diagram", title: "Servicemodelle: Wer verwaltet was?", img: "servicemodelle-folie.png",
           notes: "Je weiter rechts, desto weniger Aufwand – aber auch weniger Kontrolle. Daten und Zugriffe bleiben immer deine Aufgabe." },
         { type: "cards", title: "Merkhilfe: Pizza", cols: 4, items: [
-          { icon: "FaBuilding", h: "On Premises", t: "Alles selbst: Küche, Ofen, Teig, Belag." },
+          { icon: "FaBuilding", h: "Selbst betrieben", t: "(On Premises) Alles selbst: Küche, Ofen, Teig, Belag." },
           { icon: "FaServer", h: "IaaS", t: "Küche mit Ofen gemietet. Teig und Belag bringst du." },
           { icon: "FaRocket", h: "PaaS", t: "Der Lieferdienst backt nach deinem Rezept." },
           { icon: "FaPizzaSlice", h: "SaaS", t: "Restaurant: Du isst, was auf der Karte steht." },
         ] },
         { type: "table", title: "Beispiele bei Microsoft", head: ["Modell", "Du lieferst …", "Beispiele"], colW: [1.6, 3.5, 6], rows: [
-          ["IaaS", "Betriebssystem, Software, Konfiguration", "Azure Virtual Machines, Virtual Network, Managed Disks"],
+          ["IaaS", "Betriebssystem, Software, Konfiguration", "Azure Virtual Machines, Azure Virtual Network, Azure Managed Disks"],
           ["PaaS", "nur deine Anwendung", "Azure App Service, Azure SQL Database"],
           ["SaaS", "nur deine Daten", "Microsoft 365, Teams, Outlook"],
           ["FaaS", "einzelne Funktionen, bezahlt pro Ausführung", "Azure Functions"],
         ], note: "Im Kurs arbeitest du vor allem mit IaaS." },
-        { type: "cards", title: "Public, Private, Hybrid", cols: 3, items: [
-          { icon: "FaGlobeEurope", h: "Public Cloud", t: "Infrastruktur eines öffentlichen Anbieters, geteilt mit anderen Kunden." },
-          { icon: "FaLock", h: "Private Cloud", t: "Cloud exklusiv für eine Organisation, z. B. Banken und Behörden." },
-          { icon: "FaExchangeAlt", h: "Hybrid Cloud", t: "Ein Teil im eigenen Rechenzentrum, ein Teil in der Public Cloud – heute der Normalfall." },
+        { type: "cards", title: "Öffentlich, privat, hybrid", cols: 3, items: [
+          { icon: "FaGlobeEurope", h: "Öffentliche Cloud", t: "(Public Cloud) Infrastruktur eines öffentlichen Anbieters, geteilt mit anderen Kunden." },
+          { icon: "FaLock", h: "Private Cloud", t: "Cloud nur für eine Organisation, z. B. Banken und Behörden." },
+          { icon: "FaExchangeAlt", h: "Hybride Cloud", t: "(Hybrid Cloud) Ein Teil im eigenen Rechenzentrum, ein Teil in der öffentlichen Cloud – heute der Normalfall." },
         ] },
-        { type: "diagram", title: "Hybrid Cloud am Beispiel", img: "Betriebsmodell_Hybrid_Webshop.png", caption: "Grafik: TBZ M346",
+        { type: "diagram", title: "Hybride Cloud am Beispiel", img: "Betriebsmodell_Hybrid_Webshop.png", caption: "Grafik: TBZ M346",
           notes: "Muster: Neues und Wachsendes in die Cloud, Altes und schwer Migrierbares bleibt vorerst im Haus." },
-        { type: "compare", title: "Geteilte Verantwortung",
+        { type: "compare", title: "Geteilte Verantwortung (Shared Responsibility)",
           left: { icon: "FaBuilding", h: "Microsoft: Sicherheit der Cloud", points: ["Rechenzentren, Zutritt, Strom", "Hardware und Hypervisor", "Trennung der Kunden"] },
           right: { icon: "FaUserShield", h: "Du: Sicherheit in der Cloud", points: ["Daten und Zugriffsrechte", "offene Ports, NSG-Regeln", "Updates der VM (bei IaaS)"] },
           note: "Daten und Zugriffe bleiben immer deine Aufgabe – auch bei SaaS." },
@@ -430,16 +430,16 @@ const INPUTS = [
     sections: [
       { title: "Aufbau", slides: [
         { type: "title", title: "Aufbau von Azure", sub: "Input 2 und 3 · Tag 2", notes: "Theorie: theorie/03-azure-aufbau.md" },
-        { type: "diagram", title: "Regionen und Verfügbarkeitszonen", img: "azure-regionen-folie.png",
+        { type: "diagram", title: "Regionen und Verfügbarkeitszonen (Availability Zones)", img: "azure-regionen-folie.png",
           notes: "Alltagsvergleich: Region = Stadt, Zonen = Quartiere mit eigenem Strom- und Wassernetz. Live: Azure-Infrastrukturkarte zeigen." },
         { type: "cards", title: "Warum ist die Region wichtig?", cols: 3, items: [
           { icon: "FaBolt", h: "Nähe", t: "Kurze Wege, schnelle Antwortzeiten." },
           { icon: "FaShieldAlt", h: "Recht", t: "Daten von Schweizer Firmen sollen oft in der Schweiz bleiben." },
           { icon: "FaCoins", h: "Preis und Angebot", t: "Nicht jede VM-Grösse gibt es überall. Preise unterscheiden sich." },
         ], note: "Azure for Students erlaubt oft nur bestimmte Regionen – prüfe zuerst, welche (Auftrag 2.2)." },
-        { type: "diagram", title: "Vom Mandanten bis zur Ressource", img: "azure-hierarchie-folie.png",
+        { type: "diagram", title: "Vom Mandanten (Tenant) bis zur Ressource", img: "azure-hierarchie-folie.png",
           notes: "Verwaltungsgruppen nur in grossen Firmen. Für den Kurs relevant: Abonnement und Ressourcengruppe." },
-        { type: "cards", title: "Die Ressourcengruppe", cols: 3, items: [
+        { type: "cards", title: "Die Ressourcengruppe (Resource Group)", cols: 3, items: [
           { icon: "FaFolderOpen", h: "Ein Ordner", t: "für alles, was zusammengehört und gemeinsam lebt und stirbt." },
           { icon: "FaTrashAlt", h: "Löschen = alles weg", t: "Genau das nutzt du am Ende jedes Labs zum Aufräumen." },
           { icon: "FaClipboardList", h: "Tags", t: "Etiketten wie kurs=azure-basics – zum Filtern und für die Kostenanalyse." },
@@ -471,8 +471,8 @@ const INPUTS = [
           ["az group list -o table", "Welche Ressourcengruppen habe ich?"],
         ] },
         { type: "compare", title: "Ausblick: Wer darf was?",
-          left: { icon: "FaUserShield", h: "RBAC", points: ["Rolle: Leser, Mitwirkender, Besitzer", "für einen Bereich (Scope), z. B. eine Ressourcengruppe", "Merksatz: wer – was – wo"] },
-          right: { icon: "FaLock", h: "Bedingter Zugriff", points: ["Regeln für die Anmeldung", "z. B. nur mit Multi-Faktor-Authentifizierung", "Conditional Access in Entra ID"] },
+          left: { icon: "FaUserShield", h: "Rollen (RBAC)", points: ["Rolle: Leser, Mitwirkender, Besitzer", "für einen Bereich (Scope), z. B. eine Ressourcengruppe", "Merksatz: wer – was – wo"] },
+          right: { icon: "FaLock", h: "Bedingter Zugriff", points: ["Regeln für die Anmeldung", "z. B. nur mit Multi-Faktor-Authentifizierung", "auf Englisch: Conditional Access"] },
           note: "Üben nur in den Challenge Labs (Learn on Demand) – Azure for Students hat keine Rechte in Entra ID.",
           notes: "Optionaler Auftrag 2.7. Nicht im Vertragsumfang, darum als Zusatz." },
         { type: "quiz", qs: [
@@ -553,8 +553,8 @@ const INPUTS = [
           { icon: "FaRedo", h: "Überlebt es?", t: "Bleiben die Daten, wenn die VM ersetzt wird?" },
         ] },
         { type: "diagram", title: "Technische Speichermodelle", img: "Speicher_TechnischeModelle-folie.png", caption: "Grafik: TBZ M346, für Azure angepasst" },
-        { type: "diagram", title: "Der Storage Account", img: "azure-storage-aufbau-folie.png",
-          notes: "Live-Demo: Storage Account anlegen, Container erstellen, Datei hochladen, URL zeigen." },
+        { type: "diagram", title: "Das Speicherkonto (Storage Account)", img: "azure-storage-aufbau-folie.png",
+          notes: "Live-Demo: Speicherkonto anlegen, Container erstellen, Datei hochladen, URL zeigen." },
         { type: "cards", title: "Das musst du wissen", cols: 2, items: [
           { icon: "FaGlobeEurope", h: "Name", t: "global eindeutig, 3–24 Zeichen, nur Kleinbuchstaben und Ziffern: sttag3mm" },
           { icon: "FaFolderOpen", h: "Container und Blob", t: "Container = Ordner, Blob = Datei. $web liefert eine statische Website aus." },
@@ -562,7 +562,7 @@ const INPUTS = [
           { icon: "FaCopy", h: "Für Übungen", t: "Standard_LRS, StorageV2 – günstig und reicht." },
         ] },
         { type: "diagram", title: "Redundanz: LRS, ZRS, GRS", img: "azure-redundanz-folie.png" },
-        { type: "table", title: "Zugriffsebenen", head: ["Ebene", "Zugriff", "Mindestdauer", "Speichern", "Lesen", "Beispiel"], colW: [1.4, 1.6, 1.7, 1.8, 2.2, 2.8], fontSize: 14, rows: [
+        { type: "table", title: "Zugriffsebenen (Access Tiers)", head: ["Ebene", "Zugriff", "Mindestdauer", "Speichern", "Lesen", "Beispiel"], colW: [1.4, 1.6, 1.7, 1.8, 2.2, 2.8], fontSize: 14, rows: [
           ["Hot", "häufig", "–", "am teuersten", "am günstigsten", "Website-Dateien"],
           ["Cool", "selten", "30 Tage", "günstiger", "teurer", "Backups der letzten Wochen"],
           ["Cold", "sehr selten", "90 Tage", "noch günstiger", "noch teurer", "ältere Backups"],
@@ -574,13 +574,13 @@ const INPUTS = [
           { h: "Bilder weg?", q: "Eine Web-App speichert Bilder auf dem OS-Datenträger. Die VM wird neu erstellt. Was passiert?" },
           { h: "Name", q: "Warum ist St-Tag3-MM kein gültiger Storage-Account-Name?" },
           { h: "Archiv", q: "Jahresabschlüsse 10 Jahre aufbewahren, fast nie lesen – welche Ebene?" },
-        ], notes: "Weg – besser Blob Storage. Nur Kleinbuchstaben und Ziffern. Archive." },
+        ], notes: "Weg – besser Blob-Speicher. Nur Kleinbuchstaben und Ziffern. Archive." },
         quellen([
           { icon: "FaBook", h: "Theorie im Repository", t: "theorie/05-azure-storage.md" },
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Übersicht über Speicherkonten · Storage-Redundanz · Zugriffsebenen" },
           { icon: "FaBook", h: "TBZ M346", t: "Speichermodelle (Texte und Grafiken übernommen, für Azure angepasst)" },
         ]),
-        ende("Jetzt du", "Auftrag 3.4: Storage Account und Blob-Container"),
+        ende("Jetzt du", "Auftrag 3.4: Speicherkonto und Blob-Container"),
       ] },
     ],
   },
@@ -590,10 +590,10 @@ const INPUTS = [
     sections: [
       { title: "VNet", slides: [
         { type: "title", title: "Azure Networking", sub: "Input 1 und 2 · Tag 4", notes: "Theorie: theorie/06-azure-networking.md" },
-        { type: "cards", title: "VNet, Adressraum, Subnetz", cols: 3, items: [
-          { icon: "FaBuilding", h: "VNet", t: "Dein eigenes, isoliertes Netz in Azure – ein Firmengelände mit Zaun. Liegt in einer Region." },
-          { icon: "FaMapMarkedAlt", h: "Adressraum", t: "IP-Bereich des VNets, z. B. 10.10.0.0/16. Nur private Bereiche verwenden." },
-          { icon: "FaSitemap", h: "Subnetz", t: "Teil des VNets, z. B. 10.10.1.0/24 – ein Gebäude auf dem Gelände. Jede NIC hängt in genau einem." },
+        { type: "cards", title: "Virtuelles Netzwerk, Adressraum, Subnetz", cols: 3, items: [
+          { icon: "FaBuilding", h: "Virtuelles Netzwerk (VNet)", t: "(Virtual Network) Dein eigenes, isoliertes Netz in Azure – ein Firmengelände mit Zaun. Liegt in einer Region." },
+          { icon: "FaMapMarkedAlt", h: "Adressraum", t: "(Address Space) IP-Bereich des VNets, z. B. 10.10.0.0/16. Nur private Bereiche verwenden." },
+          { icon: "FaSitemap", h: "Subnetz", t: "(Subnet) Teil des VNets, z. B. 10.10.1.0/24 – ein Gebäude auf dem Gelände. Jede NIC hängt in genau einem." },
         ] },
         { type: "table", title: "CIDR in Kürze", head: ["CIDR", "Adressen", "in Azure nutzbar", "Beispiel"], colW: [1.5, 2, 2.5, 5], rows: [
           ["/16", "65 536", "– (Adressraum)", "10.10.0.0 – 10.10.255.255"],
@@ -606,12 +606,12 @@ const INPUTS = [
         ], points: ["In 10.10.1.0/24 bekommt die erste VM darum 10.10.1.4.", "Rechne beim Planen immer mit 5 Adressen weniger."] },
         { type: "compare", title: "IP-Adressen in Azure",
           left: { icon: "FaLock", h: "Private IP", points: ["nur im VNet erreichbar", "kommt aus dem Subnetz", "bleibt bei Neustarts gleich"] },
-          right: { icon: "FaGlobeEurope", h: "Öffentliche IP", points: ["eigene Ressource, statisch (Standard-SKU)", "kostet auch bei gestoppter VM", "gesperrt, bis eine NSG-Regel erlaubt"] },
+          right: { icon: "FaGlobeEurope", h: "Öffentliche IP (Public IP)", points: ["eigene Ressource, statisch (Standard-SKU)", "kostet auch bei gestoppter VM", "gesperrt, bis eine NSG-Regel erlaubt"] },
           note: "Achtung: Eine VM ohne öffentliche IP kommt in neuen Subnetzen evtl. nicht ins Internet (z. B. apt).",
           notes: "Seit 2026 sind neue Subnetze standardmässig privat (kein Default Outbound Access). Vor dem Kurs im Student-Abo testen." },
       ] },
       { title: "NSG", slides: [
-        { type: "divider", title: "Network Security Groups", sub: "Input 2 · Tag 4" },
+        { type: "divider", title: "Netzwerksicherheitsgruppen", sub: "Network Security Groups (NSG) · Input 2 · Tag 4" },
         { type: "statement", title: "Die NSG: ein Türsteher mit Gästeliste", icon: "FaDoorOpen",
           quote: "Er geht die Liste von oben nach unten durch. Der erste Eintrag, der passt, entscheidet.",
           points: ["Jede Regel: Priorität (100–4096, kleine Zahl zuerst), Quelle, Ziel, Zielport, Protokoll, Allow/Deny",
@@ -650,7 +650,7 @@ const INPUTS = [
     sections: [
       { title: "IaC", slides: [
         { type: "title", title: "Automatisierung: Bicep und cloud-init", sub: "Input 1 · Tag 5", notes: "Theorie: theorie/07-automatisierung.md" },
-        { type: "cards", title: "Infrastructure as Code", lead: "Infrastruktur in Textdateien beschreiben statt zusammenklicken.", cols: 3, items: [
+        { type: "cards", title: "Infrastruktur als Code (Infrastructure as Code)", lead: "Infrastruktur in Textdateien beschreiben statt zusammenklicken.", cols: 3, items: [
           { icon: "FaRedo", h: "Wiederholbar", t: "Gleiche Datei, gleiche Umgebung – für 1 oder 10 Lernende." },
           { icon: "FaTrashAlt", h: "Wegwerfbar", t: "Kaputt? Löschen und in Minuten neu bauen." },
           { icon: "FaBook", h: "Nachvollziehbar", t: "Git zeigt, wer wann was geändert hat. Der Code ist die Doku." },
@@ -661,7 +661,7 @@ const INPUTS = [
           note: "Zweimal ausführen ändert nichts = Idempotenz. Das macht Automatisierung sicher." },
         { type: "diagram", title: "Drei Wege zur selben Infrastruktur", img: "iac-ablauf-folie.png",
           notes: "Bicep wird in ein ARM-Template übersetzt (az bicep build --file main.bicep)." },
-        { type: "code", title: "Ein Storage Account in Bicep", codeW: 8.5, codeSize: 14,
+        { type: "code", title: "Ein Speicherkonto in Bicep", codeW: 8.5, codeSize: 14,
           code: "param location string = resourceGroup().location\nparam kuerzel string\n\nresource st 'Microsoft.Storage/storageAccounts@2023-05-01' = {\n  name: 'sttag5${kuerzel}'\n  location: location\n  sku: { name: 'Standard_LRS' }\n  kind: 'StorageV2'\n}\n\noutput blobUrl string =\n  st.properties.primaryEndpoints.blob",
           side: [
             { h: "param", t: "Eingabewert beim Bereitstellen" },
@@ -705,7 +705,7 @@ const INPUTS = [
         quellen([
           { icon: "FaBook", h: "Theorie im Repository", t: "theorie/07-automatisierung.md" },
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Einführung in Infrastructure as Code mit Bicep · cloud-init in Azure" },
-          { icon: "FaBook", h: "TBZ M346", t: "Infrastructure as Code, Cloud-init (Texte übernommen, für Azure angepasst)" },
+          { icon: "FaBook", h: "TBZ M346", t: "Infrastructure as Code, Cloud-init (Kapitelnamen; Texte übernommen, für Azure angepasst)" },
         ]),
         ende("Jetzt du", "Auftrag 5.1: VM mit cloud-init · danach Bicep"),
       ] },

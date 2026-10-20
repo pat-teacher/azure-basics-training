@@ -3,7 +3,7 @@
 <rect width="1000" height="470" fill="#FFFFFF"/>
 <rect x="0" y="465" width="1000" height="5" fill="#006FAD"/>
 <text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Servicemodelle: Wer verwaltet was?</text>
-<text x="145" y="70" font-size="16" fill="#27303A" font-weight="bold" text-anchor="middle">On Premises</text>
+<text x="145" y="70" font-size="16" fill="#27303A" font-weight="bold" text-anchor="middle">Eigenes Rechenzentrum</text>
 <rect x="40" y="85" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>
 <text x="145.0" y="105.33333333333333" font-size="13" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Daten und Zugriffe</text>
 <rect x="40" y="123" width="210" height="32" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="1.5"/>

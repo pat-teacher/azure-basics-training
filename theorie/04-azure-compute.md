@@ -11,17 +11,17 @@ Stand: 19.10.2026 · gehört zu [Tag 3](../kurs/tag-3.md)
 - Du kannst dich mit einem SSH-Schlüssel an einer Linux-VM anmelden. (K3)
 
 ## Woraus besteht eine VM?
-Eine Azure-VM ist nicht eine einzelne Ressource, sondern ein Verbund. Wenn du im Portal eine VM erstellst, legt Azure mehrere Ressourcen in deiner Ressourcengruppe an:
+Eine Azure-VM ist nicht eine einzelne Ressource, sondern ein Verbund. Wenn du im Portal eine VM erstellst, legt Azure mehrere Ressourcen in deiner Ressourcengruppe (Resource Group) an:
 
 ![Bestandteile einer Azure-VM](img/azure-vm-bestandteile.svg)
 
 | Ressource | Aufgabe | Vergleich mit Tag 1 (Multipass) |
 |-----------|---------|---------------------------------|
-| **Virtuelle Maschine** | CPU und RAM (Compute) | `--cpus`, `--memory` |
-| **OS-Datenträger** | Disk mit dem Betriebssystem (Managed Disk) | `--disk` |
-| **Netzwerkschnittstelle (NIC)** | verbindet die VM mit einem Subnetz, private IP | IP-Adresse in `multipass list` |
+| **Virtuelle Maschine** (Virtual Machine) | CPU und RAM (Compute) | `--cpus`, `--memory` |
+| **OS-Datenträger** (OS Disk) | Disk mit dem Betriebssystem (Managed Disk) | `--disk` |
+| **Netzwerkschnittstelle (NIC)** | verbindet die VM mit einem Subnetz (Subnet), private IP | IP-Adresse in `multipass list` |
 | **VNet + Subnetz** | privates Netz in Azure | kleines privates Netz von Hyper-V |
-| **Öffentliche IP** | macht die VM aus dem Internet erreichbar | gab es nicht – die VM war nur von deinem Laptop aus erreichbar |
+| **Öffentliche IP** (Public IP) | macht die VM aus dem Internet erreichbar | gab es nicht – die VM war nur von deinem Laptop aus erreichbar |
 | **NSG** | Firewall-Regeln: was darf hinein, was hinaus | gab es nicht |
 
 ## Grösse und Image
@@ -67,7 +67,7 @@ Linux-VMs in Azure meldest du mit einem **SSH-Schlüsselpaar** an, nicht mit Pas
 | **privater** Schlüssel (`id_ed25519`) | nur auf deinem Laptop in `~/.ssh/` | maximal: nie teilen, nie in Git, nie per Chat |
 | **öffentlicher** Schlüssel (`id_ed25519.pub`) | auf dem Server in `~/.ssh/authorized_keys` | keiner, den darf jeder sehen |
 
-> **Merkhilfe:** Der öffentliche Schlüssel ist ein **Schloss**, das du an beliebig viele Türen montierst. Der private Schlüssel ist der einzige **Schlüssel** dazu.
+> **Merkhilfe:** Der öffentliche Schlüssel (Public Key) ist ein **Schloss**, das du an beliebig viele Türen montierst. Der private Schlüssel (Private Key) ist der einzige **Schlüssel** dazu.
 
 Beim Erstellen der VM gibst du den **öffentlichen** Schlüssel von deinem Laptop mit (aus Auftrag 1.5):
 1. Zeige ihn in PowerShell an und kopiere die ganze Zeile:

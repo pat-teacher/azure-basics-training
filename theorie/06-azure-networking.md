@@ -5,9 +5,9 @@
 Stand: 19.10.2026 · gehört zu [Tag 4](../kurs/tag-4.md)
 
 ## Lernziele
-- Du kannst die Begriffe VNet, Adressraum, Subnetz und CIDR erklären. (K2)
+- Du kannst die Begriffe VNet, Adressraum (Address Space), Subnetz (Subnet) und CIDR erklären. (K2)
 - Du kannst einen Adressraum in Subnetze aufteilen. (K3)
-- Du kannst private und öffentliche IP-Adressen in Azure unterscheiden. (K2)
+- Du kannst private und öffentliche IP-Adressen (Public IP) in Azure unterscheiden. (K2)
 - Du kannst NSG-Regeln lesen, schreiben und ihre Wirkung vorhersagen. (K3)
 - Du kannst bei einem Verbindungsproblem mit einer Checkliste die Ursache finden. (K4)
 
@@ -43,8 +43,8 @@ Die Zahl nach dem `/` sagt, wie viele Bits **fix** sind. Je grösser die Zahl, d
 <!-- prüfen: Stand 19.10.2026 – Seit 2026 sind neue Subnetze standardmässig «privat» (kein Standard-Internetzugang ausgehend). Eine VM ohne öffentliche IP kommt dann nicht ins Internet (z. B. für apt). Vor Tag 4/5 im Student-Abo testen. -->
 > **Achtung:** Eine VM **ohne** öffentliche IP kommt in neuen Subnetzen unter Umständen auch **nicht ins Internet**, z. B. für `apt install`. Für die Übungen gibst du der VM, die Pakete braucht, eine öffentliche IP.
 
-## Network Security Groups (NSG)
-Eine **NSG** ist eine Liste von Regeln, die Verkehr erlaubt oder blockiert. Du verknüpfst sie mit einem **Subnetz** (empfohlen) oder mit einer **NIC**.
+## Netzwerksicherheitsgruppen (NSG)
+Eine **Netzwerksicherheitsgruppe (Network Security Group, NSG)** ist eine Liste von Regeln, die Verkehr erlaubt oder blockiert. Du verknüpfst sie mit einem **Subnetz** (empfohlen) oder mit einer **NIC**.
 
 > **Alltagsvergleich:** Ein Türsteher mit Gästeliste. Er geht die Liste von oben nach unten durch. Der erste Eintrag, der passt, entscheidet.
 
@@ -53,7 +53,7 @@ Jede Regel hat:
 | Feld | Beispiel |
 |------|----------|
 | **Priorität** | 100 (100–4096, kleine Zahl wird zuerst geprüft) |
-| **Quelle** | IP-Bereich, z. B. `203.0.113.10/32`, oder Diensttag `Internet`, `VirtualNetwork` |
+| **Quelle** | IP-Bereich, z. B. `203.0.113.10/32`, oder Diensttag (Service Tag) `Internet`, `VirtualNetwork` |
 | **Ziel** | meist `Any` oder ein Subnetz |
 | **Zielport** | 22, 80, 443 … |
 | **Protokoll** | TCP, UDP, ICMP, Any |

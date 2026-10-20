@@ -5,14 +5,14 @@
 Stand: 19.10.2026 · gehört zu [Tag 5](../kurs/tag-5.md)
 
 ## Lernziele
-- Du kannst erklären, was Infrastructure as Code (IaC) ist und welche Vorteile es hat. (K2)
+- Du kannst erklären, was Infrastruktur als Code (IaC) ist und welche Vorteile es hat. (K2)
 - Du kannst imperatives und deklaratives Vorgehen unterscheiden. (K2)
 - Du kannst eine einfache Bicep-Datei lesen und bereitstellen. (K3)
 - Du kannst eine VM mit cloud-init beim ersten Start automatisch einrichten. (K3)
 - Du kannst sagen, wann du Bicep, cloud-init oder die Azure CLI einsetzt. (K2)
 
-## Infrastructure as Code
-Bei **Infrastructure as Code** beschreibst du deine Infrastruktur in Textdateien statt sie zusammenzuklicken. Die Dateien liegen in Git, und ein Werkzeug setzt sie automatisch um.
+## Infrastruktur als Code
+Bei **Infrastruktur als Code** (Infrastructure as Code, IaC) beschreibst du deine Infrastruktur in Textdateien statt sie zusammenzuklicken. Die Dateien liegen in Git, und ein Werkzeug setzt sie automatisch um.
 
 Die Vorteile:
 - **Wiederholbar:** Die gleiche Datei ergibt immer die gleiche Umgebung. Für Test und Produktion, für 1 oder 10 Lernende.
@@ -39,7 +39,7 @@ Die Eigenschaft «zweimal ausführen ändert nichts» heisst **Idempotenz**. Sie
 - **ARM-Template:** die «Maschinensprache» des Azure Resource Manager, in JSON. Vollständig, aber lang und schwer lesbar.
 - **Bicep:** eine einfachere Sprache von Microsoft für dieselbe Aufgabe. Bicep wird vor der Bereitstellung in ein ARM-Template übersetzt (`az bicep build --file main.bicep`).
 
-Ein Storage Account in Bicep:
+Ein Speicherkonto (Storage Account) in Bicep:
 ```bicep
 param location string = resourceGroup().location
 param kuerzel string
@@ -71,7 +71,7 @@ az deployment group create --resource-group rg-tag5-<kuerzel> \
 Tipp: Mit `az deployment group what-if …` (gleiche Parameter wie `create`) siehst du vorher, was sich ändern würde.
 
 ## cloud-init: die VM beim ersten Start einrichten
-Bicep oder CLI erstellen die VM. Doch wer installiert den Webserver darauf? Das macht **cloud-init**. Du gibst der VM beim Erstellen eine YAML-Datei mit (in Azure: **benutzerdefinierte Daten**, `--custom-data`). Beim **ersten** Start arbeitet cloud-init sie ab.
+Bicep oder CLI erstellen die VM. Doch wer installiert den Webserver darauf? Das macht **cloud-init**. Du gibst der VM beim Erstellen eine YAML-Datei mit (in Azure: **benutzerdefinierte Daten** (Custom Data), `--custom-data`). Beim **ersten** Start arbeitet cloud-init sie ab.
 
 ```yaml
 #cloud-config

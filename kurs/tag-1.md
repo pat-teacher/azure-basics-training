@@ -27,7 +27,7 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 | L5 | **Input:** Automatisch statt von Hand – cloud-init | zuhören |
 | L5–L6 | [Auftrag 1.4](../auftraege/tag-1/1.4-erste-automatische-vm.md) | allein: VM mit cloud-init erstellen und prüfen |
 | L7 | **Kurz-Input:** SSH-Schlüssel | zuhören |
-| L7 | [Auftrag 1.5](../auftraege/tag-1/1.5-ssh-schluessel.md), ⭐ [1.6](../auftraege/tag-1/1.6-container-mit-docker.md) | allein: Schlüsselpaar erstellen; Schnelle: Docker |
+| L7 | [Auftrag 1.5](../auftraege/tag-1/1.5-ssh-schluessel.md), ⭐ [1.6](../auftraege/tag-1/1.6-container-mit-docker.md) | allein: Schlüsselpaar (Key Pair) erstellen; Schnelle: Docker |
 | L8 | **Input:** Vom Hypervisor zum Hyperscaler | zuhören |
 | L8 | Abschluss | aufräumen, Exit-Ticket ausfüllen |
 

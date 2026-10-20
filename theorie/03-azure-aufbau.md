@@ -5,8 +5,8 @@
 Stand: 19.10.2026 · gehört zu [Tag 2](../kurs/tag-2.md)
 
 ## Lernziele
-- Du kannst Region, Verfügbarkeitszone und Regionspaar erklären. (K2)
-- Du kannst die Hierarchie Mandant → Abonnement → Ressourcengruppe → Ressource beschreiben. (K2)
+- Du kannst Region, Verfügbarkeitszone und Regionspaar (Region Pair) erklären. (K2)
+- Du kannst die Hierarchie Mandant (Tenant) → Abonnement → Ressourcengruppe → Ressource beschreiben. (K2)
 - Du kannst erklären, warum alle Werkzeuge über den Azure Resource Manager laufen. (K2)
 - Du kannst einen Azure-CLI-Befehl lesen und selbst zusammensetzen. (K3)
 
@@ -44,9 +44,9 @@ Azure hat weltweit über 60 Regionen. <!-- prüfen: Stand 19.10.2026 -->
   - Jede Ressource gehört zu **genau einer** Ressourcengruppe.
   - Löschst du die Ressourcengruppe, ist **alles darin weg**. Genau das nutzt du am Ende jedes Labs zum Aufräumen.
   - Die Ressourcengruppe hat selbst eine Region (für ihre Metadaten). Die Ressourcen darin dürfen in anderen Regionen liegen.
-- **Ressource:** Ein einzelner Dienst, z. B. eine VM, ein Storage Account, ein VNet.
+- **Ressource:** Ein einzelner Dienst, z. B. eine VM, ein Speicherkonto (Storage Account), ein VNet.
 
-**Tags** sind Etiketten mit Name und Wert, z. B. `kurs=azure-basics`. Damit findest und filterst du Ressourcen und siehst in der Kostenanalyse, was wofür ausgegeben wurde.
+**Tags** sind Etiketten mit Name und Wert, z. B. `kurs=azure-basics`. Damit findest und filterst du Ressourcen und siehst in der Kostenanalyse (Cost Analysis), was wofür ausgegeben wurde.
 
 ## Ein Eingang für alles: Azure Resource Manager
 Egal ob du im **Portal** klickst, die **Azure CLI** benutzt oder eine **Bicep-Datei** bereitstellst: Alle Anfragen gehen an den **Azure Resource Manager (ARM)**. Er prüft, ob du angemeldet bist und die nötigen Rechte hast, und erstellt dann die Ressourcen. Darum ist das Ergebnis immer gleich, egal welches Werkzeug du benutzt.
@@ -60,7 +60,7 @@ Egal ob du im **Portal** klickst, die **Azure CLI** benutzt oder eine **Bicep-Da
 | **Azure-Portal** | Weboberfläche unter [portal.azure.com](https://portal.azure.com) | Lernen, Überblick, Kontrolle |
 | **Cloud Shell** | Terminal im Browser, Azure CLI ist schon installiert und angemeldet | schnell Befehle ausführen, ohne etwas zu installieren |
 | **Azure CLI** (`az`) | Befehlszeile für Azure, auch lokal installierbar | wiederholbare Schritte, Skripte |
-| **Bicep** | Sprache, um Infrastruktur als Code zu beschreiben | Tag 5 |
+| **Bicep** | Sprache, um Infrastruktur als Code (Infrastructure as Code) zu beschreiben | Tag 5 |
 
 ### So ist ein CLI-Befehl aufgebaut
 ```text
@@ -102,7 +102,7 @@ Eine Region ist ein Gebiet mit mehreren Rechenzentren (z. B. Zürich). Eine Verf
 
 <details><summary>2. Du löschst die Ressourcengruppe rg-tag3-mm. Was passiert mit der VM darin?</summary>
 
-Sie wird mit allen anderen Ressourcen der Gruppe gelöscht (Disk, NIC, öffentliche IP …).
+Sie wird mit allen anderen Ressourcen der Gruppe gelöscht: Datenträger, NIC, öffentliche IP (Public IP) usw.
 </details>
 
 <details><summary>3. Kann eine VM in Switzerland North in einer Ressourcengruppe mit Region West Europe liegen?</summary>
