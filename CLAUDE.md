@@ -22,7 +22,7 @@ Die Lernenden sind **ICT-Fachleute EFZ** (ICT-Fachfrau/ICT-Fachmann), nicht Info
 - **Fachbegriffe (Azure und Cloud): Deutsch mit Englisch in Klammern beim ersten Auftreten pro Seite/Präsentation**, danach nur Deutsch. Beispiel: «Ressourcengruppe (Resource Group)». Nie nur Englisch.
   - Verbindliches Glossar: `tools/begriffe.py` (GLOSSAR). Prüfen mit `python tools/begriffe.py --pruefen <dateien>`, ergänzen ohne `--pruefen`.
   - Ausnahmen (bleiben englisch, ohne Klammer): Produktnamen (Azure CLI, Cloud Shell, Bicep, Azure Resource Manager, Microsoft Entra ID, Multipass, Docker, cloud-init), Abkürzungen (VM, VNet, NSG, NIC, IaaS/PaaS/SaaS, SSH), eingebürgerte Wörter ohne gängige Übersetzung (Cloud, Hypervisor, Hyperscaler, Container, Image, Blob, Tags) und die Tagestitel aus dem Vertrag.
-- Jede Unterlage hat oben ein Stand-Datum (TT.MM.JJJJ) und unten eine Quellenliste (bevorzugt Microsoft Learn).
+- Jede Unterlage hat oben ein Stand-Datum (TT.MM.JJJJ) und unten eine Quellenliste (bevorzugt Microsoft Learn). Ausnahme: **Aufträge** (`auftraege/`) haben kein Stand-Datum – der Stand ist im Repo ersichtlich.
 
 ## Kursinhalt (vertraglich)
 1 Virtualisierung · 2 Public Cloud und Azure Grundlagen · 3 Compute und Storage · 4 Networking · 5 Bicep und Cloud-Init.

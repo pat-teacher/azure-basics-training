@@ -2,7 +2,7 @@
 
 # 4 Azure Compute: virtuelle Maschinen
 
-Stand: 19.10.2026 · gehört zu [Tag 3](../kurs/tag-3.md)
+Stand: 25.10.2026 · gehört zu [Tag 3](../kurs/tag-3.md)
 
 ## Lernziele
 - Du kannst die Bestandteile einer Azure-VM nennen und ihre Aufgabe erklären. (K2)
@@ -69,7 +69,7 @@ Linux-VMs in Azure meldest du mit einem **SSH-Schlüsselpaar** an, nicht mit Pas
 
 > **Merkhilfe:** Der öffentliche Schlüssel (Public Key) ist ein **Schloss**, das du an beliebig viele Türen montierst. Der private Schlüssel (Private Key) ist der einzige **Schlüssel** dazu.
 
-Beim Erstellen der VM gibst du den **öffentlichen** Schlüssel von deinem Laptop mit (aus Auftrag 1.5):
+Beim Erstellen der VM gibst du den **öffentlichen** Schlüssel von deinem Laptop mit (aus Auftrag 1.6):
 1. Zeige ihn in PowerShell an und kopiere die ganze Zeile:
    ```powershell
    Get-Content $env:USERPROFILE\.ssh\id_ed25519.pub

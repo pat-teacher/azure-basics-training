@@ -2,8 +2,6 @@
 
 # Aufträge
 
-Stand: 19.10.2026
-
 Hier findest du alle Aufträge, nach Tagen sortiert. Aufträge mit ⭐ sind Zusatzaufträge für Schnelle.
 
 | Tag | Aufträge |

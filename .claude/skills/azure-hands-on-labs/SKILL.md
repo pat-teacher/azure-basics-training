@@ -11,7 +11,7 @@ Vorbild: TBZ-Modul Azure (gitlab.com/ch-tbz-wb/Stud/azure) – kurze Ausgangslag
 <sub>PAT Cloud Solutions · Einführung in Cloud Computing mit Microsoft Azure · Tag <n></sub>
 
 # Auftrag <n>.<m>: <Titel>
-Stand: TT.MM.JJJJ · Zeit: <min> Min. · Form: <Einzel/Partner>
+Zeit: <min> Min. · Form: <Einzel/Partner>
 
 ## Ziel
 Du kannst … (K-Stufe)

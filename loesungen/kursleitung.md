@@ -2,7 +2,7 @@
 
 # Hinweise für die Kursleitung
 
-Stand: 19.10.2026
+Stand: 25.10.2026
 
 Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernenden geschrieben. Hier stehen die Angaben, die nur die Kursleitung braucht: wann welcher Input kommt, welche Folien dazu gehören und was vorzubereiten ist.
 
@@ -17,8 +17,8 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 |------|-------|-------|--------|--------|
 | L1, nach Begrüssung und Vorwissen | Was ist Virtualisierung? Hardware, Hypervisor, VM, Typ 1/2 | 15' | Input 1, Folien 1–7 | Auftrag 1.1 |
 | L2, nach Auftrag 1.1 | Live-Demo Multipass: `launch`, `list`, `shell`, `delete` | 10' | Input 1, «Multipass: eine VM mit einem Befehl» | Aufträge 1.2, 1.3 |
-| L5, Beginn | Automatisch statt von Hand: cloud-init | 15' | Input 1, «cloud-init» | Auftrag 1.4 |
-| L7, Beginn | SSH-Schlüssel: Schloss und Schlüssel | 5' | Input 1, «SSH-Schlüssel» | Auftrag 1.5, ⭐ 1.6 |
+| L5, nach Auftrag 1.4 | Automatisch statt von Hand: cloud-init. Einstieg: 2–3 gemessene Zeiten aus 1.4 abfragen und auf 10 Server hochrechnen | 15' | Input 1, «cloud-init» | Auftrag 1.5 |
+| L7, nach Abschluss von 1.5 | SSH-Schlüssel: Schloss und Schlüssel | 5' | Input 1, «SSH-Schlüssel» | Auftrag 1.6, ⭐ 1.7 |
 | L8, Beginn | Vom Hypervisor zum Hyperscaler | 15' | Input 2, Folien 1–2 | Aufräumen, Exit-Ticket |
 
 **Vorbereitung**
@@ -26,6 +26,7 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 - Vorher auf einem Kurs-Laptop Auftrag 1.2 durchspielen (Netzwerk, Proxy, Firewall).
 - Vor der Demo in L2 selbst schon eine VM erstellt haben, damit nicht auf den Download gewartet wird.
 - Erster `launch` lädt ca. 600 MB pro Laptop – evtl. reihenweise starten lassen.
+- L8 ist der Zeitpuffer für Auftrag 1.2 (Installation, Download) und 1.5. Wer 1.6 nicht schafft, holt es dort nach – der Schlüssel muss bis Tag 3 vorhanden sein.
 - Laptops mit «Virtualisierung: Deaktiviert» oder Windows Home in Auftrag 1.1 sofort sammeln.
 
 ## Tag 2: Public Cloud und Azure Grundlagen

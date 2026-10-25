@@ -2,16 +2,16 @@
 
 # Tag 1: Grundlagen Virtualisierung
 
-Stand: 19.10.2026 · 8 Lektionen · heute noch ohne Azure, nur auf deinem Laptop
+Stand: 25.10.2026 · 8 Lektionen · heute noch ohne Azure, nur auf deinem Laptop
 
 ## Darum geht es heute
-Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschinen (VMs)**. Du erstellst heute selbst VMs auf deinem Laptop – zuerst von Hand mit einem Befehl, dann automatisch mit einer Datei. Am Schluss bereitest du deinen SSH-Schlüssel für die Cloud vor.
+Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschinen (VMs)**. Du erstellst heute selbst VMs auf deinem Laptop – zuerst von Hand, dann automatisch mit einer Datei. Du misst, wie viel Zeit dir die Automatisierung spart. Am Schluss bereitest du deinen SSH-Schlüssel für die Cloud vor.
 
 ## Am Ende des Tages kannst du …
 - erklären, was ein Hypervisor macht, und Typ 1 und Typ 2 zuordnen. (K2)
 - mit Multipass eine VM erstellen, starten, stoppen und löschen. (K3)
 - einer VM CPU, RAM und Festplatte zuweisen und es prüfen. (K3)
-- eine VM mit einer cloud-init-Datei automatisch einrichten. (K3)
+- eine VM von Hand und automatisch mit einer cloud-init-Datei einrichten. (K3)
 - ein SSH-Schlüsselpaar erstellen. (K3)
 - ⭐ den Unterschied zwischen VM und Container beschreiben. (K2)
 
@@ -24,10 +24,11 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 | L2 | [Auftrag 1.1](../auftraege/tag-1/1.1-hypervisor-und-dein-laptop.md) | mit Partner: Laptop prüfen, Hypervisoren zuordnen |
 | L2 | **Demo:** Multipass | zuschauen |
 | L3–L4 | [Auftrag 1.2](../auftraege/tag-1/1.2-multipass-und-erste-vm.md) und [1.3](../auftraege/tag-1/1.3-ressourcen-einer-vm.md) | allein: Multipass installieren, erste VMs erstellen |
+| L5 | [Auftrag 1.4](../auftraege/tag-1/1.4-server-von-hand.md) | allein: Server von Hand einrichten, Zeit messen |
 | L5 | **Input:** Automatisch statt von Hand – cloud-init | zuhören |
-| L5–L6 | [Auftrag 1.4](../auftraege/tag-1/1.4-erste-automatische-vm.md) | allein: VM mit cloud-init erstellen und prüfen |
+| L6 | [Auftrag 1.5](../auftraege/tag-1/1.5-erste-automatische-vm.md) | allein: VM mit cloud-init erstellen, prüfen und vergleichen |
 | L7 | **Kurz-Input:** SSH-Schlüssel | zuhören |
-| L7 | [Auftrag 1.5](../auftraege/tag-1/1.5-ssh-schluessel.md), ⭐ [1.6](../auftraege/tag-1/1.6-container-mit-docker.md) | allein: Schlüsselpaar (Key Pair) erstellen; Schnelle: Docker |
+| L7 | [Auftrag 1.6](../auftraege/tag-1/1.6-ssh-schluessel.md), ⭐ [1.7](../auftraege/tag-1/1.7-container-mit-docker.md) | allein: Schlüsselpaar (Key Pair) erstellen; Schnelle: Docker |
 | L8 | **Input:** Vom Hypervisor zum Hyperscaler | zuhören |
 | L8 | Abschluss | aufräumen, Exit-Ticket ausfüllen |
 
@@ -38,16 +39,18 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 | ☐ | 1.1 | [Hypervisor und dein Laptop](../auftraege/tag-1/1.1-hypervisor-und-dein-laptop.md) | 30 Min. | Partner |
 | ☐ | 1.2 | [Multipass und deine erste VM](../auftraege/tag-1/1.2-multipass-und-erste-vm.md) | 60 Min. | allein |
 | ☐ | 1.3 | [Wie viel CPU und RAM bekommt eine VM?](../auftraege/tag-1/1.3-ressourcen-einer-vm.md) | 30 Min. | allein |
-| ☐ | 1.4 | [Deine erste automatische VM mit cloud-init](../auftraege/tag-1/1.4-erste-automatische-vm.md) | 60 Min. | allein |
-| ☐ | 1.5 | [SSH-Schlüssel für die Cloud vorbereiten](../auftraege/tag-1/1.5-ssh-schluessel.md) | 20 Min. | allein |
-| ☐ | ⭐ 1.6 | [Container mit Docker](../auftraege/tag-1/1.6-container-mit-docker.md) | 30 Min. | allein, freiwillig |
+| ☐ | 1.4 | [Einen Server von Hand einrichten](../auftraege/tag-1/1.4-server-von-hand.md) | 25 Min. | allein |
+| ☐ | 1.5 | [Deine erste automatische VM mit cloud-init](../auftraege/tag-1/1.5-erste-automatische-vm.md) | 45 Min. | allein |
+| ☐ | 1.6 | [SSH-Schlüssel für die Cloud vorbereiten](../auftraege/tag-1/1.6-ssh-schluessel.md) | 20 Min. | allein |
+| ☐ | ⭐ 1.7 | [Container mit Docker](../auftraege/tag-1/1.7-container-mit-docker.md) | 30 Min. | allein, freiwillig |
 
 ## Ins Lernjournal gehört heute
 - deine Laptop-Werte und die Zuordnung Typ 1 / Typ 2 (1.1)
 - Screenshot von `multipass list` (1.2)
 - die Tabelle mit CPU, RAM und Festplatte (1.3)
-- deine cloud-init-Datei und der Nachweis, dass sie gewirkt hat (1.4)
-- Screenshot deines öffentlichen Schlüssels (1.5)
+- deine gemessene Zeit für den Server von Hand (1.4)
+- deine cloud-init-Datei, der Nachweis, dass sie gewirkt hat, und die Vergleichstabelle (1.5)
+- Screenshot deines öffentlichen Schlüssels (1.6)
 
 ## Bevor du gehst
 - [ ] Alle VMs gelöscht: `multipass delete --purge --all`, dann zeigt `multipass list` `No instances found.`

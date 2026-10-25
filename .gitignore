@@ -4,3 +4,6 @@ _site/
 
 # Python
 __pycache__/
+
+# Office-Sperrdateien
+~$*

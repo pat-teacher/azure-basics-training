@@ -10,7 +10,7 @@ Lies zuerst die Skills `azure-kurs-kanton-zh`, `azure-hands-on-labs` und `berufs
 
 Prüfe jede angegebene Datei auf:
 1. **Sprache:** kein «ß», durchgehend Du-Form, Fachbegriffe Deutsch (Englisch) beim ersten Auftreten pro Seite (`python tools/begriffe.py --pruefen <datei>` ausführen lassen geht nicht – prüfe von Hand gegen das Glossar in tools/begriffe.py), Schweizer Hochdeutsch, verständlich für ICT-Fachleute EFZ (wenig Server-/Linux-Erfahrung). Prüfe die Regeln in CLAUDE.md, Abschnitt «Niveau der Zielgruppe»: zu viele neue Begriffe pro Schritt, Befehle ohne Erklärung, fehlende Kontrollen, zu offene oder zu schwere Fragen (K4/K5) sind Muss-Korrekturen.
-2. **Form:** Stand-Datum, Lernziele mit K-Stufe, Quellen, Dateiname nach Konvention.
+2. **Form:** Stand-Datum (nicht bei Aufträgen), Lernziele mit K-Stufe, Quellen, Dateiname nach Konvention.
 3. **Didaktik:** Tagesplanung für Lernende verständlich (Aufbau gemäss Skill azure-kurs-kanton-zh, «Tagespaket»; keine AVIVA-Begriffe), Theorieblöcke höchstens 20 Minuten, Grund- und Zusatzaufgaben vorhanden, Input-Zeitpunkte in `loesungen/kursleitung.md`.
 4. **Fachlich:** Azure-CLI-Befehle und Bicep syntaktisch plausibel, Namenskonvention eingehalten, Regionen und VM-Grössen für Azure for Students geeignet.
 5. **Kosten und Sicherheit:** jedes Lab hat einen Aufräumschritt, keine teuren Dienste, keine echten Personendaten, keine vertraulichen Auftraggeber-Infos.
