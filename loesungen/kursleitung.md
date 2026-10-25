@@ -19,14 +19,14 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 | L2, nach Auftrag 1.1 | Live-Demo Multipass: `launch`, `list`, `shell`, `delete` | 10' | Input 1, «Multipass: eine VM mit einem Befehl» | Aufträge 1.2, 1.3 |
 | L5, nach Auftrag 1.4 | Automatisch statt von Hand: cloud-init. Einstieg: 2–3 gemessene Zeiten aus 1.4 abfragen und auf 10 Server hochrechnen | 15' | Input 1, «cloud-init» | Auftrag 1.5 |
 | L7, nach Abschluss von 1.5 | SSH-Schlüssel: Schloss und Schlüssel | 5' | Input 1, «SSH-Schlüssel» | Auftrag 1.6, ⭐ 1.7 |
-| L8, Beginn | Vom Hypervisor zum Hyperscaler | 15' | Input 2, Folien 1–2 | Aufräumen, Exit-Ticket |
+| L8, Schluss | Ausblick (kein Input): «Was passiert, wenn man tausende Hypervisoren zusammenschaltet?» Frage stehen lassen, Antwort an Tag 2 | 3' | Tag 1, «Morgen: ab in die Cloud» | Aufräumen, Exit-Ticket |
 
 **Vorbereitung**
 - Mit dem Auftraggeber klären: Windows **Pro/Education/Enterprise** und **Adminrechte** für Multipass (oder vorinstallieren lassen). <!-- prüfen -->
 - Vorher auf einem Kurs-Laptop Auftrag 1.2 durchspielen (Netzwerk, Proxy, Firewall).
 - Vor der Demo in L2 selbst schon eine VM erstellt haben, damit nicht auf den Download gewartet wird.
 - Erster `launch` lädt ca. 600 MB pro Laptop – evtl. reihenweise starten lassen.
-- L8 ist der Zeitpuffer für Auftrag 1.2 (Installation, Download) und 1.5. Wer 1.6 nicht schafft, holt es dort nach – der Schlüssel muss bis Tag 3 vorhanden sein.
+- L8 ist der Zeitpuffer für Auftrag 1.2 (Installation, Download) und 1.5. Wer 1.6 nicht schafft, holt es dort nach – der Schlüssel muss bis Tag 3 vorhanden sein. Der Input «Vom Hypervisor zum Hyperscaler» kommt erst an Tag 2, L1.
 - Laptops mit «Virtualisierung: Deaktiviert» oder Windows Home in Auftrag 1.1 sofort sammeln.
 
 ## Tag 2: Public Cloud und Azure Grundlagen

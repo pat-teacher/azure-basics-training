@@ -29,8 +29,8 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 | L6 | [Auftrag 1.5](../auftraege/tag-1/1.5-erste-automatische-vm.md) | allein: VM mit cloud-init erstellen, prüfen und vergleichen |
 | L7 | **Kurz-Input:** SSH-Schlüssel | zuhören |
 | L7 | [Auftrag 1.6](../auftraege/tag-1/1.6-ssh-schluessel.md), ⭐ [1.7](../auftraege/tag-1/1.7-container-mit-docker.md) | allein: Schlüsselpaar (Key Pair) erstellen; Schnelle: Docker |
-| L8 | **Input:** Vom Hypervisor zum Hyperscaler | zuhören |
-| L8 | Abschluss | aufräumen, Exit-Ticket ausfüllen |
+| L8 | Zeit zum Fertigmachen | offene Aufträge abschliessen (vor allem 1.6) |
+| L8 | Abschluss und Ausblick auf Tag 2 | aufräumen, Exit-Ticket ausfüllen |
 
 ## Deine Aufträge
 
@@ -63,6 +63,6 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 - Internet (Multipass lädt Ubuntu selbst herunter)
 
 ## Zum Nachlesen
-- Theorie: [1 Virtualisierung](../theorie/01-virtualisierung.md), [2 Cloud-Grundlagen](../theorie/02-cloud-grundlagen.md) (Input am Schluss)
-- Folien: [Tag 1](../praesentationen/tag-1-virtualisierung.pptx) · [Input Virtualisierung](../praesentationen/input-01-virtualisierung.pptx) · [Input Cloud-Grundlagen](../praesentationen/input-02-cloud-grundlagen.pptx)
+- Theorie: [1 Virtualisierung](../theorie/01-virtualisierung.md)
+- Folien: [Tag 1](../praesentationen/tag-1-virtualisierung.pptx) · [Input Virtualisierung](../praesentationen/input-01-virtualisierung.pptx)
 - Lösungen zum Vergleichen: [Lösungen Tag 1](../loesungen/tag-1/)

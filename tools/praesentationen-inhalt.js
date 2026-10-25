@@ -53,7 +53,7 @@ const TAGE = [
           ["L5", "Hands-on, Input", "Auftrag 1.4: Server von Hand · Automatisch statt von Hand: cloud-init"],
           ["L6", "Hands-on", "Auftrag 1.5: Deine erste automatische VM"],
           ["L7", "Kurz-Input, Hands-on", "SSH-Schlüssel · Auftrag 1.6 · ⭐ 1.7: Container mit Docker"],
-          ["L8", "Input, Abschluss", "Vom Hypervisor zum Hyperscaler · Aufräumen · Exit-Ticket"],
+          ["L8", "Puffer, Abschluss", "Offene Aufträge fertig machen · Aufräumen · Exit-Ticket · Ausblick Tag 2"],
         ], notes: "Zeiten an den Stundenplan anpassen." },
         { type: "table", title: "Deine Aufträge", head: ["Nr.", "Auftrag", "Zeit", "Form"], colW: [1.2, 6.5, 1.4, 2.3], rows: [
           ["1.1", "Hypervisor und dein Laptop", "30 Min.", "Partner"],
@@ -83,7 +83,7 @@ const TAGE = [
         { type: "cards", title: "Abschluss", cols: 2, items: [
           { icon: "FaTrashAlt", h: "Aufräumen", t: "multipass delete --purge --all · Den SSH-Schlüssel behalten – du brauchst ihn an Tag 3!" },
           { icon: "FaDoorOpen", h: "Exit-Ticket", t: "Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?" },
-        ], notes: "Exit-Tickets einsammeln und an Tag 2 als Einstieg verwenden." },
+        ], notes: "Exit-Tickets einsammeln und an Tag 2 als Einstieg verwenden. Die Hyperscaler-Frage auf der nächsten Folie nur stellen, nicht beantworten – der Input folgt an Tag 2, L1." },
         ende("Morgen: ab in die Cloud", "Tag 2 · Public Cloud und Azure Grundlagen", [
           { icon: "FaCloud", h: "Hyperscaler", t: "Was passiert, wenn man tausende Hypervisoren zusammenschaltet?" },
           { icon: "FaKey", h: "Azure for Students", t: "Login testen: portal.azure.com" },
@@ -376,7 +376,7 @@ const INPUTS = [
     file: "input-02-cloud-grundlagen.pptx", title: "Input: Cloud-Grundlagen",
     sections: [
       { title: "Cloud-Grundlagen", slides: [
-        { type: "title", title: "Vom Hypervisor zum Hyperscaler", sub: "Input 3 Tag 1 · Input 1 Tag 2 · Cloud-Grundlagen", notes: "Theorie: theorie/02-cloud-grundlagen.md" },
+        { type: "title", title: "Vom Hypervisor zum Hyperscaler", sub: "Input 1 Tag 2 · Cloud-Grundlagen", notes: "Theorie: theorie/02-cloud-grundlagen.md" },
         { type: "diagram", title: "Was ist ein Hyperscaler?", img: "Hyperscaler.png", caption: "Grafik: TBZ M346",
           notes: "Tausende Server mit Typ-1-Hypervisoren, ein Orchestrator verteilt die VMs, alles über eine Web-API steuerbar. Du siehst nicht, auf welchem Server deine VM läuft." },
         { type: "cards", title: "Fünf Merkmale von Cloud Computing", cols: 3, items: [
