@@ -1,7 +1,77 @@
 // Inhalte der Präsentationen. Bilder: <name>-folie.png = Diagramm ohne eigenen Titel (siehe tools/README.md)
-// Stand: 19.10.2026
+// Stand: 25.10.2026
 
 const ende = (title, sub, items) => ({ type: "end", title, sub, items });
+
+// =============================================================================
+// KURSEINFÜHRUNG (Tag 1, L1 – vor der Tagespräsentation)
+// =============================================================================
+const EINFUEHRUNG = [
+  {
+    file: "kurs-einfuehrung.pptx", title: "Kurseinführung: Einführung in Cloud Computing mit Microsoft Azure",
+    sections: [
+      { title: "Willkommen", slides: [
+        { type: "title", title: "Einführung in Cloud Computing mit Microsoft Azure", sub: "Kurseinführung · 5 Kurstage · PAT Cloud Solutions",
+          notes: "Begrüssung. Kursleitung und PAT Cloud Solutions kurz vorstellen. Die ganze Einführung dauert ca. 15 Minuten." },
+        { type: "points", title: "Wer bist du?", items: [
+          { icon: "FaUsers", h: "Name und Lehrbetrieb", t: "In welcher Firma machst du deine Lehre?" },
+          { icon: "FaWrench", h: "Dein Alltag im Betrieb", t: "Was machst du dort am häufigsten?" },
+          { icon: "FaFlagCheckered", h: "Deine Erwartung", t: "Was möchtest du nach dem Kurs können?" },
+        ], notes: "Kurze Vorstellungsrunde, pro Person höchstens 30 Sekunden. Erwartungen notieren und an Tag 5 im Feedback wieder aufgreifen. Vorwissen zu VMs folgt im Einstieg von Tag 1." },
+      ] },
+      { title: "Ziel", slides: [
+        { type: "statement", title: "Das Ziel des Kurses", icon: "FaFlagCheckered",
+          quote: "Am letzten Kurstag stellst du eine komplette Umgebung in Azure mit einem einzigen Befehl bereit: Netzwerk, Firewall und Webserver.",
+          points: ["Du startest auf deinem eigenen Laptop und gehst Schritt für Schritt in die Cloud.",
+            "Die fiktive Firma «Velo Zürich AG» begleitet dich durch den ganzen Kurs.",
+            "An Tag 5 baust du das im Abschlussprojekt zu zweit und stellst es kurz vor."],
+          notes: "Das ist das Abschlussprojekt an Tag 5. Hier nur das Bild zeigen – Auftrag, Abgabe und Präsentation stehen in der Präsentation von Tag 5." },
+        { type: "cards", title: "Nach dem Kurs kannst du …", cols: 3, items: [
+          { icon: "FaLayerGroup", h: "Virtualisierung (K2)", t: "Hypervisor und VM erklären und beschreiben, wie eine Cloud-Plattform funktioniert." },
+          { icon: "FaCubes", h: "IaaS, PaaS, SaaS (K2)", t: "die Betriebsmodelle unterscheiden und Beispiele zuordnen." },
+          { icon: "FaServer", h: "Azure-Ressourcen (K2)", t: "die wichtigsten Ressourcen für Speicher, Rechenleistung und Netzwerk erklären." },
+          { icon: "FaNetworkWired", h: "Azure-Umgebung (K3)", t: "Speicherkonto (Storage Account), VM, VNet, Subnetz (Subnet) und NSG bereitstellen und löschen." },
+          { icon: "FaRocket", h: "Automatisierung (K3)", t: "eine VM mit Azure CLI, Bicep und cloud-init automatisch bereitstellen." },
+        ], notes: "Die fünf Kursziele aus kurs/organisation.md. K2 = verstehen und erklären, K3 = selbst anwenden." },
+      ] },
+      { title: "Aufbau", slides: [
+        { type: "table", title: "Der Kurs im Überblick", head: ["Tag", "Schwerpunkt", "Du baust …"], colW: [1, 4, 6], rows: [
+          ["1", "Grundlagen Virtualisierung", "lokale VMs mit Multipass, deine erste automatische VM"],
+          ["2", "Public Cloud und Azure Grundlagen", "deine ersten Azure-Ressourcen im Portal und mit der Azure CLI"],
+          ["3", "Azure Compute und Storage", "eine Linux-VM in Azure und ein Speicherkonto"],
+          ["4", "Azure Networking", "ein VNet mit Subnetzen und NSG-Regeln"],
+          ["5", "Automatisierung mit Bicep und cloud-init", "eine komplette Umgebung als Code – Abschlussprojekt"],
+        ], note: "Jeder Tag baut auf dem vorherigen auf: vom Laptop in die Cloud.",
+          notes: "Roter Faden: von der VM auf dem eigenen Laptop zur automatisierten Umgebung in der Cloud." },
+        { type: "table", title: "So läuft ein Kurstag", head: ["Anteil", "Was", "Wie"], colW: [1.6, 4, 6], rows: [
+          ["ca. 15 %", "Einstieg, Rückblick, Abschluss", "Rückblick-Quiz zum letzten Kurstag, Exit-Ticket zum Schluss"],
+          ["ca. 15 %", "Inputs", "2–3 kurze Inputs à max. 20 Min., immer mit Live-Demo"],
+          ["ca. 70 %", "Hands-on", "Aufträge einzeln oder zu zweit, die Kursleitung coacht"],
+        ], note: "8 Lektionen à 45 Minuten pro Kurstag. Die Kurstage sind verteilt – dein Lernjournal hilft dir beim Wiedereinstieg.",
+          notes: "Kein Frontalunterricht. Fragen sind jederzeit willkommen. Unterrichtszeiten und Pausen hier ergänzen." },
+      ] },
+      { title: "Zusammenarbeit", slides: [
+        { type: "cards", title: "So arbeiten wir", cols: 2, items: [
+          { icon: "FaPencilAlt", h: "Lernjournal", t: "Pro Auftrag: Befehle, Screenshot als Nachweis (ohne persönliche Daten), was nicht geklappt hat." },
+          { icon: "FaUsers", h: "Partnerarbeit", t: "Driver tippt, Navigator liest und kontrolliert. Nach jedem Auftrag wechseln." },
+          { icon: "FaClock", h: "Hilfe holen", t: "10 Minuten selbst probieren, dann Partner fragen, dann Kursleitung." },
+          { icon: "FaDoorOpen", h: "Exit-Ticket", t: "Am Ende jedes Tages eine kurze Frage, 1–3 Sätze. Keine Note." },
+        ], notes: "Lernjournal-Format zeigen (Markdown, OneNote oder Word – nach Absprache)." },
+        { type: "cards", title: "Deine Werkzeuge", cols: 3, items: [
+          { icon: "FaLaptop", h: "Multipass", t: "Tag 1: VMs auf deinem Laptop – Ubuntu lädt es selbst herunter." },
+          { icon: "FaTerminal", h: "Portal, Cloud Shell, Azure CLI", t: "Ab Tag 2: Azure im Browser und mit Befehlen steuern." },
+          { icon: "FaCode", h: "Bicep und cloud-init", t: "Tag 5: Infrastruktur und Einrichtung in Dateien beschreiben." },
+        ], notes: "Alles läuft im Browser oder kommt von selbst. Ausser Multipass ist nichts zu installieren." },
+        { type: "cards", title: "Spielregeln für Azure", cols: 3, items: [
+          { icon: "FaCoins", h: "Guthaben schonen", t: "Azure for Students hat begrenztes Guthaben. Erstelle nur, was der Auftrag verlangt." },
+          { icon: "FaTrashAlt", h: "Immer aufräumen", t: "Am Ende jedes Azure-Auftrags die Ressourcengruppe (Resource Group) löschen." },
+          { icon: "FaUserShield", h: "Keine echten Daten", t: "Nur die fiktive Firma «Velo Zürich AG». Keine persönlichen Daten auf Screenshots." },
+        ], notes: "Gilt ab Tag 2. Heute arbeiten alle nur lokal mit Multipass." },
+        ende("Los geht's", "Tag 1 · Grundlagen Virtualisierung"),
+      ] },
+    ],
+  },
+];
 
 // =============================================================================
 // TAGESPRÄSENTATIONEN
@@ -13,25 +83,7 @@ const TAGE = [
     sections: [
       { title: "Start", slides: [
         { type: "title", title: "Tag 1: Grundlagen Virtualisierung", sub: "Einführung in Cloud Computing mit Microsoft Azure",
-          notes: "Begrüssung. Kurz vorstellen: Kursleitung, PAT Cloud Solutions. Ziel der Woche in einem Satz: Am Freitag stellst du eine komplette Umgebung in Azure per Code bereit." },
-        { type: "cards", title: "Willkommen im Kurs", cols: 3, items: [
-          { icon: "FaLaptop", h: "Hands-on", t: "Rund 70 % der Zeit arbeitest du selbst an Aufträgen – einzeln oder zu zweit." },
-          { icon: "FaLightbulb", h: "Kurze Inputs", t: "Zu wichtigen Themen gibt es kurze Inputs, höchstens 20 Minuten, immer mit Live-Demo." },
-          { icon: "FaHandsHelping", h: "Coaching", t: "Die Kursleitung geht herum und hilft. Du bestimmst dein Tempo." },
-        ], notes: "Erwartungen klären: kein Frontalunterricht. Fragen sind jederzeit willkommen." },
-        { type: "table", title: "Die Woche im Überblick", head: ["Tag", "Schwerpunkt", "Du baust …"], colW: [1, 4, 6], rows: [
-          ["1", "Grundlagen Virtualisierung", "lokale VMs mit Multipass, deine erste automatische VM"],
-          ["2", "Public Cloud und Azure Grundlagen", "deine ersten Azure-Ressourcen im Portal und mit der Azure CLI"],
-          ["3", "Azure Compute und Storage", "eine Linux-VM in Azure und ein Speicherkonto"],
-          ["4", "Azure Networking", "ein VNet mit Subnetzen und NSG-Regeln"],
-          ["5", "Automatisierung mit Bicep und cloud-init", "eine komplette Umgebung als Code – Abschlussprojekt"],
-        ], notes: "Roter Faden: von der VM auf dem eigenen Laptop zur automatisierten Umgebung in der Cloud." },
-        { type: "cards", title: "So arbeiten wir", cols: 2, items: [
-          { icon: "FaPencilAlt", h: "Lernjournal", t: "Pro Auftrag: Befehle, Screenshot als Nachweis (ohne persönliche Daten), was nicht geklappt hat." },
-          { icon: "FaUsers", h: "Partnerarbeit", t: "Driver tippt, Navigator liest und kontrolliert. Nach jedem Auftrag wechseln." },
-          { icon: "FaClock", h: "Hilfe holen", t: "10 Minuten selbst probieren, dann Partner fragen, dann Kursleitung." },
-          { icon: "FaTrashAlt", h: "Aufräumen", t: "Ab Tag 2: Nach jedem Azure-Auftrag die Ressourcengruppe löschen. Das schont dein Guthaben." },
-        ], notes: "Lernjournal-Format zeigen (Markdown, OneNote oder Word – nach Absprache)." },
+          notes: "Direkt nach der Kurseinführung (kurs-einfuehrung.pptx). Überleitung: Heute bleiben wir noch auf dem Laptop – ab Tag 2 geht es in die Cloud." },
         { type: "points", title: "Was weisst du schon?", items: [
           { icon: "FaServer", h: "Wer hat schon eine virtuelle Maschine benutzt?", t: "Mit welchem Programm? Wofür?" },
           { icon: "FaBuilding", h: "Wo laufen VMs in deinem Lehrbetrieb?", t: "Server im Keller, Rechenzentrum, Cloud?" },
@@ -47,8 +99,8 @@ const TAGE = [
           { icon: "FaKey", h: "SSH-Schlüssel (K3)", t: "Du erstellst ein Schlüsselpaar für die Cloud." },
         ], notes: "⭐-Ziel für Schnelle: Unterschied VM und Container beschreiben (Auftrag 1.7)." },
         { type: "table", title: "Ablauf", head: ["Lektion", "Phase", "Inhalt"], colW: [1.2, 2.2, 7.6], rows: [
-          ["L1", "Einstieg, Input 1", "Kursstart · Was ist Virtualisierung?"],
-          ["L2", "Hands-on, Demo", "Auftrag 1.1: Hypervisor und dein Laptop · Live-Demo Multipass"],
+          ["L1", "Kurseinführung, Input 1", "Ziel und Aufbau des Kurses · Was weisst du schon? · Was ist Virtualisierung?"],
+          ["L2", "Hands-on, Demo", "Lernjournal anlegen · Auftrag 1.1: Hypervisor und dein Laptop · Live-Demo Multipass"],
           ["L3–L4", "Hands-on", "Auftrag 1.2: Multipass und deine erste VM · 1.3: CPU und RAM"],
           ["L5", "Hands-on, Input", "Auftrag 1.4: Server von Hand · Automatisch statt von Hand: cloud-init"],
           ["L6", "Hands-on", "Auftrag 1.5: Deine erste automatische VM"],
@@ -84,7 +136,7 @@ const TAGE = [
           { icon: "FaTrashAlt", h: "Aufräumen", t: "multipass delete --purge --all · Den SSH-Schlüssel behalten – du brauchst ihn an Tag 3!" },
           { icon: "FaDoorOpen", h: "Exit-Ticket", t: "Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?" },
         ], notes: "Exit-Tickets einsammeln und an Tag 2 als Einstieg verwenden. Die Hyperscaler-Frage auf der nächsten Folie nur stellen, nicht beantworten – der Input folgt an Tag 2, L1." },
-        ende("Morgen: ab in die Cloud", "Tag 2 · Public Cloud und Azure Grundlagen", [
+        ende("Nächstes Mal: ab in die Cloud", "Tag 2 · Public Cloud und Azure Grundlagen", [
           { icon: "FaCloud", h: "Hyperscaler", t: "Was passiert, wenn man tausende Hypervisoren zusammenschaltet?" },
           { icon: "FaKey", h: "Azure for Students", t: "Login testen: portal.azure.com" },
         ]),
@@ -140,7 +192,7 @@ const TAGE = [
           { icon: "FaTrashAlt", h: "Aufräumen", t: "az group list -o table – alle Ressourcengruppen von heute gelöscht?" },
           { icon: "FaDoorOpen", h: "Exit-Ticket", t: "Erkläre einem Kollegen in zwei Sätzen, was eine Ressourcengruppe ist." },
         ] },
-        ende("Morgen: deine erste VM in Azure", "Tag 3 · Azure Compute und Storage", [
+        ende("Nächstes Mal: deine erste VM in Azure", "Tag 3 · Azure Compute und Storage", [
           { icon: "FaKey", h: "SSH-Schlüssel", t: "Den Schlüssel von Tag 1 brauchst du wieder." },
           { icon: "FaServer", h: "VM in Azure", t: "Vergleich mit deiner lokalen VM" },
         ]),
@@ -186,7 +238,7 @@ const TAGE = [
         { type: "cards", title: "Kosten im Griff", cols: 3, items: [
           { icon: "FaMicrochip", h: "Kleine Grössen", t: "Nur Grössen mit «Für kostenlose Dienste berechtigt», z. B. Standard_B1s." },
           { icon: "FaServer", h: "Eine VM", t: "Nur eine VM gleichzeitig laufen lassen." },
-          { icon: "FaTrashAlt", h: "Löschen statt herunterfahren", t: "sudo poweroff spart kein Geld. Am Ende die Ressourcengruppe löschen." },
+          { icon: "FaTrashAlt", h: "Löschen statt herunterfahren", t: "sudo poweroff spart kein Geld. Nur eine gelöschte VM kostet nichts mehr." },
         ] },
       ] },
       { title: "Abschluss", slides: [
@@ -194,7 +246,7 @@ const TAGE = [
           { icon: "FaCoins", h: "Kostenanalyse", t: "Abonnement > Kostenverwaltung > Kostenanalyse: Was hat dein Tag gekostet?" },
           { icon: "FaDoorOpen", h: "Exit-Ticket", t: "Nenne drei Ressourcen, die beim Erstellen einer VM zusätzlich entstehen." },
         ], notes: "Kosten erscheinen mit Verzögerung – evtl. am Tag 4 nochmals anschauen." },
-        ende("Morgen: Netzwerke bauen", "Tag 4 · Azure Networking", [
+        ende("Nächstes Mal: Netzwerke bauen", "Tag 4 · Azure Networking", [
           { icon: "FaSitemap", h: "Subnetting", t: "CIDR auffrischen: Was bedeutet /24?" },
           { icon: "FaShieldAlt", h: "NSG", t: "Wer darf rein – und wer nicht?" },
         ]),
@@ -244,7 +296,7 @@ const TAGE = [
           { icon: "FaMapMarkedAlt", h: "Netzplan", t: "Zeichne deine Umgebung: VNet, Subnetze, NSG-Regeln, VMs mit IP-Adressen." },
           { icon: "FaDoorOpen", h: "Exit-Ticket", t: "Eine NSG hat Regel 100 Deny und Regel 200 Allow für Port 80. Ist die Website erreichbar?" },
         ], notes: "Antwort Exit-Ticket: Nein, Regel 100 wird zuerst geprüft." },
-        ende("Morgen: alles als Code", "Tag 5 · Automatisierung mit Bicep und cloud-init", [
+        ende("Nächstes Mal: alles als Code", "Tag 5 · Automatisierung mit Bicep und cloud-init", [
           { icon: "FaFileCode", h: "Bicep", t: "Die Umgebung von heute in einer Datei" },
           { icon: "FaRocket", h: "Abschlussprojekt", t: "Webserver der «Velo Zürich AG»" },
         ]),
@@ -257,7 +309,7 @@ const TAGE = [
     sections: [
       { title: "Start", slides: [
         { type: "title", title: "Tag 5: Automatisierung mit Bicep und cloud-init", sub: "Einführung in Cloud Computing mit Microsoft Azure" },
-        { type: "points", title: "Was hast du diese Woche von Hand gemacht?", items: [
+        { type: "points", title: "Was hast du im Kurs von Hand gemacht?", items: [
           { icon: "FaServer", h: "VMs erstellt", t: "lokal und in Azure – wie viele Klicks waren das?" },
           { icon: "FaNetworkWired", h: "Netzwerke gebaut", t: "VNet, Subnetze, NSG-Regeln" },
           { icon: "FaWrench", h: "Software installiert", t: "nginx, Docker – jedes Mal von Hand" },
@@ -272,7 +324,7 @@ const TAGE = [
           { icon: "FaStar", h: "Bicep und ARM (K2)", t: "Du zeigst, dass aus einer Bicep-Datei ein ARM-Template entsteht." },
         ] },
         { type: "table", title: "Ablauf", head: ["Lektion", "Phase", "Inhalt"], colW: [1.2, 2.2, 7.6], rows: [
-          ["L1", "Einstieg, Input 1", "Rückblick der Woche · Infrastruktur als Code, Bicep, cloud-init"],
+          ["L1", "Einstieg, Input 1", "Rückblick auf den Kurs · Infrastruktur als Code, Bicep, cloud-init"],
           ["L2", "Hands-on", "Auftrag 5.1: Ubuntu-VM mit cloud-init"],
           ["L3", "Hands-on", "Auftrag 5.2: Erstes Bicep-File, ARM-Template vergleichen"],
           ["L4", "Hands-on", "Auftrag 5.3: Bicep für VNet, Subnetz und NSG"],
@@ -287,7 +339,7 @@ const TAGE = [
       ] },
       { title: "Abschluss", slides: [
         { type: "cards", title: "Zum Schluss", cols: 3, items: [
-          { icon: "FaTrashAlt", h: "Aufräumen", t: "Alle Ressourcengruppen der Woche löschen: az group list -o table" },
+          { icon: "FaTrashAlt", h: "Aufräumen", t: "Alle Ressourcengruppen des Kurses löschen: az group list -o table" },
           { icon: "FaPencilAlt", h: "Feedback", t: "Was war hilfreich? Was soll ich ändern?" },
           { icon: "FaGraduationCap", h: "Wie weiter?", t: "Microsoft Learn: Lernpfade zu Azure Fundamentals (AZ-900)" },
         ] },
@@ -714,4 +766,4 @@ const INPUTS = [
   },
 ];
 
-module.exports = { TAGE, INPUTS };
+module.exports = { EINFUEHRUNG, TAGE, INPUTS };

@@ -2,7 +2,7 @@
 
 # Organisation
 
-Stand: 19.10.2026
+Stand: 25.10.2026
 
 ## Kursziele
 Nach dem Kurs kannst du:
@@ -71,7 +71,7 @@ Am Ende jedes Kurstages beantwortest du **eine kurze Frage** zum Tag – dein «
 
 **Wozu ist das gut?**
 - **Für dich:** Wenn du den Tag in eigenen Worten zusammenfasst, merkst du dir mehr. Und du merkst selbst, wo du noch unsicher bist.
-- **Für die Kursleitung:** Sie sieht, was angekommen ist und wo es noch hakt. Am nächsten Morgen werden einige Antworten (ohne Namen) besprochen und offene Punkte geklärt.
+- **Für die Kursleitung:** Sie sieht, was angekommen ist und wo es noch hakt. Am nächsten Kurstag werden einige Antworten (ohne Namen) besprochen und offene Punkte geklärt.
 - **Für den Kurs:** Ist eine Frage für viele unklar, wird der nächste Tag angepasst.
 
 ## Zusammenarbeit

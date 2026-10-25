@@ -8,7 +8,7 @@ description: Kursrahmen für den 5-Tage-Kurs «Einführung in Cloud Computing mi
 ## Eckdaten
 - Auftraggeber: Kanton Zürich
 - Zielgruppe: ICT-Fachleute EFZ (ICT-Fachfrau/ICT-Fachmann). Stärken bei Endgeräten und Support, wenig Erfahrung mit Servern, Linux und Kommandozeile. Niveau deutlich unter Informatiker/in Plattformentwicklung (Vorlage TBZ M346 deshalb vereinfachen). Regeln siehe CLAUDE.md, Abschnitt «Niveau der Zielgruppe».
-- Dauer: 5 Tage, je ca. 8 Lektionen à 45 Minuten.
+- Dauer: 5 Kurstage, je ca. 8 Lektionen à 45 Minuten. Die Kurstage sind **verteilt, nicht in einer Woche**. Darum nie «morgen», «Freitag» oder «diese Woche» schreiben, sondern «Tag <n>», «nächster Kurstag», «im Kurs». Jeder Tag beginnt mit einem Rückblick, weil zwischen den Kurstagen Zeit vergeht.
 - Azure-Zugang: Azure for Students (siehe Skill `azure-hands-on-labs` für Grenzen).
 
 ## Kursziele
@@ -71,10 +71,12 @@ assets/branding/         Logo, Banner, Wolke
 - Bilder von Microsoft Learn nicht kopieren, nur verlinken.
 
 ## Präsentationen
+- Eine Kurseinführung (`praesentationen/kurs-einfuehrung.pptx`): Vorstellungsrunde, Ziel des Kurses, Kursziele, Aufbau der 5 Tage, Tagesrhythmus, Zusammenarbeit, Werkzeuge, Spielregeln für Azure. Reihenfolge am ersten Kurstag: Kurseinführung → Tagespräsentation Tag 1 → Input 1.
+- **Keine Wiederholungen zwischen den Präsentationen:** Was in der Kurseinführung steht (Kursaufbau, Zusammenarbeit, Lernjournal, allgemeine Azure-Regeln), kommt in den Tagespräsentationen nicht nochmals. Tagespräsentationen enthalten nur, was für diesen Tag neu ist (z. B. VM-Kosten an Tag 3, Abschlussprojekt an Tag 5).
 - Pro Tag eine Präsentation (`praesentationen/tag-<n>-<thema>.pptx`): Titel, Rückblick-Quiz, Ziele, Ablauf, Aufträge, Abschluss mit Exit-Ticket, Ausblick.
 - Pro Theorie-Kapitel eine Input-Präsentation (`praesentationen/input-<nn>-<thema>.pptx`): Diagramme aus `theorie/img`, Alltagsvergleich, Selbsttest (Antworten in den Sprechernotizen), Quellen, «Jetzt du»-Folie.
 - Nie von Hand bearbeiten: Inhalte in `tools/praesentationen-inhalt.js` ändern und neu erzeugen (Anleitung `tools/README.md`). Danach PNG-Export mit PowerPoint und Sichtprüfung.
-- Folienregeln: Titel links, keine Akzentlinien unter Titeln, Fliesstext mind. 16 pt, eine Botschaft pro Folie, Sprechernotizen für die Kursleitung.
+- Folienregeln: nur helle Folienhintergründe (auch Titel, Kapitel, Schluss), Titel links, keine Akzentlinien unter Titeln, Fliesstext mind. 16 pt, eine Botschaft pro Folie, Sprechernotizen für die Kursleitung.
 
 ## Branding PAT Cloud Solutions
 - README und Seiten in `kurs/` beginnen mit dem Banner `assets/branding/kurs-banner.svg`.

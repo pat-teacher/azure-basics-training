@@ -2,9 +2,13 @@
 
 # Präsentationen
 
-Stand: 19.10.2026
+Stand: 25.10.2026
 
 Die Folien zum Herunterladen (PowerPoint). Die Inhalte findest du auch als Text unter [Kurs](../kurs/organisation.md) und [Theorie](../theorie/README.md).
+
+## Kurseinführung
+
+[Einführung in den Kurs](kurs-einfuehrung.pptx): Ziel des Kurses, Kursziele, Aufbau, Zusammenarbeit. Wird am ersten Kurstag vor der Präsentation von Tag 1 gezeigt.
 
 ## Tagesablauf
 

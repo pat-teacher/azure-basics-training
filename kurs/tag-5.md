@@ -2,10 +2,10 @@
 
 # Tag 5: Automatisierung mit Bicep und cloud-init
 
-Stand: 19.10.2026 · 8 Lektionen
+Stand: 25.10.2026 · 8 Lektionen
 
 ## Darum geht es heute
-Diese Woche hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebung in Dateien und stellst sie mit einem einzigen Befehl bereit. Am Nachmittag baust du im Abschlussprojekt den Webserver der «Velo Zürich AG» und stellst ihn kurz vor.
+Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebung in Dateien und stellst sie mit einem einzigen Befehl bereit. Am Nachmittag baust du im Abschlussprojekt den Webserver der «Velo Zürich AG» und stellst ihn kurz vor.
 
 ## Am Ende des Tages kannst du …
 - erklären, was «Infrastruktur als Code (Infrastructure as Code)» bedeutet. (K2)
@@ -17,7 +17,7 @@ Diese Woche hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umg
 
 | Lektion | Was passiert | Was du tust |
 |---------|--------------|-------------|
-| L1 | Rückblick der Woche | sammeln: Was hast du von Hand gemacht? |
+| L1 | Rückblick auf den Kurs | sammeln: Was hast du von Hand gemacht? |
 | L1 | **Input:** Infrastruktur als Code, Bicep, cloud-init | zuhören, mitschauen |
 | L2 | Auftrag 5.1 | mit Partner: VM mit cloud-init in Azure |
 | L3 | Auftrag 5.2 | allein: erste Bicep-Datei |
@@ -37,10 +37,10 @@ Diese Woche hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umg
 ## Ins Lernjournal gehört heute
 - deine cloud-init-Datei und deine Bicep-Dateien
 - Screenshot der Website deines Abschlussprojekts
-- drei Sätze: Was nimmst du aus dieser Woche mit?
+- drei Sätze: Was nimmst du aus diesem Kurs mit?
 
 ## Bevor du gehst
-- [ ] **Alle** Ressourcengruppen (Resource Group) der Woche gelöscht: `az group list -o table` ist leer.
+- [ ] **Alle** Ressourcengruppen (Resource Group) des Kurses gelöscht: `az group list -o table` ist leer.
 - [ ] Kursfeedback ausgefüllt.
 
 ## Das brauchst du

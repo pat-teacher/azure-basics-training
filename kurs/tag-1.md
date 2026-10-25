@@ -19,9 +19,10 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 
 | Lektion | Was passiert | Was du tust |
 |---------|--------------|-------------|
-| L1 | Start: Kurs, Woche, Lernjournal | Lernjournal anlegen |
+| L1 | **Kurseinführung:** Ziel und Aufbau des Kurses | dich vorstellen, zuhören, Fragen stellen |
+| L1 | Einstieg Tag 1: Was weisst du schon? | erzählen, was du über VMs schon weisst |
 | L1 | **Input:** Was ist Virtualisierung? | zuhören, Fragen stellen |
-| L2 | [Auftrag 1.1](../auftraege/tag-1/1.1-hypervisor-und-dein-laptop.md) | mit Partner: Laptop prüfen, Hypervisoren zuordnen |
+| L2 | [Auftrag 1.1](../auftraege/tag-1/1.1-hypervisor-und-dein-laptop.md) | Lernjournal anlegen; mit Partner: Laptop prüfen, Hypervisoren zuordnen |
 | L2 | **Demo:** Multipass | zuschauen |
 | L3–L4 | [Auftrag 1.2](../auftraege/tag-1/1.2-multipass-und-erste-vm.md) und [1.3](../auftraege/tag-1/1.3-ressourcen-einer-vm.md) | allein: Multipass installieren, erste VMs erstellen |
 | L5 | [Auftrag 1.4](../auftraege/tag-1/1.4-server-von-hand.md) | allein: Server von Hand einrichten, Zeit messen |
@@ -54,7 +55,7 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 
 ## Bevor du gehst
 - [ ] Alle VMs gelöscht: `multipass delete --purge --all`, dann zeigt `multipass list` `No instances found.`
-- [ ] SSH-Schlüssel **nicht** gelöscht – du brauchst ihn an Tag 3.
+- [ ] SSH-Schlüssel **nicht** gelöscht – du brauchst ihn an Tag 3. Bis dahin vergeht etwas Zeit: Lass den Ordner `.ssh` auf deinem Laptop unverändert.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?»
 
 ## Das brauchst du
@@ -64,5 +65,5 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 
 ## Zum Nachlesen
 - Theorie: [1 Virtualisierung](../theorie/01-virtualisierung.md)
-- Folien: [Tag 1](../praesentationen/tag-1-virtualisierung.pptx) · [Input Virtualisierung](../praesentationen/input-01-virtualisierung.pptx)
+- Folien: [Kurseinführung](../praesentationen/kurs-einfuehrung.pptx) · [Tag 1](../praesentationen/tag-1-virtualisierung.pptx) · [Input Virtualisierung](../praesentationen/input-01-virtualisierung.pptx)
 - Lösungen zum Vergleichen: [Lösungen Tag 1](../loesungen/tag-1/)

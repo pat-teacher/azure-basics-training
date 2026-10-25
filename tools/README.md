@@ -43,6 +43,7 @@ node <repo>/tools/folien/icons.js           # erzeugt assets/icons/*.png
 
 # 3. Präsentationen bauen (im Repo)
 NODE_PATH=<arbeit>/node_modules node tools/praesentationen.js <arbeit>/assets praesentationen <pptx-skill>/scripts/apply_theme.js
+#    nur einzelne Präsentationen: Dateinamen anhängen, z. B. … apply_theme.js kurs-einfuehrung.pptx
 ```
 
 Prüfen: Folien mit PowerPoint als PNG exportieren und mit `tools/folien/uebersicht.js` eine Übersicht pro Präsentation erzeugen.
@@ -50,4 +51,6 @@ Prüfen: Folien mit PowerPoint als PNG exportieren und mit `tools/folien/uebersi
 ## Gestaltung
 - Farben PAT Cloud Solutions: #27303A (dunkel), #006FAD (blau), #DEE2FB (hell), #F7F7F7, #6F6F6F.
 - Schrift: Calibri (Righteous ist auf den meisten Rechnern nicht installiert).
-- Motiv: weisses Icon im blauen Kreis. Titel- und Schlussfolien dunkel, Kapitel blau, Inhalt weiss.
+- Motiv: weisses Icon im blauen Kreis.
+- **Nur helle Folienhintergründe:** Titel-, Schluss- und Inhaltsfolien weiss, Kapitel sehr hellgrau (#F7F7F7). Keine Zierbalken oder Streifen. Hervorhebungen über Akzentfarbe in Flächen oder Text, nie über einen dunklen Hintergrund.
+- Die Wolke (`cloud-laptop.svg`, #DEE2FB) erscheint als blasse Grafik; das Logo immer in der dunklen Variante (`logo-dunkel.png`).

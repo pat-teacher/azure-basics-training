@@ -1,13 +1,14 @@
 // Erzeugt die PowerPoint-Präsentationen des Kurses im PAT-Cloud-Solutions-Stil.
-// Aufruf: node tools/praesentationen.js <assets-ordner> <ausgabe-ordner> <apply_theme.js>
+// Aufruf: node tools/praesentationen.js <assets-ordner> <ausgabe-ordner> <apply_theme.js> [<datei.pptx> …]
+//   ohne Dateinamen: alle Präsentationen; mit Dateinamen: nur diese
 //   assets-ordner: PNGs der Diagramme (2x), Logos, Wolke und icons/<Name>.png
 // Inhalte: tools/praesentationen-inhalt.js
 const path = require("path");
 const pptxgen = require("pptxgenjs");
 const sharp = require("sharp");
-const { TAGE, INPUTS } = require("./praesentationen-inhalt.js");
+const { EINFUEHRUNG, TAGE, INPUTS } = require("./praesentationen-inhalt.js");
 
-const [ASSETS, OUT, APPLY_THEME] = process.argv.slice(2);
+const [ASSETS, OUT, APPLY_THEME, ...NUR] = process.argv.slice(2);
 const { applyTheme } = require(APPLY_THEME);
 
 const DARK = "27303A", BLUE = "006FAD", LIGHT = "DEE2FB", GREY = "6F6F6F", BG = "F7F7F7", WHITE = "FFFFFF", LINE = "D5D8F4";
@@ -44,22 +45,22 @@ function defineLayouts(pres) {
     { text: { text: KURS, options: { x: 2.0, y: 6.93, w: 7, h: 0.4, fontSize: 10, color: GREY, valign: "middle", margin: 0 } } },
   ];
   pres.defineSlideMaster({
-    title: "TITEL", background: { color: DARK },
+    title: "TITEL", background: { color: WHITE },
     objects: [
-      { image: { x: M, y: 0.55, w: 2.7, h: 0.7, path: asset("logo-hell.png") } },
+      { image: { x: M, y: 0.55, w: 2.7, h: 0.7, path: asset("logo-dunkel.png") } },
       { image: { x: 9.2, y: 2.2, w: 3.5, h: 2.13, path: asset("wolke.png") } },
-      { placeholder: { options: { name: "title", type: "title", x: M, y: 2.3, w: 8.3, h: 1.7, fontSize: 44, bold: true, color: WHITE, valign: "bottom", align: "left", margin: 0 }, text: "" } },
-      { placeholder: { options: { name: "body", type: "body", x: M, y: 4.15, w: 8.3, h: 1.2, fontSize: 20, color: LIGHT, valign: "top", align: "left", margin: 0 }, text: "" } },
-      { text: { text: "Kanton Zürich · ICT-Grundbildung · PAT Cloud Solutions", options: { x: M, y: 6.7, w: 9, h: 0.4, fontSize: 12, color: LIGHT, margin: 0 } } },
+      { placeholder: { options: { name: "title", type: "title", x: M, y: 2.3, w: 8.3, h: 1.7, fontSize: 44, bold: true, color: DARK, valign: "bottom", align: "left", margin: 0 }, text: "" } },
+      { placeholder: { options: { name: "body", type: "body", x: M, y: 4.15, w: 8.3, h: 1.2, fontSize: 20, color: BLUE, valign: "top", align: "left", margin: 0 }, text: "" } },
+      { text: { text: "Kanton Zürich · ICT-Grundbildung · PAT Cloud Solutions", options: { x: M, y: 6.7, w: 9, h: 0.4, fontSize: 12, color: GREY, margin: 0 } } },
     ],
   });
   pres.defineSlideMaster({
-    title: "KAPITEL", background: { color: BLUE },
+    title: "KAPITEL", background: { color: BG },
     objects: [
       { image: { x: 9.6, y: 2.4, w: 3.0, h: 1.82, path: asset("wolke.png") } },
-      { image: { x: M, y: 6.85, w: 1.5, h: 0.39, path: asset("logo-hell.png") } },
-      { placeholder: { options: { name: "title", type: "title", x: M, y: 2.4, w: 8.6, h: 1.5, fontSize: 40, bold: true, color: WHITE, valign: "bottom", align: "left", margin: 0 }, text: "" } },
-      { placeholder: { options: { name: "body", type: "body", x: M, y: 4.05, w: 8.6, h: 1.2, fontSize: 20, color: LIGHT, valign: "top", align: "left", margin: 0 }, text: "" } },
+      { image: { x: M, y: 6.85, w: 1.5, h: 0.39, path: asset("logo-dunkel.png") } },
+      { placeholder: { options: { name: "title", type: "title", x: M, y: 2.4, w: 8.6, h: 1.5, fontSize: 40, bold: true, color: DARK, valign: "bottom", align: "left", margin: 0 }, text: "" } },
+      { placeholder: { options: { name: "body", type: "body", x: M, y: 4.05, w: 8.6, h: 1.2, fontSize: 20, color: BLUE, valign: "top", align: "left", margin: 0 }, text: "" } },
     ],
   });
   pres.defineSlideMaster({
@@ -71,11 +72,11 @@ function defineLayouts(pres) {
     slideNumber: { x: 12.23, y: 6.93, w: 0.5, h: 0.4, fontSize: 10, color: GREY, align: "right" },
   });
   pres.defineSlideMaster({
-    title: "ENDE", background: { color: DARK },
+    title: "ENDE", background: { color: WHITE },
     objects: [
-      { image: { x: M, y: 0.55, w: 2.7, h: 0.7, path: asset("logo-hell.png") } },
-      { placeholder: { options: { name: "title", type: "title", x: M, y: 1.7, w: CW, h: 1.0, fontSize: 40, bold: true, color: WHITE, valign: "middle", align: "left", margin: 0 }, text: "" } },
-      { placeholder: { options: { name: "body", type: "body", x: M, y: 2.8, w: CW, h: 0.7, fontSize: 20, color: LIGHT, valign: "top", align: "left", margin: 0 }, text: "" } },
+      { image: { x: M, y: 0.55, w: 2.7, h: 0.7, path: asset("logo-dunkel.png") } },
+      { placeholder: { options: { name: "title", type: "title", x: M, y: 1.7, w: CW, h: 1.0, fontSize: 40, bold: true, color: DARK, valign: "middle", align: "left", margin: 0 }, text: "" } },
+      { placeholder: { options: { name: "body", type: "body", x: M, y: 2.8, w: CW, h: 0.7, fontSize: 20, color: BLUE, valign: "top", align: "left", margin: 0 }, text: "" } },
     ],
   });
 }
@@ -124,10 +125,10 @@ const builders = {
       const cells = grid(s.items.length, s.items.length, 3.8, 6.4, 0.3, 2.3);
       s.items.forEach((it, i) => {
         const c = cells[i];
-        sl.addShape("roundRect", { x: c.x, y: c.y, w: c.w, h: c.h, rectRadius: 0.12, fill: { color: "323C48" }, line: { color: "323C48" }, objectName: "karte-dunkel" });
+        sl.addShape("roundRect", { x: c.x, y: c.y, w: c.w, h: c.h, rectRadius: 0.12, fill: { color: BG }, line: { color: BG }, objectName: "karte" });
         iconCircle(sl, it.icon, c.x + 0.3, c.y + 0.3, 0.7);
-        sl.addText(it.h, { x: c.x + 1.2, y: c.y + 0.3, w: c.w - 1.45, h: 0.7, fontSize: 20, bold: true, color: WHITE, valign: "middle", margin: 0, isTextBox: true });
-        if (it.t) sl.addText(it.t, { x: c.x + 0.3, y: c.y + 1.2, w: c.w - 0.6, h: c.h - 1.35, fontSize: 16, color: LIGHT, valign: "top", margin: 0, isTextBox: true });
+        sl.addText(it.h, { x: c.x + 1.2, y: c.y + 0.3, w: c.w - 1.45, h: 0.7, fontSize: 20, bold: true, color: DARK, valign: "middle", margin: 0, isTextBox: true });
+        if (it.t) sl.addText(it.t, { x: c.x + 0.3, y: c.y + 1.2, w: c.w - 0.6, h: c.h - 1.35, fontSize: 16, color: DARK, valign: "top", margin: 0, isTextBox: true });
       });
     }
     return sl;
@@ -290,5 +291,5 @@ async function buildDeck(d) {
 }
 
 (async () => {
-  for (const d of [...TAGE, ...INPUTS]) await buildDeck(d);
+  for (const d of [...EINFUEHRUNG, ...TAGE, ...INPUTS]) if (!NUR.length || NUR.includes(d.file)) await buildDeck(d);
 })().catch((e) => { console.error(e); process.exit(1); });

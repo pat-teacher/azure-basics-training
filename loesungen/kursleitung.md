@@ -9,21 +9,24 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 ## Exit-Tickets
 - Pro Tag ein Microsoft Forms mit **einer** offenen Frage (Frage steht in der Tagesplanung unter «Bevor du gehst»). Link im Kurskanal teilen. <!-- prüfen -->
 - Am Abend kurz durchsehen: Was ist angekommen? Welche Missverständnisse gibt es?
-- Am nächsten Morgen 2–3 Antworten ohne Namen vorlesen und offene Punkte klären (Teil des Rückblicks in L1).
+- Am nächsten Kurstag 2–3 Antworten ohne Namen vorlesen und offene Punkte klären (Teil des Rückblicks in L1).
 
 ## Tag 1: Grundlagen Virtualisierung
 
 | Wann | Input | Dauer | Folien | Danach |
 |------|-------|-------|--------|--------|
-| L1, nach Begrüssung und Vorwissen | Was ist Virtualisierung? Hardware, Hypervisor, VM, Typ 1/2 | 15' | Input 1, Folien 1–7 | Auftrag 1.1 |
+| L1, Beginn | Kurseinführung: Vorstellungsrunde, Ziel des Kurses, Kursziele, Aufbau, Zusammenarbeit, Spielregeln | 20' | Kurseinführung (ganz) | Tag 1 |
+| L1, nach der Kurseinführung | Einstieg Tag 1: Vorwissen, Ziele und Ablauf des Tages | 5' | Tag 1, «Start» und «Heute» | Input 1 |
+| L1, nach dem Einstieg | Was ist Virtualisierung? Hardware, Hypervisor, VM, Typ 1/2 | 15' | Input 1, Folien 1–7 | Lernjournal anlegen, Auftrag 1.1 |
 | L2, nach Auftrag 1.1 | Live-Demo Multipass: `launch`, `list`, `shell`, `delete` | 10' | Input 1, «Multipass: eine VM mit einem Befehl» | Aufträge 1.2, 1.3 |
 | L5, nach Auftrag 1.4 | Automatisch statt von Hand: cloud-init. Einstieg: 2–3 gemessene Zeiten aus 1.4 abfragen und auf 10 Server hochrechnen | 15' | Input 1, «cloud-init» | Auftrag 1.5 |
 | L7, nach Abschluss von 1.5 | SSH-Schlüssel: Schloss und Schlüssel | 5' | Input 1, «SSH-Schlüssel» | Auftrag 1.6, ⭐ 1.7 |
-| L8, Schluss | Ausblick (kein Input): «Was passiert, wenn man tausende Hypervisoren zusammenschaltet?» Frage stehen lassen, Antwort an Tag 2 | 3' | Tag 1, «Morgen: ab in die Cloud» | Aufräumen, Exit-Ticket |
+| L8, Schluss | Ausblick (kein Input): «Was passiert, wenn man tausende Hypervisoren zusammenschaltet?» Frage stehen lassen, Antwort an Tag 2 | 3' | Tag 1, «Nächstes Mal: ab in die Cloud» | Aufräumen, Exit-Ticket |
 
 **Vorbereitung**
 - Mit dem Auftraggeber klären: Windows **Pro/Education/Enterprise** und **Adminrechte** für Multipass (oder vorinstallieren lassen). <!-- prüfen -->
 - Vorher auf einem Kurs-Laptop Auftrag 1.2 durchspielen (Netzwerk, Proxy, Firewall).
+- Reihenfolge der Folien in L1: Kurseinführung → Tag 1 (Start, Heute) → Input 1. Die Vorstellungsrunde knapp halten (30 Sekunden pro Person), sonst reicht L1 nicht.
 - Vor der Demo in L2 selbst schon eine VM erstellt haben, damit nicht auf den Download gewartet wird.
 - Erster `launch` lädt ca. 600 MB pro Laptop – evtl. reihenweise starten lassen.
 - L8 ist der Zeitpuffer für Auftrag 1.2 (Installation, Download) und 1.5. Wer 1.6 nicht schafft, holt es dort nach – der Schlüssel muss bis Tag 3 vorhanden sein. Der Input «Vom Hypervisor zum Hyperscaler» kommt erst an Tag 2, L1.
