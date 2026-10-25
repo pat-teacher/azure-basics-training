@@ -2,7 +2,7 @@
 
 # Tag 4: Azure Networking
 
-Stand: 19.10.2026 · 8 Lektionen
+Stand: 25.10.2026 · 8 Lektionen
 
 ## Darum geht es heute
 Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und legst fest, wer deine VMs erreichen darf und wer nicht. Am Nachmittag suchst du Fehler: Warum kommt eine Verbindung nicht an?
@@ -39,14 +39,9 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 | ☐ | ⭐ 4.6 | Network Watcher und effektive Sicherheitsregeln *(folgt)* | allein, freiwillig |
 | ☐ | ⭐ 4.7 | Challenge Lab zu bedingtem Zugriff ([so geht's](organisation.md#themen-mit-microsoft-entra-id-challenge-labs)) | Partner, freiwillig |
 
-## Ins Lernjournal gehört heute
-- deine Subnetz-Berechnung (4.1)
-- Screenshot deines VNets mit beiden Subnetzen (4.2)
-- deine NSG-Regeln und was du getestet hast (4.4)
-- dein Netzplan (Abschluss)
-
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen (Resource Group) von heute gelöscht.
+- [ ] Lernjournal: Einträge zu allen Aufträgen von heute, dein Netzplan und deine Erkenntnisse in `tag-4/README.md`.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Regel 100 sagt Deny, Regel 200 sagt Allow für Port 80. Ist die Website erreichbar?»
 
 ## Das brauchst du

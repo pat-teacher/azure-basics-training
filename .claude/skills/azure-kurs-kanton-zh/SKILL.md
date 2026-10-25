@@ -45,7 +45,7 @@ Microsoft-Learn-Module gezielt einbinden (vertraglich vorgesehen), ergänzt durc
 ## Tagespaket
 Für jeden Tag entstehen:
 1. `kurs/tag-<n>.md` – Tagesplanung **für die Lernenden** (Übersicht und Transparenz, keine Didaktik-Begriffe wie AVIVA). Aufbau:
-   «Darum geht es heute» (2–3 Sätze) → «Am Ende des Tages kannst du …» (K-Stufe) → «So läuft der Tag» (Lektion | Was passiert | Was du tust; Inputs fett) → «Deine Aufträge» (Tabelle mit ☐, Zeit, Form) → «Ins Lernjournal gehört heute» → «Bevor du gehst» (Aufräumen, Exit-Ticket als Checkliste) → «Das brauchst du» → «Zum Nachlesen» (Theorie, Folien, Learn).
+   «Darum geht es heute» (2–3 Sätze) → «Am Ende des Tages kannst du …» (K-Stufe) → «So läuft der Tag» (Lektion | Was passiert | Was du tust; Inputs fett) → «Deine Aufträge» (Tabelle mit ☐, Zeit, Form) → «Bevor du gehst» (Aufräumen, Lernjournal, Exit-Ticket als Checkliste; was ins Lernjournal gehört, steht nur im «Erwarteten Ergebnis» der Aufträge, nicht nochmals in der Tagesplanung) → «Das brauchst du» → «Zum Nachlesen» (Theorie, Folien, Learn).
    Angaben nur für die Kursleitung (Input-Zeitpunkte, Folien, Vorbereitung) stehen in `loesungen/kursleitung.md`.
 2. `auftraege/tag-<n>/<n>.<m>-<kurzthema>.md` – ein Auftrag pro Datei (Vorlage im Skill `azure-hands-on-labs`)
 3. `loesungen/tag-<n>/<n>.<m>-<kurzthema>.md` – gleicher Dateiname wie der Auftrag: Lösung, typische Fehler, Hinweise für die Kursleitung

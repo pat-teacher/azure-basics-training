@@ -34,13 +34,9 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 | ☐ | 5.3 | Bicep für VNet, Subnetz (Subnet) und NSG *(folgt)* | allein |
 | ☐ | Projekt | Webserver der «Velo Zürich AG» *(folgt)* | Partner |
 
-## Ins Lernjournal gehört heute
-- deine cloud-init-Datei und deine Bicep-Dateien
-- Screenshot der Website deines Abschlussprojekts
-- drei Sätze: Was nimmst du aus diesem Kurs mit?
-
 ## Bevor du gehst
 - [ ] **Alle** Ressourcengruppen (Resource Group) des Kurses gelöscht: `az group list -o table` ist leer.
+- [ ] Lernjournal: Einträge zu allen Aufträgen von heute; in `tag-5/README.md` drei Sätze: Was nimmst du aus diesem Kurs mit?
 - [ ] Kursfeedback ausgefüllt.
 
 ## Das brauchst du

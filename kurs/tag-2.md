@@ -38,14 +38,9 @@ Am letzten Kurstag hast du VMs auf deinem Laptop gebaut. Heute siehst du, wie ei
 | ☐ | ⭐ 2.6 | Microsoft-Learn-Modul [Kernkomponenten der Azure-Architektur](https://learn.microsoft.com/de-de/training/modules/describe-core-architectural-components-of-azure/) | allein, freiwillig |
 | ☐ | ⭐ 2.7 | Challenge Lab «Azure RBAC konfigurieren» ([so geht's](organisation.md#themen-mit-microsoft-entra-id-challenge-labs)) | Partner, freiwillig |
 
-## Ins Lernjournal gehört heute
-- deine Zuordnung IaaS/PaaS/SaaS (2.1)
-- welche Regionen dein Abonnement erlaubt (2.2)
-- Screenshot deiner Ressourcengruppe mit Tags im Portal (2.3)
-- die CLI-Befehle, die du verwendet hast (2.4)
-
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen von heute gelöscht: `az group list -o table` zeigt keine `rg-tag2-…` mehr.
+- [ ] Lernjournal: Einträge zu allen Aufträgen von heute, Erkenntnisse in `tag-2/README.md`.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Erkläre in zwei Sätzen, was eine Ressourcengruppe ist.»
 
 ## Das brauchst du

@@ -47,20 +47,10 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 | ☐ | 1.6 | [SSH-Schlüssel für die Cloud vorbereiten](../auftraege/tag-1/1.6-ssh-schluessel.md) | 20 Min. | allein |
 | ☐ | ⭐ 1.7 | [Container mit Docker](../auftraege/tag-1/1.7-container-mit-docker.md) | 30 Min. | allein, freiwillig |
 
-## Ins Lernjournal gehört heute
-In dein Repository `lernjournal-azure`, Ordner `tag-1`, pro Auftrag ein Unterordner (siehe [Auftrag 1.0](../auftraege/tag-1/1.0-lernjournal.md)):
-- dein erster Eintrag mit Screenshot der Mitgliederliste (1.0)
-- deine Laptop-Werte und die Zuordnung Typ 1 / Typ 2 (1.1)
-- Screenshot von `multipass list` (1.2)
-- die Tabelle mit CPU, RAM und Festplatte (1.3)
-- deine gemessene Zeit für den Server von Hand (1.4)
-- deine cloud-init-Datei, der Nachweis, dass sie gewirkt hat, und die Vergleichstabelle (1.5)
-- Screenshot deines öffentlichen Schlüssels (1.6)
-
 ## Bevor du gehst
 - [ ] Alle VMs gelöscht: `multipass delete --purge --all`, dann zeigt `multipass list` `No instances found.`
 - [ ] SSH-Schlüssel **nicht** gelöscht – du brauchst ihn an Tag 3. Bis dahin vergeht etwas Zeit: Lass den Ordner `.ssh` auf deinem Laptop unverändert.
-- [ ] Erkenntnisse des Tages in `tag-1/README.md` eingetragen.
+- [ ] Lernjournal: Einträge zu allen Aufträgen von heute, Erkenntnisse in `tag-1/README.md`.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?»
 
 ## Das brauchst du

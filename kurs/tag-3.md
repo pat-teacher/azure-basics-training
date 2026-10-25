@@ -2,7 +2,7 @@
 
 # Tag 3: Azure Compute und Storage
 
-Stand: 19.10.2026 · 8 Lektionen
+Stand: 25.10.2026 · 8 Lektionen
 
 ## Darum geht es heute
 Heute erstellst du deine erste VM in Azure und meldest dich mit deinem SSH-Schlüssel von Tag 1 an. Danach lernst du, wo man in der Cloud Dateien speichert, und stellst eine kleine Website ins Internet.
@@ -37,14 +37,10 @@ Heute erstellst du deine erste VM in Azure und meldest dich mit deinem SSH-Schl�
 | ☐ | 3.5 | Statische Website im Speicherkonto *(folgt)* | allein |
 | ☐ | ⭐ 3.6 | Datei per SAS-Token zeitlich begrenzt teilen *(folgt)* | allein, freiwillig |
 
-## Ins Lernjournal gehört heute
-- Screenshot deiner SSH-Anmeldung an der Azure-VM (3.1)
-- Liste der Ressourcen, die zur VM gehören (3.2)
-- die URL deiner statischen Website (3.5)
-
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen (Resource Group) von heute gelöscht – eine laufende VM kostet Guthaben.
 - [ ] In der Kostenanalyse (Cost Analysis) nachgeschaut, was dein Tag gekostet hat.
+- [ ] Lernjournal: Einträge zu allen Aufträgen von heute, Erkenntnisse in `tag-3/README.md`.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Nenne drei Ressourcen, die beim Erstellen einer VM zusätzlich entstehen.»
 
 ## Das brauchst du
