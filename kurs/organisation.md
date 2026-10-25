@@ -55,10 +55,27 @@ Mit Azure for Students hast du keine Rechte in Microsoft Entra ID. Themen wie **
 `<kuerzel>` = deine Initialen. Jede Ressourcengruppe bekommt die Tags `kurs=azure-basics`, `tag=<n>`, `owner=<kuerzel>`.
 
 ## Lernjournal
-Halte pro Auftrag fest:
+Du führst dein Lernjournal in Markdown in einem **privaten Repository** `lernjournal-azure` auf GitHub oder GitLab. Die Kursleitung (`pat-teacher`) ist Mitglied und kann es lesen. Wie du es anlegst, steht in [Auftrag 1.0](../auftraege/tag-1/1.0-lernjournal.md).
+
+**Aufbau**
+```text
+lernjournal-azure/
+├── README.md                    Startseite
+├── tag-1/
+│   ├── README.md                Notizen und Erkenntnisse des Tages, Exit-Ticket
+│   ├── 1.1-hypervisor-und-dein-laptop/
+│   │   └── README.md            dein Eintrag zum Auftrag
+│   └── …
+└── tag-2/ …
+```
+Ordnername = Dateiname des Auftrags ohne `.md`.
+
+**Pro Auftrag** hältst du fest:
 - was du gemacht hast (Befehle, wichtige Einstellungen)
 - einen Screenshot als Nachweis (ohne persönliche Daten wie E-Mail oder Abo-ID)
 - was nicht geklappt hat und wie du es gelöst hast
+
+**Pro Kurstag** schreibst du in die `README.md` des Tages, was du heute gelernt hast und was noch unklar ist.
 
 ## Exit-Ticket
 Am Ende jedes Kurstages beantwortest du **eine kurze Frage** zum Tag – dein «Ticket zum Ausgang». Die Frage steht in der Tagesplanung unter «Bevor du gehst».
@@ -66,7 +83,7 @@ Am Ende jedes Kurstages beantwortest du **eine kurze Frage** zum Tag – dein «
 **So geht's**
 - Du hast etwa 5 Minuten Zeit.
 - Antworte in 1–3 Sätzen, in deinen eigenen Worten. Nicht nachschlagen – es geht darum, was du im Kopf hast.
-- Gib die Antwort im Formular ab, das die Kursleitung im Kurskanal teilt. <!-- prüfen: Forms-Link pro Tag bereitstellen --> Schreib sie zusätzlich als letzten Eintrag des Tages in dein Lernjournal.
+- Gib die Antwort im Formular ab, das die Kursleitung im Kurskanal teilt. <!-- prüfen: Forms-Link pro Tag bereitstellen --> Schreib sie zusätzlich in die `README.md` des Tages in deinem Lernjournal.
 - Es gibt keine Note und keine falschen Antworten.
 
 **Wozu ist das gut?**

@@ -17,19 +17,21 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 |------|-------|-------|--------|--------|
 | L1, Beginn | Kurseinführung: Vorstellungsrunde, Ziel des Kurses, Kursziele, Aufbau, Zusammenarbeit, Spielregeln | 20' | Kurseinführung (ganz) | Tag 1 |
 | L1, nach der Kurseinführung | Einstieg Tag 1: Vorwissen, Ziele und Ablauf des Tages | 5' | Tag 1, «Start» und «Heute» | Input 1 |
-| L1, nach dem Einstieg | Was ist Virtualisierung? Hardware, Hypervisor, VM, Typ 1/2 | 15' | Input 1, Folien 1–7 | Lernjournal anlegen, Auftrag 1.1 |
-| L2, nach Auftrag 1.1 | Live-Demo Multipass: `launch`, `list`, `shell`, `delete` | 10' | Input 1, «Multipass: eine VM mit einem Befehl» | Aufträge 1.2, 1.3 |
+| L1, nach dem Einstieg | Was ist Virtualisierung? Hardware, Hypervisor, VM, Typ 1/2 | 15' | Input 1, Folien 1–7 | Auftrag 1.0, 1.1 |
+| L3, nach Auftrag 1.1 | Live-Demo Multipass: `launch`, `list`, `shell`, `delete` | 10' | Input 1, «Multipass: eine VM mit einem Befehl» | Aufträge 1.2, 1.3 |
 | L5, nach Auftrag 1.4 | Automatisch statt von Hand: cloud-init. Einstieg: 2–3 gemessene Zeiten aus 1.4 abfragen und auf 10 Server hochrechnen | 15' | Input 1, «cloud-init» | Auftrag 1.5 |
 | L7, nach Abschluss von 1.5 | SSH-Schlüssel: Schloss und Schlüssel | 5' | Input 1, «SSH-Schlüssel» | Auftrag 1.6, ⭐ 1.7 |
 | L8, Schluss | Ausblick (kein Input): «Was passiert, wenn man tausende Hypervisoren zusammenschaltet?» Frage stehen lassen, Antwort an Tag 2 | 3' | Tag 1, «Nächstes Mal: ab in die Cloud» | Aufräumen, Exit-Ticket |
 
 **Vorbereitung**
+- Konto `pat-teacher` auf GitHub und GitLab bereithalten. Nach Auftrag 1.0 die Einladungen annehmen (Details in [Lösung 1.0](tag-1/1.0-lernjournal.md)).
+- Mit dem Auftraggeber klären, ob die Lernenden ein Konto bei GitHub oder GitLab anlegen dürfen (externer Anbieter, evtl. Minderjährige). <!-- prüfen -->
 - Mit dem Auftraggeber klären: Windows **Pro/Education/Enterprise** und **Adminrechte** für Multipass (oder vorinstallieren lassen). <!-- prüfen -->
 - Vorher auf einem Kurs-Laptop Auftrag 1.2 durchspielen (Netzwerk, Proxy, Firewall).
 - Reihenfolge der Folien in L1: Kurseinführung → Tag 1 (Start, Heute) → Input 1. Die Vorstellungsrunde knapp halten (30 Sekunden pro Person), sonst reicht L1 nicht.
-- Vor der Demo in L2 selbst schon eine VM erstellt haben, damit nicht auf den Download gewartet wird.
+- Vor der Demo in L3 selbst schon eine VM erstellt haben, damit nicht auf den Download gewartet wird.
 - Erster `launch` lädt ca. 600 MB pro Laptop – evtl. reihenweise starten lassen.
-- L8 ist der Zeitpuffer für Auftrag 1.2 (Installation, Download) und 1.5. Wer 1.6 nicht schafft, holt es dort nach – der Schlüssel muss bis Tag 3 vorhanden sein. Der Input «Vom Hypervisor zum Hyperscaler» kommt erst an Tag 2, L1.
+- L8 ist der Zeitpuffer für Auftrag 1.2 (Installation, Download) und 1.5. Mit Auftrag 1.0 ist L2–L4 knapp (ca. 20 Min. zu viel): Wer bei 1.2 nicht fertig wird, beendet 1.3 in L8. Wer 1.6 nicht schafft, holt es dort nach – der Schlüssel muss bis Tag 3 vorhanden sein. Der Input «Vom Hypervisor zum Hyperscaler» kommt erst an Tag 2, L1.
 - Laptops mit «Virtualisierung: Deaktiviert» oder Windows Home in Auftrag 1.1 sofort sammeln.
 
 ## Tag 2: Public Cloud und Azure Grundlagen

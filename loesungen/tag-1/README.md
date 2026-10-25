@@ -7,6 +7,7 @@
 
 | Nr. | Lösung |
 |-----|--------|
+| 1.0 | [Dein Lernjournal auf GitHub oder GitLab](1.0-lernjournal.md) |
 | 1.1 | [Hypervisor und dein Laptop](1.1-hypervisor-und-dein-laptop.md) |
 | 1.2 | [Multipass und deine erste VM](1.2-multipass-und-erste-vm.md) |
 | 1.3 | [Wie viel CPU und RAM bekommt eine VM?](1.3-ressourcen-einer-vm.md) |

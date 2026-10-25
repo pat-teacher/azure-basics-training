@@ -38,6 +38,7 @@ Microsoft-Learn-Module gezielt einbinden (vertraglich vorgesehen), ergänzt durc
 - **Inputs nur zu wichtigen Themen:** 2–3 pro Tag, höchstens 20 Minuten, immer mit Live-Demo. In der Tagesplanung erscheinen sie nur als Zeile «**Input:** Thema»; Zeitpunkt, Dauer und Folien stehen in `loesungen/kursleitung.md`.
 - **Azure for Students ist bereits aktiv.** Zusätzlich setzt die Kursleitung Labs im Azure Education Hub ein.
 - **Entra ID nur über Challenge Labs:** Themen mit Microsoft Entra ID (RBAC, Conditional Access, Benutzer, Gruppen) nie im Student-Abo üben, sondern über die Challenge Labs von Microsoft Learn for Educators (Learn on Demand / Skillable, Trainingsschlüssel der Kursleitung). Vorbild: TBZ-Auftrag «Role based access control». Da Identity nicht im Vertragsumfang ist: nur als ⭐-Zusatz.
+- **Lernjournal:** in Markdown in einem privaten Repository `lernjournal-azure` (GitHub oder GitLab), Kursleitung `pat-teacher` als Mitglied. Struktur `tag-<n>/README.md` (Notizen, Erkenntnisse, Exit-Ticket) und pro Auftrag `tag-<n>/<auftrag-dateiname-ohne-md>/README.md`. Angelegt in Auftrag 1.0.
 - **Lösungen getrennt:** Lösungen liegen nie im selben Ordner wie die Aufträge, sondern unter `loesungen/`.
 - **Branding:** Der Kurs ist von PAT Cloud Solutions und soll das zeigen (siehe unten).
 

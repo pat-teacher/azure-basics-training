@@ -22,8 +22,9 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 | L1 | **Kurseinführung:** Ziel und Aufbau des Kurses | dich vorstellen, zuhören, Fragen stellen |
 | L1 | Einstieg Tag 1: Was weisst du schon? | erzählen, was du über VMs schon weisst |
 | L1 | **Input:** Was ist Virtualisierung? | zuhören, Fragen stellen |
-| L2 | [Auftrag 1.1](../auftraege/tag-1/1.1-hypervisor-und-dein-laptop.md) | Lernjournal anlegen; mit Partner: Laptop prüfen, Hypervisoren zuordnen |
-| L2 | **Demo:** Multipass | zuschauen |
+| L2 | [Auftrag 1.0](../auftraege/tag-1/1.0-lernjournal.md) | allein: Repository für dein Lernjournal anlegen |
+| L2–L3 | [Auftrag 1.1](../auftraege/tag-1/1.1-hypervisor-und-dein-laptop.md) | mit Partner: Laptop prüfen, Hypervisoren zuordnen |
+| L3 | **Demo:** Multipass | zuschauen |
 | L3–L4 | [Auftrag 1.2](../auftraege/tag-1/1.2-multipass-und-erste-vm.md) und [1.3](../auftraege/tag-1/1.3-ressourcen-einer-vm.md) | allein: Multipass installieren, erste VMs erstellen |
 | L5 | [Auftrag 1.4](../auftraege/tag-1/1.4-server-von-hand.md) | allein: Server von Hand einrichten, Zeit messen |
 | L5 | **Input:** Automatisch statt von Hand – cloud-init | zuhören |
@@ -37,6 +38,7 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 
 | ✓ | Nr. | Auftrag | Zeit | Form |
 |---|-----|---------|------|------|
+| ☐ | 1.0 | [Dein Lernjournal auf GitHub oder GitLab](../auftraege/tag-1/1.0-lernjournal.md) | 25 Min. | allein |
 | ☐ | 1.1 | [Hypervisor und dein Laptop](../auftraege/tag-1/1.1-hypervisor-und-dein-laptop.md) | 30 Min. | Partner |
 | ☐ | 1.2 | [Multipass und deine erste VM](../auftraege/tag-1/1.2-multipass-und-erste-vm.md) | 60 Min. | allein |
 | ☐ | 1.3 | [Wie viel CPU und RAM bekommt eine VM?](../auftraege/tag-1/1.3-ressourcen-einer-vm.md) | 30 Min. | allein |
@@ -46,6 +48,8 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 | ☐ | ⭐ 1.7 | [Container mit Docker](../auftraege/tag-1/1.7-container-mit-docker.md) | 30 Min. | allein, freiwillig |
 
 ## Ins Lernjournal gehört heute
+In dein Repository `lernjournal-azure`, Ordner `tag-1`, pro Auftrag ein Unterordner (siehe [Auftrag 1.0](../auftraege/tag-1/1.0-lernjournal.md)):
+- dein erster Eintrag mit Screenshot der Mitgliederliste (1.0)
 - deine Laptop-Werte und die Zuordnung Typ 1 / Typ 2 (1.1)
 - Screenshot von `multipass list` (1.2)
 - die Tabelle mit CPU, RAM und Festplatte (1.3)
@@ -56,9 +60,11 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 ## Bevor du gehst
 - [ ] Alle VMs gelöscht: `multipass delete --purge --all`, dann zeigt `multipass list` `No instances found.`
 - [ ] SSH-Schlüssel **nicht** gelöscht – du brauchst ihn an Tag 3. Bis dahin vergeht etwas Zeit: Lass den Ordner `.ssh` auf deinem Laptop unverändert.
+- [ ] Erkenntnisse des Tages in `tag-1/README.md` eingetragen.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?»
 
 ## Das brauchst du
+- Zugang zu deinem E-Mail-Postfach (für das Konto bei GitHub oder GitLab)
 - Laptop mit Windows Pro oder Education, Virtualisierung aktiviert
 - Recht, Programme zu installieren (für Multipass)
 - Internet (Multipass lädt Ubuntu selbst herunter)

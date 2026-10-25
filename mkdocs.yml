@@ -87,6 +87,7 @@ nav:
       - auftraege/README.md
       - Tag 1:
           - auftraege/tag-1/README.md
+          - 1.0 Dein Lernjournal: auftraege/tag-1/1.0-lernjournal.md
           - 1.1 Hypervisor und dein Laptop: auftraege/tag-1/1.1-hypervisor-und-dein-laptop.md
           - 1.2 Multipass und deine erste VM: auftraege/tag-1/1.2-multipass-und-erste-vm.md
           - 1.3 CPU und RAM einer VM: auftraege/tag-1/1.3-ressourcen-einer-vm.md

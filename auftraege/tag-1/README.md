@@ -6,6 +6,7 @@ Tagesplanung: [Tag 1](../../kurs/tag-1.md)
 
 | Nr. | Auftrag | Zeit | Form |
 |-----|---------|------|------|
+| 1.0 | [Dein Lernjournal auf GitHub oder GitLab](1.0-lernjournal.md) | 25 Min. | Einzel |
 | 1.1 | [Hypervisor und dein Laptop](1.1-hypervisor-und-dein-laptop.md) | 30 Min. | Partner |
 | 1.2 | [Multipass und deine erste VM](1.2-multipass-und-erste-vm.md) | 60 Min. | Einzel |
 | 1.3 | [Wie viel CPU und RAM bekommt eine VM?](1.3-ressourcen-einer-vm.md) | 30 Min. | Einzel |

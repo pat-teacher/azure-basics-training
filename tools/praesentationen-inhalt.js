@@ -52,12 +52,13 @@ const EINFUEHRUNG = [
       ] },
       { title: "Zusammenarbeit", slides: [
         { type: "cards", title: "So arbeiten wir", cols: 2, items: [
-          { icon: "FaPencilAlt", h: "Lernjournal", t: "Pro Auftrag: Befehle, Screenshot als Nachweis (ohne persönliche Daten), was nicht geklappt hat." },
+          { icon: "FaPencilAlt", h: "Lernjournal", t: "In Markdown in deinem privaten Repository auf GitHub oder GitLab. Pro Tag ein Ordner, pro Auftrag ein Unterordner." },
           { icon: "FaUsers", h: "Partnerarbeit", t: "Driver tippt, Navigator liest und kontrolliert. Nach jedem Auftrag wechseln." },
           { icon: "FaClock", h: "Hilfe holen", t: "10 Minuten selbst probieren, dann Partner fragen, dann Kursleitung." },
           { icon: "FaDoorOpen", h: "Exit-Ticket", t: "Am Ende jedes Tages eine kurze Frage, 1–3 Sätze. Keine Note." },
-        ], notes: "Lernjournal-Format zeigen (Markdown, OneNote oder Word – nach Absprache)." },
-        { type: "cards", title: "Deine Werkzeuge", cols: 3, items: [
+        ], notes: "Ein Beispiel-Lernjournal kurz im Browser zeigen. Angelegt wird es gleich in Auftrag 1.0. Benutzername der Kursleitung: pat-teacher." },
+        { type: "cards", title: "Deine Werkzeuge", cols: 2, items: [
+          { icon: "FaBook", h: "GitHub oder GitLab", t: "Ab Tag 1: dein Lernjournal in Markdown, im Browser bearbeitet." },
           { icon: "FaLaptop", h: "Multipass", t: "Tag 1: VMs auf deinem Laptop – Ubuntu lädt es selbst herunter." },
           { icon: "FaTerminal", h: "Portal, Cloud Shell, Azure CLI", t: "Ab Tag 2: Azure im Browser und mit Befehlen steuern." },
           { icon: "FaCode", h: "Bicep und cloud-init", t: "Tag 5: Infrastruktur und Einrichtung in Dateien beschreiben." },
@@ -100,14 +101,15 @@ const TAGE = [
         ], notes: "⭐-Ziel für Schnelle: Unterschied VM und Container beschreiben (Auftrag 1.7)." },
         { type: "table", title: "Ablauf", head: ["Lektion", "Phase", "Inhalt"], colW: [1.2, 2.2, 7.6], rows: [
           ["L1", "Kurseinführung, Input 1", "Ziel und Aufbau des Kurses · Was weisst du schon? · Was ist Virtualisierung?"],
-          ["L2", "Hands-on, Demo", "Lernjournal anlegen · Auftrag 1.1: Hypervisor und dein Laptop · Live-Demo Multipass"],
-          ["L3–L4", "Hands-on", "Auftrag 1.2: Multipass und deine erste VM · 1.3: CPU und RAM"],
+          ["L2", "Hands-on", "Auftrag 1.0: Dein Lernjournal · Auftrag 1.1: Hypervisor und dein Laptop"],
+          ["L3–L4", "Demo, Hands-on", "Live-Demo Multipass · Auftrag 1.2: Multipass und deine erste VM · 1.3: CPU und RAM"],
           ["L5", "Hands-on, Input", "Auftrag 1.4: Server von Hand · Automatisch statt von Hand: cloud-init"],
           ["L6", "Hands-on", "Auftrag 1.5: Deine erste automatische VM"],
           ["L7", "Kurz-Input, Hands-on", "SSH-Schlüssel · Auftrag 1.6 · ⭐ 1.7: Container mit Docker"],
           ["L8", "Puffer, Abschluss", "Offene Aufträge fertig machen · Aufräumen · Exit-Ticket · Ausblick Tag 2"],
         ], notes: "Zeiten an den Stundenplan anpassen." },
         { type: "table", title: "Deine Aufträge", head: ["Nr.", "Auftrag", "Zeit", "Form"], colW: [1.2, 6.5, 1.4, 2.3], rows: [
+          ["1.0", "Dein Lernjournal auf GitHub oder GitLab", "25 Min.", "Einzel"],
           ["1.1", "Hypervisor und dein Laptop", "30 Min.", "Partner"],
           ["1.2", "Multipass und deine erste VM", "60 Min.", "Einzel"],
           ["1.3", "Wie viel CPU und RAM bekommt eine VM?", "30 Min.", "Einzel"],
