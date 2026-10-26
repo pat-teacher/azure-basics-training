@@ -97,7 +97,7 @@ const TAGE = [
           { icon: "FaServer", h: "VMs mit Multipass (K3)", t: "Du erstellst, startest, stoppst und löschst VMs." },
           { icon: "FaMemory", h: "Ressourcen (K3)", t: "Du gibst einer VM CPU, RAM und Festplatte und prüfst es." },
           { icon: "FaRocket", h: "cloud-init (K3)", t: "Du richtest eine VM von Hand und automatisch mit einer Datei ein." },
-          { icon: "FaKey", h: "SSH-Schlüssel (K3)", t: "Du erstellst ein Schlüsselpaar für die Cloud." },
+          { icon: "FaKey", h: "SSH-Schlüssel (K3)", t: "Du erstellst ein Schlüsselpaar und meldest dich damit an vm1 an." },
         ], notes: "⭐-Ziel für Schnelle: Unterschied VM und Container beschreiben (Auftrag 1.7)." },
         { type: "table", title: "Ablauf", head: ["Lektion", "Phase", "Inhalt"], colW: [1.2, 2.2, 7.6], rows: [
           ["L1", "Kurseinführung, Input 1", "Ziel und Aufbau des Kurses · Was weisst du schon? · Was ist Virtualisierung?"],
@@ -115,7 +115,7 @@ const TAGE = [
           ["1.3", "Wie viel CPU und RAM bekommt eine VM?", "30 Min.", "Einzel"],
           ["1.4", "Einen Server von Hand einrichten", "25 Min.", "Einzel"],
           ["1.5", "Deine erste automatische VM mit cloud-init", "45 Min.", "Einzel"],
-          ["1.6", "SSH-Schlüssel für die Cloud vorbereiten", "20 Min.", "Einzel"],
+          ["1.6", "SSH-Schlüssel für die Cloud vorbereiten", "25 Min.", "Einzel"],
           ["⭐ 1.7", "Container mit Docker", "30 Min.", "Einzel"],
         ], note: "Aufträge: auftraege/tag-1/ · Lösungen erst nach dem eigenen Versuch: loesungen/tag-1/",
           notes: "Ablage auf der Website zeigen. Hinweis: Lösungen sind zum Vergleichen da." },
@@ -410,7 +410,10 @@ const INPUTS = [
         { type: "compare", title: "SSH-Schlüssel: Schloss und Schlüssel",
           left: { icon: "FaLock", h: "Öffentlicher Schlüssel", points: ["id_ed25519.pub", "das Schloss – kommt auf den Server", "darf jeder sehen"] },
           right: { icon: "FaKey", h: "Privater Schlüssel", points: ["id_ed25519", "der einzige Schlüssel zum Schloss", "bleibt auf deinem Laptop – nie weitergeben"] },
-          notes: "Kurz vor Auftrag 1.6. Live: ssh-keygen -t ed25519." },
+          note: "Warum kein Passwort? Bots probieren im Internet ständig Passwörter durch. Einen Schlüssel kann man nicht erraten.",
+          notes: "Kurz vor Auftrag 1.6. Beide Dateien entstehen zusammen mit ssh-keygen und passen nur zueinander. Aus dem Schloss lässt sich der Schlüssel nicht nachbauen. Live: ssh-keygen -t ed25519." },
+        { type: "diagram", title: "So läuft die Anmeldung ab", img: "ssh-schluessel-folie.png",
+          notes: "1 Einmal: öffentlichen Schlüssel in authorized_keys kopieren (Auftrag 1.6, Schritt 3a). 2 ssh ubuntu@<IP>. 3 Server schickt eine Prüfaufgabe mit Zufallszahl. 4 Laptop löst sie mit dem privaten Schlüssel, Server prüft mit dem öffentlichen. Betonen: Der private Schlüssel geht nie über das Netz. Die Frage «Are you sure…» beim ersten Verbinden: Der Server zeigt seinen eigenen Host-Schlüssel, mit yes landet er in known_hosts." },
         { type: "quiz", qs: [
           { h: "Hypervisor", q: "Typ 1 oder Typ 2: VirtualBox, Hyper-V?" },
           { h: "cloud-init", q: "Wann arbeitet cloud-init die Datei ab?" },
@@ -419,7 +422,7 @@ const INPUTS = [
         quellen([
           { icon: "FaBook", h: "Theorie", t: "theorie/01-virtualisierung.md" },
           { icon: "FaGraduationCap", h: "Microsoft und Canonical", t: "Was ist Virtualisierung? · Multipass-Dokumentation" },
-          { icon: "FaBook", h: "TBZ M346", t: "Virtualisierung, Multipass, KN01 (übernommen und vereinfacht)" },
+          { icon: "FaBook", h: "TBZ M346", t: "Virtualisierung, Multipass, SSH, KN01 (übernommen und vereinfacht)" },
         ]),
         ende("Jetzt du", "Auftrag 1.1–1.6 · ⭐ 1.7"),
       ] },
@@ -573,6 +576,8 @@ const INPUTS = [
           ["Beendet (Zuordnung aufgehoben)", "nichts – Hardware frei", "nur Disk + IP"],
           ["Gelöscht", "–", "nichts"],
         ], note: "Herunterfahren aus der VM spart kein Geld. Am einfachsten: Ressourcengruppe löschen." },
+        { type: "diagram", title: "Wiederholung: Anmelden mit SSH-Schlüssel", img: "ssh-schluessel-folie.png",
+          notes: "Bekannt von Tag 1 (vm1). In Azure gleich: Der öffentliche Schlüssel kommt beim Erstellen der VM in authorized_keys, der private bleibt auf dem Laptop. Frage an die Klasse: Welche Datei fügst du im Portal ein?" },
         { type: "steps", title: "Anmelden mit deinem SSH-Schlüssel", steps: [
           { h: "Anzeigen", t: "In PowerShell: Get-Content ~\\.ssh\\id_ed25519.pub" },
           { h: "Mitgeben", t: "Im Portal als vorhandenen öffentlichen Schlüssel einfügen" },

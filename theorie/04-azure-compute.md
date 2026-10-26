@@ -2,7 +2,7 @@
 
 # 4 Azure Compute: virtuelle Maschinen
 
-Stand: 25.10.2026 · gehört zu [Tag 3](../kurs/tag-3.md)
+Stand: 26.10.2026 · gehört zu [Tag 3](../kurs/tag-3.md)
 
 ## Lernziele
 - Du kannst die Bestandteile einer Azure-VM nennen und ihre Aufgabe erklären. (K2)
@@ -60,7 +60,9 @@ Die **B-Serie** ist «burstable»: Die VM sammelt Guthaben, wenn sie wenig zu tu
 > **Merke:** Herunterfahren aus der VM heraus spart **kein** Geld. Stoppe die VM im Portal oder mit `az vm deallocate`. Am einfachsten: Ressourcengruppe löschen.
 
 ## Anmelden mit SSH-Schlüssel
-Linux-VMs in Azure meldest du mit einem **SSH-Schlüsselpaar** an, nicht mit Passwort.
+Linux-VMs in Azure meldest du mit deinem **SSH-Schlüsselpaar** (Key Pair) aus Auftrag 1.6 an, nicht mit Passwort. Es funktioniert genau gleich wie bei vm1 an Tag 1. Die ausführliche Erklärung steht in [Kapitel 1](01-virtualisierung.md).
+
+![Anmeldung mit SSH-Schlüssel in vier Schritten](img/ssh-schluessel.svg)
 
 | Schlüssel | Liegt | Schutzbedarf |
 |-----------|-------|--------------|

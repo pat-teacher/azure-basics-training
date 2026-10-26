@@ -2,13 +2,14 @@
 
 # 1 Virtualisierung
 
-Stand: 19.10.2026 · gehört zu [Tag 1](../kurs/tag-1.md) · Lesezeit ca. 15 Min.
+Stand: 26.10.2026 · gehört zu [Tag 1](../kurs/tag-1.md) · Lesezeit ca. 20 Min.
 
 ## Lernziele
 - Du kannst erklären, was ein Hypervisor macht. (K2)
 - Du kannst Hypervisoren dem Typ 1 oder Typ 2 zuordnen. (K2)
 - Du kannst erklären, warum sich VMs die Hardware teilen können. (K2)
 - Du kannst sagen, wozu Multipass und cloud-init dienen. (K1)
+- Du kannst erklären, wie die Anmeldung mit einem SSH-Schlüsselpaar abläuft und welcher Schlüssel geheim bleibt. (K2)
 - Du kannst den Unterschied zwischen VM und Container beschreiben. (K2)
 
 ## Was ist Virtualisierung?
@@ -92,6 +93,41 @@ Multipass mit Hyper-V verwendet NAT. Dein Laptop erreicht die VM, andere Geräte
 
 In Azure regelst du später mit einer **Netzwerksicherheitsgruppe (NSG)**, wer deine VM erreichen darf (Tag 4).
 
+## Anmelden mit SSH-Schlüssel
+Vor einem Server in der Cloud sitzt du nie. Du steuerst ihn über das Netz mit **SSH** (Secure Shell). SSH ist eine verschlüsselte Verbindung zur Kommandozeile des Servers.
+
+**Warum kein Passwort?** Server im Internet werden ständig von Programmen angegriffen, die Passwörter durchprobieren. Ein Passwort kann man erraten, abschauen oder an mehreren Orten wiederverwenden. Darum meldest du dich mit einem **Schlüsselpaar** (Key Pair) an.
+
+### Zwei Dateien, die zusammengehören
+Der Befehl `ssh-keygen` erstellt zwei Dateien, die mathematisch zusammenpassen:
+
+| Datei | Vergleich | Liegt wo? | Darf es jemand sehen? |
+|-------|-----------|-----------|-----------------------|
+| **öffentlicher Schlüssel** (Public Key) `id_ed25519.pub` | Schloss | auf jedem Server, an dem du dich anmelden willst, in `~/.ssh/authorized_keys` | ja, jeder |
+| **privater Schlüssel** (Private Key) `id_ed25519` | Schlüssel | nur auf deinem Laptop in `~\.ssh\` | nein, niemand |
+
+Das Schloss kannst du an beliebig viele Türen (Server) montieren. Öffnen kann sie nur, wer den passenden Schlüssel hat. Aus dem Schloss lässt sich der Schlüssel nicht nachbauen.
+
+### So läuft die Anmeldung ab
+
+![Anmeldung mit SSH-Schlüssel in vier Schritten](img/ssh-schluessel.svg)
+
+1. **Einmal vorbereiten:** Du kopierst den öffentlichen Schlüssel auf den Server. Er steht dort in der Datei `authorized_keys`, der Liste der erlaubten Schlösser.
+2. **Verbinden:** Du gibst `ssh ubuntu@<IP>` ein. Dein Laptop meldet: «Ich bin ubuntu und habe den Schlüssel zu diesem Schloss.»
+3. **Prüfaufgabe:** Der Server findet das Schloss in `authorized_keys`. Er schickt eine Aufgabe mit einer Zufallszahl.
+4. **Lösen:** Dein Laptop löst die Aufgabe mit dem privaten Schlüssel und schickt die Lösung zurück. Der Server prüft sie mit dem öffentlichen Schlüssel. Passt sie, bist du angemeldet – ohne Passwort.
+
+Der private Schlüssel selbst geht nie über das Netz. Die Prüfaufgabe ist jedes Mal neu. Wer eine Lösung mitliest, kann sie beim nächsten Mal nicht mehr brauchen.
+
+### Die Frage beim ersten Verbinden
+Beim ersten Verbinden fragt SSH: `Are you sure you want to continue connecting (yes/no/[fingerprint])?`
+
+Auch der Server hat ein eigenes Schlüsselpaar, den **Host-Schlüssel** (Host Key). SSH zeigt dir davon eine kurze Prüfsumme, den Fingerabdruck (Fingerprint). Mit `yes` merkt sich dein Laptop den Server in der Datei `known_hosts`. Meldet sich unter derselben IP später ein anderer Server, warnt SSH mit `REMOTE HOST IDENTIFICATION HAS CHANGED`. Im Kurs passiert das, wenn eine neue VM eine alte IP bekommt. Dann löschst du den alten Eintrag mit `ssh-keygen -R <IP>`.
+
+> **Merke:** Den öffentlichen Schlüssel darfst du überall hinterlegen. Den privaten Schlüssel gibst du nie weiter: nicht per Chat, nicht per Mail, nicht in Git.
+
+⭐ **Passphrase:** In Auftrag 1.6 drückst du bei der Frage nach einer Passphrase nur `Enter`. Eine Passphrase ist ein Passwort für den privaten Schlüssel. Wird der Schlüssel gestohlen, nützt er ohne Passphrase nichts. In der Praxis ist sie empfohlen.
+
 ## Container: die leichte Alternative
 
 ![Container und VM im Vergleich](img/vm-vs-container.svg)
@@ -129,13 +165,25 @@ Ja. Die VMs teilen sich die echten Prozessoren abwechselnd (Überbuchung). Arbei
 Nur beim ersten Start der VM.
 </details>
 
-<details><summary>5. Ein Kollege sagt: «Docker ist auch ein Hypervisor.» Stimmt das?</summary>
+<details><summary>5. Welche Datei kopierst du auf den Server: `id_ed25519` oder `id_ed25519.pub`?</summary>
+
+`id_ed25519.pub`, den öffentlichen Schlüssel. Er kommt auf dem Server in `~/.ssh/authorized_keys`. `id_ed25519` ist der private Schlüssel und bleibt auf deinem Laptop.
+</details>
+
+<details><summary>6. Warum darf jeder deinen öffentlichen Schlüssel sehen?</summary>
+
+Mit dem öffentlichen Schlüssel kann man nur prüfen, nicht anmelden. Die Prüfaufgabe lösen kann nur, wer den privaten Schlüssel hat.
+</details>
+
+<details><summary>7. Ein Kollege sagt: «Docker ist auch ein Hypervisor.» Stimmt das?</summary>
 
 Nein. Docker startet Container. Container teilen sich den Kernel und haben kein eigenes Betriebssystem. Ein Hypervisor betreibt ganze VMs.
 </details>
 
 ## Quellen
 - TBZ M346: [Virtualisierung & Hypervisor](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Virtualisierung.md), [Cloud-init](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/CloudInit.md), [Multipass](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Tools/Multipass.md) (übernommen und vereinfacht)
+- TBZ M346: [SSH mit Public/Private Keys](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/SSH.md) (übernommen und vereinfacht)
+- Microsoft Learn: [Schlüsselbasierte Authentifizierung in OpenSSH für Windows](https://learn.microsoft.com/de-de/windows-server/administration/openssh/openssh_keymanagement)
 - TBZ M347: [Docker einfach erklärt](https://gitlab.com/ch-tbz-it/Stud/m347/-/blob/main/Container/docker/Readme.md)
 - Microsoft: [Was ist Virtualisierung?](https://azure.microsoft.com/de-de/resources/cloud-computing-dictionary/what-is-virtualization)
 - Microsoft Learn: [Hypervisor-Sicherheit in der Azure-Flotte](https://learn.microsoft.com/de-de/azure/security/fundamentals/hypervisor)

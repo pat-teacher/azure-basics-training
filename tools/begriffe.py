@@ -44,6 +44,8 @@ GLOSSAR = [
     (r"Schlüsselpaar(?:e)?", "Key Pair"),
     (r"[Öö]ffentliche[nr]? Schlüssel", "Public Key"),
     (r"[Pp]rivate[nr]? Schlüssel", "Private Key"),
+    (r"Host-Schlüssel", "Host Key"),
+    (r"Fingerabdruck", "Fingerprint"),
     (r"Adressraum", "Address Space"),
     (r"Standardregeln", "Default Rules"),
     (r"Diensttags?", "Service Tag"),
