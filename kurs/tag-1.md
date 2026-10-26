@@ -12,7 +12,7 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 - mit Multipass eine VM erstellen, starten, stoppen und löschen. (K3)
 - einer VM CPU, RAM und Festplatte zuweisen und es prüfen. (K3)
 - eine VM von Hand und automatisch mit einer cloud-init-Datei einrichten. (K3)
-- ein SSH-Schlüsselpaar erstellen. (K3)
+- ein SSH-Schlüsselpaar erstellen und dich damit an einer VM anmelden. (K3)
 - ⭐ den Unterschied zwischen VM und Container beschreiben. (K2)
 
 ## So läuft der Tag
@@ -30,7 +30,7 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 | L5 | **Input:** Automatisch statt von Hand – cloud-init | zuhören |
 | L6 | [Auftrag 1.5](../auftraege/tag-1/1.5-erste-automatische-vm.md) | allein: VM mit cloud-init erstellen, prüfen und vergleichen |
 | L7 | **Kurz-Input:** SSH-Schlüssel | zuhören |
-| L7 | [Auftrag 1.6](../auftraege/tag-1/1.6-ssh-schluessel.md), ⭐ [1.7](../auftraege/tag-1/1.7-container-mit-docker.md) | allein: Schlüsselpaar (Key Pair) erstellen; Schnelle: Docker |
+| L7 | [Auftrag 1.6](../auftraege/tag-1/1.6-ssh-schluessel.md), ⭐ [1.7](../auftraege/tag-1/1.7-container-mit-docker.md) | allein: Schlüsselpaar (Key Pair) erstellen und Anmeldung an vm1 testen; Schnelle: Docker |
 | L8 | Zeit zum Fertigmachen | offene Aufträge abschliessen (vor allem 1.6) |
 | L8 | Abschluss und Ausblick auf Tag 2 | aufräumen, Exit-Ticket ausfüllen |
 
@@ -44,7 +44,7 @@ Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschine
 | ☐ | 1.3 | [Wie viel CPU und RAM bekommt eine VM?](../auftraege/tag-1/1.3-ressourcen-einer-vm.md) | 30 Min. | allein |
 | ☐ | 1.4 | [Einen Server von Hand einrichten](../auftraege/tag-1/1.4-server-von-hand.md) | 25 Min. | allein |
 | ☐ | 1.5 | [Deine erste automatische VM mit cloud-init](../auftraege/tag-1/1.5-erste-automatische-vm.md) | 45 Min. | allein |
-| ☐ | 1.6 | [SSH-Schlüssel für die Cloud vorbereiten](../auftraege/tag-1/1.6-ssh-schluessel.md) | 20 Min. | allein |
+| ☐ | 1.6 | [SSH-Schlüssel für die Cloud vorbereiten](../auftraege/tag-1/1.6-ssh-schluessel.md) | 25 Min. | allein |
 | ☐ | ⭐ 1.7 | [Container mit Docker](../auftraege/tag-1/1.7-container-mit-docker.md) | 30 Min. | allein, freiwillig |
 
 ## Bevor du gehst
