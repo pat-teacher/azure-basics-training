@@ -52,9 +52,9 @@ class Svg:
 
 
 # 1 VM-Netzwerkmodi --------------------------------------------------------
-s = Svg(1000, 470, "VM-Netzwerk: NAT und Netzwerkbrücke")
+s = Svg(1000, 470, "VM-Netzwerk: NAT und Network Bridge")
 for ox, mode, vmip, vmsub, dev, partner_ok in ((0, "NAT (Standard)", "172.27.0.5", "privates Netz des Hypervisors", "NAT", False),
-                                               (490, "Netzwerkbrücke", "192.168.1.57", "eigene IP im WLAN", "Netzwerkbrücke", True)):
+                                               (490, "Network Bridge", "192.168.1.57", "eigene IP im WLAN", "Network Bridge", True)):
     s.text(40 + ox, 62, mode, 16, BLUE, "bold", "start")
     s.label(340 + ox, 76, 120, 40, ["Internet"], LIGHT2, BLUE)
     s.box(30 + ox, 130, 440, 300, BG, GREY, dash=True)
@@ -74,29 +74,29 @@ for ox, mode, vmip, vmsub, dev, partner_ok in ((0, "NAT (Standard)", "172.27.0.5
         s.text(395 + ox, 330, "erreicht VM nicht ✗", 12, NO, "bold")
         s.text(200 + ox, 276, "nur dein Laptop erreicht die VM", 11, GREY)
 s.text(20, 455, "* sofern das WLAN keine Client-Isolation hat", 11, GREY, "normal", "start")
-s.save("vm-netzwerkmodi.svg", "Vergleich NAT und Netzwerkbrücke bei einer lokalen VM")
+s.save("vm-netzwerkmodi.svg", "Vergleich NAT und Network Bridge bei einer lokalen VM")
 
 # 2 Azure-Hierarchie --------------------------------------------------------
-s = Svg(920, 500, "Aufbau von Azure: vom Mandanten bis zur Ressource")
+s = Svg(920, 500, "Aufbau von Azure: vom Tenant bis zur Ressource")
 rows = [
-    ("Microsoft Entra ID", "Mandant (Tenant)", "Identitäten: Benutzer, Gruppen, Anmeldung", DARK, WHITE, False),
-    ("Verwaltungsgruppen", "Management Groups", "fassen mehrere Abonnements zusammen (optional)", LIGHT2, DARK, False),
-    ("Abonnement", "Subscription", "Abrechnung, Kosten- und Quotengrenze · bei dir: Azure for Students", LIGHT, DARK, True),
-    ("Ressourcengruppe", "Resource Group", "«Ordner» für alles, was zusammengehört · z. B. rg-tag3-mm", LIGHT, DARK, True),
+    ("Microsoft Entra ID", "Tenant", "Identitäten: Benutzer, Gruppen, Anmeldung", DARK, WHITE, False),
+    ("Management Groups", None, "fassen mehrere Subscriptions zusammen (optional)", LIGHT2, DARK, False),
+    ("Subscription", None, "Abrechnung, Kosten- und Quotengrenze · bei dir: Azure for Students", LIGHT, DARK, True),
+    ("Resource Group", None, "«Ordner» für alles, was zusammengehört · z. B. rg-tag3-mm", LIGHT, DARK, True),
 ]
 for i, (t, en, desc, fill, col, hl) in enumerate(rows):
     y = 55 + i * 85
-    s.label(30, y, 330, 58, [t, en], fill, BLUE if hl else DARK, col, sw=3 if hl else 1.5)
+    s.label(30, y, 330, 58, [t, en] if en else [t], fill, BLUE if hl else DARK, col, sw=3 if hl else 1.5)
     s.text(385, y + 34, desc, 13, DARK, "normal", "start")
     s.arrow(195, y + 58, 195, y + 85)
 for j, r in enumerate(["vm-web-mm", "sttag3mm", "vnet-tag4-mm"]):
     s.label(30 + j * 115, 395, 105, 44, [r], WHITE, BLUE, size=12)
-s.text(385, 422, "Ressourcen: VM, Speicherkonto, VNet … – jede gehört zu genau einer Ressourcengruppe", 13, DARK, "normal", "start")
-s.text(30, 475, "Blau umrandet: damit arbeitest du im Kurs. Löschst du eine Ressourcengruppe, löschst du alles darin.", 13, BLUE, "bold", "start")
-s.save("azure-hierarchie.svg", "Hierarchie in Azure: Mandant, Verwaltungsgruppen, Abonnement, Ressourcengruppe, Ressourcen")
+s.text(385, 422, "Resources: VM, Storage Account, VNet … – jede gehört zu genau einer Resource Group", 13, DARK, "normal", "start")
+s.text(30, 475, "Blau umrandet: damit arbeitest du im Kurs. Löschst du eine Resource Group, löschst du alles darin.", 13, BLUE, "bold", "start")
+s.save("azure-hierarchie.svg", "Hierarchie in Azure: Tenant, Management Groups, Subscription, Resource Group, Resources")
 
 # 3 Regionen und Zonen -------------------------------------------------------
-s = Svg(1000, 440, "Regionen, Verfügbarkeitszonen und Regionspaare")
+s = Svg(1000, 440, "Regions, Availability Zones und Region Pairs")
 s.box(20, 48, 960, 340, BG, GREY, dash=True)
 s.text(35, 70, "Geografie Schweiz – die Daten bleiben im Land", 13, GREY, "bold", "start")
 s.box(40, 85, 600, 285, LIGHT, BLUE, 2)
@@ -104,7 +104,7 @@ s.text(340, 108, "Region Switzerland North (Zürich)", 15, DARK, "bold")
 for i in range(3):
     x = 58 + i * 195
     s.box(x, 122, 180, 232, WHITE, DARK)
-    s.text(x + 90, 145, f"Verfügbarkeitszone {i+1}", 13, DARK, "bold")
+    s.text(x + 90, 145, f"Availability Zone {i+1}", 13, DARK, "bold")
     s.text(x + 90, 163, "eigener Strom, Kühlung, Netz", 11, GREY)
     s.label(x + 20, 180, 140, 70, ["Rechenzentrum"], LIGHT2, GREY, size=12)
     s.label(x + 20, 265, 140, 70, ["Rechenzentrum"], LIGHT2, GREY, size=12)
@@ -113,21 +113,22 @@ s.text(830, 108, "Region Switzerland West", 15, DARK, "bold")
 s.text(830, 126, "(Genf)", 13, DARK)
 s.label(735, 190, 190, 80, ["Rechenzentren", "eingeschränkter Zugang"], LIGHT2, GREY, size=12)
 s.arrow(642, 228, 698, 228, BLUE, both=True)
-s.text(670, 218, "Paar", 12, BLUE, "bold")
-s.text(500, 412, "Zonen schützen vor dem Ausfall eines Rechenzentrums. Regionspaare schützen vor dem Ausfall einer ganzen Region.", 13, DARK)
-s.save("azure-regionen.svg", "Region Switzerland North mit drei Verfügbarkeitszonen und Regionspaar Switzerland West")
+s.text(670, 212, "Region", 12, BLUE, "bold")
+s.text(670, 250, "Pair", 12, BLUE, "bold")
+s.text(500, 412, "Availability Zones schützen vor dem Ausfall eines Rechenzentrums. Region Pairs schützen vor dem Ausfall einer ganzen Region.", 13, DARK)
+s.save("azure-regionen.svg", "Region Switzerland North mit drei Availability Zones und Region Pair Switzerland West")
 
 # 4 Bestandteile einer VM ----------------------------------------------------
 s = Svg(1000, 460, "Woraus besteht eine Azure-VM?")
 s.box(20, 48, 960, 380, BG, GREY, dash=True)
-s.text(35, 70, "Ressourcengruppe rg-tag3-mm", 13, GREY, "bold", "start")
-s.label(380, 85, 240, 90, ["Virtuelle Maschine (VM)", "vm-web-mm · Standard_B1s", "CPU + RAM (Compute)"], DARK, DARK, WHITE)
-s.label(50, 225, 220, 70, ["OS-Datenträger (OS Disk)", "verwaltet, z. B. 30 GB"], LIGHT, DARK)
-s.label(50, 325, 220, 60, ["Datenträger", "optional, für Daten"], WHITE, GREY, dash=True)
-s.label(390, 230, 220, 70, ["Netzwerkschnittstelle (NIC)", "private IP 10.0.0.4"], LIGHT, DARK)
-s.label(380, 345, 240, 62, ["Virtuelles Netzwerk + Subnetz", "10.0.0.0/16 · 10.0.0.0/24"], LIGHT, DARK)
-s.label(740, 100, 210, 70, ["Öffentliche IP (Public IP)", "z. B. 20.203.x.x"], LIGHT, DARK)
-s.label(740, 230, 210, 70, ["NSG", "Netzwerksicherheitsgruppe", "z. B. Port 22 erlaubt"], WHITE, BLUE, sw=2, size=14)
+s.text(35, 70, "Resource Group rg-tag3-mm", 13, GREY, "bold", "start")
+s.label(380, 85, 240, 90, ["Virtual Machine (VM)", "vm-web-mm · Standard_B1s", "CPU + RAM (Compute)"], DARK, DARK, WHITE)
+s.label(50, 225, 220, 70, ["OS Disk", "Managed Disk, z. B. 30 GB"], LIGHT, DARK)
+s.label(50, 325, 220, 60, ["Data Disk", "optional, für Daten"], WHITE, GREY, dash=True)
+s.label(390, 230, 220, 70, ["Network Interface (NIC)", "private IP 10.0.0.4"], LIGHT, DARK)
+s.label(380, 345, 240, 62, ["Virtual Network + Subnet", "10.0.0.0/16 · 10.0.0.0/24"], LIGHT, DARK)
+s.label(740, 100, 210, 70, ["Public IP", "z. B. 20.203.x.x"], LIGHT, DARK)
+s.label(740, 230, 210, 70, ["NSG", "Network Security Group", "z. B. Port 22 erlaubt"], WHITE, BLUE, sw=2, size=14)
 s.arrow(420, 175, 270, 240)
 s.arrow(500, 175, 500, 230)
 s.arrow(500, 300, 500, 345)
@@ -135,18 +136,18 @@ s.arrow(380, 160, 272, 345, GREY, dash=True)
 s.arrow(610, 250, 740, 140)
 s.arrow(740, 265, 612, 265, BLUE)
 s.text(676, 285, "schützt", 12, BLUE, "bold")
-s.text(960, 448, "Kostet laufend: VM (solange zugeordnet), Datenträger, öffentliche IP", 12, GREY, "normal", "end")
-s.save("azure-vm-bestandteile.svg", "Bestandteile einer Azure-VM: Compute, Datenträger, NIC, VNet, öffentliche IP und NSG")
+s.text(960, 448, "Kostet laufend: VM (solange zugeordnet), Disks, Public IP", 12, GREY, "normal", "end")
+s.save("azure-vm-bestandteile.svg", "Bestandteile einer Azure-VM: Compute, Disks, NIC, VNet, Public IP und NSG")
 
 # 5 Storage Account ----------------------------------------------------------
-s = Svg(1000, 430, "Aufbau eines Speicherkontos (Storage Account)")
+s = Svg(1000, 430, "Aufbau eines Storage Accounts")
 s.box(20, 48, 960, 360, LIGHT, BLUE, 2)
-s.text(40, 76, "Speicherkonto sttag3mm", 16, DARK, "bold", "start")
-s.text(40, 98, "global eindeutiger Name (3–24 Zeichen, klein) · Redundanz (LRS, ZRS, GRS …) · Zugriffsebene (Hot, Cool, Cold, Archive)", 12, DARK, "normal", "start")
-cols = [("Blob-Speicher", "blob", "Objekte: Bilder, Backups, Websites"),
+s.text(40, 76, "Storage Account sttag3mm", 16, DARK, "bold", "start")
+s.text(40, 98, "global eindeutiger Name (3–24 Zeichen, klein) · Redundanz (LRS, ZRS, GRS …) · Access Tier (Hot, Cool, Cold, Archive)", 12, DARK, "normal", "start")
+cols = [("Blob Storage", "blob", "Objekte: Bilder, Backups, Websites"),
         ("Azure Files", "file", "Netzlaufwerk (SMB/NFS)"),
-        ("Warteschlangen (Queue)", "queue", "Nachrichten zwischen Apps"),
-        ("Tabellen (Table)", "table", "einfache NoSQL-Tabellen")]
+        ("Queue Storage", "queue", "Nachrichten zwischen Apps"),
+        ("Table Storage", "table", "einfache NoSQL-Tabellen")]
 for i, (t, ep, d) in enumerate(cols):
     x = 40 + i * 235
     hl = i == 0
@@ -161,22 +162,22 @@ for i, (t, ep, d) in enumerate(cols):
         s.label(x + 15, 310, 185, 36, ["Container: $web"], LIGHT, DARK, size=13)
         s.label(x + 30, 352, 155, 28, ["index.html"], WHITE, GREY, size=12)
     elif i == 1:
-        s.label(x + 15, 190, 185, 36, ["Freigabe: daten"], LIGHT2, GREY, size=13)
+        s.label(x + 15, 190, 185, 36, ["File Share: daten"], LIGHT2, GREY, size=13)
         s.label(x + 30, 236, 155, 28, ["Ordner / Datei"], WHITE, GREY, size=12)
     elif i == 2:
-        s.label(x + 15, 190, 185, 36, ["Warteschlange"], LIGHT2, GREY, size=13)
+        s.label(x + 15, 190, 185, 36, ["Queue"], LIGHT2, GREY, size=13)
         for k in range(3):
             s.label(x + 30 + k * 55, 240, 45, 26, ["msg"], WHITE, GREY, size=11)
     else:
-        s.label(x + 15, 190, 185, 36, ["Tabelle"], LIGHT2, GREY, size=13)
+        s.label(x + 15, 190, 185, 36, ["Table"], LIGHT2, GREY, size=13)
         for r in range(3):
             for c in range(3):
                 s.box(x + 30 + c * 52, 236 + r * 24, 50, 22, WHITE, GREY, 1, 2)
 s.text(147, 402, "★ im Kurs", 12, BLUE, "bold")
-s.save("azure-storage-aufbau.svg", "Speicherkonto mit Blob-Speicher, Azure Files, Warteschlangen und Tabellen")
+s.save("azure-storage-aufbau.svg", "Storage Account mit Blob Storage, Azure Files, Queue Storage und Table Storage")
 
 # 6 Redundanz ----------------------------------------------------------------
-s = Svg(1000, 380, "Redundanz im Speicherkonto: LRS, ZRS, GRS")
+s = Svg(1000, 380, "Redundanz im Storage Account: LRS, ZRS, GRS")
 def copies(x, y, n=3):
     for k in range(n):
         s.label(x, y + k * 34, 70, 28, ["Kopie"], BLUE, BLUE, WHITE, size=12)
@@ -204,18 +205,18 @@ s.text(500, 360, "Je mehr Schutz, desto teurer. Für Übungen reicht LRS.", 12, 
 s.save("azure-redundanz.svg", "Vergleich der Redundanzoptionen LRS, ZRS und GRS")
 
 # 7 VNet mit NSG -------------------------------------------------------------
-s = Svg(1000, 560, "VNet, Subnetze und NSG")
+s = Svg(1000, 560, "VNet, Subnets und NSG")
 s.label(400, 45, 200, 42, ["Internet"], LIGHT2, BLUE)
 s.box(20, 110, 960, 410, BG, GREY, dash=True)
-s.text(35, 132, "VNet vnet-tag4-mm · Adressraum 10.10.0.0/16", 13, DARK, "bold", "start")
+s.text(35, 132, "VNet vnet-tag4-mm · Address Space 10.10.0.0/16", 13, DARK, "bold", "start")
 for ox, sn, nsg, rules, vm, ip in (
-        (0, "Subnetz snet-web · 10.10.1.0/24", "NSG nsg-web (eingehend)",
+        (0, "Subnet snet-web · 10.10.1.0/24", "NSG nsg-web (eingehend)",
          [("100", "Allow", "TCP 80 von Internet", OK), ("110", "Allow", "TCP 22 von <Schul-IP>", OK),
           ("65000", "Allow", "VirtualNetwork (Standard)", GREY), ("65500", "Deny", "alles andere (Standard)", NO)],
-         "vm-web-mm", "10.10.1.4 · öffentliche IP"),
-        (480, "Subnetz snet-intern · 10.10.2.0/24", "NSG nsg-intern (eingehend)",
+         "vm-web-mm", "10.10.1.4 · Public IP"),
+        (480, "Subnet snet-intern · 10.10.2.0/24", "NSG nsg-intern (eingehend)",
          [("65000", "Allow", "VirtualNetwork (Standard)", GREY), ("65500", "Deny", "alles andere (Standard)", NO)],
-         "vm-db-mm", "10.10.2.4 · keine öffentliche IP")):
+         "vm-db-mm", "10.10.2.4 · keine Public IP")):
     s.box(40 + ox, 145, 440, 355, LIGHT, DARK)
     s.text(55 + ox, 167, sn, 13, DARK, "bold", "start")
     s.box(60 + ox, 180, 400, 150, WHITE, BLUE, 2)
@@ -233,11 +234,11 @@ s.text(700, 98, "aus dem Internet ✗", 12, NO, "bold", "start")
 s.arrow(372, 430, 628, 430, OK, dash=True)
 s.text(500, 420, "innerhalb VNet ✓", 12, OK, "bold")
 s.text(500, 545, "Regeln werden nach Priorität geprüft: kleine Zahl zuerst. Die erste passende Regel entscheidet.", 13, DARK)
-s.save("azure-vnet-nsg.svg", "VNet mit zwei Subnetzen, NSG-Regeln und erlaubten sowie blockierten Verbindungen")
+s.save("azure-vnet-nsg.svg", "VNet mit zwei Subnets, NSG-Regeln und erlaubten sowie blockierten Verbindungen")
 
 # 8 Weg einer Anfrage --------------------------------------------------------
 s = Svg(1000, 280, "Der Weg einer Anfrage zu deiner VM – und wo sie scheitern kann")
-steps = [("Internet", "Browser, ssh"), ("Öffentliche IP", "richtige IP?"), ("NSG am Subnetz", "Regel für Port + Quelle?"),
+steps = [("Internet", "Browser, ssh"), ("Public IP", "richtige IP?"), ("NSG am Subnet", "Regel für Port + Quelle?"),
          ("NSG an der NIC", "falls vorhanden: auch hier?"), ("Firewall im OS", "ufw – meist aus"), ("Dienst", "läuft nginx / sshd?")]
 for i, (t, q) in enumerate(steps):
     x = 20 + i * 163
@@ -247,7 +248,7 @@ for i, (t, q) in enumerate(steps):
     if i < len(steps) - 1:
         s.arrow(x + 138, 110, x + 163, 110)
 s.text(500, 225, "Fehlersuche: Prüfe die Stationen der Reihe nach von links nach rechts.", 13, DARK, "bold")
-s.text(500, 248, "Eine NSG muss den Verkehr in beiden Ebenen (Subnetz und NIC) erlauben, sonst wird er blockiert.", 12, GREY)
+s.text(500, 248, "Eine NSG muss den Verkehr in beiden Ebenen (Subnet und NIC) erlauben, sonst wird er blockiert.", 12, GREY)
 s.save("anfrage-weg.svg", "Stationen einer Anfrage von Internet bis zum Dienst auf der VM")
 
 # 9 IaC-Ablauf ---------------------------------------------------------------
@@ -263,23 +264,23 @@ s.arrow(280, 91, 360, 170)
 s.arrow(280, 191, 360, 200)
 s.arrow(280, 291, 360, 235, BLUE)
 s.box(650, 50, 330, 250, BG, GREY, dash=True)
-s.text(665, 72, "Ressourcengruppe", 13, GREY, "bold", "start")
+s.text(665, 72, "Resource Group", 13, GREY, "bold", "start")
 s.label(670, 90, 135, 46, ["VNet"], LIGHT, DARK, size=13)
 s.label(825, 90, 135, 46, ["NSG"], LIGHT, DARK, size=13)
 s.label(670, 175, 290, 56, ["VM vm-web-mm"], DARK, DARK, WHITE)
 s.arrow(580, 200, 648, 200)
 s.label(650, 340, 330, 80, ["cloud-init", "beim ersten Start der VM:", "Pakete, Dateien, Befehle"], LIGHT, BLUE, sw=2)
 s.arrow(815, 231, 815, 338, BLUE, dash=True)
-s.text(825, 290, "benutzerdefinierte Daten", 11, BLUE, "normal", "start")
+s.text(825, 290, "Custom Data", 11, BLUE, "normal", "start")
 s.text(500, 455, "Bicep baut das Haus – cloud-init richtet es beim Einzug ein.", 14, DARK, "bold")
 s.save("iac-ablauf.svg", "Portal, CLI und Bicep laufen über den Azure Resource Manager; cloud-init richtet die VM beim ersten Start ein")
 
 print("ok")
 
 # 10 Servicemodelle ----------------------------------------------------------
-s = Svg(1000, 470, "Servicemodelle: Wer verwaltet was?")
+s = Svg(1000, 470, "Service Models: Wer verwaltet was?")
 layers = ["Daten und Zugriffe", "Anwendung", "Laufzeit, Middleware", "Betriebssystem", "Virtualisierung", "Server", "Speicher", "Netzwerk"]
-models = [("Eigenes Rechenzentrum", 8), ("IaaS", 4), ("PaaS", 2), ("SaaS", 1)]  # Anzahl Schichten, die du verwaltest (von oben)
+models = [("On Premises", 8), ("IaaS", 4), ("PaaS", 2), ("SaaS", 1)]  # Anzahl Schichten, die du verwaltest (von oben)
 for i, (m, mine) in enumerate(models):
     x = 40 + i * 235
     s.text(x + 105, 70, m, 16, DARK, "bold")
@@ -295,8 +296,8 @@ s.text(960, 440, "weniger Aufwand", 12, GREY, "normal", "end")
 s.save("servicemodelle.svg", "Verantwortung bei On Premises, IaaS, PaaS und SaaS")
 
 # 11 VM vs Container ---------------------------------------------------------
-s = Svg(1000, 400, "Virtuelle Maschinen und Container im Vergleich")
-for ox, title in ((20, "Virtuelle Maschinen"), (520, "Container")):
+s = Svg(1000, 400, "Virtual Machines und Container im Vergleich")
+for ox, title in ((20, "Virtual Machines"), (520, "Container")):
     s.text(ox + 230, 62, title, 16, BLUE, "bold")
     s.label(ox, 330, 460, 40, ["Hardware"], LIGHT2, GREY, size=13)
 s.label(20, 285, 460, 40, ["Hypervisor"], DARK, DARK, WHITE, size=13)
@@ -327,8 +328,8 @@ def nr(x, y, n):
 s.box(30, 50, 300, 400, LIGHT, DARK)
 s.text(180, 76, "Dein Laptop", 15, DARK, "bold")
 s.text(180, 95, "C:\\Users\\<du>\\.ssh\\", 12, GREY)
-s.label(55, 110, 250, 64, ["id_ed25519.pub", "öffentlicher Schlüssel = Schloss"], WHITE, BLUE, sw=2)
-s.label(55, 300, 250, 78, ["id_ed25519", "privater Schlüssel = Schlüssel", "bleibt hier – nie weitergeben"], DARK, DARK, WHITE)
+s.label(55, 110, 250, 64, ["id_ed25519.pub", "Public Key = Schloss"], WHITE, BLUE, sw=2)
+s.label(55, 300, 250, 78, ["id_ed25519", "Private Key = Schlüssel", "bleibt hier – nie weitergeben"], DARK, DARK, WHITE)
 s.text(180, 420, "beide erstellt mit ssh-keygen", 12, GREY)
 s.box(670, 50, 300, 400, LIGHT, DARK)
 s.text(820, 76, "Server", 15, DARK, "bold")
@@ -342,7 +343,7 @@ nr(350, 200, 2); s.text(368, 205, "ssh ubuntu@<IP>: «Ich habe den Schlüssel da
 s.arrow(670, 265, 332, 265)
 nr(350, 250, 3); s.text(368, 255, "Server stellt eine Prüfaufgabe (Zufallszahl)", 12, DARK, "normal", "start")
 s.arrow(305, 330, 693, 330, OK)
-nr(350, 315, 4); s.text(368, 320, "Laptop löst sie mit dem privaten Schlüssel", 12, OK, "bold", "start")
-s.text(500, 485, "Der private Schlüssel verlässt deinen Laptop nie. Über das Netz geht nur die Lösung der Prüfaufgabe.", 14, DARK, "bold")
-s.text(500, 512, "Wer nur das Schloss (den öffentlichen Schlüssel) kennt, kann die Aufgabe nicht lösen. Darum darf es jeder sehen.", 12, GREY)
-s.save("ssh-schluessel.svg", "SSH-Anmeldung: öffentlicher Schlüssel liegt auf dem Server, der Laptop löst die Prüfaufgabe mit dem privaten Schlüssel")
+nr(350, 315, 4); s.text(368, 320, "Laptop löst sie mit dem Private Key", 12, OK, "bold", "start")
+s.text(500, 485, "Der Private Key verlässt deinen Laptop nie. Über das Netz geht nur die Lösung der Prüfaufgabe.", 14, DARK, "bold")
+s.text(500, 512, "Wer nur das Schloss (den Public Key) kennt, kann die Aufgabe nicht lösen. Darum darf es jeder sehen.", 12, GREY)
+s.save("ssh-schluessel.svg", "SSH-Anmeldung: Public Key liegt auf dem Server, der Laptop löst die Prüfaufgabe mit dem Private Key")

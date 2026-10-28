@@ -20,7 +20,7 @@ Eine Azure-VM ist nicht eine einzelne Ressource, sondern ein Verbund. Wenn du im
 | **Virtuelle Maschine** (Virtual Machine) | CPU und RAM (Compute) | `--cpus`, `--memory` |
 | **OS-Datenträger** (OS Disk) | Disk mit dem Betriebssystem (Managed Disk) | `--disk` |
 | **Netzwerkschnittstelle (NIC)** | verbindet die VM mit einem Subnetz (Subnet), private IP | IP-Adresse in `multipass list` |
-| **VNet + Subnetz** | privates Netz in Azure | kleines privates Netz von Hyper-V |
+| **VNet + Subnetz** (Subnet) | privates Netz in Azure | kleines privates Netz von Hyper-V |
 | **Öffentliche IP** (Public IP) | macht die VM aus dem Internet erreichbar | gab es nicht – die VM war nur von deinem Laptop aus erreichbar |
 | **NSG** | Firewall-Regeln: was darf hinein, was hinaus | gab es nicht |
 
@@ -46,18 +46,18 @@ Standard_B2ats_v2
 
 Die **B-Serie** ist «burstable»: Die VM sammelt Guthaben, wenn sie wenig zu tun hat, und darf damit kurz mehr Leistung brauchen. Ideal für Übungen.
 
-**Image:** Die Vorlage für den OS-Datenträger, z. B. Ubuntu Server 24.04 LTS oder Windows Server 2025. Im Kurs arbeitest du mit **Ubuntu**.
+**Image:** Die Vorlage für den OS-Datenträger (OS Disk), z. B. Ubuntu Server 24.04 LTS oder Windows Server 2025. Im Kurs arbeitest du mit **Ubuntu**.
 
 ## Status und Kosten
 
 | Status | Was läuft? | Was kostet? |
 |--------|-----------|-------------|
-| **Wird ausgeführt** (Running) | alles | Compute + Disk + öffentliche IP |
+| **Wird ausgeführt** (Running) | alles | Compute + Disk + öffentliche IP (Public IP) |
 | **Beendet** (Stopped), z. B. nach `sudo poweroff` | nichts, aber die Hardware bleibt reserviert | **weiterhin Compute** + Disk + IP |
-| **Beendet (Zuordnung aufgehoben)** (Stopped (deallocated)), über «Beenden» im Portal | nichts, Hardware freigegeben | nur Disk + öffentliche IP |
+| **Beendet (Zuordnung aufgehoben)** (Stopped (deallocated)), über «Beenden» im Portal | nichts, Hardware freigegeben | nur Disk + öffentliche IP (Public IP) |
 | **Gelöscht** | – | nichts, sofern auch Disk und IP gelöscht sind |
 
-> **Merke:** Herunterfahren aus der VM heraus spart **kein** Geld. Stoppe die VM im Portal oder mit `az vm deallocate`. Am einfachsten: Ressourcengruppe löschen.
+> **Merke:** Herunterfahren aus der VM heraus spart **kein** Geld. Stoppe die VM im Portal oder mit `az vm deallocate`. Am einfachsten: Ressourcengruppe (Resource Group) löschen.
 
 ## Anmelden mit SSH-Schlüssel
 Linux-VMs in Azure meldest du mit deinem **SSH-Schlüsselpaar** (Key Pair) aus Auftrag 1.6 an, nicht mit Passwort. Es funktioniert genau gleich wie bei vm1 an Tag 1. Die ausführliche Erklärung steht in [Kapitel 1](01-virtualisierung.md).
@@ -76,11 +76,11 @@ Beim Erstellen der VM gibst du den **öffentlichen** Schlüssel von deinem Lapto
    ```powershell
    Get-Content $env:USERPROFILE\.ssh\id_ed25519.pub
    ```
-2. Im **Portal** fügst du ihn bei «SSH-Schlüsseltyp» als vorhandenen öffentlichen Schlüssel ein. In der **Cloud Shell** übergibst du ihn als Text:
+2. Im **Portal** fügst du ihn bei «SSH-Schlüsseltyp» als vorhandenen öffentlichen Schlüssel (Public Key) ein. In der **Cloud Shell** übergibst du ihn als Text:
    ```bash
    az vm create ... --admin-username azureuser --ssh-key-values "ssh-ed25519 AAAA... dein-kommentar"
    ```
-3. Danach verbindest du dich **von deinem Laptop** aus, denn dort liegt der private Schlüssel:
+3. Danach verbindest du dich **von deinem Laptop** aus, denn dort liegt der private Schlüssel (Private Key):
    ```powershell
    ssh azureuser@<öffentliche-ip>
    ```
@@ -97,7 +97,7 @@ Alternative: `--generate-ssh-keys` erzeugt ein neues RSA-Schlüsselpaar dort, wo
 
 <details><summary>1. Du erstellst eine VM im Portal. Welche Ressourcen findest du danach in der Ressourcengruppe?</summary>
 
-VM, OS-Datenträger, Netzwerkschnittstelle, VNet, öffentliche IP, NSG (je nach Einstellungen).
+VM, OS-Datenträger (OS Disk), Netzwerkschnittstelle (Network Interface), VNet, öffentliche IP (Public IP), NSG (je nach Einstellungen).
 </details>
 
 <details><summary>2. Du fährst die VM mit `sudo poweroff` herunter. Kostet sie noch etwas?</summary>
@@ -112,7 +112,7 @@ Zwei vCPUs.
 
 <details><summary>4. Ein Kollege will Zugriff auf deine VM. Welchen Schlüssel brauchst du von ihm?</summary>
 
-Seinen öffentlichen Schlüssel. Du trägst ihn in `~/.ssh/authorized_keys` ein. Seinen privaten Schlüssel gibt er nie weiter.
+Seinen öffentlichen Schlüssel (Public Key). Du trägst ihn in `~/.ssh/authorized_keys` ein. Seinen privaten Schlüssel (Private Key) gibt er nie weiter.
 </details>
 
 ## Quellen

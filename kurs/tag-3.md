@@ -18,11 +18,11 @@ Heute erstellst du deine erste VM in Azure und meldest dich mit deinem SSH-Schl�
 | Lektion | Was passiert | Was du tust |
 |---------|--------------|-------------|
 | L1 | Rückblick Tag 2 | Quiz mit deinem Partner |
-| L1 | **Input:** Virtuelle Maschinen (Virtual Machine) in Azure | zuhören, mitschauen |
+| L1 | **Input:** Virtuelle Maschinen (Virtual Machines) in Azure | zuhören, mitschauen |
 | L2–L3 | Aufträge 3.1 und 3.2 | allein: VM im Portal erstellen, per SSH anmelden; mit Partner: Bestandteile untersuchen |
 | L4 | Auftrag 3.3 | allein: VM mit der Azure CLI, Webserver installieren |
 | L5 | **Input:** Azure Storage | zuhören, mitschauen |
-| L5–L6 | Auftrag 3.4 | allein: Speicherkonto, Dateien hochladen |
+| L5–L6 | Auftrag 3.4 | allein: Speicherkonto (Storage Account), Dateien hochladen |
 | L7 | Auftrag 3.5, ⭐ 3.6 | allein: statische Website (Static Website); Schnelle: Datei per Link teilen |
 | L8 | Abschluss | aufräumen, Kosten anschauen, Exit-Ticket |
 
@@ -33,12 +33,12 @@ Heute erstellst du deine erste VM in Azure und meldest dich mit deinem SSH-Schl�
 | ☐ | 3.1 | Linux-VM im Portal erstellen und per SSH verbinden *(folgt)* | allein |
 | ☐ | 3.2 | Was gehört alles zur VM? *(folgt)* | Partner |
 | ☐ | 3.3 | Dieselbe VM mit der Azure CLI, Webserver installieren *(folgt)* | allein |
-| ☐ | 3.4 | Speicherkonto und Blob-Container, Dateien hochladen *(folgt)* | allein |
-| ☐ | 3.5 | Statische Website im Speicherkonto *(folgt)* | allein |
+| ☐ | 3.4 | Speicherkonto (Storage Account) und Blob-Container, Dateien hochladen *(folgt)* | allein |
+| ☐ | 3.5 | Statische Website (Static Website) im Speicherkonto (Storage Account) *(folgt)* | allein |
 | ☐ | ⭐ 3.6 | Datei per SAS-Token zeitlich begrenzt teilen *(folgt)* | allein, freiwillig |
 
 ## Bevor du gehst
-- [ ] Alle Ressourcengruppen (Resource Group) von heute gelöscht – eine laufende VM kostet Guthaben.
+- [ ] Alle Ressourcengruppen (Resource Groups) von heute gelöscht – eine laufende VM kostet Guthaben.
 - [ ] In der Kostenanalyse (Cost Analysis) nachgeschaut, was dein Tag gekostet hat.
 - [ ] Lernjournal: Einträge zu allen Aufträgen von heute, Erkenntnisse in `tag-3/README.md`.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Nenne drei Ressourcen, die beim Erstellen einer VM zusätzlich entstehen.»

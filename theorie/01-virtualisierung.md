@@ -112,21 +112,21 @@ Das Schloss kannst du an beliebig viele Türen (Server) montieren. Öffnen kann 
 
 ![Anmeldung mit SSH-Schlüssel in vier Schritten](img/ssh-schluessel.svg)
 
-1. **Einmal vorbereiten:** Du kopierst den öffentlichen Schlüssel auf den Server. Er steht dort in der Datei `authorized_keys`, der Liste der erlaubten Schlösser.
+1. **Einmal vorbereiten:** Du kopierst den öffentlichen Schlüssel (Public Key) auf den Server. Er steht dort in der Datei `authorized_keys`, der Liste der erlaubten Schlösser.
 2. **Verbinden:** Du gibst `ssh ubuntu@<IP>` ein. Dein Laptop meldet: «Ich bin ubuntu und habe den Schlüssel zu diesem Schloss.»
 3. **Prüfaufgabe:** Der Server findet das Schloss in `authorized_keys`. Er schickt eine Aufgabe mit einer Zufallszahl.
-4. **Lösen:** Dein Laptop löst die Aufgabe mit dem privaten Schlüssel und schickt die Lösung zurück. Der Server prüft sie mit dem öffentlichen Schlüssel. Passt sie, bist du angemeldet – ohne Passwort.
+4. **Lösen:** Dein Laptop löst die Aufgabe mit dem privaten Schlüssel (Private Key) und schickt die Lösung zurück. Der Server prüft sie mit dem öffentlichen Schlüssel (Public Key). Passt sie, bist du angemeldet – ohne Passwort.
 
-Der private Schlüssel selbst geht nie über das Netz. Die Prüfaufgabe ist jedes Mal neu. Wer eine Lösung mitliest, kann sie beim nächsten Mal nicht mehr brauchen.
+Der private Schlüssel (Private Key) selbst geht nie über das Netz. Die Prüfaufgabe ist jedes Mal neu. Wer eine Lösung mitliest, kann sie beim nächsten Mal nicht mehr brauchen.
 
 ### Die Frage beim ersten Verbinden
 Beim ersten Verbinden fragt SSH: `Are you sure you want to continue connecting (yes/no/[fingerprint])?`
 
-Auch der Server hat ein eigenes Schlüsselpaar, den **Host-Schlüssel** (Host Key). SSH zeigt dir davon eine kurze Prüfsumme, den Fingerabdruck (Fingerprint). Mit `yes` merkt sich dein Laptop den Server in der Datei `known_hosts`. Meldet sich unter derselben IP später ein anderer Server, warnt SSH mit `REMOTE HOST IDENTIFICATION HAS CHANGED`. Im Kurs passiert das, wenn eine neue VM eine alte IP bekommt. Dann löschst du den alten Eintrag mit `ssh-keygen -R <IP>`.
+Auch der Server hat ein eigenes Schlüsselpaar (Key Pair), den **Host-Schlüssel** (Host Key). SSH zeigt dir davon eine kurze Prüfsumme, den Fingerabdruck (Fingerprint). Mit `yes` merkt sich dein Laptop den Server in der Datei `known_hosts`. Meldet sich unter derselben IP später ein anderer Server, warnt SSH mit `REMOTE HOST IDENTIFICATION HAS CHANGED`. Im Kurs passiert das, wenn eine neue VM eine alte IP bekommt. Dann löschst du den alten Eintrag mit `ssh-keygen -R <IP>`.
 
-> **Merke:** Den öffentlichen Schlüssel darfst du überall hinterlegen. Den privaten Schlüssel gibst du nie weiter: nicht per Chat, nicht per Mail, nicht in Git.
+> **Merke:** Den öffentlichen Schlüssel (Public Key) darfst du überall hinterlegen. Den privaten Schlüssel (Private Key) gibst du nie weiter: nicht per Chat, nicht per Mail, nicht in Git.
 
-⭐ **Passphrase:** In Auftrag 1.6 drückst du bei der Frage nach einer Passphrase nur `Enter`. Eine Passphrase ist ein Passwort für den privaten Schlüssel. Wird der Schlüssel gestohlen, nützt er ohne Passphrase nichts. In der Praxis ist sie empfohlen.
+⭐ **Passphrase:** In Auftrag 1.6 drückst du bei der Frage nach einer Passphrase nur `Enter`. Eine Passphrase ist ein Passwort für den privaten Schlüssel (Private Key). Wird der Schlüssel gestohlen, nützt er ohne Passphrase nichts. In der Praxis ist sie empfohlen.
 
 ## Container: die leichte Alternative
 
@@ -147,7 +147,7 @@ Was passiert, wenn man tausende Server mit Hypervisoren zusammenschaltet und üb
 
 <details><summary>1. Was macht ein Hypervisor?</summary>
 
-Er teilt die echte Hardware (CPU, RAM, Festplatte, Netzwerk) auf mehrere virtuelle Maschinen auf.
+Er teilt die echte Hardware (CPU, RAM, Festplatte, Netzwerk) auf mehrere virtuelle Maschinen (Virtual Machines) auf.
 </details>
 
 <details><summary>2. Typ 1 oder Typ 2: VirtualBox, Hyper-V?</summary>
@@ -167,12 +167,12 @@ Nur beim ersten Start der VM.
 
 <details><summary>5. Welche Datei kopierst du auf den Server: `id_ed25519` oder `id_ed25519.pub`?</summary>
 
-`id_ed25519.pub`, den öffentlichen Schlüssel. Er kommt auf dem Server in `~/.ssh/authorized_keys`. `id_ed25519` ist der private Schlüssel und bleibt auf deinem Laptop.
+`id_ed25519.pub`, den öffentlichen Schlüssel (Public Key). Er kommt auf dem Server in `~/.ssh/authorized_keys`. `id_ed25519` ist der private Schlüssel (Private Key) und bleibt auf deinem Laptop.
 </details>
 
 <details><summary>6. Warum darf jeder deinen öffentlichen Schlüssel sehen?</summary>
 
-Mit dem öffentlichen Schlüssel kann man nur prüfen, nicht anmelden. Die Prüfaufgabe lösen kann nur, wer den privaten Schlüssel hat.
+Mit dem öffentlichen Schlüssel (Public Key) kann man nur prüfen, nicht anmelden. Die Prüfaufgabe lösen kann nur, wer den privaten Schlüssel (Private Key) hat.
 </details>
 
 <details><summary>7. Ein Kollege sagt: «Docker ist auch ein Hypervisor.» Stimmt das?</summary>

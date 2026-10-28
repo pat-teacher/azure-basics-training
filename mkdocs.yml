@@ -95,6 +95,15 @@ nav:
           - 1.5 Erste automatische VM: auftraege/tag-1/1.5-erste-automatische-vm.md
           - 1.6 SSH-Schlüssel: auftraege/tag-1/1.6-ssh-schluessel.md
           - 1.7 Container mit Docker ⭐: auftraege/tag-1/1.7-container-mit-docker.md
+      - Tag 2:
+          - auftraege/tag-2/README.md
+          - 2.1 IaaS, PaaS oder SaaS?: auftraege/tag-2/2.1-servicemodelle.md
+          - 2.2 Abonnement erkunden: auftraege/tag-2/2.2-abonnement-erkunden.md
+          - 2.3 Ressourcengruppe im Portal: auftraege/tag-2/2.3-ressourcengruppe-im-portal.md
+          - 2.4 Ressourcengruppe mit der CLI: auftraege/tag-2/2.4-ressourcengruppe-mit-cli.md
+          - 2.5 Regionen recherchieren: auftraege/tag-2/2.5-regionen-recherchieren.md
+          - 2.6 Learn-Modul ⭐: auftraege/tag-2/2.6-learn-modul-architektur.md
+          - 2.7 Challenge Lab RBAC ⭐: auftraege/tag-2/2.7-challenge-lab-rbac.md
   - Theorie:
       - theorie/README.md
       - 1 Virtualisierung: theorie/01-virtualisierung.md

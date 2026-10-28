@@ -19,8 +19,10 @@ Die Lernenden sind **ICT-Fachleute EFZ** (ICT-Fachfrau/ICT-Fachmann), nicht Info
 - Schweizer Hochdeutsch: immer «ss», nie «ß».
 - Lernende werden in der Du-Form angesprochen.
 - Kurze Sätze, aktive Formulierungen, Fachbegriffe beim ersten Auftreten erklären.
-- **Fachbegriffe (Azure und Cloud): Deutsch mit Englisch in Klammern beim ersten Auftreten pro Seite/Präsentation**, danach nur Deutsch. Beispiel: «Ressourcengruppe (Resource Group)». Nie nur Englisch.
-  - Verbindliches Glossar: `tools/begriffe.py` (GLOSSAR). Prüfen mit `python tools/begriffe.py --pruefen <dateien>`, ergänzen ohne `--pruefen`.
+- **Fachbegriffe (Azure und Cloud): immer Deutsch mit Englisch in Klammern, bei jedem Auftreten** (Fliesstext, Tabellen, Folien). Beispiel: «Ressourcengruppe (Resource Group)», Mehrzahl «Ressourcengruppen (Resource Groups)». Nie nur Englisch, nie nur Deutsch.
+  - Ausgenommen: Überschriften, Code, Link-Texte, «Zitate» von Meldungen und fette Beschriftungen von Bedienelementen, die aus mehreren Wörtern bestehen.
+  - **Diagramme** (`tools/diagramme.py`): Fachbegriffe nur Englisch, ohne deutsche Übersetzung. Erklärende Sätze bleiben Deutsch.
+  - Verbindliches Glossar: `tools/begriffe.py` (GLOSSAR, MEHRZAHL). Prüfen mit `python tools/begriffe.py --pruefen <dateien>`, ergänzen ohne `--pruefen`.
   - Ausnahmen (bleiben englisch, ohne Klammer): Produktnamen (Azure CLI, Cloud Shell, Bicep, Azure Resource Manager, Microsoft Entra ID, Multipass, Docker, cloud-init), Abkürzungen (VM, VNet, NSG, NIC, IaaS/PaaS/SaaS, SSH), eingebürgerte Wörter ohne gängige Übersetzung (Cloud, Hypervisor, Hyperscaler, Container, Image, Blob, Tags) und die Tagestitel aus dem Vertrag.
 - Jede Unterlage hat oben ein Stand-Datum (TT.MM.JJJJ) und unten eine Quellenliste (bevorzugt Microsoft Learn). Ausnahme: **Aufträge** (`auftraege/`) haben kein Stand-Datum – der Stand ist im Repo ersichtlich.
 

@@ -6,7 +6,7 @@ Stand: 19.10.2026 · gehört zu [Tag 4](../kurs/tag-4.md)
 
 ## Lernziele
 - Du kannst die Begriffe VNet, Adressraum (Address Space), Subnetz (Subnet) und CIDR erklären. (K2)
-- Du kannst einen Adressraum in Subnetze aufteilen. (K3)
+- Du kannst einen Adressraum (Address Space) in Subnetze (Subnets) aufteilen. (K3)
 - Du kannst private und öffentliche IP-Adressen (Public IP) in Azure unterscheiden. (K2)
 - Du kannst NSG-Regeln lesen, schreiben und ihre Wirkung vorhersagen. (K3)
 - Du kannst bei einem Verbindungsproblem mit einer Checkliste die Ursache finden. (K4)
@@ -17,7 +17,7 @@ Stand: 19.10.2026 · gehört zu [Tag 4](../kurs/tag-4.md)
 
 - **Virtuelles Netzwerk (VNet):** dein eigenes, isoliertes Netz in Azure. Andere Kunden sehen es nicht. Ein VNet liegt in **einer** Region.
 - **Adressraum:** der IP-Bereich des VNets, z. B. `10.10.0.0/16`. Verwende private Bereiche: `10.0.0.0/8`, `172.16.0.0/12` oder `192.168.0.0/16`.
-- **Subnetz:** ein Teilbereich des VNets, z. B. `10.10.1.0/24`. Jede NIC hängt in genau einem Subnetz. Subnetze trennen Aufgaben, z. B. Webserver und Datenbanken.
+- **Subnetz:** ein Teilbereich des VNets, z. B. `10.10.1.0/24`. Jede NIC hängt in genau einem Subnetz (Subnet). Subnetze (Subnets) trennen Aufgaben, z. B. Webserver und Datenbanken.
 
 ### CIDR in Kürze
 Die Zahl nach dem `/` sagt, wie viele Bits **fix** sind. Je grösser die Zahl, desto kleiner das Netz.
@@ -27,21 +27,21 @@ Die Zahl nach dem `/` sagt, wie viele Bits **fix** sind. Je grösser die Zahl, d
 | `/16` | 65 536 | – (Adressraum) | `10.10.0.0/16` = 10.10.0.0 – 10.10.255.255 |
 | `/24` | 256 | 251 | `10.10.1.0/24` = 10.10.1.0 – 10.10.1.255 |
 | `/27` | 32 | 27 | `10.10.3.0/27` = 10.10.3.0 – 10.10.3.31 |
-| `/29` | 8 | 3 | kleinstes erlaubtes Subnetz |
+| `/29` | 8 | 3 | kleinstes erlaubtes Subnetz (Subnet) |
 
 **Azure reserviert in jedem Subnetz 5 Adressen:** die erste (Netzadresse), `.1` (Gateway), `.2` und `.3` (Azure-DNS) und die letzte (Broadcast). Die erste VM in `10.10.1.0/24` bekommt darum `10.10.1.4`.
 
-> **Alltagsvergleich:** Das VNet ist ein Firmengelände mit eigenem Zaun, die Subnetze sind die Gebäude darauf. Die IP-Adresse ist die Büronummer.
+> **Alltagsvergleich:** Das VNet ist ein Firmengelände mit eigenem Zaun, die Subnetze (Subnets) sind die Gebäude darauf. Die IP-Adresse ist die Büronummer.
 
 ## IP-Adressen in Azure
 
 | Typ | Erreichbar | Bemerkung |
 |-----|-----------|-----------|
-| **Private IP** | nur im VNet (und verbundenen Netzen) | kommt aus dem Subnetz, bleibt bei Neustarts gleich |
+| **Private IP** | nur im VNet (und verbundenen Netzen) | kommt aus dem Subnetz (Subnet), bleibt bei Neustarts gleich |
 | **Öffentliche IP** (Standard-SKU) | aus dem Internet | eigene Ressource, statisch, kostet auch bei gestoppter VM. Standardmässig ist alles gesperrt, bis eine NSG-Regel Verkehr erlaubt. |
 
 <!-- prüfen: Stand 19.10.2026 – Seit 2026 sind neue Subnetze standardmässig «privat» (kein Standard-Internetzugang ausgehend). Eine VM ohne öffentliche IP kommt dann nicht ins Internet (z. B. für apt). Vor Tag 4/5 im Student-Abo testen. -->
-> **Achtung:** Eine VM **ohne** öffentliche IP kommt in neuen Subnetzen unter Umständen auch **nicht ins Internet**, z. B. für `apt install`. Für die Übungen gibst du der VM, die Pakete braucht, eine öffentliche IP.
+> **Achtung:** Eine VM **ohne** öffentliche IP (Public IP) kommt in neuen Subnetzen (Subnets) unter Umständen auch **nicht ins Internet**, z. B. für `apt install`. Für die Übungen gibst du der VM, die Pakete braucht, eine öffentliche IP (Public IP).
 
 ## Netzwerksicherheitsgruppen (NSG)
 Eine **Netzwerksicherheitsgruppe (Network Security Group, NSG)** ist eine Liste von Regeln, die Verkehr erlaubt oder blockiert. Du verknüpfst sie mit einem **Subnetz** (empfohlen) oder mit einer **NIC**.
@@ -54,7 +54,7 @@ Jede Regel hat:
 |------|----------|
 | **Priorität** | 100 (100–4096, kleine Zahl wird zuerst geprüft) |
 | **Quelle** | IP-Bereich, z. B. `203.0.113.10/32`, oder Diensttag (Service Tag) `Internet`, `VirtualNetwork` |
-| **Ziel** | meist `Any` oder ein Subnetz |
+| **Ziel** | meist `Any` oder ein Subnetz (Subnet) |
 | **Zielport** | 22, 80, 443 … |
 | **Protokoll** | TCP, UDP, ICMP, Any |
 | **Aktion** | Allow oder Deny |
@@ -88,7 +88,7 @@ Wichtig:
 ![Weg einer Anfrage](img/anfrage-weg.svg)
 
 Wenn «es nicht geht», prüfe die Stationen der Reihe nach:
-1. **Richtige IP?** Öffentliche IP im Portal nachschauen.
+1. **Richtige IP?** Öffentliche IP (Public IP) im Portal nachschauen.
 2. **NSG am Subnetz:** Gibt es eine Allow-Regel für Port und Quelle? Hat sie eine **kleinere Prioritätszahl** als jede passende Deny-Regel, wird also früher geprüft?
 3. **NSG an der NIC:** Falls vorhanden, muss sie den Verkehr **ebenfalls** erlauben.
 4. **Firewall im Betriebssystem:** bei Ubuntu in Azure meist aus (`sudo ufw status`).
@@ -120,7 +120,7 @@ Ja. NSGs sind zustandsbehaftet: Die Antwort auf eine erlaubte Anfrage darf autom
 
 <details><summary>5. Port 80 ist in der NSG erlaubt, trotzdem lädt die Website nicht. Was prüfst du als Nächstes?</summary>
 
-Ob eine NSG an der NIC den Verkehr blockiert, ob der Webserver läuft (`systemctl status nginx`) und ob du die richtige öffentliche IP verwendest.
+Ob eine NSG an der NIC den Verkehr blockiert, ob der Webserver läuft (`systemctl status nginx`) und ob du die richtige öffentliche IP (Public IP) verwendest.
 </details>
 
 ## Quellen

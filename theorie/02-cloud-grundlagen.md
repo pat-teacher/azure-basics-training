@@ -8,7 +8,7 @@ Stand: 19.10.2026 · gehört zu [Tag 2](../kurs/tag-2.md)
 - Du kannst erklären, was ein Hyperscaler ist und wie er mit Virtualisierung zusammenhängt. (K2)
 - Du kannst die fünf Merkmale von Cloud Computing nennen. (K1)
 - Du kannst IaaS, PaaS und SaaS unterscheiden und Beispiele zuordnen. (K2)
-- Du kannst öffentliche, private und hybride Cloud unterscheiden. (K2)
+- Du kannst öffentliche Cloud (Public Cloud), private Cloud (Private Cloud) und hybride Cloud (Hybrid Cloud) unterscheiden. (K2)
 - Du kannst erklären, wer in der Cloud für welche Sicherheit verantwortlich ist. (K2)
 
 ## Vom Hypervisor zum Hyperscaler
@@ -29,11 +29,11 @@ Nach der Definition des NIST (US-Standardisierungsinstitut) ist etwas Cloud, wen
 | Messbarer Dienst | Du bezahlst, was du brauchst. | Kostenanalyse (Cost Analysis) im Abonnement (Subscription) |
 
 ## Servicemodelle: Wer verwaltet was?
-Bei den Servicemodellen (Service Model) geht es um eine Frage: **Wie viel Betriebsverantwortung gibst du an den Anbieter ab?** Je mehr du abgibst, desto weniger Kontrolle hast du, aber auch desto weniger Aufwand.
+Bei den Servicemodellen (Service Models) geht es um eine Frage: **Wie viel Betriebsverantwortung gibst du an den Anbieter ab?** Je mehr du abgibst, desto weniger Kontrolle hast du, aber auch desto weniger Aufwand.
 
 ![Servicemodelle](img/servicemodelle.svg)
 
-| Schicht | eigenes Rechenzentrum | IaaS | PaaS | SaaS |
+| Schicht | eigenes Rechenzentrum (On Premises) | IaaS | PaaS | SaaS |
 |---|---|---|---|---|
 | Daten und Zugriffe | du | du | du | du |
 | Anwendung | du | du | du | Anbieter |
@@ -63,7 +63,7 @@ Weitere Modelle: **FaaS** (Function as a Service, z. B. Azure Functions) führt 
 |--------|--------------|-------------|
 | **Öffentliche Cloud (Public Cloud)** | Infrastruktur eines öffentlichen Anbieters, geteilt mit anderen Kunden | die meisten Firmen, Start-ups |
 | **Private Cloud** | Cloud-Infrastruktur exklusiv für eine Organisation | Banken, Behörden, besondere Vorschriften |
-| **Hybride Cloud (Hybrid Cloud)** | Mischung: ein Teil im eigenen Rechenzentrum, ein Teil in der öffentlichen Cloud | heute der Normalfall |
+| **Hybride Cloud (Hybrid Cloud)** | Mischung: ein Teil im eigenen Rechenzentrum, ein Teil in der öffentlichen Cloud (Public Cloud) | heute der Normalfall |
 
 ![Hybride Cloud am Beispiel eines Webshops](img/tbz/Betriebsmodell_Hybrid_Webshop.svg)
 <sub>Grafik: TBZ M346</sub>
@@ -90,7 +90,7 @@ PaaS. Die App läuft auf einer verwalteten Plattform. Bei IaaS müsste sich die 
 
 <details><summary>3. Eine Treuhandfirma hat ihre Buchhaltung auf einem Server im Keller und nutzt Microsoft 365. Welches Bereitstellungsmodell ist das?</summary>
 
-Hybride Cloud.
+Hybride Cloud (Hybrid Cloud).
 </details>
 
 <details><summary>4. Eine VM in Azure wird gehackt, weil der SSH-Port mit Passwort für alle offen war. Wer ist verantwortlich?</summary>

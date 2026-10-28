@@ -7,7 +7,7 @@ Hier findest du alle Aufträge, nach Tagen sortiert. Aufträge mit ⭐ sind Zusa
 | Tag | Aufträge |
 |-----|----------|
 | 1 | [Grundlagen Virtualisierung](tag-1/README.md) |
-| 2 | folgt |
+| 2 | [Public Cloud und Azure Grundlagen](tag-2/README.md) |
 | 3 | folgt |
 | 4 | folgt |
 | 5 | folgt |

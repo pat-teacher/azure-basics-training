@@ -2,7 +2,7 @@
 
 # Tag 2: Public Cloud und Azure Grundlagen
 
-Stand: 25.10.2026 · 8 Lektionen · heute zum ersten Mal in Azure
+Stand: 28.10.2026 · 8 Lektionen · heute zum ersten Mal in Azure
 
 ## Darum geht es heute
 Am letzten Kurstag hast du VMs auf deinem Laptop gebaut. Heute siehst du, wie ein Cloud-Anbieter wie Microsoft das im grossen Stil macht. Du lernst, wie Azure aufgebaut ist, und erstellst deine ersten Ressourcen – im Portal und mit der Kommandozeile.
@@ -18,28 +18,28 @@ Am letzten Kurstag hast du VMs auf deinem Laptop gebaut. Heute siehst du, wie ei
 |---------|--------------|-------------|
 | L1 | Rückblick Tag 1 | Quiz mit deinem Partner |
 | L1 | **Input:** Vom Hypervisor zum Hyperscaler, IaaS/PaaS/SaaS | zuhören, Fragen stellen |
-| L2 | Auftrag 2.1 | mit Partner: Dienste zuordnen |
+| L1–L2 | Auftrag 2.1 | mit Partner: Dienste zuordnen |
 | L3 | **Input:** Aufbau von Azure, Rundgang durchs Portal | zuhören, mitschauen |
-| L3–L4 | Aufträge 2.2 und 2.3 | allein: Abonnement erkunden, erste Ressourcengruppe im Portal |
+| L3–L4 | Aufträge 2.2 und 2.3 | allein: Abonnement (Subscription) erkunden, erste Ressourcengruppe (Resource Group) im Portal |
 | L5 | **Input:** Cloud Shell und Azure CLI | zuhören, mittippen |
-| L5–L6 | Auftrag 2.4 | allein: Ressourcengruppe mit der CLI |
-| L7 | Auftrag 2.5, ⭐ 2.6, ⭐ 2.7 | mit Partner: Regionen recherchieren; Schnelle: Microsoft Learn oder Challenge Lab |
-| L8 | Abschluss | aufräumen, Exit-Ticket ausfüllen |
+| L5–L6 | Auftrag 2.4 | allein: Ressourcengruppe (Resource Group) mit der CLI |
+| L6–L7 | Auftrag 2.5, ⭐ 2.6, ⭐ 2.7 | mit Partner: Regionen recherchieren; Schnelle: Microsoft Learn oder Challenge Lab |
+| L8 | Abschluss | Auftrag 2.5 besprechen, aufräumen, Exit-Ticket ausfüllen |
 
 ## Deine Aufträge
 
-| ✓ | Nr. | Auftrag | Form |
-|---|-----|---------|------|
-| ☐ | 2.1 | IaaS, PaaS oder SaaS? Dienste zuordnen *(folgt)* | Partner |
-| ☐ | 2.2 | Dein Azure-Abonnement erkunden: Guthaben, erlaubte Regionen, Kosten *(folgt)* | allein |
-| ☐ | 2.3 | Erste Ressourcengruppe im Portal mit Tags *(folgt)* | allein |
-| ☐ | 2.4 | Dieselbe Ressourcengruppe mit der Azure CLI *(folgt)* | allein |
-| ☐ | 2.5 | Azure-Regionen recherchieren *(folgt)* | Partner |
-| ☐ | ⭐ 2.6 | Microsoft-Learn-Modul [Kernkomponenten der Azure-Architektur](https://learn.microsoft.com/de-de/training/modules/describe-core-architectural-components-of-azure/) | allein, freiwillig |
-| ☐ | ⭐ 2.7 | Challenge Lab «Azure RBAC konfigurieren» ([so geht's](organisation.md#themen-mit-microsoft-entra-id-challenge-labs)) | Partner, freiwillig |
+| ✓ | Nr. | Auftrag | Zeit | Form |
+|---|-----|---------|------|------|
+| ☐ | 2.1 | [IaaS, PaaS oder SaaS?](../auftraege/tag-2/2.1-servicemodelle.md) | 35 Min. | Partner |
+| ☐ | 2.2 | [Dein Azure-Abonnement erkunden](../auftraege/tag-2/2.2-abonnement-erkunden.md) | 30 Min. | Einzel |
+| ☐ | 2.3 | [Erste Ressourcengruppe im Portal](../auftraege/tag-2/2.3-ressourcengruppe-im-portal.md) | 30 Min. | Einzel |
+| ☐ | 2.4 | [Dieselbe Ressourcengruppe mit der Azure CLI](../auftraege/tag-2/2.4-ressourcengruppe-mit-cli.md) | 45 Min. | Einzel |
+| ☐ | 2.5 | [Azure-Regionen recherchieren](../auftraege/tag-2/2.5-regionen-recherchieren.md) | 30 Min. | Partner |
+| ☐ | ⭐ 2.6 | [Microsoft-Learn-Modul «Kernkomponenten der Azure-Architektur»](../auftraege/tag-2/2.6-learn-modul-architektur.md) | ca. 45 Min. | Einzel, freiwillig |
+| ☐ | ⭐ 2.7 | [Challenge Lab «Azure RBAC konfigurieren»](../auftraege/tag-2/2.7-challenge-lab-rbac.md) | ca. 45 Min. | Partner, freiwillig |
 
 ## Bevor du gehst
-- [ ] Alle Ressourcengruppen von heute gelöscht: `az group list -o table` zeigt keine `rg-tag2-…` mehr.
+- [ ] Alle Ressourcengruppen (Resource Groups) von heute gelöscht: `az group list --output table` zeigt keine `rg-tag2-…` mehr.
 - [ ] Lernjournal: Einträge zu allen Aufträgen von heute, Erkenntnisse in `tag-2/README.md`.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Erkläre in zwei Sätzen, was eine Ressourcengruppe ist.»
 

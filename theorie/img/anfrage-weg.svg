@@ -8,11 +8,11 @@
 <text x="89" y="170" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Browser, ssh</text>
 <line x1="158" y1="110" x2="183" y2="110" stroke="#27303A" stroke-width="2" marker-end="url(#aD)"/>
 <rect x="183" y="80" width="138" height="60" rx="8" fill="#FFFFFF" stroke="#27303A" stroke-width="1.5"/>
-<text x="252.0" y="114.33333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Öffentliche IP</text>
+<text x="252.0" y="114.33333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Public IP</text>
 <text x="252" y="170" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">richtige IP?</text>
 <line x1="321" y1="110" x2="346" y2="110" stroke="#27303A" stroke-width="2" marker-end="url(#aD)"/>
 <rect x="346" y="80" width="138" height="60" rx="8" fill="#DEE2FB" stroke="#006FAD" stroke-width="2.5"/>
-<text x="415.0" y="114.33333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">NSG am Subnetz</text>
+<text x="415.0" y="114.33333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">NSG am Subnet</text>
 <text x="415" y="170" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Regel für Port + Quelle?</text>
 <line x1="484" y1="110" x2="509" y2="110" stroke="#27303A" stroke-width="2" marker-end="url(#aD)"/>
 <rect x="509" y="80" width="138" height="60" rx="8" fill="#DEE2FB" stroke="#006FAD" stroke-width="2.5"/>
@@ -27,5 +27,5 @@
 <text x="904.0" y="114.33333333333333" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Dienst</text>
 <text x="904" y="170" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">läuft nginx / sshd?</text>
 <text x="500" y="225" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Fehlersuche: Prüfe die Stationen der Reihe nach von links nach rechts.</text>
-<text x="500" y="248" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Eine NSG muss den Verkehr in beiden Ebenen (Subnetz und NIC) erlauben, sonst wird er blockiert.</text>
+<text x="500" y="248" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Eine NSG muss den Verkehr in beiden Ebenen (Subnet und NIC) erlauben, sonst wird er blockiert.</text>
 </svg>

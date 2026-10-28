@@ -20,7 +20,7 @@ Der Kurs ist **hands-on**: Du arbeitest den grössten Teil der Zeit selbst an Au
 | [1](kurs/tag-1.md) | Grundlagen Virtualisierung | lokale VMs mit Multipass, deine erste automatische VM mit cloud-init |
 | [2](kurs/tag-2.md) | Public Cloud und Azure Grundlagen | deine ersten Azure-Ressourcen im Portal und mit der Azure CLI |
 | [3](kurs/tag-3.md) | Azure Compute und Storage | eine Linux-VM in Azure und ein Speicherkonto (Storage Account) |
-| [4](kurs/tag-4.md) | Azure Networking | ein VNet mit Subnetzen (Subnet) und NSG-Regeln |
+| [4](kurs/tag-4.md) | Azure Networking | ein VNet mit Subnetzen (Subnets) und NSG-Regeln |
 | [5](kurs/tag-5.md) | Automatisierung mit Bicep und cloud-init | eine komplette Umgebung als Code, Abschlussprojekt |
 
 ## So arbeitest du mit diesem Repository

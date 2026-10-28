@@ -1,10 +1,11 @@
-"""Fachbegriffe: Deutsch mit Englisch in Klammern beim ersten Auftreten pro Seite.
+"""Fachbegriffe: Deutsch mit Englisch in Klammern, bei jedem Auftreten.
 
 Aufruf:  python tools/begriffe.py [--pruefen] <datei.md>...
-  ohne --pruefen: ergänzt den englischen Begriff beim ersten Auftreten (wenn er auf der Seite noch fehlt)
+  ohne --pruefen: ergänzt den englischen Begriff überall, wo er fehlt
   mit  --pruefen: listet nur auf, wo er fehlt
 
-Ausgelassen werden Überschriften, Codeblöcke, `Inline-Code`, Link-Ziele, Bilder, HTML und Kommentare.
+Ausgelassen werden Überschriften, Codeblöcke, `Inline-Code`, Links, Bilder, HTML, Kommentare,
+Text in Klammern und «Anführungszeichen» sowie fette Beschriftungen von Bedienelementen.
 """
 import re
 import sys
@@ -35,6 +36,7 @@ GLOSSAR = [
     (r"[Gg]eteilte[n]? Verantwortung", "Shared Responsibility"),
     (r"[Öö]ffentliche[nr]? Cloud", "Public Cloud"),
     (r"[Hh]ybride[nr]? Cloud", "Hybrid Cloud"),
+    (r"private[nr]? Cloud", "Private Cloud"),  # gross geschrieben ist «Private Cloud» auch deutsch
     (r"[Bb]edingte[rnm]? Zugriff", "Conditional Access"),
     (r"[Rr]ollenbasierte[n]? Zugriffssteuerung", "Role-Based Access Control"),
     (r"Bereitstellungsmodell(?:e|en)?", "Deployment Model"),
@@ -52,6 +54,36 @@ GLOSSAR = [
     (r"[Ss]tatische[n]? Website", "Static Website"),
 ]
 
+# Mehrzahl: englischer Begriff → deutsche Mehrzahlformen; dann wird das Englische mit «s» ergänzt
+MEHRZAHL = {
+    "Network Security Group": r"[Nn]etzwerksicherheitsgruppen",
+    "Network Interface": r"[Nn]etzwerkschnittstellen",
+    "Resource Group": r"[Rr]essourcengruppen",
+    "Subscription": r"Abonnements",
+    "Availability Zone": r"Verfügbarkeitszonen",
+    "Region Pair": r"Regionspaare(?:n)?",
+    "Management Group": r"Verwaltungsgruppen",
+    "Virtual Machine": r"[Vv]irtuelle[n]? Maschinen",
+    "Virtual Network": r"[Vv]irtuelle[n]? Netzwerke",
+    "Subnet": r"Subnetze(?:n)?",
+    "Storage Account": r"Speicherkont(?:os|en)",
+    "Access Tier": r"Zugriffsebenen",
+    "Deployment Model": r"Bereitstellungsmodelle(?:n)?",
+    "Service Model": r"Servicemodelle(?:n)?",
+    "Key Pair": r"Schlüsselpaare",
+    "Service Tag": r"Diensttags",
+}
+GENITIV = re.compile(r"(?:des|eines|deines|meines|seines|ihres|dieses)\s+$")
+
+
+def englisch_fuer(deutsch, englisch, davor):
+    """Englischer Begriff in Einzahl oder Mehrzahl, passend zur deutschen Form."""
+    mehrzahl = MEHRZAHL.get(englisch)
+    if mehrzahl and re.fullmatch(mehrzahl, deutsch) and not GENITIV.search(davor):
+        return englisch + "s"
+    return englisch
+
+
 GESCHUETZT = re.compile(r"`[^`]*`|\[[^\]]*\]\([^)]*\)|<!--.*?-->|<[^>]+>|https?://\S+")
 
 
@@ -59,33 +91,34 @@ def bearbeiten(text, pruefen=False):
     zeilen = text.split("\n")
     im_code = False
     fehlend = []
-    for deutsch, englisch in GLOSSAR:
-        if re.search(r"\(" + re.escape(englisch), text):
-            continue  # englischer Begriff steht schon auf der Seite
-        muster = re.compile(r"(?<![\w-])(" + deutsch + r")(?![\w-])(\*\*)?")
-        im_code = False
-        for i, z in enumerate(zeilen):
-            if z.lstrip().startswith("```"):
-                im_code = not im_code
-                continue
-            if im_code or z.lstrip().startswith(("#", "![", "<", "    ")):
-                continue
-            geschuetzt = [m.span() for m in GESCHUETZT.finditer(z)]
-            treffer = None
+    for i, z in enumerate(zeilen):
+        if z.lstrip().startswith("```"):
+            im_code = not im_code
+            continue
+        if im_code or z.lstrip().startswith(("#", "![", "<", "    ")):
+            continue
+        geschuetzt = [m.span() for m in GESCHUETZT.finditer(z)]
+        # in Klammern, «Zitaten» und fetten Bedienelementen (**Neu erstellen**) nichts einfügen
+        klammern = [m.span() for m in re.finditer(r"\([^)]*\)|«[^»]*»", z)]
+        fett = [m.span() for m in re.finditer(r"\*\*[^*]+\*\*", z)]
+        einfuegen = []
+        for deutsch, englisch in GLOSSAR:
+            muster = re.compile(r"(?<![\w-])(" + deutsch + r")(?![\w-])(\*\*)?")
             for m in muster.finditer(z):
-                if not any(a <= m.start() < b for a, b in geschuetzt):
-                    treffer = m
-                    break
-            if not treffer:
-                continue
-            ende = treffer.end()
-            if z[ende:ende + 2] == " (":
-                break  # schon eine Klammer dahinter
-            fehlend.append((i + 1, treffer.group(1), englisch))
+                a = m.start()
+                if any(x <= a < y for x, y in geschuetzt + klammern):
+                    continue
+                if any(x < a < y and m.end() != y for x, y in fett):
+                    continue  # Begriff ist Teil einer fetten Beschriftung
+                if z[m.end():m.end() + 2] == " (":
+                    continue  # schon eine Klammer dahinter
+                einfuegen.append((m.end(), m.group(1), englisch_fuer(m.group(1), englisch, z[:a])))
+        for ende, de, en in sorted(einfuegen, reverse=True):
+            fehlend.append((i + 1, de, en))
             if not pruefen:
-                zeilen[i] = z[:ende] + f" ({englisch})" + z[ende:]
-                text = "\n".join(zeilen)
-            break
+                z = z[:ende] + f" ({en})" + z[ende:]
+        zeilen[i] = z
+    fehlend.sort()
     return "\n".join(zeilen), fehlend
 
 
@@ -93,9 +126,9 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     pruefen = "--pruefen" in args
     for pfad in [a for a in args if a != "--pruefen"]:
-        alt = open(pfad, encoding="utf-8").read()
+        alt = open(pfad, encoding="utf-8", newline="").read()
         neu, fehlend = bearbeiten(alt, pruefen)
         for zeile, de, en in fehlend:
             print(f"{pfad}:{zeile}: {de} -> ({en})")
         if not pruefen and neu != alt:
-            open(pfad, "w", encoding="utf-8").write(neu)
+            open(pfad, "w", encoding="utf-8", newline="").write(neu)

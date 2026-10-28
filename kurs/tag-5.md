@@ -18,7 +18,7 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 | Lektion | Was passiert | Was du tust |
 |---------|--------------|-------------|
 | L1 | Rückblick auf den Kurs | sammeln: Was hast du von Hand gemacht? |
-| L1 | **Input:** Infrastruktur als Code, Bicep, cloud-init | zuhören, mitschauen |
+| L1 | **Input:** Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init | zuhören, mitschauen |
 | L2 | Auftrag 5.1 | mit Partner: VM mit cloud-init in Azure |
 | L3 | Auftrag 5.2 | allein: erste Bicep-Datei |
 | L4 | Auftrag 5.3 | allein: Netzwerk von Tag 4 als Bicep |
@@ -35,7 +35,7 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 | ☐ | Projekt | Webserver der «Velo Zürich AG» *(folgt)* | Partner |
 
 ## Bevor du gehst
-- [ ] **Alle** Ressourcengruppen (Resource Group) des Kurses gelöscht: `az group list -o table` ist leer.
+- [ ] **Alle** Ressourcengruppen (Resource Groups) des Kurses gelöscht: `az group list -o table` ist leer.
 - [ ] Lernjournal: Einträge zu allen Aufträgen von heute; in `tag-5/README.md` drei Sätze: Was nimmst du aus diesem Kurs mit?
 - [ ] Kursfeedback ausgefüllt.
 

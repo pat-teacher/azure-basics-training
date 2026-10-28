@@ -8,8 +8,8 @@ Stand: 25.10.2026 · 8 Lektionen
 Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und legst fest, wer deine VMs erreichen darf und wer nicht. Am Nachmittag suchst du Fehler: Warum kommt eine Verbindung nicht an?
 
 ## Am Ende des Tages kannst du …
-- einen Adressbereich in Subnetze (Subnet) aufteilen. (K3)
-- ein VNet mit mehreren Subnetzen bereitstellen und VMs darin platzieren. (K3)
+- einen Adressbereich in Subnetze (Subnets) aufteilen. (K3)
+- ein VNet mit mehreren Subnetzen (Subnets) bereitstellen und VMs darin platzieren. (K3)
 - mit NSG-Regeln festlegen, wer deine VM über welchen Port erreicht. (K3)
 - mit einer Checkliste herausfinden, warum eine Verbindung blockiert wird. (K4)
 
@@ -18,9 +18,9 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 | Lektion | Was passiert | Was du tust |
 |---------|--------------|-------------|
 | L1 | Rückblick Tag 3 | Quiz mit deinem Partner |
-| L1 | **Input:** VNet und Subnetze | zuhören, mitrechnen |
-| L2 | Auftrag 4.1 | mit Partner: Subnetze berechnen |
-| L3 | Auftrag 4.2 | allein: VNet mit zwei Subnetzen |
+| L1 | **Input:** VNet und Subnetze (Subnets) | zuhören, mitrechnen |
+| L2 | Auftrag 4.1 | mit Partner: Subnetze (Subnets) berechnen |
+| L3 | Auftrag 4.2 | allein: VNet mit zwei Subnetzen (Subnets) |
 | L4 | **Input:** Netzwerksicherheitsgruppen (NSG) | zuhören, mitschauen |
 | L4–L5 | Auftrag 4.3 | mit Partner: zwei VMs im VNet, Verbindungen testen |
 | L6 | Auftrag 4.4 | mit Partner: NSG-Regeln einrichten |
@@ -32,7 +32,7 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 | ✓ | Nr. | Auftrag | Form |
 |---|-----|---------|------|
 | ☐ | 4.1 | Subnetting-Training für die «Velo Zürich AG» *(folgt)* | Partner |
-| ☐ | 4.2 | VNet mit zwei Subnetzen *(folgt)* | allein |
+| ☐ | 4.2 | VNet mit zwei Subnetzen (Subnets) *(folgt)* | allein |
 | ☐ | 4.3 | Zwei VMs im VNet, Verbindungen testen *(folgt)* | Partner |
 | ☐ | 4.4 | NSG-Regeln: Web für alle, SSH nur von der Schule *(folgt)* | Partner |
 | ☐ | 4.5 | Fehlersuche: «Warum komme ich nicht auf meine VM?» *(folgt)* | Partner |
@@ -40,7 +40,7 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 | ☐ | ⭐ 4.7 | Challenge Lab zu bedingtem Zugriff ([so geht's](organisation.md#themen-mit-microsoft-entra-id-challenge-labs)) | Partner, freiwillig |
 
 ## Bevor du gehst
-- [ ] Alle Ressourcengruppen (Resource Group) von heute gelöscht.
+- [ ] Alle Ressourcengruppen (Resource Groups) von heute gelöscht.
 - [ ] Lernjournal: Einträge zu allen Aufträgen von heute, dein Netzplan und deine Erkenntnisse in `tag-4/README.md`.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Regel 100 sagt Deny, Regel 200 sagt Allow für Port 80. Ist die Website erreichbar?»
 

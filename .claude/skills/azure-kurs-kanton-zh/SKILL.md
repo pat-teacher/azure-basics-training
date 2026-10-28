@@ -89,7 +89,7 @@ assets/branding/         Logo, Banner, Wolke
 
 ## Schreibregeln
 - Schweizer Hochdeutsch mit «ss», Du-Form.
-- Fachbegriffe: Deutsch (Englisch) beim ersten Auftreten pro Seite, danach Deutsch – Glossar und Ausnahmen in CLAUDE.md und `tools/begriffe.py`.
+- Fachbegriffe: immer Deutsch (Englisch), bei jedem Auftreten; in Diagrammen nur Englisch – Glossar und Ausnahmen in CLAUDE.md und `tools/begriffe.py`.
 - Oben: Titel, Kurstag, Stand-Datum (nicht bei Aufträgen), Dauer, Lernziele.
 - Unten: Quellen mit Link (Microsoft Learn bevorzugt).
 - Screenshots als Platzhalter: `![Beschreibung](bilder/tag<n>-<name>.png)` mit Hinweis, was der Screenshot zeigen soll.

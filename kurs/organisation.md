@@ -6,10 +6,10 @@ Stand: 25.10.2026
 
 ## Kursziele
 Nach dem Kurs kannst du:
-1. Virtualisierung, Hypervisoren und virtuelle Maschinen (Virtual Machine) erklären und die Grundprinzipien einer Cloud-Plattform beschreiben. (K2)
+1. Virtualisierung, Hypervisoren und virtuelle Maschinen (Virtual Machines) erklären und die Grundprinzipien einer Cloud-Plattform beschreiben. (K2)
 2. die Betriebsmodelle IaaS, PaaS und SaaS unterscheiden und Beispiele zuordnen. (K2)
 3. die zentralen Azure-Ressourcen für Speicher (Storage), Rechenleistung (Compute) und Netzwerk (Network) erklären. (K2)
-4. einfache Azure-Umgebungen mit Speicherkonto (Storage Account), VM, VNet, Subnetzen (Subnet) und NSG bereitstellen, konfigurieren und wieder löschen. (K3)
+4. einfache Azure-Umgebungen mit Speicherkonto (Storage Account), VM, VNet, Subnetzen (Subnets) und NSG bereitstellen, konfigurieren und wieder löschen. (K3)
 5. eine VM automatisiert mit Scripting (Azure CLI), ARM/Bicep und cloud-init bereitstellen. (K3)
 
 ## Tagesrhythmus
@@ -33,26 +33,28 @@ Jeder Tag hat 8 Lektionen à 45 Minuten. Ungefähr so verteilt:
 
 ## Themen mit Microsoft Entra ID: Challenge Labs
 Mit Azure for Students hast du keine Rechte in Microsoft Entra ID. Themen wie **Rollenbasierte Zugriffssteuerung (RBAC)** oder **bedingter Zugriff (Conditional Access)** übst du deshalb in den **Challenge Labs** von Microsoft Learn for Educators (Plattform [Learn on Demand / Skillable](https://msle.learnondemand.net/)):
-1. Mit dem Trainingsschlüssel der Kursleitung anmelden und ein Skillable-Konto registrieren.
-2. Unter **Meine Schulung** die Klasse öffnen und das angegebene Challenge Lab starten.
-3. Du arbeitest in einer vorbereiteten Umgebung mit einem temporären Konto. Die Anleitung erscheint im zweiten Fenster.
+1. Beim ersten Mal auf **Mit dem Schulungsschlüssel registrieren** klicken, den Trainingsschlüssel der Kursleitung eingeben und ein **Skillable-Konto** erstellen. Dein Konto für Azure for Students brauchst du dafür nicht.
+2. Später über **Einloggen** > **Skillable Account** anmelden.
+3. Die Klasse öffnen und das angegebene Lab starten. Du arbeitest in einer vorbereiteten Umgebung mit einem temporären Konto. Die Anleitung erscheint im zweiten Fenster.
+
+Klassen im Kurs: [AZ-900](https://msle.learnondemand.net/Class/777739) · [AZ-104](https://msle.learnondemand.net/Class/777740). Für jede Klasse gibt es einen eigenen Trainingsschlüssel. Eine Anleitung mit Screenshots steht in [Auftrag 2.7](../auftraege/tag-2/2.7-challenge-lab-rbac.md).
 
 > [!IMPORTANT]
-> Challenge Labs sind zeitlich begrenzt und lassen sich nur wenige Male starten (meist 3). Starte ein Lab erst, wenn du Zeit hast, es fertig zu machen.
+> Labs sind zeitlich begrenzt und lassen sich nur eine begrenzte Anzahl Male starten. Starte ein Lab erst, wenn du Zeit hast, es fertig zu machen. <!-- prüfen: Stand 28.10.2026 – laut Skillable-FAQ 10 Starts pro Modul, Speichern bis 7 Tage -->
 
 <!-- prüfen: Trainingsschlüssel und Lab-Auswahl im Microsoft Learn for Educators Portal bereitstellen; Themen ausserhalb des Vertragsumfangs nur als Zusatz (⭐) -->
 
 ## Namen und Tags
 | Ressource | Schema | Beispiel (Kürzel `mm`) |
 |-----------|--------|------------------------|
-| Ressourcengruppe | `rg-tag<n>-<kuerzel>` | `rg-tag3-mm` |
-| Virtuelle Maschine | `vm-<zweck>-<kuerzel>` | `vm-web-mm` |
+| Ressourcengruppe (Resource Group) | `rg-tag<n>-<kuerzel>` | `rg-tag3-mm` |
+| Virtuelle Maschine (Virtual Machine) | `vm-<zweck>-<kuerzel>` | `vm-web-mm` |
 | Virtuelles Netzwerk (Virtual Network) | `vnet-tag<n>-<kuerzel>` | `vnet-tag4-mm` |
-| Subnetz | `snet-<zweck>` | `snet-web` |
+| Subnetz (Subnet) | `snet-<zweck>` | `snet-web` |
 | NSG | `nsg-<zweck>` | `nsg-web` |
-| Speicherkonto | `sttag<n><kuerzel>` (klein, ohne Bindestrich) | `sttag3mm` |
+| Speicherkonto (Storage Account) | `sttag<n><kuerzel>` (klein, ohne Bindestrich) | `sttag3mm` |
 
-`<kuerzel>` = deine Initialen. Jede Ressourcengruppe bekommt die Tags `kurs=azure-basics`, `tag=<n>`, `owner=<kuerzel>`.
+`<kuerzel>` = deine Initialen. Jede Ressourcengruppe (Resource Group) bekommt die Tags `kurs=azure-basics`, `tag=<n>`, `owner=<kuerzel>`.
 
 ## Lernjournal
 Du führst dein Lernjournal in Markdown in einem **privaten Repository** `lernjournal-azure` auf GitHub oder GitLab. Die Kursleitung (`pat-teacher`) ist Mitglied und kann es lesen. Wie du es anlegst, steht in [Auftrag 1.0](../auftraege/tag-1/1.0-lernjournal.md).
