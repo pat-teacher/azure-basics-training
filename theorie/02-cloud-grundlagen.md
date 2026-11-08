@@ -72,7 +72,7 @@ Der Vergleich hat eine Grenze: Deine Daten und Zugriffe bleiben in jedem Modell 
 |--------|--------------|-------------|
 | **Öffentliche Cloud (Public Cloud)** | Infrastruktur eines öffentlichen Anbieters, geteilt mit anderen Kunden | die meisten Firmen, Start-ups |
 | **Private Cloud** | Cloud-Infrastruktur exklusiv für eine Organisation | Banken, Behörden, besondere Vorschriften |
-| **Hybride Cloud (Hybrid Cloud)** | Mischung: ein Teil im eigenen Rechenzentrum, ein Teil in der öffentlichen Cloud (Public Cloud) | heute der Normalfall |
+| **Hybride Cloud (Hybrid Cloud)** | Ein Teil läuft im eigenen Rechenzentrum, ein Teil in der öffentlichen Cloud (Public Cloud). Beide Teile sind verbunden (Netzwerk, Anmeldung). Typisch: Sensible Daten oder alte Anwendungen bleiben im Haus, Neues kommt in die Cloud. | heute der Normalfall |
 
 **Wer teilt die Hardware?** In der Private Cloud wird die Hardware nicht mit anderen Kunden geteilt, aber innerhalb der Organisation, zum Beispiel zwischen Abteilungen. Die Private Cloud kann im eigenen Haus stehen oder bei einem Anbieter, der die Hardware nur für diese eine Organisation reserviert.
 
