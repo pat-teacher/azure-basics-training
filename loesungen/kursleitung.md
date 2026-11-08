@@ -9,7 +9,7 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 ## Exit-Tickets
 - Pro Tag ein Microsoft Forms mit **einer** offenen Frage (Frage steht in der Tagesplanung unter «Bevor du gehst»). Link im Kurskanal teilen. <!-- prüfen -->
 - Am Abend kurz durchsehen: Was ist angekommen? Welche Missverständnisse gibt es?
-- Am nächsten Kurstag 2–3 Antworten ohne Namen vorlesen und offene Punkte klären (Teil des Rückblicks in L1).
+- Am nächsten Kurstag 2–3 Antworten ohne Namen mit Missverständnissen auswählen und zeigen (Rückblick in L1). Beispiel: Tag 2, Folien 4–5 «Exit-Ticket Tag 1: Was stimmt hier nicht?» und «die Auflösung». Die Antworten auf der Folie für jeden Kurs anpassen.
 
 ## Tag 1: Grundlagen Virtualisierung
 
@@ -40,16 +40,18 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 | Wann | Input | Dauer | Folien | Danach |
 |------|-------|-------|--------|--------|
-| L1, Beginn | Rückblick: Quiz zu zweit, 2–3 Exit-Tickets von Tag 1 vorlesen. Ziele und Ablauf des Tages | 15' | Tag 2, Folien 1–5 | Input 2 |
-| L1, nach dem Einstieg | Vom Hypervisor zum Hyperscaler (Antwort auf die Frage vom Schluss von Tag 1: «Was passiert, wenn man tausende Hypervisoren zusammenschaltet?»), Cloud-Merkmale, Servicemodelle (Service Models) mit Pizza, öffentliche, private und hybride Cloud (Public, Private, Hybrid Cloud), geteilte Verantwortung (Shared Responsibility), Selbsttest | 25' | Input 2, Folien 1–12 | Auftrag 2.1 |
-| L2, nach Auftrag 2.1 | Besprechung 2.1: strittige Zeilen aus Schritt 1, 2–3 Empfehlungen aus Schritt 5 | 10' | Input 2, Folie 4 «Servicemodelle» | Lernjournal, ⭐ von 2.1 |
+| L1, Beginn | Rückblick-Quiz zu zweit, danach die Lösungen zeigen | 5' | Tag 2, Folien 1–3 | Exit-Ticket |
+| L1, nach dem Quiz | Exit-Ticket Tag 1: Die Lernenden finden zuerst selbst heraus, was an den drei Antworten A–C nicht stimmt. Danach kommt die Auflösung | 7' | Tag 2, Folien 4–5 | Ziele |
+| L1, nach dem Exit-Ticket | Ziele, Ablauf und Aufträge des Tages | 3' | Tag 2, Folien 6–8 | Input 2 |
+| L1, nach dem Einstieg | Frage vom Schluss von Tag 1 «Was passiert, wenn man tausende Hypervisoren zusammenschaltet?» zu zweit vermuten lassen, Auflösung mit der nächsten Folie: Hyperscaler. Dann Cloud-Merkmale, Servicemodelle (Service Models) mit Pizza, öffentliche, private und hybride Cloud (Public, Private, Hybrid Cloud), geteilte Verantwortung (Shared Responsibility), Selbsttest | 25' | Input 2, Folien 1–13 | Auftrag 2.1 |
+| L2, nach Auftrag 2.1 | Besprechung 2.1: strittige Zeilen aus Schritt 1, 2–3 Empfehlungen aus Schritt 5 | 10' | Input 2, Folie 5 «Servicemodelle» | Lernjournal, ⭐ von 2.1 |
 | L3, Beginn | Aufbau von Azure: Regionen und Zonen, Hierarchie, Ressourcengruppe (Resource Group), Azure Resource Manager. Live-Demo Portal: Ressourcengruppe (Resource Group) bis Reiter Tags ausfüllen, nicht erstellen | 17' | Input 3, Folien 1–9 | Aufträge 2.2, 2.3 |
 | L4, Beginn | Kursregion abfragen: «Wer hat Switzerland North nicht in der Liste?» Ersatzregionen an die Wandtafel | 5' | Input 3, Folie 9 | Auftrag 2.3 |
 | L4, Schluss | Aktivitätsprotokoll zeigen: «Jede Aktion läuft über den Resource Manager.» | 5' | Portal | 2.2/2.3 fertig, aufräumen |
 | L5, Beginn | Werkzeuge: Live-Demo Cloud Shell (erster Start ohne Speicherkonto (Storage Account)) und Azure CLI (`az group create`, `list`, `delete`, `--help`, `-o table`). Ausblick RBAC in einem Satz, Selbsttest | 15' | Input 3, Folien 10–18 | Aufträge 2.4, 2.5 |
-| L7, Beginn | Challenge Labs erklären, Trainingsschlüssel teilen | 5' | Tag 2, Folie 6 | Puffer 2.1–2.5, ⭐ 2.6, ⭐ 2.7 |
+| L7, Beginn | Challenge Labs erklären, Trainingsschlüssel teilen | 5' | Tag 2, Folie 9 | Puffer 2.1–2.5, ⭐ 2.6, ⭐ 2.7 |
 | L8, Beginn | Besprechung 2.5, Schritt 3 (Switzerland North: Schweiz und Zonen) | 10' | – | Aufräumkontrolle |
-| L8, Schluss | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag2-…`. Ausblick Tag 3: SSH-Schlüssel von Tag 1 bereithalten | 10' | Tag 2, Folien 7–8 | Lernjournal, Exit-Ticket |
+| L8, Schluss | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag2-…`. Ausblick Tag 3: SSH-Schlüssel von Tag 1 bereithalten | 10' | Tag 2, Folien 10–11 | Lernjournal, Exit-Ticket |
 
 **Vorbereitung**
 - Alle Lernenden haben sich vorab bei Azure for Students angemeldet (Login testen lassen, siehe Tag 1, Folie «Nächstes Mal»).

@@ -155,7 +155,22 @@ const TAGE = [
           { h: "Typ 1 oder Typ 2?", q: "VirtualBox, Hyper-V, VMware ESXi – ordne zu." },
           { h: "Multipass", q: "Mit welchem Befehl erstellst du eine neue VM?" },
           { h: "cloud-init", q: "Wann arbeitet cloud-init seine Datei ab?" },
-        ], notes: "Lösungen: Typ 2 / Typ 1 / Typ 1. multipass launch --name <name>. Nur beim ersten Start. Danach 2–3 Exit-Tickets vorlesen." },
+        ], notes: "5 Minuten zu zweit. Die Lösungen kommen auf der nächsten Folie." },
+        { type: "cards", title: "Rückblick Tag 1: Lösungen", lead: "Vergleiche mit deinen Antworten.", cols: 3, items: [
+          { icon: "FaCheckCircle", h: "Typ 1 oder Typ 2?", t: "VirtualBox: Typ 2 · Hyper-V: Typ 1 · VMware ESXi: Typ 1" },
+          { icon: "FaCheckCircle", h: "Multipass", t: "multipass launch --name <name>" },
+          { icon: "FaCheckCircle", h: "cloud-init", t: "Nur beim ersten Start der VM." },
+        ], notes: "Typ 2 läuft als Programm auf Windows oder macOS, Typ 1 direkt auf der Hardware. Hyper-V ist Typ 1, auch wenn es unter Windows eingeschaltet wird: Windows läuft dann selbst als VM darüber." },
+        { type: "cards", title: "Exit-Ticket Tag 1: Was stimmt hier nicht?", lead: "Frage: Was ist der grösste Unterschied zwischen deiner VM und einer VM in der Cloud?", cols: 3, items: [
+          { icon: "FaQuestionCircle", h: "Antwort A", t: "«… wie viel Leistung die VM in der Cloud braucht. Die VM im Host kann man die Cores zuteilen und die in der Cloud nicht.»" },
+          { icon: "FaQuestionCircle", h: "Antwort B", t: "«Eine VM in der Cloud ist über das Internet frei verfügbar. Bei einer lokalen VM hast du viel mehr Anpassungsmöglichkeiten, was für ein OS läuft und vor allem in was für einem Netzwerk. Das hast du in der Cloud nicht so.»" },
+          { icon: "FaQuestionCircle", h: "Antwort C", t: "«Die Ressourcen in einer Cloud-VM können auch ausgelagert werden … Ein grosser Pluspunkt ist auch, dass man mit Hilfe eines Skripts die gleiche VM mehrfach und fehlerfrei reproduzieren kann.»" },
+        ], notes: "Echte Antworten aus den Exit-Tickets, ohne Namen. Für jeden Kurs eigene Antworten mit Missverständnissen einsetzen. 2 Minuten zu zweit: Was stimmt bei A, B und C nicht? Dann 2–3 Paare fragen. Auflösung auf der nächsten Folie." },
+        { type: "cards", title: "Exit-Ticket Tag 1: die Auflösung", lead: "Richtig: Deine VM nutzt die Hardware deines Laptops, eine Cloud-VM läuft auf Servern im Rechenzentrum eines Anbieters und ist über das Internet erreichbar.", cols: 3, items: [
+          { icon: "FaExclamationTriangle", h: "A: Leistung wählst du auch in der Cloud", t: "Die VM-Grösse (z. B. B2s) legt fest, wie viele CPU-Kerne und wie viel RAM die VM bekommt." },
+          { icon: "FaExclamationTriangle", h: "B: OS und Netzwerk wählst du auch in der Cloud", t: "Du bestimmst das Image (Ubuntu, Windows …) und das virtuelle Netzwerk. Frei verfügbar ist die VM nicht: Zugriff nur mit Berechtigung." },
+          { icon: "FaExclamationTriangle", h: "C: Skripte sind kein Cloud-Vorteil", t: "cloud-init funktioniert auch lokal, das hast du an Tag 1 mit Multipass gemacht." },
+        ], notes: "Kernaussage: lokal die Hardware des Laptops, in der Cloud ein Rechenzentrum des Anbieters, gesteuert über das Internet. Überleitung zu Input 2: Wie sieht so ein Rechenzentrum aus? Damit beantwortest du die Hyperscaler-Frage von Tag 1." },
       ] },
       { title: "Heute", slides: [
         { type: "cards", title: "Deine Ziele heute", cols: 3, items: [
@@ -434,6 +449,11 @@ const INPUTS = [
     sections: [
       { title: "Cloud-Grundlagen", slides: [
         { type: "title", title: "Vom Hypervisor zum Hyperscaler", sub: "Input 1 Tag 2 · Cloud-Grundlagen", notes: "Theorie: theorie/02-cloud-grundlagen.md" },
+        { type: "statement", title: "Die Frage von Tag 1", icon: "FaQuestionCircle",
+          quote: "Was passiert, wenn man tausende Hypervisoren zusammenschaltet?",
+          points: ["Erinnerung: Ein Hypervisor verteilt die Hardware eines Servers auf mehrere VMs.",
+            "Überlege kurz mit deinem Nachbarn: Was entsteht daraus?"],
+          notes: "Frage vom Schluss von Tag 1. 1 Minute zu zweit, dann 2–3 Vermutungen sammeln, nicht auflösen. Die Antwort zeigt die nächste Folie: ein Hyperscaler." },
         { type: "diagram", title: "Was ist ein Hyperscaler?", img: "Hyperscaler.png", caption: "Grafik: TBZ M346",
           notes: "Tausende Server mit Typ-1-Hypervisoren, ein Orchestrator verteilt die VMs, alles über eine Web-API steuerbar. Du siehst nicht, auf welchem Server deine VM läuft." },
         { type: "cards", title: "Fünf Merkmale von Cloud Computing", cols: 3, items: [
