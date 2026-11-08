@@ -52,6 +52,18 @@ GLOSSAR = [
     (r"Standardregeln", "Default Rules"),
     (r"Diensttags?", "Service Tag"),
     (r"[Ss]tatische[n]? Website", "Static Website"),
+    (r"Rollenzuweisung(?:en)?", "Role Assignment"),
+    (r"Zuweisung(?:en)?", "Assignment"),
+    (r"Richtlinie(?:n)?", "Policy"),
+    (r"Rolle(?:n)?", "Role"),
+    (r"Besitzer", "Owner"),
+    (r"Mitwirkende[r]?", "Contributor"),
+    (r"Leser", "Reader"),
+    (r"Guthabens?", "Credit"),
+    (r"Aktivitätsprotokolls?", "Activity Log"),
+    (r"Kostenverwaltung", "Cost Management"),
+    (r"Grundeinstellungen", "Basics"),
+    (r"Verzeichnis(?:se|ses)?", "Directory"),
 ]
 
 # Mehrzahl: englischer Begriff → deutsche Mehrzahlformen; dann wird das Englische mit «s» ergänzt
@@ -72,6 +84,11 @@ MEHRZAHL = {
     "Service Model": r"Servicemodelle(?:n)?",
     "Key Pair": r"Schlüsselpaare",
     "Service Tag": r"Diensttags",
+    "Role Assignment": r"Rollenzuweisungen",
+    "Assignment": r"Zuweisungen",
+    "Policy": r"Richtlinien",
+    "Role": r"Rollen",
+    "Directory": r"Verzeichnisse",
 }
 GENITIV = re.compile(r"(?:des|eines|deines|meines|seines|ihres|dieses)\s+$")
 
@@ -80,6 +97,8 @@ def englisch_fuer(deutsch, englisch, davor):
     """Englischer Begriff in Einzahl oder Mehrzahl, passend zur deutschen Form."""
     mehrzahl = MEHRZAHL.get(englisch)
     if mehrzahl and re.fullmatch(mehrzahl, deutsch) and not GENITIV.search(davor):
+        if englisch.endswith("y") and englisch[-2] not in "aeiou":
+            return englisch[:-1] + "ies"  # Policy → Policies, Directory → Directories
         return englisch + "s"
     return englisch
 
