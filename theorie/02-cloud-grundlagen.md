@@ -74,6 +74,11 @@ Der Vergleich hat eine Grenze: Deine Daten und Zugriffe bleiben in jedem Modell 
 | **Private Cloud** | Cloud-Infrastruktur exklusiv für eine Organisation | Banken, Behörden, besondere Vorschriften |
 | **Hybride Cloud (Hybrid Cloud)** | Mischung: ein Teil im eigenen Rechenzentrum, ein Teil in der öffentlichen Cloud (Public Cloud) | heute der Normalfall |
 
+**Wer teilt die Hardware?** In der Private Cloud wird die Hardware nicht mit anderen Kunden geteilt, aber innerhalb der Organisation, zum Beispiel zwischen Abteilungen. Die Private Cloud kann im eigenen Haus stehen oder bei einem Anbieter, der die Hardware nur für diese eine Organisation reserviert.
+
+> [!NOTE]
+> Ein eigenes virtuelles Netzwerk (VNet) in Azure ist keine Private Cloud. Dein Netz ist zwar abgetrennt, die Hardware darunter teilst du aber weiterhin mit anderen Kunden.
+
 ![Hybride Cloud am Beispiel eines Webshops](img/tbz/Betriebsmodell_Hybrid_Webshop.svg)
 <sub>Grafik: TBZ M346</sub>
 

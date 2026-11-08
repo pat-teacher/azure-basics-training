@@ -482,7 +482,7 @@ const INPUTS = [
           { icon: "FaGlobeEurope", h: "Öffentliche Cloud (Public Cloud)", t: "Infrastruktur eines öffentlichen Anbieters, geteilt mit anderen Kunden." },
           { icon: "FaLock", h: "Private Cloud", t: "Cloud nur für eine Organisation, z. B. Banken und Behörden." },
           { icon: "FaExchangeAlt", h: "Hybride Cloud (Hybrid Cloud)", t: "Ein Teil im eigenen Rechenzentrum, ein Teil in der öffentlichen Cloud (Public Cloud) – heute der Normalfall." },
-        ] },
+        ], notes: "Private Cloud: Die Hardware wird nicht mit anderen Kunden geteilt, aber innerhalb der Organisation, z. B. zwischen Abteilungen – der Ressourcen-Pool gilt also auch hier. Sie kann im eigenen Haus oder bei einem Anbieter stehen (Hosted Private Cloud). Häufiges Missverständnis: Ein VNet in Azure ist keine Private Cloud, die Hardware darunter ist weiterhin geteilt." },
         { type: "diagram", title: "Hybride Cloud am Beispiel", img: "Betriebsmodell_Hybrid_Webshop.png", caption: "Grafik: TBZ M346",
           notes: "Muster: Neues und Wachsendes in die Cloud, Altes und schwer Migrierbares bleibt vorerst im Haus." },
         { type: "compare", title: "Geteilte Verantwortung (Shared Responsibility)",
