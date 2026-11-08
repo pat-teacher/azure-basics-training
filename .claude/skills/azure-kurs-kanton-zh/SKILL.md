@@ -90,7 +90,7 @@ assets/branding/         Logo, Banner, Wolke
 ## Schreibregeln
 - Schweizer Hochdeutsch mit «ss», Du-Form.
 - Fachbegriffe: immer Deutsch (Englisch), bei jedem Auftreten; in Diagrammen nur Englisch – Glossar und Ausnahmen in CLAUDE.md und `tools/begriffe.py`.
-- Oben: Titel, Kurstag, Stand-Datum (nicht bei Aufträgen), Dauer, Lernziele.
+- Oben: Titel, Kurstag, Dauer, Lernziele. Kein Stand-Datum (der Stand ist im Repo ersichtlich).
 - Unten: Quellen mit Link (Microsoft Learn bevorzugt).
 - Screenshots als Platzhalter: `![Beschreibung](bilder/tag<n>-<name>.png)` mit Hinweis, was der Screenshot zeigen soll.
 
@@ -101,7 +101,7 @@ assets/branding/         Logo, Banner, Wolke
 - **Umfang:** Nur Inhalte aus dem Tagesplan oben. Zusätzliche Themen nur als Ausblick, sonst braucht es eine schriftliche Vereinbarung.
 
 ## Abgabe-Checkliste
-- [ ] Quellen vorhanden; Stand-Datum vorhanden (ausser bei Aufträgen)
+- [ ] Quellen vorhanden; kein Stand-Datum
 - [ ] Kein «ß», durchgehend Du-Form
 - [ ] Lernziele mit K-Stufe formuliert
 - [ ] Lab enthält Voraussetzungen, Zeitbedarf, Aufräumschritt

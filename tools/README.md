@@ -1,7 +1,5 @@
 # Werkzeuge
 
-Stand: 19.10.2026
-
 Skripte, mit denen die Grafiken und Präsentationen des Kurses erzeugt werden. Die erzeugten Dateien liegen im Repo; die Skripte brauchst du nur, wenn du etwas änderst.
 
 ## Website (GitHub Pages)

@@ -2,7 +2,7 @@
 
 # Tag 2: Public Cloud und Azure Grundlagen
 
-Stand: 28.10.2026 · 8 Lektionen · heute zum ersten Mal in Azure
+8 Lektionen · heute zum ersten Mal in Azure
 
 ## Darum geht es heute
 Am letzten Kurstag hast du VMs auf deinem Laptop gebaut. Heute siehst du, wie ein Cloud-Anbieter wie Microsoft das im grossen Stil macht. Du lernst, wie Azure aufgebaut ist, und erstellst deine ersten Ressourcen – im Portal und mit der Kommandozeile.

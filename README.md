@@ -6,8 +6,6 @@
 
 Ein Hands-on-Kurs von **[PAT Cloud Solutions](https://patcloudsolutions.ch)** für ICT-Lernende im Auftrag des Kantons Zürich.
 
-Stand: 19.10.2026
-
 ## Worum es geht
 In fünf Tagen baust du selbst: zuerst eine virtuelle Maschine (Virtual Machine) auf deinem Laptop, dann Schritt für Schritt eine kleine Infrastruktur in Azure. Am Ende stellst du alles automatisch mit Bicep und cloud-init bereit.
 

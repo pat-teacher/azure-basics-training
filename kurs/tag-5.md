@@ -2,7 +2,7 @@
 
 # Tag 5: Automatisierung mit Bicep und cloud-init
 
-Stand: 25.10.2026 · 8 Lektionen
+8 Lektionen
 
 ## Darum geht es heute
 Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebung in Dateien und stellst sie mit einem einzigen Befehl bereit. Am Nachmittag baust du im Abschlussprojekt den Webserver der «Velo Zürich AG» und stellst ihn kurz vor.

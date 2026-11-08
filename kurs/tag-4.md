@@ -2,7 +2,7 @@
 
 # Tag 4: Azure Networking
 
-Stand: 25.10.2026 · 8 Lektionen
+8 Lektionen
 
 ## Darum geht es heute
 Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und legst fest, wer deine VMs erreichen darf und wer nicht. Am Nachmittag suchst du Fehler: Warum kommt eine Verbindung nicht an?

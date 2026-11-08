@@ -1,5 +1,4 @@
 // Inhalte der Präsentationen. Bilder: <name>-folie.png = Diagramm ohne eigenen Titel (siehe tools/README.md)
-// Stand: 28.10.2026
 
 const ende = (title, sub, items) => ({ type: "end", title, sub, items });
 
@@ -465,12 +464,14 @@ const INPUTS = [
         ], notes: "Definition nach NIST SP 800-145." },
         { type: "diagram", title: "Servicemodelle: Wer verwaltet was?", img: "servicemodelle-folie.png",
           notes: "Je weiter rechts, desto weniger Aufwand – aber auch weniger Kontrolle. Daten und Zugriffe bleiben immer deine Aufgabe." },
-        { type: "cards", title: "Merkhilfe: Pizza", cols: 4, items: [
-          { icon: "FaBuilding", h: "Selbst betrieben", t: "Eigenes Rechenzentrum (On Premises): alles selbst – Küche, Ofen, Teig, Belag." },
-          { icon: "FaServer", h: "IaaS", t: "Küche mit Ofen gemietet. Teig und Belag bringst du." },
-          { icon: "FaRocket", h: "PaaS", t: "Der Lieferdienst backt nach deinem Rezept." },
-          { icon: "FaPizzaSlice", h: "SaaS", t: "Restaurant: Du isst, was auf der Karte steht." },
-        ] },
+        { type: "table", title: "Merkhilfe Pizza: Wer macht was?", fontSize: 16, highlight: "du", center: true,
+          head: ["Aufgabe", "Selbst betrieben", "IaaS", "PaaS", "SaaS"], colW: [3.6, 1.85, 1.85, 1.85, 1.85], rows: [
+          [[{ text: "Bei der Pizza", options: { bold: true } }], "eigene Küche", "Mietküche", "Pizza nach Wunsch", "Pizza von der Karte"],
+          [[{ text: "Küche, Ofen, Strom", options: { bold: true, breakLine: true } }, { text: "Rechenzentrum, Hardware, Hypervisor", options: { color: "6F6F6F" } }], "du", "Anbieter", "Anbieter", "Anbieter"],
+          [[{ text: "Teig und Backen", options: { bold: true, breakLine: true } }, { text: "Betriebssystem, Laufzeitumgebung (Runtime)", options: { color: "6F6F6F" } }], "du", "du", "Anbieter", "Anbieter"],
+          [[{ text: "Belag wählen", options: { bold: true, breakLine: true } }, { text: "deine Anwendung", options: { color: "6F6F6F" } }], "du", "du", "du", "Anbieter"],
+        ], note: "Deine Daten und Zugriffe bleiben in jedem Modell deine Aufgabe.",
+          notes: "Zuerst nur die Zeile «Bei der Pizza» lesen lassen und fragen: Wer macht bei der Mietküche den Teig? Dann Zeile für Zeile zur IT übersetzen. PaaS gegen SaaS: Bei PaaS bestimmst du den Inhalt (deine Anwendung), bei SaaS nimmst du ein fertiges Produkt. Grenze des Vergleichs: Daten und Zugriffe bleiben immer deine Aufgabe, mehr dazu auf der Folie «Geteilte Verantwortung (Shared Responsibility)»." },
         { type: "table", title: "Beispiele bei Microsoft", head: ["Modell", "Du lieferst …", "Beispiele"], colW: [1.6, 3.5, 6], rows: [
           ["IaaS", "Betriebssystem, Software, Konfiguration", "Azure Virtual Machines, Azure Virtual Network, Azure Managed Disks"],
           ["PaaS", "nur deine Anwendung", "Azure App Service, Azure SQL Database"],

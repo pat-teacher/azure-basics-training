@@ -2,8 +2,6 @@
 
 # Theorie
 
-Stand: 19.10.2026
-
 Hier findest du die Theorie zum Kurs, kurz zusammengefasst und mit Grafiken. Die Kapitel passen zu den Inputs im Unterricht. Lies das Kapitel vor oder nach dem Input. Teste dich am Ende jedes Kapitels mit dem Selbsttest.
 
 | Kapitel | Inhalt | Kurstag |

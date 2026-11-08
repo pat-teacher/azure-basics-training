@@ -186,7 +186,13 @@ const builders = {
     sl.addText(s.title, { placeholder: "title" });
     const fs = s.fontSize || 17;
     const head = s.head.map((h) => ({ text: h, options: { bold: true, color: WHITE, fill: { color: DARK } } }));
-    const rows = s.rows.map((r, i) => r.map((c) => ({ text: c, options: { fill: { color: i % 2 ? WHITE : BG } } })));
+    // highlight: Zellen mit genau diesem Text hervorheben; center: alle Spalten ausser der ersten zentrieren
+    const rows = s.rows.map((r, i) => r.map((c, k) => ({ text: c, options: {
+      fill: { color: s.highlight ? (c === s.highlight ? LIGHT : k > 0 && i > 0 ? BG : WHITE) : i % 2 ? WHITE : BG },
+      ...(s.highlight && c === s.highlight ? { bold: true, color: BLUE } : {}),
+      ...(s.highlight && k > 0 && i > 0 && c !== s.highlight ? { color: GREY } : {}),
+      ...(s.center && k > 0 ? { align: "center" } : {}),
+    } })));
     const total = s.colW.reduce((a, b) => a + b, 0);
     const colW = s.colW.map((c) => (c / total) * CW);
     sl.addTable([head, ...rows], { x: M, y: TOP, w: CW, colW, fontSize: fs, color: DARK, valign: "middle", border: { type: "solid", pt: 0.75, color: LINE }, margin: [7, 10, 7, 10] });

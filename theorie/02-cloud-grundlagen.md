@@ -2,7 +2,7 @@
 
 # 2 Cloud-Grundlagen
 
-Stand: 19.10.2026 · gehört zu [Tag 2](../kurs/tag-2.md)
+Gehört zu [Tag 2](../kurs/tag-2.md)
 
 ## Lernziele
 - Du kannst erklären, was ein Hyperscaler ist und wie er mit Virtualisierung zusammenhängt. (K2)
@@ -49,11 +49,20 @@ Bei den Servicemodellen (Service Models) geht es um eine Frage: **Wie viel Betri
 
 Weitere Modelle: **FaaS** (Function as a Service, z. B. Azure Functions) führt nur einzelne Funktionen aus und kostet nur, wenn sie laufen. **CaaS** (Container as a Service) betreibt Container für dich.
 
-> **Merkhilfe Pizza:**
-> - **Eigenes Rechenzentrum (On Premises):** Du backst alles selbst, mit eigenem Ofen und eigener Küche.
-> - **IaaS:** Du mietest eine Küche mit Ofen. Teig und Belag bringst du mit.
-> - **PaaS:** Der Lieferdienst backt nach deinem Rezept.
-> - **SaaS:** Du gehst ins Restaurant und isst, was auf der Karte steht.
+**Merkhilfe Pizza:** Wer macht was?
+
+| Aufgabe | eigenes Rechenzentrum (On Premises) | IaaS | PaaS | SaaS |
+|---|---|---|---|---|
+| **Bei der Pizza** | eigene Küche | Mietküche | Pizza nach Wunsch | Pizza von der Karte |
+| **Küche, Ofen, Strom** = Rechenzentrum, Hardware, Hypervisor | du | Anbieter | Anbieter | Anbieter |
+| **Teig und Backen** = Betriebssystem, Laufzeitumgebung (Runtime) | du | du | Anbieter | Anbieter |
+| **Belag wählen** = deine Anwendung | du | du | du | Anbieter |
+
+- **Mietküche (IaaS):** Küche und Ofen gehören dem Vermieter. Teig und Belag machst du selbst.
+- **Pizza nach Wunsch (PaaS):** Du stellst den Belag online zusammen, die Pizzeria macht Teig und backt. Du bestimmst den Inhalt, also deine Anwendung.
+- **Pizza von der Karte (SaaS):** Du nimmst ein fertiges Produkt.
+
+Der Vergleich hat eine Grenze: Deine Daten und Zugriffe bleiben in jedem Modell deine Aufgabe (siehe [Geteilte Verantwortung](#geteilte-verantwortung-shared-responsibility)).
 
 **Im Kurs** arbeitest du vor allem mit **IaaS**: VMs, Netzwerke und Datenträger verwaltest du selbst.
 

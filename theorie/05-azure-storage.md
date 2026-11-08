@@ -2,7 +2,7 @@
 
 # 5 Azure Storage
 
-Stand: 19.10.2026 · gehört zu [Tag 3](../kurs/tag-3.md)
+Gehört zu [Tag 3](../kurs/tag-3.md)
 
 ## Lernziele
 - Du kannst Block-, Datei- und Objektspeicher unterscheiden und Azure-Dienste zuordnen. (K2)

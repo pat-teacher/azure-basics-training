@@ -2,7 +2,7 @@
 
 # 4 Azure Compute: virtuelle Maschinen
 
-Stand: 26.10.2026 · gehört zu [Tag 3](../kurs/tag-3.md)
+Gehört zu [Tag 3](../kurs/tag-3.md)
 
 ## Lernziele
 - Du kannst die Bestandteile einer Azure-VM nennen und ihre Aufgabe erklären. (K2)

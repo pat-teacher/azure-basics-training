@@ -2,7 +2,7 @@
 
 # 7 Automatisierung: Bicep und cloud-init
 
-Stand: 19.10.2026 · gehört zu [Tag 5](../kurs/tag-5.md)
+Gehört zu [Tag 5](../kurs/tag-5.md)
 
 ## Lernziele
 - Du kannst erklären, was Infrastruktur als Code (IaC) ist und welche Vorteile es hat. (K2)

@@ -2,7 +2,7 @@
 
 # 6 Azure Networking
 
-Stand: 19.10.2026 · gehört zu [Tag 4](../kurs/tag-4.md)
+Gehört zu [Tag 4](../kurs/tag-4.md)
 
 ## Lernziele
 - Du kannst die Begriffe VNet, Adressraum (Address Space), Subnetz (Subnet) und CIDR erklären. (K2)

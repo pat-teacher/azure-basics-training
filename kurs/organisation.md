@@ -2,8 +2,6 @@
 
 # Organisation
 
-Stand: 25.10.2026
-
 ## Kursziele
 Nach dem Kurs kannst du:
 1. Virtualisierung, Hypervisoren und virtuelle Maschinen (Virtual Machines) erklären und die Grundprinzipien einer Cloud-Plattform beschreiben. (K2)

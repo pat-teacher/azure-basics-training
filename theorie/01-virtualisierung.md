@@ -2,7 +2,7 @@
 
 # 1 Virtualisierung
 
-Stand: 26.10.2026 · gehört zu [Tag 1](../kurs/tag-1.md) · Lesezeit ca. 20 Min.
+Gehört zu [Tag 1](../kurs/tag-1.md) · Lesezeit ca. 20 Min.
 
 ## Lernziele
 - Du kannst erklären, was ein Hypervisor macht. (K2)

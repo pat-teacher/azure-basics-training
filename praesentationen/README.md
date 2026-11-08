@@ -2,8 +2,6 @@
 
 # Präsentationen
 
-Stand: 25.10.2026
-
 Die Folien zum Herunterladen (PowerPoint). Die Inhalte findest du auch als Text unter [Kurs](../kurs/organisation.md) und [Theorie](../theorie/README.md).
 
 ## Kurseinführung

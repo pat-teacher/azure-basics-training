@@ -2,7 +2,7 @@
 
 # 3 Aufbau von Azure
 
-Stand: 19.10.2026 · gehört zu [Tag 2](../kurs/tag-2.md)
+Gehört zu [Tag 2](../kurs/tag-2.md)
 
 ## Lernziele
 - Du kannst Region, Verfügbarkeitszone (Availability Zone) und Regionspaar (Region Pair) erklären. (K2)

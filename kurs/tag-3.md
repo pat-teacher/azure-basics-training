@@ -2,7 +2,7 @@
 
 # Tag 3: Azure Compute und Storage
 
-Stand: 25.10.2026 · 8 Lektionen
+8 Lektionen
 
 ## Darum geht es heute
 Heute erstellst du deine erste VM in Azure und meldest dich mit deinem SSH-Schlüssel von Tag 1 an. Danach lernst du, wo man in der Cloud Dateien speichert, und stellst eine kleine Website ins Internet.

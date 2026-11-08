@@ -2,7 +2,7 @@
 
 # Tag 1: Grundlagen Virtualisierung
 
-Stand: 25.10.2026 · 8 Lektionen · heute noch ohne Azure, nur auf deinem Laptop
+8 Lektionen · heute noch ohne Azure, nur auf deinem Laptop
 
 ## Darum geht es heute
 Bevor du in die Cloud gehst, lernst du, was dahintersteckt: **virtuelle Maschinen (VMs)**. Du erstellst heute selbst VMs auf deinem Laptop – zuerst von Hand, dann automatisch mit einer Datei. Du misst, wie viel Zeit dir die Automatisierung spart. Am Schluss bereitest du deinen SSH-Schlüssel für die Cloud vor.

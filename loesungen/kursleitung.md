@@ -2,8 +2,6 @@
 
 # Hinweise für die Kursleitung
 
-Stand: 08.11.2026
-
 Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernenden geschrieben. Hier stehen die Angaben, die nur die Kursleitung braucht: wann welcher Input kommt, welche Folien dazu gehören und was vorzubereiten ist.
 
 ## Exit-Tickets
