@@ -45,7 +45,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L2, nach Auftrag 2.1 | Besprechung 2.1: strittige Zeilen aus Schritt 1, 2–3 Empfehlungen aus Schritt 5 | 10' | Input 2, Folie 5 «Servicemodelle» | Lernjournal, ⭐ von 2.1 |
 | L3, Beginn | Aufbau von Azure: Regionen und Zonen, Hierarchie, Ressourcengruppe (Resource Group), Azure Resource Manager. Live-Demo Portal: Ressourcengruppe (Resource Group) bis Reiter Tags ausfüllen, nicht erstellen | 17' | Input 3, Folien 1–9 | Aufträge 2.2, 2.3 |
 | L4, Beginn | Kursregion abfragen: «Wer hat Switzerland North nicht in der Liste?» Ersatzregionen an die Wandtafel | 5' | Input 3, Folie 9 | Auftrag 2.3 |
-| L4, Schluss | Aktivitätsprotokoll zeigen: «Jede Aktion läuft über den Resource Manager.» | 5' | Portal | 2.2/2.3 fertig, aufräumen |
+| L4, Schluss | Aktivitätsprotokoll (Activity Log) zeigen: «Jede Aktion läuft über den Resource Manager.» | 5' | Portal | 2.2/2.3 fertig, aufräumen |
 | L5, Beginn | Werkzeuge: Live-Demo Cloud Shell (erster Start ohne Speicherkonto (Storage Account)) und Azure CLI (`az group create`, `list`, `delete`, `--help`, `-o table`). Ausblick RBAC in einem Satz, Selbsttest | 15' | Input 3, Folien 10–18 | Aufträge 2.4, 2.5 |
 | L7, Beginn | Challenge Labs erklären, Trainingsschlüssel teilen | 5' | Tag 2, Folie 9 | Puffer 2.1–2.5, ⭐ 2.6, ⭐ 2.7 |
 | L8, Beginn | Besprechung 2.5, Schritt 3 (Switzerland North: Schweiz und Zonen) | 10' | – | Aufräumkontrolle |
@@ -53,7 +53,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 **Vorbereitung**
 - Alle Lernenden haben sich vorab bei Azure for Students angemeldet (Login testen lassen, siehe Tag 1, Folie «Nächstes Mal»).
-- Mit einem eigenen Konto für Azure for Students vorab prüfen: erlaubte Regionen (Richtlinie > Zuweisungen), Anzeige des Guthabens im Education Hub, Dialog beim ersten Start der Cloud Shell. Pfade in 2.2 und 2.4 bei Abweichungen anpassen. <!-- prüfen -->
+- Mit einem eigenen Konto für Azure for Students vorab prüfen: erlaubte Regionen (Richtlinie > Zuweisungen), Anzeige des Guthabens (Credit) im Education Hub, Dialog beim ersten Start der Cloud Shell. Pfade in 2.2 und 2.4 bei Abweichungen anpassen. <!-- prüfen -->
 - Für die Demos in L3 und L5 im Browser bereit: Portal (Sprache Deutsch), Cloud Shell schon einmal gestartet, damit die Demo nicht beim Einrichten hängt. Für die Demo des ersten Starts ein zweites Browserprofil oder Inkognito-Fenster verwenden.
 - Wandtafel oder Whiteboard für die Kursregionen (L4).
 - Zeitplan: 2.1 bis ca. Mitte L2, 2.2 in L3, 2.3 in L4, 2.4 bis ca. L6 Beginn, 2.5 zu zweit in L6. L7 ist Puffer. ⭐ 2.7 nur für Teams, die 2.5 in L6 beendet haben (Lab braucht ca. 40'); sie dürfen in L8 bis 20' weiterarbeiten.
@@ -62,7 +62,8 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 **Wenn es klemmt**
 - Lernende ohne funktionierendes Abonnement (Subscription) arbeiten ab 2.2 bei einem Partner mit und holen es nach.
-- Häufigster Fehler in 2.3 und 2.4: `RequestDisallowedByPolicy` → Region nicht erlaubt, Kursregion aus 2.2 verwenden.
+- Region nicht erlaubt → Fehler `RequestDisallowedByPolicy` (evtl. `RequestDisallowedByAzure`). Lösung: Kursregion aus 2.2 verwenden. Viele Konten für Azure for Students haben keine Einschränkung (getestet am 08.11.2026: Ressourcengruppe (Resource Group) und Speicherkonto (Storage Account) in Brazil South ohne Fehler). <!-- prüfen: Verhalten bei einem eingeschränkten Konto, insbesondere ob schon die Ressourcengruppe abgelehnt wird -->
+- In L4 kontrollieren, dass alle die Kursregion aus 2.2 verwenden (Schritt 4 oder 4b).
 - In 2.4: Platzhalter `<kuerzel>` nicht ersetzt → `syntax error near unexpected token`.
 - Heute entstehen keine kostenpflichtigen Ressourcen. Die Aufräumkontrolle in L8 übt trotzdem die Routine für Tag 3.
 
