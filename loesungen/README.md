@@ -13,6 +13,6 @@ Input-Zeitpunkte und Vorbereitung pro Tag: [Hinweise für die Kursleitung](kursl
 |-----|----------|
 | 1 | [tag-1/](tag-1/) |
 | 2 | [tag-2/](tag-2/) |
-| 3 | folgt |
+| 3 | [tag-3/](tag-3/) |
 | 4 | folgt |
 | 5 | folgt |

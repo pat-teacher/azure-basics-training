@@ -69,13 +69,28 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 ## Tag 3: Azure Compute und Storage
 
-| Wann | Input | Dauer | Folien |
-|------|-------|-------|--------|
-| L1, nach Rückblick | Virtuelle Maschinen (Virtual Machines) in Azure: Bestandteile, Grössen, Kosten | 20' | Input 4 |
-| L5, Beginn | Azure Storage: Speicherkonto (Storage Account), Blob, Redundanz | 15' | Input 5 |
+| Wann | Input | Dauer | Folien | Danach |
+|------|-------|-------|--------|--------|
+| L1, Beginn | Rückblick-Quiz zu zweit, Exit-Tickets von Tag 2, Ziele, Ablauf und Aufträge | 15' | Tag 3, Folien 1–5 | Input 4 |
+| L1, nach dem Einstieg | Virtuelle Maschinen (Virtual Machines) in Azure: Bestandteile, Vergleich mit Tag 1, Grösse (Size), Status und Kosten, SSH-Schlüssel von Tag 1, Selbsttest. Live-Demo: VM-Assistent im Portal bis **Überprüfen + erstellen** (nach Folie 7) | 20' | Input 4, Folien 1–11 | Kosten im Griff |
+| L1, vor Auftrag 3.1 | Kosten im Griff: kleine Grössen, nur eine VM gleichzeitig, immer aufräumen | 3' | Tag 3, Folie 6 | Aufträge 3.1, 3.2 |
+| L3/L4, nach Auftrag 3.2 | Kurz im Plenum: «Beendet» oder «Beendet (Zuordnung aufgehoben)»? Was kostet was? (aus 3.2). Kontrolle, dass alle `rg-tag3-portal-…` gelöscht haben | 5' | Input 4, Folie 5 | Auftrag 3.3 |
+| L5, Beginn | Azure Storage: Speichermodelle, Speicherkonto (Storage Account), Container und Blob, Redundanz (Redundancy), Zugriffsebenen (Access Tiers), Persistenz, Selbsttest | 15' | Input 5, Folien 1–11 | Auftrag 3.4 |
+| L7, wenn die meisten 3.5 fertig haben | Kurz im Plenum: Vergleich VM mit nginx (3.3) und statische Website (Static Website) (3.5), Bezug zu IaaS/PaaS | 5' | Input 2 (Tag 2), Folie 6 «Merkhilfe Pizza» | ⭐ 3.6, aufräumen |
+| L8 | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag3-…`. Kostenanalyse (Cost Analysis) anschauen (zeigt erst die Kosten von Tag 2, Verzögerung 8–24 Stunden), Exit-Ticket, Ausblick Tag 4 | 15' | Tag 3, Folien 7–8 | – |
 
 **Vorbereitung**
-- Erlaubte Regionen und VM-Grössen im Student-Abo prüfen. <!-- prüfen -->
+- **Port 22 im Schulnetz testen:** Ausgehendes SSH vom Kurs-Laptop zu einer Azure-VM muss gehen, sonst scheitern 3.1 und 3.3. Ausweichmöglichkeit: Mobile-Hotspot. <!-- prüfen -->
+- Mit einem eigenen Konto für Azure for Students vorab prüfen: `Standard_B1s` und Image Ubuntu 24.04 in der Kursregion verfügbar, Feldnamen im deutschen VM-Assistenten, Menüpfade **Endpunkte** und **Statische Website** (Static Website) im Speicherkonto (Storage Account). <!-- prüfen -->
+- Lernende ohne SSH-Schlüssel von Tag 1 (Auftrag 1.6) vor L2 erfassen. Sie holen Schritt 1–2 von 1.6 in 5 Minuten nach.
+- Für die Demo in L1 den VM-Assistenten im Portal offen haben, aber nicht erstellen.
+
+**Wenn es klemmt**
+- Nur **eine VM gleichzeitig**: Das Kontingent an vCPUs (Quota) im Student-Abo ist klein. 3.2 endet mit dem Löschen der Portal-VM, 3.3 mit dem Löschen der CLI-VM.
+- `SkuNotAvailable` → `Standard_B2ats_v2` statt `Standard_B1s`.
+- `Permission denied (publickey)` → fast immer Benutzer `ubuntu` statt `azureuser`.
+- Speicherkonto (Storage Account): Name «bereits vergeben» → zwei Ziffern anhängen. «Keine Berechtigung» beim Öffnen des Containers → **Zu Zugriffsschlüssel wechseln**.
+- Wer in L7 nicht fertig ist: 3.5 hat Vorrang vor ⭐ 3.6. Speicherkonten (Storage Accounts) kosten fast nichts, VMs schon. Bei Zeitnot zuerst die VMs aufräumen.
 
 ## Tag 4: Azure Networking
 
