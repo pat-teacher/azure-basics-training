@@ -580,9 +580,9 @@ const INPUTS = [
           notes: "Optionaler Auftrag 2.7. Nicht im Vertragsumfang, darum als Zusatz." },
         { type: "quiz", qs: [
           { h: "CLI", q: "Wie zeigst du alle Ressourcengruppen (Resource Groups) als Tabelle an?" },
-          { h: "Platzhalter", q: "Was machst du mit <kuerzel> in einem Befehl?" },
+          { h: "Platzhalter", q: "Im Befehl steht rg-tag2-<kuerzel>. Was tippst du ein, wenn du Mia Muster heisst?" },
           { h: "Gleich?", q: "Warum kommt im Portal und in der CLI dasselbe heraus?" },
-        ], notes: "az group list --output table. Durch die eigenen Initialen ersetzen – samt Klammern. Beide gehen über den Azure Resource Manager." },
+        ], notes: "az group list --output table. rg-tag2-mm: Die eigenen Initialen einsetzen, die spitzen Klammern fallen weg. Häufiger Fehler: <mm> eintippen, dann meldet die Shell «syntax error near unexpected token». Beide gehen über den Azure Resource Manager." },
         quellen([
           { icon: "FaBook", h: "Theorie im Repository", t: "theorie/03-azure-aufbau.md" },
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Beschreiben der Kernkomponenten der Azure-Architektur · Erste Schritte mit der Azure CLI" },
