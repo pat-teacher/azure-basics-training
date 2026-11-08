@@ -33,6 +33,10 @@ Azure hat weltweit über 60 Regionen. <!-- prüfen: Stand 19.10.2026 -->
 
 > **Alltagsvergleich:** Eine Region ist eine Stadt, die Verfügbarkeitszonen (Availability Zones) sind Quartiere mit eigenem Strom- und Wassernetz. Brennt es in einem Quartier, laufen die anderen weiter.
 
+**Wie weit liegen die Verfügbarkeitszonen (Availability Zones) auseinander?** Einen festen Mindestabstand gibt es nicht. Die Zonen einer Region liegen meist mehrere Kilometer auseinander, aber innerhalb von etwa 100 km. Der Abstand ist ein Kompromiss:
+- **Weit genug für den Katastrophenschutz:** Ein Hochwasser, ein Sturm oder ein grosser Stromausfall soll nicht zwei Zonen gleichzeitig treffen.
+- **Nah genug für eine kurze Latenz (Latency):** Latenz ist die Zeit, die ein Signal unterwegs ist. Azure kopiert Daten zwischen den Zonen gleichzeitig, damit in jeder Zone derselbe Stand ist. Dafür darf ein Signal hin und zurück nur etwa 2 Millisekunden brauchen. Das geht nur, wenn die Glasfaser zwischen den Zonen kurz ist.
+
 ## Die logische Seite: von Mandant bis Ressource
 
 ![Hierarchie in Azure](img/azure-hierarchie.svg)
