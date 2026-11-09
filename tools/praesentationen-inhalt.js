@@ -222,10 +222,20 @@ const TAGE = [
       { title: "Start", slides: [
         { type: "title", title: "Tag 3: Azure Compute und Storage", sub: "Einführung in Cloud Computing mit Microsoft Azure" },
         { type: "quiz", title: "Rückblick Tag 2", lead: "Beantworte die Fragen mit deinem Partner – 5 Minuten.", qs: [
-          { h: "Servicemodell (Service Model)", q: "Azure Virtual Machines, Microsoft Teams, Azure App Service – IaaS, PaaS oder SaaS?" },
-          { h: "Ressourcengruppe (Resource Group)", q: "Was passiert mit allen Ressourcen, wenn du die Ressourcengruppe (Resource Group) löschst?" },
-          { h: "CLI", q: "Mit welchem Befehl zeigst du alle Ressourcengruppen (Resource Groups) als Tabelle an?" },
-        ], notes: "IaaS / SaaS / PaaS. Alles wird gelöscht. az group list --output table." },
+          { h: "Servicemodell (Service Model)", q: "Bei welchem Modell installierst du die Updates des Betriebssystems selbst: IaaS, PaaS oder SaaS?" },
+          { h: "Ressourcengruppe (Resource Group)", q: "Kann eine VM gleichzeitig in zwei Ressourcengruppen (Resource Groups) liegen?" },
+          { h: "CLI", q: "Mit welchem Befehl prüfst du, mit welchem Abonnement (Subscription) die Azure CLI verbunden ist?" },
+        ], notes: "IaaS – bei der VM bist du für das Betriebssystem zuständig, genau das machst du heute. Bei PaaS und SaaS macht es Microsoft. Nein – jede Ressource gehört zu genau einer Ressourcengruppe (Resource Group). az account show --output table (Spalte Name: Azure for Students)." },
+        { type: "cards", title: "Exit-Ticket Tag 2: Was stimmt hier nicht?", lead: "Frage: Erkläre in zwei Sätzen, was eine Ressourcengruppe (Resource Group) ist.", cols: 3, items: [
+          { icon: "FaQuestionCircle", h: "Antwort A", t: "«Eine Ressourcengruppe vereint die verschiedenen Ressourcen wie Speicher, Ram und Kerne die für die VMs zu Verfügung stehen»" },
+          { icon: "FaQuestionCircle", h: "Antwort B", t: "«In Microsoft Azure ist eine Ressourcengruppe ein Ordner, in dem mehrere Azure-Ressourcen zusammen gespeichert werden. So kann man zum Beispiel virtuelle Maschinen, Datenbanken und Netzwerke einfacher verwalten.»" },
+          { icon: "FaQuestionCircle", h: "Antwort C", t: "«In einer Resource Group kannst du sachen in der cloud zentral verwalten. Das man alle Berechtigungen zentral im Blick hast»" },
+        ], notes: "Echte Antworten aus den Exit-Tickets, ohne Namen. Für jeden Kurs eigene Antworten mit Missverständnissen einsetzen. 2 Minuten zu zweit: Was stimmt bei A, B und C nicht? Dann 2–3 Paare fragen. Auflösung auf der nächsten Folie." },
+        { type: "cards", title: "Exit-Ticket Tag 2: die Auflösung", lead: "Richtig: «Eine Ressourcengruppe ist wie ein Ordner in Azure, in dem man verschiedene Ressourcen zusammen verwalten kann. Wenn man die Ressourcengruppe löscht, werden auch alle Ressourcen darin gelöscht.»", cols: 3, items: [
+          { icon: "FaExclamationTriangle", h: "A: Das ist die VM-Grösse", t: "Kerne und RAM legt die Grösse der VM fest. In der Gruppe liegen ganze Ressourcen: VM, Netzwerk, Datenträger." },
+          { icon: "FaExclamationTriangle", h: "B: Darin wird nichts gespeichert", t: "Die Gruppe ordnet Ressourcen nur zu. Daten liegen in den Ressourcen selbst, z. B. in einer Datenbank." },
+          { icon: "FaExclamationTriangle", h: "C: Zu ungenau", t: "Welche «Sachen»? Ressourcen, die zusammengehören. Rechte kann man dort vergeben, aber nicht alle." },
+        ], notes: "Die richtige Antwort oben stammt ebenfalls aus den Exit-Tickets. Kernaussage: logischer Container, gemeinsam verwalten (Tags, Rechte, Kosten), gemeinsam löschen. Überleitung zu Tag 3: Heute legst du in einer Ressourcengruppe (Resource Group) eine VM an – und siehst, wie viele Ressourcen dabei zusammen entstehen." },
       ] },
       { title: "Heute", slides: [
         { type: "cards", title: "Deine Ziele heute", cols: 2, items: [

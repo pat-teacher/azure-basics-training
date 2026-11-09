@@ -72,13 +72,15 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 | Wann | Input | Dauer | Folien | Danach |
 |------|-------|-------|--------|--------|
-| L1, Beginn | Rückblick-Quiz zu zweit, Exit-Tickets von Tag 2, Ziele, Ablauf und Aufträge | 15' | Tag 3, Folien 1–5 | Input 4 |
+| L1, Beginn | Rückblick-Quiz zu zweit | 5' | Tag 3, Folien 1–2 | Exit-Ticket |
+| L1, nach dem Quiz | Exit-Ticket Tag 2: Die Lernenden finden zuerst selbst heraus, was an den drei Antworten A–C nicht stimmt. Danach kommt die Auflösung mit der richtigen Aussage | 7' | Tag 3, Folien 3–4 | Ziele |
+| L1, nach dem Exit-Ticket | Ziele, Ablauf und Aufträge des Tages | 3' | Tag 3, Folien 5–7 | Input 4 |
 | L1, nach dem Einstieg | Virtuelle Maschinen (Virtual Machines) in Azure: Bestandteile, Vergleich mit Tag 1, Grösse (Size), Status und Kosten, SSH-Schlüssel von Tag 1, Selbsttest. Live-Demo: VM-Assistent im Portal bis **Überprüfen + erstellen** (nach Folie 7) | 20' | Input 4, Folien 1–11 | Kosten im Griff |
-| L1, vor Auftrag 3.1 | Kosten im Griff: kleine Grössen, nur eine VM gleichzeitig, immer aufräumen | 3' | Tag 3, Folie 6 | Aufträge 3.1, 3.2 |
+| L1, vor Auftrag 3.1 | Kosten im Griff: kleine Grössen, nur eine VM gleichzeitig, immer aufräumen | 3' | Tag 3, Folie 8 | Aufträge 3.1, 3.2 |
 | L3/L4, nach Auftrag 3.2 | Kurz im Plenum: «Beendet» oder «Beendet (Zuordnung aufgehoben)»? Was kostet was? (aus 3.2). Kontrolle, dass alle `rg-tag3-portal-…` gelöscht haben | 5' | Input 4, Folie 5 | Auftrag 3.3 |
 | L5, Beginn | Azure Storage: Speichermodelle, Speicherkonto (Storage Account), Container und Blob, Redundanz (Redundancy), Zugriffsebenen (Access Tiers), Persistenz, Selbsttest | 15' | Input 5, Folien 1–11 | Auftrag 3.4 |
 | L7, wenn die meisten 3.5 fertig haben | Kurz im Plenum: Vergleich VM mit nginx (3.3) und statische Website (Static Website) (3.5), Bezug zu IaaS/PaaS | 5' | Input 2 (Tag 2), Folie 6 «Merkhilfe Pizza» | ⭐ 3.6, aufräumen |
-| L8 | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag3-…`. Kostenanalyse (Cost Analysis) anschauen (zeigt erst die Kosten von Tag 2, Verzögerung 8–24 Stunden), Exit-Ticket, Ausblick Tag 4 | 15' | Tag 3, Folien 7–8 | – |
+| L8 | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag3-…`. Kostenanalyse (Cost Analysis) anschauen (zeigt erst die Kosten von Tag 2, Verzögerung 8–24 Stunden), Exit-Ticket, Ausblick Tag 4 | 15' | Tag 3, Folien 9–10 | – |
 
 **Vorbereitung**
 - **Port 22 im Schulnetz testen:** Ausgehendes SSH vom Kurs-Laptop zu einer Azure-VM muss gehen, sonst scheitern 3.1 und 3.3. Ausweichmöglichkeit: Mobile-Hotspot. <!-- prüfen -->
