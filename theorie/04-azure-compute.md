@@ -67,9 +67,9 @@ Eine VM braucht Festplatten, wie dein Laptop. In Azure heissen sie **Datenträge
 
 | Datenträger | Was ist darauf? | Bleibt erhalten? |
 |-------------|-----------------|------------------|
-| **OS-Datenträger** (OS Disk) | das Betriebssystem, erstellt aus dem Image. Jede VM hat genau einen. | ja, bis du ihn löschst |
-| **Datenfestplatte** (Data Disk) | deine Daten, z. B. eine Datenbank. Freiwillig, lässt sich an eine andere VM hängen. | ja, bis du sie löschst |
-| **temporärer Datenträger** (Temporary Disk) | Cache und temporäre Dateien. Nur bei manchen VM-Grössen, liegt direkt auf dem Host. | **nein**, kann beim Freigeben oder bei einer Wartung verloren gehen |
+| **OS-Datenträger** (OS Disk) | das Betriebssystem, erstellt aus dem Image. Jede VM hat genau einen. | bei Neustart und Freigeben ja. Wird die VM **ersetzt**: **nein**, die neue VM bekommt einen frischen aus dem Image, der alte wird mit der VM gelöscht. |
+| **Datenfestplatte** (Data Disk) | deine Daten, z. B. eine Datenbank. Freiwillig, lässt sich an eine andere VM hängen. | ja, auch wenn die VM ersetzt wird: Du hängst sie an die neue VM. |
+| **temporärer Datenträger** (Temporary Disk) | Cache und temporäre Dateien. Nur bei manchen VM-Grössen, liegt direkt auf dem Host. | **nein**, schon nach dem Freigeben oder einer Wartung kann alles weg sein. |
 
 - OS-Datenträger (OS Disk) und Datenfestplatte (Data Disk) sind **verwaltete Datenträger** (Managed Disks): eigene Ressourcen in der Ressourcengruppe (Resource Group). Du findest sie in Auftrag 3.2. Sie liegen **nicht** in einem Speicherkonto (Storage Account).
 - Datenträger kosten auch dann, wenn die VM freigegeben (deallocated) ist. Erst Löschen beendet die Kosten.

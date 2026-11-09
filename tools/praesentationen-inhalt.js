@@ -648,12 +648,12 @@ const INPUTS = [
           ["Permission denied (publickey)", "falscher Schlüssel oder falscher Benutzername"],
           ["REMOTE HOST IDENTIFICATION HAS CHANGED", "neue VM unter alter IP → ssh-keygen -R <ip>"],
         ] },
-        { type: "table", title: "Speicher der VM", head: ["Datenträger (Disk)", "Was ist darauf?", "Bleibt erhalten?"], colW: [4, 3.5, 3.5], rows: [
-          ["OS-Datenträger (OS Disk)", "Betriebssystem aus dem Image. Jede VM hat genau einen.", "ja, bis du ihn löschst"],
-          ["Datenfestplatte (Data Disk)", "deine Daten, freiwillig. Lässt sich an eine andere VM hängen.", "ja, bis du sie löschst"],
-          ["temporärer Datenträger (Temporary Disk)", "Cache, nur bei manchen Grössen. Liegt direkt auf dem Host.", "nein – kann beim Freigeben verloren gehen"],
+        { type: "table", title: "Speicher der VM", head: ["Datenträger (Disk)", "Was ist darauf?", "Bleibt erhalten?"], colW: [3.2, 3.6, 4.2], rows: [
+          ["OS-Datenträger (OS Disk)", "Betriebssystem aus dem Image. Jede VM hat genau einen.", "bei Neustart und Freigeben ja. Wird die VM ersetzt: nein, die neue bekommt einen frischen aus dem Image."],
+          ["Datenfestplatte (Data Disk)", "deine Daten, freiwillig. Lässt sich an eine andere VM hängen.", "ja, auch wenn die VM ersetzt wird: Du hängst sie an die neue VM."],
+          ["temporärer Datenträger (Temporary Disk)", "Cache, nur bei manchen Grössen. Liegt direkt auf dem Host.", "nein, schon nach dem Freigeben kann alles weg sein."],
         ], note: "Die ersten zwei sind verwaltete Datenträger (Managed Disks): eigene Ressourcen in der Ressourcengruppe (Resource Group), nicht im Speicherkonto (Storage Account).",
-          notes: "Wie eine eingebaute Festplatte (Blockspeicher): Eine VM liest und schreibt darauf. Datenträger kosten auch, wenn die VM freigegeben ist (Folie 5). Den OS-Datenträger (OS Disk) finden die Lernenden in Auftrag 3.2 in der Ressourcengruppe (Resource Group). Das Speicherkonto (Storage Account) mit Blob, Files, Queue und Table folgt in Input 5." },
+          notes: "Wie eine eingebaute Festplatte (Blockspeicher): Eine VM liest und schreibt darauf. Brücke zu Input 5, Persistenz: Daten auf dem OS-Datenträger (OS Disk) überleben das Ersetzen der VM nicht. Datenträger kosten auch, wenn die VM freigegeben ist (Folie 5). Den OS-Datenträger (OS Disk) finden die Lernenden in Auftrag 3.2 in der Ressourcengruppe (Resource Group). Das Speicherkonto (Storage Account) mit Blob, Files, Queue und Table folgt in Input 5." },
         { type: "quiz", qs: [
           { h: "Bestandteile", q: "Welche Ressourcen findest du nach dem Erstellen einer VM in der Ressourcengruppe (Resource Group)?" },
           { h: "Kosten", q: "Kostet die VM nach sudo poweroff noch etwas?" },
