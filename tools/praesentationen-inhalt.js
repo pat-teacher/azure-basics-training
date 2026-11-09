@@ -703,7 +703,11 @@ const INPUTS = [
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Übersicht über Speicherkonten (Storage Accounts) · Storage-Redundanz · Zugriffsebenen (Access Tiers)" },
           { icon: "FaBook", h: "TBZ M346", t: "Speichermodelle (Texte und Grafiken übernommen, für Azure angepasst)" },
         ]),
-        ende("Jetzt du", "Auftrag 3.4: Speicherkonto (Storage Account) und Blob-Container"),
+        ende("Jetzt du", "Auftrag 3.4, direkt danach 3.5", [
+          { icon: "FaDatabase", h: "3.4 · Dateien in Azure", t: "Einzel, 40 Min. · Speicherkonto (Storage Account), Datei hochladen. Noch nicht aufräumen!" },
+          { icon: "FaGlobeEurope", h: "3.5 · Website ohne Server", t: "Einzel, 30 Min. · Statische Website (Static Website) im selben Speicherkonto (Storage Account)" },
+          { icon: "FaStar", h: "Fertig?", t: "⭐ 3.6 SAS-Token, 20 Min. · Datei zeitlich begrenzt teilen. Danach aufräumen" },
+        ]),
       ] },
     ],
   },

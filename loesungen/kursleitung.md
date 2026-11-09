@@ -78,15 +78,16 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L1, nach dem Einstieg | Virtuelle Maschinen (Virtual Machines) in Azure: Bestandteile, Vergleich mit Tag 1, Grösse (Size), Status und Kosten, SSH-Schlüssel von Tag 1, Selbsttest. Live-Demo: VM-Assistent im Portal bis **Überprüfen + erstellen** (nach Folie 7) | 20' | Input 4, Folien 1–11 | Kosten im Griff |
 | L1, vor Auftrag 3.1 | Kosten im Griff: kleine Grössen, nur eine VM gleichzeitig, immer aufräumen | 3' | Tag 3, Folie 8 | Aufträge 3.1, 3.2 |
 | L3/L4, nach Auftrag 3.2 | Kurz im Plenum: «Beendet» oder «Beendet (Zuordnung aufgehoben)»? Was kostet was? (aus 3.2). Kontrolle, dass alle `rg-tag3-portal-…` gelöscht haben | 5' | Input 4, Folie 5 | Auftrag 3.3 |
-| L5, Beginn | Azure Storage: Speichermodelle, Speicherkonto (Storage Account), Container und Blob, Redundanz (Redundancy), Zugriffsebenen (Access Tiers), Persistenz, Selbsttest | 15' | Input 5, Folien 1–11 | Auftrag 3.4 |
+| L5, Beginn | Azure Storage: Speichermodelle, Speicherkonto (Storage Account), Container und Blob, Redundanz (Redundancy), Zugriffsebenen (Access Tiers), Persistenz, Selbsttest | 15' | Input 5, Folien 1–11 | Auftrag 3.4, direkt danach 3.5 im selben Speicherkonto (Storage Account) |
 | L7, wenn die meisten 3.5 fertig haben | Kurz im Plenum: Vergleich VM mit nginx (3.3) und statische Website (Static Website) (3.5), Bezug zu IaaS/PaaS | 5' | Input 2 (Tag 2), Folie 6 «Merkhilfe Pizza» | ⭐ 3.6, aufräumen |
 | L8 | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag3-…`. Kostenanalyse (Cost Analysis) anschauen (zeigt erst die Kosten von Tag 2, Verzögerung 8–24 Stunden), Exit-Ticket, Ausblick Tag 4 | 15' | Tag 3, Folien 9–10 | – |
 
 **Vorbereitung**
 - **Port 22 im Schulnetz testen:** Ausgehendes SSH vom Kurs-Laptop zu einer Azure-VM muss gehen, sonst scheitern 3.1 und 3.3. Ausweichmöglichkeit: Mobile-Hotspot. <!-- prüfen -->
-- Mit einem eigenen Konto für Azure for Students vorab prüfen: `Standard_B1s` und Image Ubuntu 24.04 in der Kursregion verfügbar, Feldnamen im deutschen VM-Assistenten, Menüpfade **Endpunkte** (Endpoints) und **Statische Website** (Static Website) im Speicherkonto (Storage Account). <!-- prüfen -->
+- Mit einem eigenen Konto für Azure for Students vorab prüfen: `Standard_B1s` und Image Ubuntu 24.04 in der Kursregion verfügbar, Feldnamen im VM-Assistenten (englisches Portal, die Aufträge nennen Deutsch und Englisch), Menüpfade **Endpunkte** (Endpoints) und **Statische Website** (Static Website) im Speicherkonto (Storage Account). <!-- prüfen -->
 - Lernende ohne SSH-Schlüssel von Tag 1 (Auftrag 1.6) vor L2 erfassen. Sie holen Schritt 1–2 von 1.6 in 5 Minuten nach.
 - Für die Demo in L1 den VM-Assistenten im Portal offen haben, aber nicht erstellen.
+- Zeitplan: 3.1 in L2, 3.2 zu zweit in L3, 3.3 in L3–L4. Nach Input 5 (L5) arbeiten alle allein: 3.4 in L5–L6 (40'), **direkt danach 3.5** in L6–L7 (30'). 3.5 baut auf dem Speicherkonto (Storage Account) aus 3.4 auf: Wer weitermacht, räumt in 3.4, Schritt 9 nicht auf. ⭐ 3.6 nur, wer 3.5 fertig hat; es braucht ebenfalls dasselbe Speicherkonto mit `preisliste.txt`. Aufgeräumt wird erst nach 3.5 bzw. 3.6.
 
 **Wenn es klemmt**
 - Nur **eine VM gleichzeitig**: Das Kontingent an vCPUs (Quota) im Student-Abo ist klein. 3.2 endet mit dem Löschen der Portal-VM, 3.3 mit dem Löschen der CLI-VM.
