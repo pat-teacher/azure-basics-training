@@ -5,36 +5,34 @@
 Gehört zu [Tag 3](../kurs/tag-3.md)
 
 ## Lernziele
-- Du kannst Block-, Datei- und Objektspeicher unterscheiden und Azure-Dienste zuordnen. (K2)
 - Du kannst den Aufbau eines Speicherkontos (Storage Account) erklären. (K2)
+- Du kannst den vier Diensten im Speicherkonto (Blob, Files, Queue, Table) passende Anwendungsfälle zuordnen. (K2)
 - Du kannst für einen Anwendungsfall eine passende Redundanz (Redundancy) und Zugriffsebene (Access Tier) festlegen. (K3)
 - Du kannst erklären, welche Daten das Löschen einer VM überleben. (K2)
 
-## Drei Fragen an jeden Speicher
-1. **Wie** wird gespeichert? → technisches Modell
+## Drei Fragen an ein Speicherkonto
+1. **Welcher Dienst?** → Blob, Files, Queue oder Table
 2. **Wie oft** wird zugegriffen? → Zugriffsebene (Access Tier)
-3. **Überleben** die Daten die VM? → Persistenz
-
-## Technische Speichermodelle
-
-![Technische Speichermodelle](img/tbz/Speicher_TechnischeModelle.svg)
-<sub>Grafik: TBZ M346, für Azure angepasst</sub>
-
-| Modell | Azure-Dienst | Zugriff | Mehrere VMs gleichzeitig? | Einsatz |
-|--------|--------------|---------|---------------------------|---------|
-| Blockspeicher | **verwalteter Datenträger** (Managed Disk) | wie eine Festplatte | nein (Normalfall) | Betriebssystem, Datenbank |
-| Dateispeicher | **Azure Files** | Netzlaufwerk (SMB/NFS) | ja | geteilte Dateien |
-| Objektspeicher | **Blob-Speicher** (Blob Storage) | HTTP/API, per URL | ja | Bilder, Backups, statische Websites |
-| Flüchtiger Speicher | **temporärer Datenträger** (Temporary Disk), bei manchen VM-Grössen | wie eine Festplatte | nein | Cache, temporäre Dateien |
+3. **Überleben** die Daten, wenn die VM ersetzt wird? → Persistenz
 
 ## Das Speicherkonto
 
 ![Aufbau eines Speicherkontos](img/azure-storage-aufbau.svg)
 
-Ein **Speicherkonto** (Storage Account) ist der Behälter für vier Speicherdienste: **Blob**, **Files**, **Queue** und **Table**. Im Kurs nutzt du vor allem den Blob-Speicher (Blob Storage).
+Ein **Speicherkonto** (Storage Account) ist der Behälter für vier Speicherdienste:
+
+| Dienst | Was speichert er? | Zugriff | Beispiel |
+|--------|-------------------|---------|----------|
+| **Blob** (Blob Storage) | Dateien aller Art, als Objekte | per URL über das Internet (HTTP) | Bilder, Backups, statische Website (Static Website) |
+| **Files** (Azure Files) | Ordner und Dateien wie auf einem Netzlaufwerk | über das Netzwerk (SMB), viele gleichzeitig | gemeinsame Ablage statt eigener Fileserver |
+| **Queue** (Queue Storage) | Nachrichten in einer Warteschlange | durch Programme | Bestellungen, die nacheinander abgearbeitet werden |
+| **Table** (Table Storage) | einfache Tabellen ohne festes Schema | durch Programme | Einstellungen, Protokolle |
+
+Im Kurs nutzt du den Blob-Speicher (Blob Storage). Files, Queue und Table musst du nur zuordnen können.
 
 > [!NOTE]
-> Verwaltete Datenträger (Managed Disks) liegen nicht in einem Speicherkonto (Storage Account). Sie sind eigene Ressourcen in der Ressourcengruppe (Resource Group), wie die VM selbst. Darum siehst du die Festplatte deiner VM in Auftrag 3.2 in der Ressourcengruppe (Resource Group), aber in keinem Speicherkonto (Storage Account).
+> Die Festplatten deiner VM liegen **nicht** im Speicherkonto (Storage Account). Sie sind verwaltete Datenträger (Managed Disks), eigene Ressourcen in der Ressourcengruppe (Resource Group). Mehr dazu in [Kapitel 4](04-azure-compute.md), Abschnitt «Speicher der VM».
+
 - **Name:** global eindeutig, 3–24 Zeichen, nur Kleinbuchstaben und Ziffern, z. B. `sttag3mm`. Der Name wird Teil der URL: `https://sttag3mm.blob.core.windows.net`.
 - **Blob-Speicher:** Ein **Container** ist wie ein Ordner, ein **Blob** ist eine Datei darin. Der Spezial-Container `$web` liefert eine **statische Website** (Static Website) aus.
 - **Zugriff:** Standardmässig ist alles privat. Zugriff gibt es über die **Zugriffsschlüssel** (Access Key) des Speicherkontos (in der CLI `--auth-mode key`) oder über ein **SAS-Token** (zeitlich begrenzter Link). <!-- prüfen: --auth-mode login braucht die Rolle «Storage-Blob-Datenmitwirkender», im Student-Abo testen -->
@@ -75,7 +73,7 @@ Löschst du eine Datei vor Ablauf der Mindestdauer oder verschiebst du sie in ei
 
 In der Cloud wird eine VM oft nicht repariert, sondern **ersetzt** (z. B. per Bicep neu erstellt). Darum gilt:
 - **Betriebssystem:** Kommt bei jeder neuen VM frisch aus dem Image und cloud-init.
-- **Daten:** gehören auf Speicher, der **unabhängig von der VM** existiert, z. B. eine eigene Datenfestplatte (Data Disk), den Blob-Speicher (Blob Storage) oder eine Datenbank.
+- **Daten:** gehören auf Speicher, der **unabhängig von der VM** existiert, z. B. den Blob-Speicher (Blob Storage), Azure Files oder eine Datenbank. Auch eine eigene Datenfestplatte (Data Disk) geht (siehe Kapitel 4). Nie auf den temporären Datenträger (Temporary Disk).
 
 ## Selbsttest
 
@@ -94,7 +92,12 @@ Nur Kleinbuchstaben und Ziffern sind erlaubt, keine Bindestriche und keine Gross
 Archive. Speichern ist sehr günstig, und lange Wartezeiten beim Lesen sind kein Problem.
 </details>
 
-<details><summary>4. Was ist der Unterschied zwischen LRS und ZRS?</summary>
+<details><summary>4. Die Velo Zürich AG will ihren alten Fileserver ablösen. Alle Mitarbeitenden sollen ein Netzlaufwerk verbinden. Welcher Dienst im Speicherkonto passt?</summary>
+
+Files (Azure Files). Es stellt ein Netzlaufwerk über SMB bereit, auf das viele gleichzeitig zugreifen.
+</details>
+
+<details><summary>5. Was ist der Unterschied zwischen LRS und ZRS?</summary>
 
 Bei LRS liegen alle drei Kopien im selben Rechenzentrum. Bei ZRS sind sie auf drei Verfügbarkeitszonen (Availability Zones) verteilt und überleben so den Ausfall eines Rechenzentrums.
 </details>
@@ -102,6 +105,7 @@ Bei LRS liegen alle drei Kopien im selben Rechenzentrum. Bei ZRS sind sie auf dr
 ## Quellen
 - TBZ M346: [Speichermodelle](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Speichermodelle.md) (Texte und Grafiken übernommen und für Azure angepasst)
 - Microsoft Learn: [Übersicht über Speicherkonten](https://learn.microsoft.com/de-de/azure/storage/common/storage-account-overview)
+- Microsoft Learn: [Einführung in Azure Storage](https://learn.microsoft.com/de-de/azure/storage/common/storage-introduction)
 - Microsoft Learn: [Azure Storage-Redundanz](https://learn.microsoft.com/de-de/azure/storage/common/storage-redundancy)
 - Microsoft Learn: [Zugriffsebenen für Blobdaten](https://learn.microsoft.com/de-de/azure/storage/blobs/access-tiers-overview)
 - Microsoft Learn: [Hosten statischer Websites in Azure Storage](https://learn.microsoft.com/de-de/azure/storage/blobs/storage-blob-static-website)

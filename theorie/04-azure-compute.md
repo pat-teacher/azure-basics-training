@@ -8,6 +8,7 @@ Gehört zu [Tag 3](../kurs/tag-3.md)
 - Du kannst die Bestandteile einer Azure-VM nennen und ihre Aufgabe erklären. (K2)
 - Du kannst für eine Übung eine passende VM-Grösse und ein Image festlegen. (K3)
 - Du kannst erklären, welcher VM-Status was kostet. (K2)
+- Du kannst OS-Datenträger (OS Disk), Datenfestplatte (Data Disk) und temporären Datenträger (Temporary Disk) unterscheiden. (K2)
 - Du kannst dich mit einem SSH-Schlüssel an einer Linux-VM anmelden. (K3)
 
 ## Woraus besteht eine VM?
@@ -60,6 +61,21 @@ Die **B-Serie** ist «burstable»: Die VM sammelt Guthaben (Credit), wenn sie we
 | **Gelöscht** | – | nichts, sofern auch Disk und IP gelöscht sind |
 
 > **Merke:** Herunterfahren aus der VM heraus spart **kein** Geld. Stoppe die VM im Portal oder mit `az vm deallocate`. Am einfachsten: Ressourcengruppe (Resource Group) löschen.
+
+## Speicher der VM
+Eine VM braucht Festplatten, wie dein Laptop. In Azure heissen sie **Datenträger** (Disks). Sie verhalten sich wie eine eingebaute Festplatte (Blockspeicher): Eine VM liest und schreibt darauf, andere VMs nicht.
+
+| Datenträger | Was ist darauf? | Bleibt erhalten? |
+|-------------|-----------------|------------------|
+| **OS-Datenträger** (OS Disk) | das Betriebssystem, erstellt aus dem Image. Jede VM hat genau einen. | ja, bis du ihn löschst |
+| **Datenfestplatte** (Data Disk) | deine Daten, z. B. eine Datenbank. Freiwillig, lässt sich an eine andere VM hängen. | ja, bis du sie löschst |
+| **temporärer Datenträger** (Temporary Disk) | Cache und temporäre Dateien. Nur bei manchen VM-Grössen, liegt direkt auf dem Host. | **nein**, kann beim Freigeben oder bei einer Wartung verloren gehen |
+
+- OS-Datenträger (OS Disk) und Datenfestplatte (Data Disk) sind **verwaltete Datenträger** (Managed Disks): eigene Ressourcen in der Ressourcengruppe (Resource Group). Du findest sie in Auftrag 3.2. Sie liegen **nicht** in einem Speicherkonto (Storage Account).
+- Datenträger kosten auch dann, wenn die VM freigegeben (deallocated) ist. Erst Löschen beendet die Kosten.
+- Der temporäre Datenträger ist keine eigene Ressource, er gehört zur VM.
+
+Wo Daten liegen sollen, die eine neue VM überleben, zeigt [Kapitel 5](05-azure-storage.md), Abschnitt «Persistenz».
 
 ## Anmelden mit SSH-Schlüssel
 Linux-VMs in Azure meldest du mit deinem **SSH-Schlüsselpaar** (Key Pair) aus Auftrag 1.6 an, nicht mit Passwort. Es funktioniert genau gleich wie bei vm1 an Tag 1. Die ausführliche Erklärung steht in [Kapitel 1](01-virtualisierung.md).
@@ -117,9 +133,15 @@ Zwei vCPUs.
 Seinen öffentlichen Schlüssel (Public Key). Du trägst ihn in `~/.ssh/authorized_keys` ein. Seinen privaten Schlüssel (Private Key) gibt er nie weiter.
 </details>
 
+<details><summary>5. Ein Programm legt wichtige Dateien auf dem temporären Datenträger ab. Nach einer Wartung durch Microsoft sind sie weg. Warum?</summary>
+
+Der temporäre Datenträger (Temporary Disk) liegt auf dem Host. Startet die VM auf einem anderen Host, ist sein Inhalt weg. Wichtige Daten gehören auf eine Datenfestplatte (Data Disk) oder in den Blob-Speicher (Blob Storage).
+</details>
+
 ## Quellen
 - TBZ M346: [SSH mit Public/Private Keys](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/SSH.md) (Texte übernommen und angepasst)
 - Microsoft Learn: [Erstellen einer Linux-VM in Azure](https://learn.microsoft.com/de-de/training/modules/create-linux-virtual-machine-in-azure/)
 - Microsoft Learn: [Benennungskonventionen für Azure-VM-Grössen](https://learn.microsoft.com/de-de/azure/virtual-machines/vm-naming-conventions)
 - Microsoft Learn: [Zustände und Abrechnungsstatus von Azure-VMs](https://learn.microsoft.com/de-de/azure/virtual-machines/states-billing)
+- Microsoft Learn: [Einführung in verwaltete Azure-Datenträger](https://learn.microsoft.com/de-de/azure/virtual-machines/managed-disks-overview)
 - Microsoft Learn: [Burstfähige VMs der B-Serie](https://learn.microsoft.com/de-de/azure/virtual-machines/sizes/general-purpose/b-family)

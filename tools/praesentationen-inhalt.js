@@ -648,6 +648,12 @@ const INPUTS = [
           ["Permission denied (publickey)", "falscher Schlüssel oder falscher Benutzername"],
           ["REMOTE HOST IDENTIFICATION HAS CHANGED", "neue VM unter alter IP → ssh-keygen -R <ip>"],
         ] },
+        { type: "table", title: "Speicher der VM", head: ["Datenträger (Disk)", "Was ist darauf?", "Bleibt erhalten?"], colW: [4, 3.5, 3.5], rows: [
+          ["OS-Datenträger (OS Disk)", "Betriebssystem aus dem Image. Jede VM hat genau einen.", "ja, bis du ihn löschst"],
+          ["Datenfestplatte (Data Disk)", "deine Daten, freiwillig. Lässt sich an eine andere VM hängen.", "ja, bis du sie löschst"],
+          ["temporärer Datenträger (Temporary Disk)", "Cache, nur bei manchen Grössen. Liegt direkt auf dem Host.", "nein – kann beim Freigeben verloren gehen"],
+        ], note: "Die ersten zwei sind verwaltete Datenträger (Managed Disks): eigene Ressourcen in der Ressourcengruppe (Resource Group), nicht im Speicherkonto (Storage Account).",
+          notes: "Wie eine eingebaute Festplatte (Blockspeicher): Eine VM liest und schreibt darauf. Datenträger kosten auch, wenn die VM freigegeben ist (Folie 5). Den OS-Datenträger (OS Disk) finden die Lernenden in Auftrag 3.2 in der Ressourcengruppe (Resource Group). Das Speicherkonto (Storage Account) mit Blob, Files, Queue und Table folgt in Input 5." },
         { type: "quiz", qs: [
           { h: "Bestandteile", q: "Welche Ressourcen findest du nach dem Erstellen einer VM in der Ressourcengruppe (Resource Group)?" },
           { h: "Kosten", q: "Kostet die VM nach sudo poweroff noch etwas?" },
@@ -670,12 +676,17 @@ const INPUTS = [
     sections: [
       { title: "Storage", slides: [
         { type: "title", title: "Azure Storage", sub: "Input 2 · Tag 3", notes: "Theorie: theorie/05-azure-storage.md" },
-        { type: "cards", title: "Drei Fragen an jeden Speicher", cols: 3, items: [
-          { icon: "FaHdd", h: "Wie?", t: "Block, Datei oder Objekt – das technische Modell" },
+        { type: "cards", title: "Drei Fragen an ein Speicherkonto", cols: 3, items: [
+          { icon: "FaHdd", h: "Welcher Dienst?", t: "Blob, Files, Queue oder Table" },
           { icon: "FaClock", h: "Wie oft?", t: "Hot, Cool, Cold, Archive – die Zugriffsebene (Access Tier)" },
           { icon: "FaRedo", h: "Überlebt es?", t: "Bleiben die Daten, wenn die VM ersetzt wird?" },
         ] },
-        { type: "diagram", title: "Technische Speichermodelle", img: "Speicher_TechnischeModelle-folie.png", caption: "Grafik: TBZ M346, für Azure angepasst" },
+        { type: "cards", title: "Vier Dienste im Speicherkonto (Storage Account)", cols: 2, items: [
+          { icon: "FaCloud", h: "Blob", t: "Dateien aller Art, per URL abrufbar: Bilder, Backups, statische Website (Static Website). Damit arbeitest du heute." },
+          { icon: "FaFolderOpen", h: "Files", t: "Netzlaufwerk (SMB) für viele gleichzeitig, z. B. statt eines eigenen Fileservers." },
+          { icon: "FaExchangeAlt", h: "Queue", t: "Warteschlange für Nachrichten: Ein Programm legt Aufträge ab, ein anderes arbeitet sie nacheinander ab." },
+          { icon: "FaClipboardList", h: "Table", t: "Einfache Tabellen ohne festes Schema, z. B. für Einstellungen oder Protokolle." },
+        ], notes: "Im Kurs arbeiten die Lernenden nur mit Blob. Files, Queue und Table nur zuordnen können. Die Festplatten der VM (Managed Disks) liegen nicht im Speicherkonto (Storage Account), das war Input 4." },
         { type: "diagram", title: "Das Speicherkonto (Storage Account)", img: "azure-storage-aufbau-folie.png",
           notes: "Live-Demo: Speicherkonto (Storage Account) anlegen, Container erstellen, Datei hochladen, URL zeigen." },
         { type: "cards", title: "Das musst du wissen", cols: 2, items: [

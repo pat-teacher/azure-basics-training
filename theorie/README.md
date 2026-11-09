@@ -9,8 +9,8 @@ Hier findest du die Theorie zum Kurs, kurz zusammengefasst und mit Grafiken. Die
 | [1 Virtualisierung](01-virtualisierung.md) | Hypervisor Typ 1/2, Hardware teilen, Multipass, cloud-init, VM-Netzwerk, Container | 1 |
 | [2 Cloud-Grundlagen](02-cloud-grundlagen.md) | Hyperscaler, Cloud-Merkmale, IaaS/PaaS/SaaS, öffentliche, private und hybride Cloud (Public, Private, Hybrid Cloud), geteilte Verantwortung (Shared Responsibility) | 2 |
 | [3 Aufbau von Azure](03-azure-aufbau.md) | Regionen und Zonen, Abonnement (Subscription), Ressourcengruppen (Resource Groups), Portal, Cloud Shell, Azure CLI | 2 |
-| [4 Azure Compute](04-azure-compute.md) | Bestandteile einer VM, Grössen (Sizes), Images, Status und Kosten, SSH-Schlüssel | 3 |
-| [5 Azure Storage](05-azure-storage.md) | Speichermodelle, Speicherkonto (Storage Account), Blob, Redundanz (Redundancy), Zugriffsebenen (Access Tiers), Persistenz | 3 |
+| [4 Azure Compute](04-azure-compute.md) | Bestandteile einer VM, Grössen (Sizes), Images, Status und Kosten, Speicher der VM, SSH-Schlüssel | 3 |
+| [5 Azure Storage](05-azure-storage.md) | Speicherkonto (Storage Account) mit Blob, Files, Queue, Table, Redundanz (Redundancy), Zugriffsebenen (Access Tiers), Persistenz | 3 |
 | [6 Azure Networking](06-azure-networking.md) | VNet, CIDR und Subnetze (Subnets), IP-Adressen, NSG, Weg einer Anfrage | 4 |
 | [7 Automatisierung](07-automatisierung.md) | Infrastruktur als Code (Infrastructure as Code), imperativ/deklarativ, ARM und Bicep, cloud-init | 5 |
 
