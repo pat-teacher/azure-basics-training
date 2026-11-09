@@ -25,7 +25,7 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 | L4–L5 | Auftrag 4.3 | mit Partner: zwei VMs im VNet, Verbindungen testen |
 | L6 | Auftrag 4.4 | mit Partner: NSG-Regeln einrichten |
 | L7 | Auftrag 4.5, ⭐ 4.6, ⭐ 4.7 | mit Partner: Fehlersuche; Schnelle: Network Watcher oder Challenge Lab |
-| L8 | Abschluss | Netzplan zeichnen, aufräumen, Exit-Ticket |
+| L8 | Auftrag 4.8, Abschluss | allein: Azure CLI und VS Code für Tag 5 installieren; Netzplan zeichnen, aufräumen, Exit-Ticket |
 
 ## Deine Aufträge
 
@@ -38,9 +38,11 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 | ☐ | 4.5 | Fehlersuche: «Warum komme ich nicht auf meine VM?» *(folgt)* | Partner |
 | ☐ | ⭐ 4.6 | Network Watcher und effektive Sicherheitsregeln *(folgt)* | allein, freiwillig |
 | ☐ | ⭐ 4.7 | Challenge Lab zu bedingtem Zugriff ([so geht's](organisation.md#themen-mit-microsoft-entra-id-challenge-labs)) | Partner, freiwillig |
+| ☐ | 4.8 | Werkzeuge für Tag 5: Azure CLI und Visual Studio Code installieren *(folgt)* | allein |
 
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen (Resource Groups) von heute gelöscht.
+- [ ] Auftrag 4.8 erledigt: `az account show --output table` zeigt auf deinem Laptop **Azure for Students**.
 - [ ] Lernjournal: Einträge zu allen Aufträgen von heute, dein Netzplan und deine Erkenntnisse in `tag-4/README.md`.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Regel 100 sagt Deny, Regel 200 sagt Allow für Port 80. Ist die Website erreichbar?»
 

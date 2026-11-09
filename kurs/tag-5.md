@@ -41,7 +41,7 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 
 ## Das brauchst du
 - dein Azure-for-Students-Konto und deinen SSH-Schlüssel
-- Visual Studio Code mit Bicep-Erweiterung oder den Editor in der Cloud Shell
+- auf deinem Laptop aus Auftrag 4.8: **Azure CLI** und **Visual Studio Code** mit der Bicep-Erweiterung. Heute arbeitest du im Terminal von Visual Studio Code, nicht in der Cloud Shell. Deine Dateien bleiben so auf deinem Laptop und kommen ins Lernjournal.
 
 ## Zum Nachlesen
 - Theorie: [7 Automatisierung](../theorie/07-automatisierung.md)

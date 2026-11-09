@@ -114,6 +114,11 @@ az network vnet subnet update --resource-group rg-tag4-<kuerzel> --vnet-name vne
   --name snet-web --network-security-group nsg-web
 ```
 
+### Werkzeuge: Cloud Shell bis Tag 4, lokale Azure CLI ab Tag 5
+- Tag 2–4: alle Azure-CLI-Befehle in der Cloud Shell (Bash, ohne Speicherkonto). Keine Installation.
+- Auftrag 4.8 (Tag 4, L8): Azure CLI und Visual Studio Code mit Bicep-Erweiterung lokal installieren (`winget`), `az login`, Kontrolle `az account show --output table`. Adminrechte sind vorhanden (Multipass an Tag 1).
+- Tag 5: im Terminal von Visual Studio Code (PowerShell) mit der lokalen Azure CLI arbeiten, damit Bicep- und cloud-init-Dateien auf dem Laptop bleiben. Befehle darum für PowerShell schreiben (Zeilenfortsetzung mit Backtick `` ` `` statt `\`, oder einzeilig). Cloud Shell nur als Notlösung.
+
 ### Tag 5: Bicep und Cloud-Init
 `cloud-init.yaml`:
 ```yaml

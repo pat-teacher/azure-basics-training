@@ -103,6 +103,9 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 - Öffentliche IP (Public IP) der Schule ermitteln (für die SSH-Regel in 4.4).
 - Für 4.5: Umgebung mit vorbereiteten Fehlern bereitstellen.
 - Für ⭐ 4.7: passendes Challenge Lab wählen. <!-- prüfen -->
+- **Auftrag 4.8 (L8, ca. 20'):** Die Lernenden installieren Azure CLI und Visual Studio Code mit Bicep-Erweiterung für Tag 5, z. B. mit `winget install --exact --id Microsoft.AzureCLI` und `winget install --exact --id Microsoft.VisualStudioCode`. Adminrechte sind vorhanden (wie bei Multipass an Tag 1). Bewusst an Tag 4, damit Probleme bis Tag 5 gelöst werden können. Vor L8 kontrollieren, wer nicht fertig ist. <!-- prüfen: winget auf den Kurs-Laptops verfügbar, Installation im Schulnetz -->
+
+**Planungsentscheid Werkzeuge:** Tag 2–4 arbeiten mit der Cloud Shell (keine Installation nötig). Ab Tag 5 arbeiten die Lernenden mit der lokal installierten Azure CLI im Terminal von Visual Studio Code. Grund: Bicep- und cloud-init-Dateien müssen gespeichert bleiben und ins Lernjournal. Die Cloud Shell ohne Speicherkonto (Storage Account) verliert Dateien beim Schliessen.
 
 ## Tag 5: Automatisierung mit Bicep und cloud-init
 
@@ -111,6 +114,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L1, nach Rückblick | Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init in Azure | 20' | Input 7 |
 
 **Vorbereitung**
+- Zu Beginn kontrollieren: Bei allen zeigt `az account show --output table` im Terminal von Visual Studio Code **Azure for Students** (Auftrag 4.8). Wer nicht angemeldet ist: `az login`. Wer die Installation nicht geschafft hat, arbeitet mit dem Partner oder ausnahmsweise in der Cloud Shell und speichert die Dateien sofort im Lernjournal.
 - Bewertungsraster für das Abschlussprojekt ausdrucken oder teilen.
 - Zeitplan für die Kurzpräsentationen (5' pro Team) festlegen.
 
