@@ -347,3 +347,45 @@ nr(350, 315, 4); s.text(368, 320, "Laptop löst sie mit dem Private Key", 12, OK
 s.text(500, 485, "Der Private Key verlässt deinen Laptop nie. Über das Netz geht nur die Lösung der Prüfaufgabe.", 14, DARK, "bold")
 s.text(500, 512, "Wer nur das Schloss (den Public Key) kennt, kann die Aufgabe nicht lösen. Darum darf es jeder sehen.", 12, GREY)
 s.save("ssh-schluessel.svg", "SSH-Anmeldung: Public Key liegt auf dem Server, der Laptop löst die Prüfaufgabe mit dem Private Key")
+
+# 13 Vom Hypervisor zum Hyperscaler -----------------------------------------
+s = Svg(1000, 520, "Vom Hypervisor zum Hyperscaler")
+# links: ein Server wie an Tag 1
+s.text(150, 66, "Tag 1: ein Server", 15, BLUE, "bold")
+s.box(20, 80, 260, 300, BG, GREY, dash=True)
+for k in range(3):
+    s.label(35 + k * 80, 100, 70, 120, [f"VM {k+1}"], WHITE, BLUE, sw=2, size=13)
+s.label(35, 235, 230, 50, ["Hypervisor"], DARK, DARK, WHITE, size=14)
+s.label(35, 300, 230, 60, ["Hardware", "CPU · RAM · Disk"], LIGHT2, GREY, size=14)
+s.text(150, 405, "dein Laptop mit Hyper-V", 12, GREY)
+# Mitte: vervielfachen
+s.arrow(292, 230, 368, 230, BLUE, sw=3)
+s.text(330, 258, "×", 16, BLUE, "bold")
+s.text(330, 276, "zehntausende", 12, BLUE, "bold")
+# rechts: Hyperscaler
+s.text(675, 66, "Hyperscaler: z. B. Microsoft Azure", 15, BLUE, "bold")
+s.label(380, 80, 110, 46, ["Du"], LIGHT, BLUE, sw=2)
+s.label(530, 80, 170, 46, ["Portal / Azure CLI"], WHITE, DARK, size=13)
+s.label(740, 80, 240, 46, ["Web API", "Azure Resource Manager"], WHITE, DARK, size=13)
+s.arrow(490, 103, 528, 103)
+s.arrow(700, 103, 738, 103)
+s.text(509, 145, "«Ich brauche eine VM»", 12, GREY)
+s.label(380, 160, 600, 44, ["Orchestrator: sucht einen freien Server und startet die VM dort"], DARK, DARK, WHITE, size=13)
+s.arrow(860, 126, 860, 158)
+s.box(380, 220, 600, 220, BG, GREY, dash=True)
+s.text(395, 240, "Rechenzentrum · tausende Server mit Hypervisor", 12, GREY, "bold", "start")
+for r in range(3):
+    for c in range(8):
+        x, y = 395 + c * 73, 252 + r * 60
+        mine = (r, c) == (0, 5)
+        s.box(x, y, 66, 50, LIGHT if mine else WHITE, BLUE if mine else GREY, 2.5 if mine else 1, 4)
+        for v in range(3):
+            filled = mine and v == 0 or (r + c + v) % 3 != 0
+            s.box(x + 6 + v * 19, y + 8, 15, 22, (BLUE if mine and v == 0 else LIGHT2) if filled else WHITE, GREY, 0.8, 2)
+        s.box(x + 6, y + 35, 54, 8, DARK, DARK, 0.5, 2)
+s.arrow(783, 206, 783, 249, BLUE, dash=True)
+s.text(792, 236, "deine VM", 12, BLUE, "bold", "start")
+s.box(395, 455, 15, 15, LIGHT2, GREY, 0.8, 2); s.text(416, 467, "VM anderer Kunden", 11, GREY, "normal", "start")
+s.box(560, 455, 15, 15, WHITE, GREY, 0.8, 2); s.text(581, 467, "freier Platz", 11, GREY, "normal", "start")
+s.text(500, 505, "Du siehst nicht, auf welchem Server deine VM läuft. Für dich wirkt es wie ein fast unendlicher Pool an Ressourcen.", 13, DARK, "bold")
+s.save("hyperscaler.svg", "Vom einzelnen Server mit Hypervisor zum Hyperscaler: Anfrage über Web API, Orchestrator verteilt die VM auf einen von tausenden Servern")

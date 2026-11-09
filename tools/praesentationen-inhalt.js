@@ -463,7 +463,7 @@ const INPUTS = [
           points: ["Erinnerung: Ein Hypervisor verteilt die Hardware eines Servers auf mehrere VMs.",
             "Überlege kurz mit deinem Nachbarn: Was entsteht daraus?"],
           notes: "Frage vom Schluss von Tag 1. 1 Minute zu zweit, dann 2–3 Vermutungen sammeln, nicht auflösen. Die Antwort zeigt die nächste Folie: ein Hyperscaler." },
-        { type: "diagram", title: "Was ist ein Hyperscaler?", img: "Hyperscaler.png", caption: "Grafik: TBZ M346",
+        { type: "diagram", title: "Was ist ein Hyperscaler?", img: "hyperscaler-folie.png",
           notes: "Tausende Server mit Typ-1-Hypervisoren, ein Orchestrator verteilt die VMs, alles über eine Web-API steuerbar. Du siehst nicht, auf welchem Server deine VM läuft." },
         { type: "cards", title: "Fünf Merkmale von Cloud Computing", cols: 3, items: [
           { icon: "FaHandsHelping", h: "Selbstbedienung", t: "Du holst dir Ressourcen selbst – ohne Telefon, ohne Ticket." },

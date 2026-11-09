@@ -14,8 +14,7 @@ Gehört zu [Tag 2](../kurs/tag-2.md)
 ## Vom Hypervisor zum Hyperscaler
 Ein **Hyperscaler** wie Microsoft Azure, AWS oder Google Cloud nimmt das Hypervisor-Prinzip und vervielfacht es: zehntausende Server, alle mit Typ-1-Hypervisoren. Ein **Orchestrator** verteilt die VMs auf die Server. Gesteuert wird alles über eine **Web-API**. Für dich sieht das aus wie ein fast unendlicher Pool an Ressourcen. Auf welchem Server deine VM landet, siehst du nicht.
 
-![Vom Hypervisor zum Hyperscaler](img/tbz/Hyperscaler.png)
-<sub>Grafik: TBZ M346</sub>
+![Vom Hypervisor zum Hyperscaler: Ein Orchestrator verteilt deine VM auf einen von tausenden Servern](img/hyperscaler.svg)
 
 ## Die fünf Merkmale von Cloud Computing
 Nach der Definition des NIST (US-Standardisierungsinstitut) ist etwas Cloud, wenn es diese fünf Merkmale hat:
