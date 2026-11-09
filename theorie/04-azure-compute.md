@@ -15,14 +15,16 @@ Eine Azure-VM ist nicht eine einzelne Ressource, sondern ein Verbund. Wenn du im
 
 ![Bestandteile einer Azure-VM](img/azure-vm-bestandteile.svg)
 
-| Ressource | Aufgabe | Vergleich mit Tag 1 (Multipass) |
-|-----------|---------|---------------------------------|
-| **Virtuelle Maschine** (Virtual Machine) | CPU und RAM (Compute) | `--cpus`, `--memory` |
-| **OS-Datenträger** (OS Disk) | Disk mit dem Betriebssystem (Managed Disk) | `--disk` |
-| **Netzwerkschnittstelle (NIC)** | verbindet die VM mit einem Subnetz (Subnet), private IP | IP-Adresse in `multipass list` |
-| **VNet + Subnetz** (Subnet) | privates Netz in Azure | kleines privates Netz von Hyper-V |
-| **Öffentliche IP** (Public IP) | macht die VM aus dem Internet erreichbar | gab es nicht – die VM war nur von deinem Laptop aus erreichbar |
-| **NSG** | Firewall-Regeln: was darf hinein, was hinaus | gab es nicht |
+An Tag 1 hat Multipass mit einem einzigen Befehl alles gebaut. Die einzelnen Teile waren darin versteckt. Azure legt dieselben Teile als eigene Ressourcen an. Die Tabelle zeigt, wo jedes Teil an Tag 1 war.
+
+| In Azure: eigene Ressource | Was sie macht | Und an Tag 1? |
+|----------------------------|---------------|---------------|
+| **Virtuelle Maschine** (Virtual Machine) | rechnet: CPU und RAM (Compute) | `--cpus 1 --memory 1G` beim Erstellen |
+| **OS-Datenträger** (OS Disk) | Festplatte mit dem Betriebssystem, ein verwalteter Datenträger (Managed Disk) | `--disk 5G` beim Erstellen |
+| **Netzwerkschnittstelle (NIC)** | Netzwerkkarte der VM, bekommt die private IP-Adresse | unsichtbar angelegt: die IP-Adresse in `multipass list` |
+| **VNet + Subnetz** (Subnet) | privates Netz, in dem die Netzwerkkarte hängt | das interne Netz von Hyper-V auf deinem Laptop |
+| **Öffentliche IP** (Public IP) | macht die VM aus dem Internet erreichbar | nicht nötig: Nur dein Laptop erreichte die VM. |
+| **NSG** | Firewall: Wer darf über welchen Port herein? | nicht nötig: Von aussen kam niemand an die VM heran. |
 
 ## Grösse und Image
 **Grösse (Size):** Bestimmt vCPUs, RAM und Preis. Der Name verrät viel:
@@ -44,7 +46,7 @@ Standard_B2ats_v2
 | `Standard_B2s` | 2 | 4 GiB | etwas mehr Last |
 <!-- prüfen: Stand 19.10.2026 – Verfügbarkeit und «Free services eligible» im Student-Abo kontrollieren -->
 
-Die **B-Serie** ist «burstable»: Die VM sammelt Guthaben, wenn sie wenig zu tun hat, und darf damit kurz mehr Leistung brauchen. Ideal für Übungen.
+Die **B-Serie** ist «burstable»: Die VM sammelt Guthaben (Credit), wenn sie wenig zu tun hat, und darf damit kurz mehr Leistung brauchen. Ideal für Übungen.
 
 **Image:** Die Vorlage für den OS-Datenträger (OS Disk), z. B. Ubuntu Server 24.04 LTS oder Windows Server 2025. Im Kurs arbeitest du mit **Ubuntu**.
 

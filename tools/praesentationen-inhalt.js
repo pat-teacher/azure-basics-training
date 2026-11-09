@@ -613,14 +613,14 @@ const INPUTS = [
         { type: "title", title: "Azure Compute: virtuelle Maschinen", sub: "Input 1 · Tag 3", notes: "Theorie: theorie/04-azure-compute.md" },
         { type: "diagram", title: "Woraus besteht eine Azure-VM?", img: "azure-vm-bestandteile-folie.png",
           notes: "Live-Demo: VM im Portal erstellen, danach die Ressourcengruppe (Resource Group) öffnen und alle Teile zeigen." },
-        { type: "table", title: "Vergleich mit deiner VM von Tag 1", head: ["Azure", "Aufgabe", "Tag 1 (Multipass)"], colW: [3, 4.5, 3.5], rows: [
-          ["Virtuelle Maschine (Virtual Machine)", "CPU und RAM (Compute)", "--cpus, --memory"],
-          ["OS-Datenträger (OS Disk)", "Disk mit dem Betriebssystem", "--disk"],
-          ["Netzwerkschnittstelle (NIC)", "verbindet mit dem Subnetz (Subnet)", "IP in multipass list"],
-          ["VNet + Subnetz (Subnet)", "privates Netz", "kleines Netz von Hyper-V"],
-          ["Öffentliche IP (Public IP)", "erreichbar aus dem Internet", "gab es nicht"],
-          ["NSG", "Firewall-Regeln", "gab es nicht"],
-        ] },
+        { type: "table", title: "Vergleich mit deiner VM von Tag 1", head: ["In Azure: eigene Ressource", "Was sie macht", "Und an Tag 1?"], colW: [3, 3.6, 4.4], rows: [
+          ["Virtuelle Maschine (Virtual Machine)", "rechnet: CPU und RAM (Compute)", "--cpus 1 --memory 1G beim Erstellen"],
+          ["OS-Datenträger (OS Disk)", "Festplatte mit dem Betriebssystem", "--disk 5G beim Erstellen"],
+          ["Netzwerkschnittstelle (NIC)", "Netzwerkkarte der VM, bekommt die private IP-Adresse", "unsichtbar angelegt: die IP-Adresse in multipass list"],
+          ["VNet + Subnetz (Subnet)", "privates Netz, in dem die Netzwerkkarte hängt", "das interne Netz von Hyper-V auf deinem Laptop"],
+          ["Öffentliche IP (Public IP)", "macht die VM aus dem Internet erreichbar", "nicht nötig: nur dein Laptop erreichte die VM"],
+          ["NSG", "Firewall: Wer darf über welchen Port herein?", "nicht nötig: von aussen kam niemand an die VM heran"],
+        ], notes: "Kernaussage: An Tag 1 hat Multipass mit einem Befehl alles gebaut, die Teile waren versteckt. Azure legt jedes Teil als eigene Ressource in der Ressourcengruppe (Resource Group) an. Zeile für Zeile fragen: Wo war dieses Teil an Tag 1? Öffentliche IP (Public IP) und NSG braucht es erst, weil die VM jetzt im Internet steht. Die Teile sehen die Lernenden in Auftrag 3.2 selbst." },
         { type: "code", title: "VM-Grössen lesen", codeW: 6.2, codeSize: 16,
           code: "Standard_B2ats_v2\n         │││││ └ Version\n         ││││└ s = Premium SSD\n         │││└ t = wenig RAM\n         ││└ a = AMD\n         │└ 2 = vCPUs\n         └ B = Serie",
           side: [
