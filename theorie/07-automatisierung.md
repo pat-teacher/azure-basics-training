@@ -37,7 +37,7 @@ Die Eigenschaft «zweimal ausführen ändert nichts» heisst **Idempotenz**. Sie
 ![Drei Wege zur selben Infrastruktur](img/iac-ablauf.svg)
 
 - **ARM-Template:** die «Maschinensprache» des Azure Resource Manager, in JSON. Vollständig, aber lang und schwer lesbar.
-- **Bicep:** eine einfachere Sprache von Microsoft für dieselbe Aufgabe. Bicep wird vor der Bereitstellung in ein ARM-Template übersetzt (`az bicep build --file main.bicep`).
+- **Bicep:** eine einfachere Sprache von Microsoft für dieselbe Aufgabe. Bicep wird vor der Bereitstellung (Deployment) in ein ARM-Template übersetzt (`az bicep build --file main.bicep`).
 
 Ein Speicherkonto (Storage Account) in Bicep:
 ```bicep
@@ -60,7 +60,7 @@ output blobUrl string = st.properties.primaryEndpoints.blob
 | `resource <name> '<typ>@<api-version>'` | eine Ressource, die existieren soll |
 | `${kuerzel}` | Wert in einen Text einsetzen |
 | `st.properties…` | auf eine andere Ressource verweisen; Bicep erkennt daraus die Reihenfolge |
-| `output` | Wert, der nach der Bereitstellung ausgegeben wird |
+| `output` | Wert, der nach der Bereitstellung (Deployment) ausgegeben wird |
 
 Bereitstellen:
 ```bash

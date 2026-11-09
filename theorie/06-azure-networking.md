@@ -52,7 +52,7 @@ Jede Regel hat:
 
 | Feld | Beispiel |
 |------|----------|
-| **Priorität** | 100 (100–4096, kleine Zahl wird zuerst geprüft) |
+| **Priorität** (Priority) | 100 (100–4096, kleine Zahl wird zuerst geprüft) |
 | **Quelle** | IP-Bereich, z. B. `203.0.113.10/32`, oder Diensttag (Service Tag) `Internet`, `VirtualNetwork` |
 | **Ziel** | meist `Any` oder ein Subnetz (Subnet) |
 | **Zielport** | 22, 80, 443 … |
@@ -61,7 +61,7 @@ Jede Regel hat:
 
 **Standardregeln** (können nicht gelöscht werden; eine eigene Regel mit **kleinerer Prioritätszahl** wird aber früher geprüft und übersteuert sie):
 
-| Richtung | Priorität | Regel | Wirkung |
+| Richtung | Priorität (Priority) | Regel | Wirkung |
 |----------|-----------|-------|---------|
 | eingehend | 65000 | AllowVnetInBound | Verkehr innerhalb des VNets erlaubt |
 | eingehend | 65001 | AllowAzureLoadBalancerInBound | Azure-Load-Balancer erlaubt |
@@ -89,12 +89,12 @@ Wichtig:
 
 Wenn «es nicht geht», prüfe die Stationen der Reihe nach:
 1. **Richtige IP?** Öffentliche IP (Public IP) im Portal nachschauen.
-2. **NSG am Subnetz:** Gibt es eine Allow-Regel für Port und Quelle? Hat sie eine **kleinere Prioritätszahl** als jede passende Deny-Regel, wird also früher geprüft?
+2. **NSG am Subnetz:** Gibt es eine Allow-Regel für Port und Quelle? Hat sie eine **kleinere Prioritätszahl** (Priority) als jede passende Deny-Regel, wird also früher geprüft?
 3. **NSG an der NIC:** Falls vorhanden, muss sie den Verkehr **ebenfalls** erlauben.
 4. **Firewall im Betriebssystem:** bei Ubuntu in Azure meist aus (`sudo ufw status`).
 5. **Dienst:** Läuft er? (`systemctl status nginx`) Hört er auf dem richtigen Port? (`ss -tlnp`)
 
-Im Portal hilft dir unter **VM > Netzwerk** die Ansicht **Effektive Sicherheitsregeln**.
+Im Portal hilft dir unter **VM > Netzwerk** (VM > Networking) die Ansicht **Effektive Sicherheitsregeln** (Effective security rules).
 
 ## Selbsttest
 

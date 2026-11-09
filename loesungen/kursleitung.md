@@ -54,7 +54,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 **Vorbereitung**
 - Alle Lernenden haben sich vorab bei Azure for Students angemeldet (Login testen lassen, siehe Tag 1, Folie «Nächstes Mal»).
 - Mit einem eigenen Konto für Azure for Students vorab prüfen: erlaubte Regionen (Richtlinie > Zuweisungen), Anzeige des Guthabens (Credit) im Education Hub, Dialog beim ersten Start der Cloud Shell. Pfade in 2.2 und 2.4 bei Abweichungen anpassen. <!-- prüfen -->
-- Für die Demos in L3 und L5 im Browser bereit: Portal (Sprache Deutsch), Cloud Shell schon einmal gestartet, damit die Demo nicht beim Einrichten hängt. Für die Demo des ersten Starts ein zweites Browserprofil oder Inkognito-Fenster verwenden.
+- Für die Demos in L3 und L5 im Browser bereit: Portal (Sprache Englisch; die Aufträge nennen Deutsch und Englisch), Cloud Shell schon einmal gestartet, damit die Demo nicht beim Einrichten hängt. Für die Demo des ersten Starts ein zweites Browserprofil oder Inkognito-Fenster verwenden.
 - Wandtafel oder Whiteboard für die Kursregionen (L4).
 - Zeitplan: 2.1 bis ca. Mitte L2, 2.2 in L3, 2.3 in L4, 2.4 bis ca. L6 Beginn, 2.5 zu zweit in L6. L7 ist Puffer. ⭐ 2.7 nur für Teams, die 2.5 in L6 beendet haben (Lab braucht ca. 40'); sie dürfen in L8 bis 20' weiterarbeiten.
 - ⭐ 2.8 ist die Herausforderung für Lernstarke, die allein arbeiten wollen: Schleife in der Bash, `--query`, Tags ergänzen statt ersetzen, Sperre (Lock). Ohne Kosten und ohne Trainingsschlüssel. Vorab mit dem eigenen Konto testen, ob `az lock create` geht. Bei der Aufräumkontrolle in L8 zusätzlich `az lock list --output table` zeigen lassen. <!-- prüfen -->
@@ -84,7 +84,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 **Vorbereitung**
 - **Port 22 im Schulnetz testen:** Ausgehendes SSH vom Kurs-Laptop zu einer Azure-VM muss gehen, sonst scheitern 3.1 und 3.3. Ausweichmöglichkeit: Mobile-Hotspot. <!-- prüfen -->
-- Mit einem eigenen Konto für Azure for Students vorab prüfen: `Standard_B1s` und Image Ubuntu 24.04 in der Kursregion verfügbar, Feldnamen im deutschen VM-Assistenten, Menüpfade **Endpunkte** und **Statische Website** (Static Website) im Speicherkonto (Storage Account). <!-- prüfen -->
+- Mit einem eigenen Konto für Azure for Students vorab prüfen: `Standard_B1s` und Image Ubuntu 24.04 in der Kursregion verfügbar, Feldnamen im deutschen VM-Assistenten, Menüpfade **Endpunkte** (Endpoints) und **Statische Website** (Static Website) im Speicherkonto (Storage Account). <!-- prüfen -->
 - Lernende ohne SSH-Schlüssel von Tag 1 (Auftrag 1.6) vor L2 erfassen. Sie holen Schritt 1–2 von 1.6 in 5 Minuten nach.
 - Für die Demo in L1 den VM-Assistenten im Portal offen haben, aber nicht erstellen.
 
@@ -92,7 +92,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 - Nur **eine VM gleichzeitig**: Das Kontingent an vCPUs (Quota) im Student-Abo ist klein. 3.2 endet mit dem Löschen der Portal-VM, 3.3 mit dem Löschen der CLI-VM.
 - `SkuNotAvailable` → `Standard_B2ats_v2` statt `Standard_B1s`.
 - `Permission denied (publickey)` → fast immer Benutzer `ubuntu` statt `azureuser`.
-- Speicherkonto (Storage Account): Name «bereits vergeben» → zwei Ziffern anhängen. «Keine Berechtigung» beim Öffnen des Containers → **Zu Zugriffsschlüssel wechseln**.
+- Speicherkonto (Storage Account): Name «bereits vergeben» → zwei Ziffern anhängen. «Keine Berechtigung» beim Öffnen des Containers → **Zu Zugriffsschlüssel wechseln** (Switch to Access key).
 - Wer in L7 nicht fertig ist: 3.5 hat Vorrang vor ⭐ 3.6. Speicherkonten (Storage Accounts) kosten fast nichts, VMs schon. Bei Zeitnot zuerst die VMs aufräumen.
 
 ## Tag 4: Azure Networking

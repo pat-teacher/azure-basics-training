@@ -20,7 +20,8 @@ Die Lernenden sind **ICT-Fachleute EFZ** (ICT-Fachfrau/ICT-Fachmann), nicht Info
 - Lernende werden in der Du-Form angesprochen.
 - Kurze Sätze, aktive Formulierungen, Fachbegriffe beim ersten Auftreten erklären.
 - **Fachbegriffe (Azure und Cloud): immer Deutsch mit Englisch in Klammern, bei jedem Auftreten** (Fliesstext, Tabellen, Folien). Beispiel: «Ressourcengruppe (Resource Group)», Mehrzahl «Ressourcengruppen (Resource Groups)». Nie nur Englisch, nie nur Deutsch.
-  - Ausgenommen: Überschriften, Code, Link-Texte, «Zitate» von Meldungen und fette Beschriftungen von Bedienelementen, die aus mehreren Wörtern bestehen.
+  - Ausgenommen: Überschriften, Code und Link-Texte.
+  - **Beschriftungen im Azure-Portal** (Schaltflächen, Menüs, Felder, Meldungen): Das Portal läuft im Kurs auf Englisch. Darum Deutsch fett und die englische Portal-Beschriftung in Klammern, z. B. **Überprüfen + erstellen** (Review + create), Feld «Speicherkontoname» (Storage account name). Gilt nicht für Windows, GitHub oder Skillable an Tag 1/2.
   - **Diagramme** (`tools/diagramme.py`): Fachbegriffe nur Englisch, ohne deutsche Übersetzung. Erklärende Sätze bleiben Deutsch.
   - Verbindliches Glossar: `tools/begriffe.py` (GLOSSAR, MEHRZAHL). Prüfen mit `python tools/begriffe.py --pruefen <dateien>`, ergänzen ohne `--pruefen`.
   - Ausnahmen (bleiben englisch, ohne Klammer): Produktnamen (Azure CLI, Cloud Shell, Bicep, Azure Resource Manager, Microsoft Entra ID, Multipass, Docker, cloud-init), Abkürzungen (VM, VNet, NSG, NIC, IaaS/PaaS/SaaS, SSH), eingebürgerte Wörter ohne gängige Übersetzung (Cloud, Hypervisor, Hyperscaler, Container, Image, Blob, Tags) und die Tagestitel aus dem Vertrag.

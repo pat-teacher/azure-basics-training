@@ -64,7 +64,7 @@ Weitere Modelle: **FaaS** (Function as a Service, z. B. Azure Functions) führt 
 
 Der Vergleich hat eine Grenze: Deine Daten und Zugriffe bleiben in jedem Modell deine Aufgabe (siehe [Geteilte Verantwortung](#geteilte-verantwortung-shared-responsibility)).
 
-**Im Kurs** arbeitest du vor allem mit **IaaS**: VMs, Netzwerke und Datenträger verwaltest du selbst.
+**Im Kurs** arbeitest du vor allem mit **IaaS**: VMs, Netzwerke und Datenträger (Disks) verwaltest du selbst.
 
 ## Bereitstellungsmodelle: Wo läuft die Cloud?
 
@@ -102,7 +102,7 @@ IaaS, SaaS, PaaS.
 PaaS. Die App läuft auf einer verwalteten Plattform. Bei IaaS müsste sich die Firma um Betriebssystem und Updates kümmern. SaaS hiesse, die eigene App durch ein fertiges Produkt zu ersetzen.
 </details>
 
-<details><summary>3. Eine Treuhandfirma hat ihre Buchhaltung auf einem Server im Keller und nutzt Microsoft 365. Welches Bereitstellungsmodell ist das?</summary>
+<details><summary>3. Eine Treuhandfirma hat ihre Buchhaltung auf einem Server im Keller und nutzt Microsoft 365. Welches Bereitstellungsmodell (Deployment Model) ist das?</summary>
 
 Hybride Cloud (Hybrid Cloud).
 </details>

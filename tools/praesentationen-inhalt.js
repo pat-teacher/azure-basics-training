@@ -612,7 +612,7 @@ const INPUTS = [
       { title: "Compute", slides: [
         { type: "title", title: "Azure Compute: virtuelle Maschinen", sub: "Input 1 · Tag 3", notes: "Theorie: theorie/04-azure-compute.md" },
         { type: "diagram", title: "Woraus besteht eine Azure-VM?", img: "azure-vm-bestandteile-folie.png",
-          notes: "Live-Demo: VM im Portal erstellen, danach die Ressourcengruppe (Resource Group) öffnen und alle Teile zeigen." },
+          notes: "Überblick: Eine Azure-VM besteht aus mehreren Ressourcen. Noch keine Demo, die kommt nach Folie 7." },
         { type: "table", title: "Vergleich mit deiner VM von Tag 1", head: ["In Azure: eigene Ressource", "Was sie macht", "Und an Tag 1?"], colW: [3, 3.6, 4.4], rows: [
           ["Virtuelle Maschine (Virtual Machine)", "rechnet: CPU und RAM (Compute)", "--cpus 1 --memory 1G beim Erstellen"],
           ["OS-Datenträger (OS Disk)", "Festplatte mit dem Betriebssystem", "--disk 5G beim Erstellen"],
@@ -641,7 +641,8 @@ const INPUTS = [
           { h: "Anzeigen", t: "In PowerShell: Get-Content ~\\.ssh\\id_ed25519.pub" },
           { h: "Mitgeben", t: "Im Portal als vorhandenen öffentlichen Schlüssel (Public Key) einfügen" },
           { h: "Verbinden", t: "ssh azureuser@<öffentliche-ip> – vom Laptop aus" },
-        ], note: "Den privaten Schlüssel (Private Key) gibst du nie heraus. In Azure landet nur der öffentliche." },
+        ], note: "Den privaten Schlüssel (Private Key) gibst du nie heraus. In Azure landet nur der öffentliche.",
+          notes: "Jetzt Live-Demo im Portal: VM-Assistent bis Überprüfen + erstellen (Review + create) ausfüllen, nicht erstellen. Dabei den öffentlichen Schlüssel (Public Key) so einfügen wie auf dieser Folie. Danach weiter mit Folie 8." },
         { type: "table", title: "Wenn SSH nicht klappt", head: ["Meldung", "Häufige Ursache"], colW: [4.5, 6.5], rows: [
           ["Connection timed out", "Port 22 in der NSG zu, falsche IP, VM gestoppt"],
           ["Permission denied (publickey)", "falscher Schlüssel oder falscher Benutzername"],

@@ -154,4 +154,5 @@ az deployment group create --resource-group rg-tag5-<kuerzel> --template-file ma
 - Jeder Befehl wird erklärt, bevor er ausgeführt wird.
 - Platzhalter immer in `<spitzen Klammern>`.
 - Portal-Pfade als «Menü > Untermenü > Schaltfläche».
+- Das Portal läuft auf Englisch: Jede Beschriftung des Azure-Portals deutsch und fett, die englische in Klammern, z. B. **Einstellungen** (Settings) > **Sperren** (Locks).
 - Kein Lab ohne Aufräumschritt.

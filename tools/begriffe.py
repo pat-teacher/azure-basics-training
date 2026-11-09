@@ -65,6 +65,12 @@ GLOSSAR = [
     (r"Grundeinstellungen", "Basics"),
     (r"Verzeichnis(?:se|ses)?", "Directory"),
     (r"Sperre(?:n)?", "Lock"),
+    (r"Prioritätszahl(?:en)?", "Priority"),
+    (r"Priorität(?:en)?", "Priority"),
+    (r"Redundanz", "Redundancy"),
+    (r"Bereitstellung(?:en)?", "Deployment"),
+    (r"[Pp]rimäre[nr]? Endpunkts?", "Primary Endpoint"),
+    (r"(?<!märer )(?<!mären )(?<!märe )Endpunkt(?:e|en|es|s)?", "Endpoint"),
 ]
 
 # Mehrzahl: englischer Begriff → deutsche Mehrzahlformen; dann wird das Englische mit «s» ergänzt
@@ -91,6 +97,9 @@ MEHRZAHL = {
     "Role": r"Rollen",
     "Directory": r"Verzeichnisse",
     "Lock": r"Sperren",
+    "Priority": r"Prioritäten",
+    "Deployment": r"Bereitstellungen",
+    "Endpoint": r"Endpunkte(?:n)?",
 }
 GENITIV = re.compile(r"(?:des|eines|deines|meines|seines|ihres|dieses)\s+$")
 

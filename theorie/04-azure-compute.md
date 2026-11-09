@@ -39,7 +39,7 @@ Standard_B2ats_v2
          └ B = Serie (B = burstable, günstig für wenig Last)
 ```
 
-| Grösse | vCPU | RAM | Eignung |
+| Grösse (Size) | vCPU | RAM | Eignung |
 |--------|------|-----|---------|
 | `Standard_B1s` | 1 | 1 GiB | Übungen, kleiner Webserver |
 | `Standard_B2ats_v2` | 2 | 1 GiB | Übungen |

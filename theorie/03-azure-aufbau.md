@@ -94,7 +94,7 @@ Mit Azure for Students hast du dafür keine Rechte. Du übst diese Themen in den
 
 ## Kosten im Griff
 - In der **Kostenanalyse** (Cost Analysis) des Abonnements (Subscription) siehst du, was welche Ressource kostet (mit etwas Verzögerung).
-- Dein Guthaben bei Azure for Students ist begrenzt. <!-- prüfen: aktuelle Höhe und Laufzeit des Guthabens --> Ist es aufgebraucht, werden deine Ressourcen gestoppt.
+- Dein Guthaben (Credit) bei Azure for Students ist begrenzt. <!-- prüfen: aktuelle Höhe und Laufzeit des Guthabens --> Ist es aufgebraucht, werden deine Ressourcen gestoppt.
 - **Faustregel:** Nach jedem Lab die Ressourcengruppe (Resource Group) löschen.
 
 ## Selbsttest
@@ -106,7 +106,7 @@ Eine Region ist ein Gebiet mit mehreren Rechenzentren (z. B. Zürich). Eine Verf
 
 <details><summary>2. Du löschst die Ressourcengruppe rg-tag3-mm. Was passiert mit der VM darin?</summary>
 
-Sie wird mit allen anderen Ressourcen der Gruppe gelöscht: Datenträger, NIC, öffentliche IP (Public IP) usw.
+Sie wird mit allen anderen Ressourcen der Gruppe gelöscht: Datenträger (Disk), NIC, öffentliche IP (Public IP) usw.
 </details>
 
 <details><summary>3. Kann eine VM in Switzerland North in einer Ressourcengruppe mit Region West Europe liegen?</summary>

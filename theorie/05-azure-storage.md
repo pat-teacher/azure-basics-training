@@ -7,7 +7,7 @@ Gehört zu [Tag 3](../kurs/tag-3.md)
 ## Lernziele
 - Du kannst Block-, Datei- und Objektspeicher unterscheiden und Azure-Dienste zuordnen. (K2)
 - Du kannst den Aufbau eines Speicherkontos (Storage Account) erklären. (K2)
-- Du kannst für einen Anwendungsfall eine passende Redundanz und Zugriffsebene (Access Tier) festlegen. (K3)
+- Du kannst für einen Anwendungsfall eine passende Redundanz (Redundancy) und Zugriffsebene (Access Tier) festlegen. (K3)
 - Du kannst erklären, welche Daten das Löschen einer VM überleben. (K2)
 
 ## Drei Fragen an jeden Speicher
@@ -25,7 +25,7 @@ Gehört zu [Tag 3](../kurs/tag-3.md)
 | Blockspeicher | **verwalteter Datenträger** (Managed Disk) | wie eine Festplatte | nein (Normalfall) | Betriebssystem, Datenbank |
 | Dateispeicher | **Azure Files** | Netzlaufwerk (SMB/NFS) | ja | geteilte Dateien |
 | Objektspeicher | **Blob-Speicher** (Blob Storage) | HTTP/API, per URL | ja | Bilder, Backups, statische Websites |
-| Flüchtiger Speicher | **temporärer Datenträger** (bei manchen VM-Grössen) | wie eine Festplatte | nein | Cache, temporäre Dateien |
+| Flüchtiger Speicher | **temporärer Datenträger** (Temporary Disk), bei manchen VM-Grössen | wie eine Festplatte | nein | Cache, temporäre Dateien |
 
 ## Das Speicherkonto
 
@@ -45,9 +45,9 @@ Ein **Speicherkonto** (Storage Account) ist der Behälter für vier Speicherdien
 
 | Option | Kopien | Schützt vor |
 |--------|--------|-------------|
-| **LRS** – lokal redundant | 3 in einem Rechenzentrum | Ausfall einer Festplatte oder eines Servers |
-| **ZRS** – zonenredundant | 3 verteilt auf 3 Zonen | Ausfall eines Rechenzentrums |
-| **GRS** – georedundant | 3 lokal + 3 in der gepaarten Region | Ausfall einer ganzen Region |
+| **LRS** – lokal redundant (Locally Redundant Storage) | 3 in einem Rechenzentrum | Ausfall einer Festplatte oder eines Servers |
+| **ZRS** – zonenredundant (Zone-Redundant Storage) | 3 verteilt auf 3 Zonen | Ausfall eines Rechenzentrums |
+| **GRS** – georedundant (Geo-Redundant Storage) | 3 lokal + 3 in der gepaarten Region | Ausfall einer ganzen Region |
 | **GZRS** | ZRS + Kopie in der gepaarten Region | Kombination aus beiden |
 
 Für Übungen reicht **LRS**, es ist am günstigsten.
@@ -75,7 +75,7 @@ Löschst du eine Datei vor Ablauf der Mindestdauer oder verschiebst du sie in ei
 
 In der Cloud wird eine VM oft nicht repariert, sondern **ersetzt** (z. B. per Bicep neu erstellt). Darum gilt:
 - **Betriebssystem:** Kommt bei jeder neuen VM frisch aus dem Image und cloud-init.
-- **Daten:** gehören auf Speicher, der **unabhängig von der VM** existiert, z. B. einen eigenen Datenträger, den Blob-Speicher (Blob Storage) oder eine Datenbank.
+- **Daten:** gehören auf Speicher, der **unabhängig von der VM** existiert, z. B. eine eigene Datenfestplatte (Data Disk), den Blob-Speicher (Blob Storage) oder eine Datenbank.
 
 ## Selbsttest
 
