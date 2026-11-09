@@ -32,6 +32,9 @@ Gehört zu [Tag 3](../kurs/tag-3.md)
 ![Aufbau eines Speicherkontos](img/azure-storage-aufbau.svg)
 
 Ein **Speicherkonto** (Storage Account) ist der Behälter für vier Speicherdienste: **Blob**, **Files**, **Queue** und **Table**. Im Kurs nutzt du vor allem den Blob-Speicher (Blob Storage).
+
+> [!NOTE]
+> Verwaltete Datenträger (Managed Disks) liegen nicht in einem Speicherkonto (Storage Account). Sie sind eigene Ressourcen in der Ressourcengruppe (Resource Group), wie die VM selbst. Darum siehst du die Festplatte deiner VM in Auftrag 3.2 in der Ressourcengruppe (Resource Group), aber in keinem Speicherkonto (Storage Account).
 - **Name:** global eindeutig, 3–24 Zeichen, nur Kleinbuchstaben und Ziffern, z. B. `sttag3mm`. Der Name wird Teil der URL: `https://sttag3mm.blob.core.windows.net`.
 - **Blob-Speicher:** Ein **Container** ist wie ein Ordner, ein **Blob** ist eine Datei darin. Der Spezial-Container `$web` liefert eine **statische Website** (Static Website) aus.
 - **Zugriff:** Standardmässig ist alles privat. Zugriff gibt es über die **Zugriffsschlüssel** (Access Key) des Speicherkontos (in der CLI `--auth-mode key`) oder über ein **SAS-Token** (zeitlich begrenzter Link). <!-- prüfen: --auth-mode login braucht die Rolle «Storage-Blob-Datenmitwirkender», im Student-Abo testen -->
