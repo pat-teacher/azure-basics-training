@@ -657,7 +657,10 @@ const INPUTS = [
           { icon: "FaBook", h: "Theorie im Repository", t: "theorie/04-azure-compute.md" },
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Erstellen einer Linux-VM in Azure · Zustände und Abrechnung von VMs" },
         ]),
-        ende("Jetzt du", "Auftrag 3.1: Linux-VM im Portal erstellen und per SSH verbinden"),
+        ende("Jetzt du", "Aufträge 3.1 und 3.2", [
+          { icon: "FaServer", h: "3.1 · Linux-VM im Portal", t: "Einzel, 45 Min. · VM mit deinem SSH-Schlüssel erstellen und per SSH verbinden" },
+          { icon: "FaCubes", h: "3.2 · Was gehört zur VM?", t: "Zu zweit, 30 Min. · Ressourcen der VM untersuchen, Kosten zuordnen – am Schluss aufräumen" },
+        ]),
       ] },
     ],
   },
