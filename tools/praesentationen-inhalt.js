@@ -262,14 +262,14 @@ const TAGE = [
           ["⭐ 3.6", "Datei per SAS-Token zeitlich begrenzt teilen", "Einzel"],
         ] },
         { type: "cards", title: "Kosten im Griff", cols: 3, items: [
-          { icon: "FaMicrochip", h: "Kleine Grössen", t: "Nur Grössen mit «Für kostenlose Dienste berechtigt», z. B. Standard_B1s." },
+          { icon: "FaMicrochip", h: "Kleine Grössen", t: "Nur Grössen mit «Für kostenlose Dienste berechtigt» (Free services eligible), z. B. Standard_B1s." },
           { icon: "FaServer", h: "Eine VM", t: "Nur eine VM gleichzeitig laufen lassen." },
           { icon: "FaTrashAlt", h: "Löschen statt herunterfahren", t: "sudo poweroff spart kein Geld. Nur eine gelöschte VM kostet nichts mehr." },
         ] },
       ] },
       { title: "Abschluss", slides: [
         { type: "cards", title: "Abschluss", cols: 2, items: [
-          { icon: "FaCoins", h: "Kostenanalyse (Cost Analysis)", t: "Abonnement (Subscription) > Kostenverwaltung > Kostenanalyse (Cost Analysis): Was hat dein Tag gekostet?" },
+          { icon: "FaCoins", h: "Kostenanalyse (Cost Analysis)", t: "Abonnement (Subscription) > Kostenverwaltung (Cost Management) > Kostenanalyse (Cost Analysis): Was hat dein Tag gekostet?" },
           { icon: "FaDoorOpen", h: "Exit-Ticket", t: "Nenne drei Ressourcen, die beim Erstellen einer VM zusätzlich entstehen." },
         ], notes: "Kosten erscheinen mit Verzögerung – evtl. am Tag 4 nochmals anschauen." },
         ende("Nächstes Mal: Netzwerke bauen", "Tag 4 · Azure Networking", [
@@ -539,11 +539,11 @@ const INPUTS = [
         { type: "diagram", title: "Ein Eingang für alles: Azure Resource Manager", img: "iac-ablauf-folie.png",
           notes: "Portal, CLI und Bicep schicken ihre Anfrage an ARM. Darum ist das Ergebnis immer gleich." },
         { type: "points", title: "Live: Rundgang durchs Portal", items: [
-          { icon: "FaSearch", h: "Suchfeld", t: "Jeden Dienst findest du über die Suche oben: Abonnements (Subscriptions), Ressourcengruppen (Resource Groups), Richtlinie" },
+          { icon: "FaSearch", h: "Suchfeld", t: "Jeden Dienst findest du über die Suche oben: Abonnements (Subscriptions), Ressourcengruppen (Resource Groups), Richtlinie (Policy)" },
           { icon: "FaCoins", h: "Abonnement (Subscription)", t: "Azure for Students: Status, Kostenanalyse (Cost Analysis)" },
-          { icon: "FaFolderOpen", h: "Ressourcengruppen (Resource Groups)", t: "Liste, Erstellen, Tags, Aktivitätsprotokoll" },
+          { icon: "FaFolderOpen", h: "Ressourcengruppen (Resource Groups)", t: "Liste, Erstellen (Create), Tags, Aktivitätsprotokoll (Activity Log)" },
           { icon: "FaTerminal", h: "Symbol >_", t: "öffnet die Cloud Shell – kommt im nächsten Input" },
-        ], notes: "Live im Portal zeigen (ca. 5'): Startseite, Suche, Abonnement (Subscription) Azure for Students, Richtlinie > Zuweisungen (erlaubte Regionen), Ressourcengruppen (Resource Groups) > Erstellen bis zum Reiter Tags (nicht erstellen). Portal-Sprache: Zahnrad > Sprache und Region." },
+        ], notes: "Live im Portal zeigen (ca. 5'): Startseite, Suche, Abonnement (Subscription) Azure for Students, Richtlinie (Policy) > Zuweisungen (Assignments) (erlaubte Regionen), Ressourcengruppen (Resource Groups) > Erstellen (Create) bis zum Reiter Tags (nicht erstellen). Portal-Sprache: Zahnrad > Sprache und Region (Language + region). Im Kurs ist das Portal auf Englisch." },
         { type: "quiz", qs: [
           { h: "Region oder Zone?", q: "Was ist der Unterschied zwischen einer Region und einer Verfügbarkeitszone (Availability Zone)?" },
           { h: "Löschen", q: "Du löschst rg-tag3-mm. Was passiert mit der VM darin?" },
@@ -564,10 +564,10 @@ const INPUTS = [
         { type: "steps", title: "Cloud Shell zum ersten Mal öffnen", steps: [
           { h: "Öffnen", t: "Im Portal oben auf das Symbol >_ klicken" },
           { h: "Bash", t: "Bash wählen, nicht PowerShell" },
-          { h: "Kein Speicher", t: "«Kein Speicherkonto erforderlich» und Azure for Students wählen > Anwenden" },
+          { h: "Kein Speicher", t: "«Kein Speicherkonto erforderlich» (No storage account required) > Anwenden (Apply)" },
           { h: "Testen", t: "az account show --output table" },
         ], note: "Ohne Speicherkonto (Storage Account) kostet die Cloud Shell nichts. Dateien gehen beim Schliessen verloren – heute kein Problem.",
-          notes: "Live zeigen, das ist die grösste Stolperstelle in Auftrag 2.4. Einfügen in der Cloud Shell: Ctrl+Shift+V oder Rechtsklick." },
+          notes: "Live zeigen, das ist die grösste Stolperstelle in Auftrag 2.4. In Schritt 3 als Abonnement (Subscription) Azure for Students wählen. Einfügen in der Cloud Shell: Ctrl+Shift+V oder Rechtsklick." },
         { type: "code", title: "So ist ein CLI-Befehl aufgebaut", codeW: 6.6,
           code: "az group create \\\n  --name rg-tag2-mm \\\n  --location switzerlandnorth \\\n  --tags kurs=azure-basics tag=2\n\naz group list --output table\n\naz group delete \\\n  --name rg-tag2-mm --yes",
           side: [
@@ -628,12 +628,12 @@ const INPUTS = [
             { h: "Standard_B2ats_v2", t: "2 vCPU, 1 GiB RAM – Übungen" },
             { h: "Standard_B2s", t: "2 vCPU, 4 GiB RAM – etwas mehr Last" },
             { h: "B-Serie = burstable", t: "sammelt Guthaben bei wenig Last – ideal für Übungen" },
-          ], notes: "Verfügbarkeit im Student-Abo vorher prüfen: Filter «Für kostenlose Dienste berechtigt»." },
+          ], notes: "Verfügbarkeit im Student-Abo vorher prüfen: Filter «Für kostenlose Dienste berechtigt» (Free services eligible)." },
         { type: "table", title: "Status und Kosten", head: ["Status", "Was läuft?", "Was kostet?"], colW: [4, 3.5, 3.5], rows: [
-          ["Wird ausgeführt", "alles", "Compute + Disk + IP"],
-          ["Beendet (sudo poweroff)", "nichts – Hardware bleibt reserviert", "weiterhin Compute + Disk + IP"],
-          ["Beendet (Zuordnung aufgehoben)", "nichts – Hardware frei", "nur Disk + IP"],
-          ["Gelöscht", "–", "nichts"],
+          ["Wird ausgeführt (Running)", "alles", "Compute + Disk + IP"],
+          ["Beendet (Stopped), nach sudo poweroff", "nichts – Hardware bleibt reserviert", "weiterhin Compute + Disk + IP"],
+          ["Beendet (Zuordnung aufgehoben) (Stopped (deallocated))", "nichts – Hardware frei", "nur Disk + IP"],
+          ["Gelöscht (Deleted)", "–", "nichts"],
         ], note: "Herunterfahren aus der VM spart kein Geld. Am einfachsten: Ressourcengruppe (Resource Group) löschen." },
         { type: "diagram", title: "Wiederholung: Anmelden mit SSH-Schlüssel", img: "ssh-schluessel-folie.png",
           notes: "Bekannt von Tag 1 (vm1). In Azure gleich: Der öffentliche Schlüssel (Public Key) kommt beim Erstellen der VM in authorized_keys, der private bleibt auf dem Laptop. Frage an die Klasse: Welche Datei fügst du im Portal ein?" },
