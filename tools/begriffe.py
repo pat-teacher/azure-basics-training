@@ -64,6 +64,7 @@ GLOSSAR = [
     (r"Kostenverwaltung", "Cost Management"),
     (r"Grundeinstellungen", "Basics"),
     (r"Verzeichnis(?:se|ses)?", "Directory"),
+    (r"Sperre(?:n)?", "Lock"),
 ]
 
 # Mehrzahl: englischer Begriff → deutsche Mehrzahlformen; dann wird das Englische mit «s» ergänzt
@@ -89,6 +90,7 @@ MEHRZAHL = {
     "Policy": r"Richtlinien",
     "Role": r"Rollen",
     "Directory": r"Verzeichnisse",
+    "Lock": r"Sperren",
 }
 GENITIV = re.compile(r"(?:des|eines|deines|meines|seines|ihres|dieses)\s+$")
 

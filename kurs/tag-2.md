@@ -23,7 +23,7 @@ Am letzten Kurstag hast du VMs auf deinem Laptop gebaut. Heute siehst du, wie ei
 | L3–L4 | Aufträge 2.2 und 2.3 | allein: Abonnement (Subscription) erkunden, erste Ressourcengruppe (Resource Group) im Portal |
 | L5 | **Input:** Cloud Shell und Azure CLI | zuhören, mittippen |
 | L5–L6 | Auftrag 2.4 | allein: Ressourcengruppe (Resource Group) mit der CLI |
-| L6–L7 | Auftrag 2.5, ⭐ 2.6, ⭐ 2.7 | mit Partner: Regionen recherchieren; Schnelle: Microsoft Learn oder Challenge Lab |
+| L6–L7 | Auftrag 2.5, ⭐ 2.6, ⭐ 2.7, ⭐ 2.8 | mit Partner: Regionen recherchieren; Schnelle: Microsoft Learn, Challenge Lab oder CLI-Herausforderung |
 | L8 | Abschluss | Auftrag 2.5 besprechen, aufräumen, Exit-Ticket ausfüllen |
 
 ## Deine Aufträge
@@ -37,6 +37,7 @@ Am letzten Kurstag hast du VMs auf deinem Laptop gebaut. Heute siehst du, wie ei
 | ☐ | 2.5 | [Azure-Regionen recherchieren](../auftraege/tag-2/2.5-regionen-recherchieren.md) | 30 Min. | Partner |
 | ☐ | ⭐ 2.6 | [Microsoft-Learn-Modul «Kernkomponenten der Azure-Architektur»](../auftraege/tag-2/2.6-learn-modul-architektur.md) | ca. 45 Min. | Einzel, freiwillig |
 | ☐ | ⭐ 2.7 | [Challenge Lab «Azure RBAC konfigurieren»](../auftraege/tag-2/2.7-challenge-lab-rbac.md) | ca. 45 Min. | Partner, freiwillig |
+| ☐ | ⭐ 2.8 | [Herausforderung: Drei Umgebungen, ein Befehl – Tags, Abfragen und Sperren](../auftraege/tag-2/2.8-umgebungen-tags-sperren.md) | ca. 45 Min. | Einzel, freiwillig |
 
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen (Resource Groups) von heute gelöscht: `az group list --output table` zeigt keine `rg-tag2-…` mehr.

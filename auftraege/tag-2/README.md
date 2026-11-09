@@ -13,5 +13,6 @@ Tagesplanung: [Tag 2](../../kurs/tag-2.md)
 | 2.5 | [Azure-Regionen recherchieren](2.5-regionen-recherchieren.md) | 30 Min. | Partner |
 | ⭐ 2.6 | [Microsoft-Learn-Modul «Kernkomponenten der Azure-Architektur»](2.6-learn-modul-architektur.md) | ca. 45 Min. | Einzel |
 | ⭐ 2.7 | [Challenge Lab «Azure RBAC konfigurieren»](2.7-challenge-lab-rbac.md) | ca. 45 Min. | Partner |
+| ⭐ 2.8 | [Herausforderung: Drei Umgebungen, ein Befehl – Tags, Abfragen und Sperren](2.8-umgebungen-tags-sperren.md) | ca. 45 Min. | Einzel |
 
 Lösungen zum Vergleichen: [Lösungen Tag 2](../../loesungen/tag-2/README.md)

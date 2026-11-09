@@ -47,7 +47,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L4, Beginn | Kursregion abfragen: «Wer hat Switzerland North nicht in der Liste?» Ersatzregionen an die Wandtafel | 5' | Input 3, Folie 9 | Auftrag 2.3 |
 | L4, Schluss | Aktivitätsprotokoll (Activity Log) zeigen: «Jede Aktion läuft über den Resource Manager.» | 5' | Portal | 2.2/2.3 fertig, aufräumen |
 | L5, Beginn | Werkzeuge: Live-Demo Cloud Shell (erster Start ohne Speicherkonto (Storage Account)) und Azure CLI (`az group create`, `list`, `delete`, `--help`, `-o table`). Ausblick RBAC in einem Satz, Selbsttest | 15' | Input 3, Folien 10–18 | Aufträge 2.4, 2.5 |
-| L7, Beginn | Challenge Labs erklären, Trainingsschlüssel teilen | 5' | Tag 2, Folie 9 | Puffer 2.1–2.5, ⭐ 2.6, ⭐ 2.7 |
+| L7, Beginn | Challenge Labs erklären, Trainingsschlüssel teilen | 5' | Tag 2, Folie 9 | Puffer 2.1–2.5, ⭐ 2.6, ⭐ 2.7, ⭐ 2.8 |
 | L8, Beginn | Besprechung 2.5, Schritt 3 (Switzerland North: Schweiz und Zonen) | 10' | – | Aufräumkontrolle |
 | L8, Schluss | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag2-…`. Ausblick Tag 3: SSH-Schlüssel von Tag 1 bereithalten | 10' | Tag 2, Folien 10–11 | Lernjournal, Exit-Ticket |
 
@@ -57,6 +57,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 - Für die Demos in L3 und L5 im Browser bereit: Portal (Sprache Deutsch), Cloud Shell schon einmal gestartet, damit die Demo nicht beim Einrichten hängt. Für die Demo des ersten Starts ein zweites Browserprofil oder Inkognito-Fenster verwenden.
 - Wandtafel oder Whiteboard für die Kursregionen (L4).
 - Zeitplan: 2.1 bis ca. Mitte L2, 2.2 in L3, 2.3 in L4, 2.4 bis ca. L6 Beginn, 2.5 zu zweit in L6. L7 ist Puffer. ⭐ 2.7 nur für Teams, die 2.5 in L6 beendet haben (Lab braucht ca. 40'); sie dürfen in L8 bis 20' weiterarbeiten.
+- ⭐ 2.8 ist die Herausforderung für Lernstarke, die allein arbeiten wollen: Schleife in der Bash, `--query`, Tags ergänzen statt ersetzen, Sperre (Lock). Ohne Kosten und ohne Trainingsschlüssel. Vorab mit dem eigenen Konto testen, ob `az lock create` geht. Bei der Aufräumkontrolle in L8 zusätzlich `az lock list --output table` zeigen lassen. <!-- prüfen -->
 - Für ⭐ 2.7: Trainingsschlüssel der Klasse [AZ-104](https://msle.learnondemand.net/Class/777740) im Kurskanal teilen (für 2.6 optional [AZ-900](https://msle.learnondemand.net/Class/777739)). Die Lernenden registrieren sich über «Mit dem Schulungsschlüssel registrieren», nicht über «Einloggen». Name des RBAC-Labs in der Klasse nachsehen und in Auftrag 2.7 eintragen. <!-- prüfen -->
 - Mit dem Auftraggeber klären: Dürfen die Lernenden ein Konto bei Azure for Students (Mindestalter, «accredited institution») und bei Skillable anlegen? Wie bei GitHub/GitLab an Tag 1. <!-- prüfen -->
 
