@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Vier Access Tiers Hot, Cool, Cold, Archive: Speicherpreis sinkt, Zugriffspreis und Mindestdauer steigen">
+<defs><marker id="aD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27303A"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#006FAD"/></marker><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2E7D32"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B3261E"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6F6F6F"/></marker></defs>
+<rect width="1000" height="470" fill="#FFFFFF"/>
+<rect x="0" y="465" width="1000" height="5" fill="#006FAD"/>
+<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Zugriffsebenen (Access Tiers) im Blob Storage</text>
+<rect x="40" y="55" width="200" height="40" rx="8" fill="#006FAD" stroke="#006FAD" stroke-width="2"/>
+<text x="140.0" y="80.33333333333333" font-size="16" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Hot</text>
+<rect x="70" y="162" width="60" height="168" rx="3" fill="#006FAD" stroke="#006FAD" stroke-width="1"/>
+<rect x="150" y="288" width="60" height="42" rx="3" fill="#27303A" stroke="#27303A" stroke-width="1"/>
+<text x="140" y="360" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">Mindestdauer: –</text>
+<text x="140" y="380" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Website-Dateien</text>
+<rect x="280" y="55" width="200" height="40" rx="8" fill="#DEE2FB" stroke="#006FAD" stroke-width="2"/>
+<text x="380.0" y="80.33333333333333" font-size="16" fill="#27303A" font-weight="bold" text-anchor="middle">Cool</text>
+<rect x="310" y="204" width="60" height="126" rx="3" fill="#006FAD" stroke="#006FAD" stroke-width="1"/>
+<rect x="390" y="246" width="60" height="84" rx="3" fill="#27303A" stroke="#27303A" stroke-width="1"/>
+<text x="380" y="360" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">Mindestdauer: 30 Tage</text>
+<text x="380" y="380" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Backups der letzten Wochen</text>
+<rect x="520" y="55" width="200" height="40" rx="8" fill="#DEE2FB" stroke="#006FAD" stroke-width="2"/>
+<text x="620.0" y="80.33333333333333" font-size="16" fill="#27303A" font-weight="bold" text-anchor="middle">Cold</text>
+<rect x="550" y="246" width="60" height="84" rx="3" fill="#006FAD" stroke="#006FAD" stroke-width="1"/>
+<rect x="630" y="204" width="60" height="126" rx="3" fill="#27303A" stroke="#27303A" stroke-width="1"/>
+<text x="620" y="360" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">Mindestdauer: 90 Tage</text>
+<text x="620" y="380" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">ältere Backups</text>
+<rect x="760" y="55" width="200" height="40" rx="8" fill="#DEE2FB" stroke="#006FAD" stroke-width="2"/>
+<text x="860.0" y="80.33333333333333" font-size="16" fill="#27303A" font-weight="bold" text-anchor="middle">Archive</text>
+<rect x="790" y="288" width="60" height="42" rx="3" fill="#006FAD" stroke="#006FAD" stroke-width="1"/>
+<rect x="870" y="162" width="60" height="168" rx="3" fill="#27303A" stroke="#27303A" stroke-width="1"/>
+<text x="860" y="360" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">Mindestdauer: 180 Tage</text>
+<text x="860" y="380" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">gesetzliche Aufbewahrung</text>
+<line x1="30" y1="330" x2="970" y2="330" stroke="#6F6F6F" stroke-width="1.5"/>
+<rect x="40" y="405" width="18" height="14" rx="2" fill="#006FAD" stroke="#006FAD" stroke-width="1"/>
+<text x="66" y="417" font-size="12" fill="#27303A" font-weight="normal" text-anchor="start">Preis fürs Speichern pro GB</text>
+<rect x="300" y="405" width="18" height="14" rx="2" fill="#27303A" stroke="#27303A" stroke-width="1"/>
+<text x="326" y="417" font-size="12" fill="#27303A" font-weight="normal" text-anchor="start">Preis fürs Lesen (pro Zugriff)</text>
+<text x="960" y="417" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="end">Archive: Lesen erst nach Stunden</text>
+<text x="500" y="455" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">Je heisser, desto teurer pro GB. Je kälter, desto teurer pro Zugriff.</text>
+</svg>

@@ -52,8 +52,7 @@ Für Übungen reicht **LRS**, es ist am günstigsten.
 
 ## Zugriffsebenen: Hot, Cool, Cold, Archive
 
-![Zugriffsklassen](img/tbz/Speicher_Zugriffsklassen.svg)
-<sub>Grafik: TBZ M346, für Azure angepasst. Sie zeigt die allgemeine Idee. Azure unterteilt feiner in vier Ebenen:</sub>
+![Vier Zugriffsebenen: Speichern wird günstiger, Lesen teurer](img/zugriffsebenen.svg)
 
 | Ebene | Zugriff | Mindestdauer | Speichern pro GB | Lesen | Beispiel |
 |-------|---------|--------------|------------------|-------|----------|
@@ -68,8 +67,7 @@ Löschst du eine Datei vor Ablauf der Mindestdauer oder verschiebst du sie in ei
 
 ## Persistenz: Was überlebt?
 
-![Persistenz](img/tbz/Speicher_Persistenz.svg)
-<sub>Grafik: TBZ M346, für Azure angepasst</sub>
+![Persistenz: OS-Datenträger und temporärer Datenträger gehen beim Ersetzen verloren, Datenfestplatte und Blob-Speicher bleiben](img/persistenz.svg)
 
 In der Cloud wird eine VM oft nicht repariert, sondern **ersetzt** (z. B. per Bicep neu erstellt). Darum gilt:
 - **Betriebssystem:** Kommt bei jeder neuen VM frisch aus dem Image und cloud-init.
@@ -103,7 +101,7 @@ Bei LRS liegen alle drei Kopien im selben Rechenzentrum. Bei ZRS sind sie auf dr
 </details>
 
 ## Quellen
-- TBZ M346: [Speichermodelle](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Speichermodelle.md) (Texte und Grafiken übernommen und für Azure angepasst)
+- TBZ M346: [Speichermodelle](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Speichermodelle.md) (als Quelle für die Texte, für Azure angepasst)
 - Microsoft Learn: [Übersicht über Speicherkonten](https://learn.microsoft.com/de-de/azure/storage/common/storage-account-overview)
 - Microsoft Learn: [Einführung in Azure Storage](https://learn.microsoft.com/de-de/azure/storage/common/storage-introduction)
 - Microsoft Learn: [Azure Storage-Redundanz](https://learn.microsoft.com/de-de/azure/storage/common/storage-redundancy)

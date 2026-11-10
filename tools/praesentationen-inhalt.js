@@ -398,7 +398,7 @@ const INPUTS = [
           points: ["Gebäude = Hardware · Wohnung = virtuelle Maschine (VM) · Hausverwaltung = Hypervisor",
             "Ein Server ohne Virtualisierung ist oft nur zu 10–20 % ausgelastet – mit Virtualisierung laufen viele VMs darauf."],
           notes: "Live-Demo: Hyper-V-Manager öffnen und eine laufende Multipass-VM zeigen." },
-        { type: "diagram", title: "Hypervisor Typ 1 und Typ 2", img: "Hypervisor.png", caption: "Grafik: TBZ M346",
+        { type: "diagram", title: "Hypervisor Typ 1 und Typ 2", img: "hypervisor-typen-folie.png",
           notes: "Typ 1 direkt auf der Hardware, Typ 2 als Programm auf einem Betriebssystem." },
         { type: "compare", title: "Typ 1 oder Typ 2?",
           left: { icon: "FaServer", h: "Typ 1 – bare metal", points: ["läuft direkt auf der Hardware", "hohe Leistung, kein Betriebssystem dazwischen", "Rechenzentren und Cloud", "Hyper-V, VMware ESXi, KVM"] },
@@ -493,7 +493,7 @@ const INPUTS = [
           { icon: "FaLock", h: "Private Cloud", t: "Cloud nur für eine Organisation, z. B. Banken und Behörden." },
           { icon: "FaExchangeAlt", h: "Hybride Cloud (Hybrid Cloud)", t: "Ein Teil im eigenen Rechenzentrum, ein Teil in der öffentlichen Cloud (Public Cloud) – heute der Normalfall." },
         ], notes: "Private Cloud: Die Hardware wird nicht mit anderen Kunden geteilt, aber innerhalb der Organisation, z. B. zwischen Abteilungen – der Ressourcen-Pool gilt also auch hier. Sie kann im eigenen Haus oder bei einem Anbieter stehen (Hosted Private Cloud). Häufiges Missverständnis: Ein VNet in Azure ist keine Private Cloud, die Hardware darunter ist weiterhin geteilt. Hybride Cloud (Hybrid Cloud): In der Praxis eigenes Rechenzentrum plus öffentliche Cloud (Public Cloud), beide Teile verbunden (Netzwerk, Anmeldung). Typisch bleiben sensible Daten oder alte Anwendungen im Haus. Nur Microsoft 365 und daneben ein Server im Keller ist noch keine hybride Cloud." },
-        { type: "diagram", title: "Hybride Cloud am Beispiel", img: "Betriebsmodell_Hybrid_Webshop.png", caption: "Grafik: TBZ M346",
+        { type: "diagram", title: "Hybride Cloud am Beispiel", img: "hybride-cloud-folie.png",
           notes: "Muster: Neues und Wachsendes in die Cloud, Altes und schwer Migrierbares bleibt vorerst im Haus." },
         { type: "compare", title: "Geteilte Verantwortung (Shared Responsibility)",
           left: { icon: "FaBuilding", h: "Microsoft: Sicherheit der Cloud", points: ["Rechenzentren, Zutritt, Strom", "Hardware und Hypervisor", "Trennung der Kunden"] },
@@ -507,7 +507,7 @@ const INPUTS = [
         quellen([
           { icon: "FaBook", h: "Theorie im Repository", t: "theorie/02-cloud-grundlagen.md" },
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Beschreiben von Cloud Computing · Beschreiben von Clouddiensttypen" },
-          { icon: "FaBook", h: "TBZ M346", t: "Servicemodelle (Service Models), Betriebsmodelle (Texte und Grafiken übernommen)" },
+          { icon: "FaBook", h: "TBZ M346", t: "Servicemodelle (Service Models), Betriebsmodelle (als Quelle für die Texte)" },
         ]),
         ende("Jetzt du", "Auftrag 2.1: IaaS, PaaS oder SaaS?", [
           { icon: "FaUsers", h: "Zu zweit · 35 Min.", t: "Dienste zuordnen, Cloud-Merkmale, Empfehlung für die Velo Zürich AG" },
@@ -702,7 +702,7 @@ const INPUTS = [
           ["Cold", "sehr selten", "90 Tage", "noch günstiger", "noch teurer", "ältere Backups"],
           ["Archive", "fast nie", "180 Tage", "am günstigsten", "teuer, Stunden Wartezeit", "gesetzliche Aufbewahrung"],
         ], note: "Je heisser, desto teurer pro GB. Je kälter, desto teurer pro Zugriff." },
-        { type: "diagram", title: "Persistenz: Was überlebt?", img: "Speicher_Persistenz-folie.png", caption: "Grafik: TBZ M346, für Azure angepasst",
+        { type: "diagram", title: "Persistenz: Was überlebt?", img: "persistenz-folie.png",
           notes: "In der Cloud wird eine VM ersetzt statt repariert. Daten gehören auf Speicher, der unabhängig von der VM existiert." },
         { type: "quiz", qs: [
           { h: "Bilder weg?", q: "Eine Web-App speichert Bilder auf dem OS-Datenträger (OS Disk). Die VM wird neu erstellt. Was passiert?" },
@@ -712,7 +712,7 @@ const INPUTS = [
         quellen([
           { icon: "FaBook", h: "Theorie im Repository", t: "theorie/05-azure-storage.md" },
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Übersicht über Speicherkonten (Storage Accounts) · Storage-Redundanz · Zugriffsebenen (Access Tiers)" },
-          { icon: "FaBook", h: "TBZ M346", t: "Speichermodelle (Texte und Grafiken übernommen, für Azure angepasst)" },
+          { icon: "FaBook", h: "TBZ M346", t: "Speichermodelle (als Quelle für die Texte, für Azure angepasst)" },
         ]),
         ende("Jetzt du", "Auftrag 3.4, direkt danach 3.5", [
           { icon: "FaDatabase", h: "3.4 · Dateien in Azure", t: "Einzel, 40 Min. · Speicherkonto (Storage Account), Datei hochladen. Noch nicht aufräumen!" },

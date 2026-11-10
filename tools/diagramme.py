@@ -389,3 +389,98 @@ s.box(395, 455, 15, 15, LIGHT2, GREY, 0.8, 2); s.text(416, 467, "VM anderer Kund
 s.box(560, 455, 15, 15, WHITE, GREY, 0.8, 2); s.text(581, 467, "freier Platz", 11, GREY, "normal", "start")
 s.text(500, 505, "Du siehst nicht, auf welchem Server deine VM läuft. Für dich wirkt es wie ein fast unendlicher Pool an Ressourcen.", 13, DARK, "bold")
 s.save("hyperscaler.svg", "Vom einzelnen Server mit Hypervisor zum Hyperscaler: Anfrage über Web API, Orchestrator verteilt die VM auf einen von tausenden Servern")
+
+# 14 Hypervisor Typ 1 und Typ 2 ----------------------------------------------
+s = Svg(1000, 500, "Hypervisor Typ 1 und Typ 2")
+# Typ 1
+s.text(245, 66, "Typ 1: direkt auf der Hardware", 15, BLUE, "bold")
+s.box(20, 80, 450, 320, BG, GREY, dash=True)
+for k, os_ in enumerate(["Ubuntu", "Windows Server", "Ubuntu"]):
+    s.label(40 + k * 140, 100, 130, 110, ["VM", os_], WHITE, BLUE, sw=2, size=14)
+s.label(40, 225, 410, 60, ["Type 1 Hypervisor", "verteilt CPU, RAM und Disk auf die VMs"], DARK, DARK, WHITE)
+s.label(40, 300, 410, 80, ["Hardware", "Server im Rechenzentrum"], LIGHT2, GREY)
+s.text(245, 425, "Beispiele: Hyper-V, VMware ESXi – auch in jedem Azure-Rechenzentrum", 12, DARK)
+# Typ 2
+s.text(755, 66, "Typ 2: als Programm auf einem Betriebssystem", 15, BLUE, "bold")
+s.box(530, 80, 450, 320, BG, GREY, dash=True)
+s.box(550, 95, 270, 128, WHITE, DARK, 2)
+s.text(685, 113, "Type 2 Hypervisor (Programm)", 12, DARK, "bold")
+for k in range(2):
+    s.label(562 + k * 128, 122, 118, 88, ["VM", "Ubuntu"], WHITE, BLUE, sw=2, size=14)
+s.label(832, 95, 128, 58, ["Browser"], LIGHT, GREY, size=13)
+s.label(832, 165, 128, 58, ["Teams"], LIGHT, GREY, size=13)
+s.label(550, 233, 410, 52, ["Host OS: Windows oder macOS"], LIGHT2, DARK)
+s.label(550, 300, 410, 80, ["Hardware", "dein Laptop"], LIGHT2, GREY)
+s.text(755, 425, "Beispiele: VirtualBox, VMware Workstation", 12, DARK)
+s.text(500, 465, "Typ 1: weniger Schichten, schneller – für Server und Cloud.   Typ 2: einfach installiert – für Tests auf dem Laptop.", 13, DARK, "bold")
+s.text(500, 488, "Hyper-V ist Typ 1, auch auf deinem Windows-Laptop: Windows läuft dann selbst als VM darüber.", 12, GREY)
+s.save("hypervisor-typen.svg", "Hypervisor Typ 1 läuft direkt auf der Hardware, Typ 2 als Programm auf einem Host-Betriebssystem")
+
+# 15 Hybride Cloud ------------------------------------------------------------
+s = Svg(1000, 500, "Hybride Cloud am Beispiel der Velo Zürich AG")
+s.box(20, 60, 330, 340, LIGHT2, DARK, 2)
+s.text(185, 86, "On Premises", 16, DARK, "bold")
+s.text(185, 105, "Serverraum im eigenen Haus", 12, GREY)
+s.label(45, 125, 280, 70, ["Kundendaten, Buchhaltung", "sensibel – bleibt im Haus"], WHITE, DARK, size=14)
+s.label(45, 210, 280, 70, ["Kassensystem der Läden", "alte Anwendung, schwer zu migrieren"], WHITE, DARK, size=14)
+s.label(45, 300, 280, 70, ["Mitarbeitende", "Büro und Läden"], LIGHT, GREY, size=14)
+s.box(650, 60, 330, 340, LIGHT, BLUE, 2)
+s.text(815, 86, "Public Cloud: Azure", 16, BLUE, "bold")
+s.text(815, 105, "neu und wachsend", 12, GREY)
+s.box(675, 125, 280, 95, WHITE, BLUE, 2)
+s.text(815, 147, "Webshop", 14, DARK, "bold")
+for k in range(3):
+    s.label(690 + k * 88, 160, 78, 46, ["VM"], LIGHT, BLUE, size=12)
+s.text(815, 236, "für die Kundschaft · Weihnachten: mehr VMs", 11, GREY)
+s.label(675, 250, 280, 60, ["Produktbilder", "Blob Storage"], WHITE, BLUE, size=14)
+s.label(675, 325, 280, 55, ["Microsoft Entra ID", "eine Anmeldung für alles"], WHITE, BLUE, size=13)
+# Verbindungen
+s.arrow(355, 165, 645, 165, BLUE, both=True, sw=3)
+s.text(500, 152, "Netzwerk: VPN", 13, BLUE, "bold")
+s.text(500, 185, "Bestellungen fliessen in die Buchhaltung", 11, GREY)
+s.arrow(355, 335, 645, 350, BLUE, dash=True, both=True)
+s.text(500, 325, "Anmeldung: ein Konto", 13, BLUE, "bold")
+s.text(500, 440, "Beide Teile sind verbunden und bilden zusammen eine Firmen-IT.", 13, DARK, "bold")
+s.text(500, 463, "Nur Microsoft 365 nutzen und daneben ein Server im Keller ist noch keine hybride Cloud.", 12, GREY)
+s.save("hybride-cloud.svg", "Hybride Cloud: sensible Daten und alte Anwendungen im eigenen Haus, Webshop in Azure, verbunden über VPN und gemeinsame Anmeldung")
+
+# 16 Zugriffsebenen -----------------------------------------------------------
+s = Svg(1000, 470, "Zugriffsebenen (Access Tiers) im Blob Storage")
+tiers = [("Hot", "–", "Website-Dateien"), ("Cool", "30 Tage", "Backups der letzten Wochen"),
+         ("Cold", "90 Tage", "ältere Backups"), ("Archive", "180 Tage", "gesetzliche Aufbewahrung")]
+base = 330
+for i, (t, mind, bsp) in enumerate(tiers):
+    x = 40 + i * 240
+    s.label(x, 55, 200, 40, [t], BLUE if i == 0 else LIGHT, BLUE, WHITE if i == 0 else DARK, sw=2, size=16)
+    hs, ha = (4 - i) * 42, (i + 1) * 42
+    s.box(x + 30, base - hs, 60, hs, BLUE, BLUE, 1, 3)
+    s.box(x + 110, base - ha, 60, ha, DARK, DARK, 1, 3)
+    s.text(x + 100, 360, f"Mindestdauer: {mind}", 12, DARK, "bold")
+    s.text(x + 100, 380, bsp, 12, GREY)
+s.parts.append(f'<line x1="30" y1="{base}" x2="970" y2="{base}" stroke="{GREY}" stroke-width="1.5"/>')
+s.box(40, 405, 18, 14, BLUE, BLUE, 1, 2); s.text(66, 417, "Preis fürs Speichern pro GB", 12, DARK, "normal", "start")
+s.box(300, 405, 18, 14, DARK, DARK, 1, 2); s.text(326, 417, "Preis fürs Lesen (pro Zugriff)", 12, DARK, "normal", "start")
+s.text(960, 417, "Archive: Lesen erst nach Stunden", 12, GREY, "normal", "end")
+s.text(500, 455, "Je heisser, desto teurer pro GB. Je kälter, desto teurer pro Zugriff.", 14, DARK, "bold")
+s.save("zugriffsebenen.svg", "Vier Access Tiers Hot, Cool, Cold, Archive: Speicherpreis sinkt, Zugriffspreis und Mindestdauer steigen")
+
+# 17 Persistenz ---------------------------------------------------------------
+s = Svg(1000, 470, "Persistenz: Was überlebt, wenn die VM ersetzt wird?")
+s.label(220, 55, 300, 50, ["vorher: vm-web-mm"], DARK, DARK, WHITE)
+s.label(660, 55, 320, 50, ["nachher: neu erstellt", "z. B. mit Bicep und cloud-init"], LIGHT, BLUE, sw=2)
+s.arrow(525, 80, 655, 80, BLUE, sw=3)
+s.text(590, 70, "VM ersetzen", 12, BLUE, "bold")
+rows = [("OS Disk", "Betriebssystem + was du dort gespeichert hast", False, "neue, leere OS Disk aus dem Image"),
+        ("Temporary Disk", "Cache, temporäre Dateien", False, "leer"),
+        ("Data Disk", "deine Daten", True, "an die neue VM gehängt"),
+        ("Blob Storage", "Dateien im Storage Account", True, "per URL erreichbar wie vorher")]
+for k, (t, inhalt, ok, nachher) in enumerate(rows):
+    y = 125 + k * 72
+    s.label(20, y, 180, 58, [t], LIGHT2 if not ok else LIGHT, GREY if not ok else BLUE, size=14)
+    s.label(220, y, 300, 58, [inhalt], WHITE, GREY, size=13)
+    s.parts.append(f'<circle cx="590" cy="{y + 29}" r="20" fill="{OK if ok else NO}"/>')
+    s.text(590, y + 36, "✓" if ok else "✗", 20, WHITE, "bold")
+    s.label(660, y, 320, 58, [nachher], WHITE, OK if ok else NO, OK if ok else NO, sw=2, size=13)
+s.text(500, 435, "Faustregel: Die VM ist ersetzbar. Daten gehören auf Speicher, der unabhängig von der VM existiert.", 14, DARK, "bold")
+s.text(500, 458, "✓ bleibt erhalten   ✗ ist weg", 12, GREY)
+s.save("persistenz.svg", "Beim Ersetzen der VM gehen OS Disk und Temporary Disk verloren, Data Disk und Blob Storage bleiben")

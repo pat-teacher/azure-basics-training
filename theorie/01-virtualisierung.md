@@ -26,8 +26,7 @@ Die Software, die das möglich macht, heisst **Hypervisor**. Sie teilt die echte
 
 ## Typ 1 und Typ 2
 
-![Hypervisor Typ 1 und Typ 2](img/tbz/Hypervisor.png)
-<sub>Grafik: TBZ M346</sub>
+![Hypervisor Typ 1 läuft direkt auf der Hardware, Typ 2 als Programm auf Windows oder macOS](img/hypervisor-typen.svg)
 
 | | Typ 1 | Typ 2 |
 |---|---|---|

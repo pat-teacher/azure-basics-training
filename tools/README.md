@@ -33,9 +33,8 @@ mkdir -p <arbeit>/assets/icons && cd <arbeit>
 npm init -y && npm install pptxgenjs@3.12.0 sharp react react-dom react-icons
 
 # 2. Bilder: Diagramme, Logo und Wolke als PNG (2x), dann Titel abschneiden (-folie.png)
-sh <repo>/tools/folien/render2x.sh <arbeit>/assets <repo>/theorie/img/*.svg <repo>/theorie/img/tbz/*.svg
+sh <repo>/tools/folien/render2x.sh <arbeit>/assets <repo>/theorie/img/*.svg
 #    Logo hell/dunkel und Wolke: assets/branding/*.svg mit angepasster Füllfarbe ebenso rendern
-cp <repo>/theorie/img/tbz/*.png <arbeit>/assets/
 node <repo>/tools/folien/zuschneiden.js <arbeit>/assets
 node <repo>/tools/folien/icons.js           # erzeugt assets/icons/*.png
 

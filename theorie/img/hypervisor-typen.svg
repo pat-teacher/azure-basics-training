@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Hypervisor Typ 1 läuft direkt auf der Hardware, Typ 2 als Programm auf einem Host-Betriebssystem">
+<defs><marker id="aD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27303A"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#006FAD"/></marker><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2E7D32"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B3261E"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6F6F6F"/></marker></defs>
+<rect width="1000" height="500" fill="#FFFFFF"/>
+<rect x="0" y="495" width="1000" height="5" fill="#006FAD"/>
+<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Hypervisor Typ 1 und Typ 2</text>
+<text x="245" y="66" font-size="15" fill="#006FAD" font-weight="bold" text-anchor="middle">Typ 1: direkt auf der Hardware</text>
+<rect x="20" y="80" width="450" height="320" rx="8" fill="#F7F7F7" stroke="#6F6F6F" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="40" y="100" width="130" height="110" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="105.0" y="150.16666666666666" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">VM</text>
+<text x="105.0" y="169.16666666666666" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Ubuntu</text>
+<rect x="180" y="100" width="130" height="110" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="245.0" y="150.16666666666666" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">VM</text>
+<text x="245.0" y="169.16666666666666" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Windows Server</text>
+<rect x="320" y="100" width="130" height="110" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="385.0" y="150.16666666666666" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">VM</text>
+<text x="385.0" y="169.16666666666666" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Ubuntu</text>
+<rect x="40" y="225" width="410" height="60" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
+<text x="245.0" y="250.16666666666666" font-size="14" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Type 1 Hypervisor</text>
+<text x="245.0" y="269.16666666666663" font-size="12" fill="#FFFFFF" font-weight="normal" text-anchor="middle">verteilt CPU, RAM und Disk auf die VMs</text>
+<rect x="40" y="300" width="410" height="80" rx="8" fill="#D5D8F4" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="245.0" y="335.1666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">Hardware</text>
+<text x="245.0" y="354.1666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Server im Rechenzentrum</text>
+<text x="245" y="425" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Beispiele: Hyper-V, VMware ESXi – auch in jedem Azure-Rechenzentrum</text>
+<text x="755" y="66" font-size="15" fill="#006FAD" font-weight="bold" text-anchor="middle">Typ 2: als Programm auf einem Betriebssystem</text>
+<rect x="530" y="80" width="450" height="320" rx="8" fill="#F7F7F7" stroke="#6F6F6F" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="550" y="95" width="270" height="128" rx="8" fill="#FFFFFF" stroke="#27303A" stroke-width="2"/>
+<text x="685" y="113" font-size="12" fill="#27303A" font-weight="bold" text-anchor="middle">Type 2 Hypervisor (Programm)</text>
+<rect x="562" y="122" width="118" height="88" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="621.0" y="161.16666666666666" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">VM</text>
+<text x="621.0" y="180.16666666666666" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Ubuntu</text>
+<rect x="690" y="122" width="118" height="88" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="2"/>
+<text x="749.0" y="161.16666666666666" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">VM</text>
+<text x="749.0" y="180.16666666666666" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Ubuntu</text>
+<rect x="832" y="95" width="128" height="58" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="896.0" y="128.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Browser</text>
+<rect x="832" y="165" width="128" height="58" rx="8" fill="#DEE2FB" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="896.0" y="198.33333333333334" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Teams</text>
+<rect x="550" y="233" width="410" height="52" rx="8" fill="#D5D8F4" stroke="#27303A" stroke-width="1.5"/>
+<text x="755.0" y="263.6666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">Host OS: Windows oder macOS</text>
+<rect x="550" y="300" width="410" height="80" rx="8" fill="#D5D8F4" stroke="#6F6F6F" stroke-width="1.5"/>
+<text x="755.0" y="335.1666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">Hardware</text>
+<text x="755.0" y="354.1666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">dein Laptop</text>
+<text x="755" y="425" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Beispiele: VirtualBox, VMware Workstation</text>
+<text x="500" y="465" font-size="13" fill="#27303A" font-weight="bold" text-anchor="middle">Typ 1: weniger Schichten, schneller – für Server und Cloud.   Typ 2: einfach installiert – für Tests auf dem Laptop.</text>
+<text x="500" y="488" font-size="12" fill="#6F6F6F" font-weight="normal" text-anchor="middle">Hyper-V ist Typ 1, auch auf deinem Windows-Laptop: Windows läuft dann selbst als VM darüber.</text>
+</svg>

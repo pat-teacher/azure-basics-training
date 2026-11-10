@@ -15,6 +15,6 @@ Hier findest du die Theorie zum Kurs, kurz zusammengefasst und mit Grafiken. Die
 | [7 Automatisierung](07-automatisierung.md) | Infrastruktur als Code (Infrastructure as Code), imperativ/deklarativ, ARM und Bicep, cloud-init | 5 |
 
 ## Herkunft der Inhalte
-- Einige Texte und Grafiken stammen aus den Modulen [M346](https://gitlab.com/ch-tbz-it/Stud/m346/m346) und [M347](https://gitlab.com/ch-tbz-it/Stud/m347) der TBZ. Sie wurden mit Erlaubnis übernommen und für Azure angepasst. Die Herkunft steht jeweils bei der Grafik und in den Quellen.
-- Eigene Grafiken: PAT Cloud Solutions.
+- Einige Texte stützen sich auf die Module [M346](https://gitlab.com/ch-tbz-it/Stud/m346/m346) und [M347](https://gitlab.com/ch-tbz-it/Stud/m347) der TBZ. Sie wurden mit Erlaubnis als Quelle verwendet und für Azure angepasst. Die Herkunft steht jeweils in den Quellen.
+- Alle Grafiken: PAT Cloud Solutions.
 - Fachliche Grundlage: Dokumentation auf Microsoft Learn (in jedem Kapitel verlinkt).

@@ -78,8 +78,7 @@ Der Vergleich hat eine Grenze: Deine Daten und Zugriffe bleiben in jedem Modell 
 > [!NOTE]
 > Ein eigenes virtuelles Netzwerk (VNet) in Azure ist keine Private Cloud. Dein Netz ist zwar abgetrennt, die Hardware darunter teilst du aber weiterhin mit anderen Kunden.
 
-![Hybride Cloud am Beispiel eines Webshops](img/tbz/Betriebsmodell_Hybrid_Webshop.svg)
-<sub>Grafik: TBZ M346</sub>
+![Hybride Cloud am Beispiel der Velo Zürich AG: sensible Daten im eigenen Haus, Webshop in Azure](img/hybride-cloud.svg)
 
 Das typische Muster: **Neues und Wachsendes** geht in die Cloud, **Altes und schwer Migrierbares** bleibt vorerst im Haus.
 
@@ -117,7 +116,7 @@ Messbarer Dienst (Measured Service).
 </details>
 
 ## Quellen
-- TBZ M346: [Servicemodelle](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Servicemodelle.md) (Texte), [Betriebsmodelle](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Betriebsmodelle.md), [Virtualisierung](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Virtualisierung.md) (Texte und Grafiken übernommen und angepasst)
+- TBZ M346: [Servicemodelle](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Servicemodelle.md) (Texte), [Betriebsmodelle](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Betriebsmodelle.md), [Virtualisierung](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/Virtualisierung.md) (als Quelle für die Texte, angepasst)
 - Microsoft Learn: [Beschreiben von Cloud Computing](https://learn.microsoft.com/de-de/training/modules/describe-cloud-compute/)
 - Microsoft Learn: [Beschreiben von Clouddiensttypen](https://learn.microsoft.com/de-de/training/modules/describe-cloud-service-types/)
 - Microsoft Learn: [Gemeinsame Verantwortung in der Cloud](https://learn.microsoft.com/de-de/azure/security/fundamentals/shared-responsibility)

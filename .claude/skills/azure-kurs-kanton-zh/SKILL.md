@@ -55,7 +55,7 @@ Für jeden Tag entstehen:
 ```
 README.md                Kursübersicht mit Banner
 kurs/                    organisation.md, tag-1.md … tag-5.md
-theorie/                 Kapitel 01–07 (zusammenfassend), img/ eigene Diagramme (img/tbz/ = alte TBZ-Grafiken, werden ersetzt)
+theorie/                 Kapitel 01–07 (zusammenfassend), img/ eigene Diagramme (aus tools/diagramme.py)
 auftraege/tag-<n>/       Aufträge für Lernende
 loesungen/tag-<n>/       Lösungen, gleiche Dateinamen wie Aufträge
 abschlussprojekt/        auftrag.md, bewertungsraster.md (Lösung unter loesungen/)
@@ -68,7 +68,7 @@ assets/branding/         Logo, Banner, Wolke
 - Ein Kapitel pro Thema (`theorie/<nn>-<thema>.md`), zusammenfassend, verlinkt aus den Inputs der Tagesplanung.
 - Aufbau: Lernziele (K-Stufe) → Inhalt mit Tabellen, Alltagsvergleich und Grafiken → Selbsttest mit `<details>` → Quellen.
 - **TBZ-Material (M346, M347)** nur als **inhaltliche Quelle** für Erklärungen verwenden (Erlaubnis liegt vor), in den Quellen angeben. AWS-Begriffe auf Azure umschreiben.
-- **Keine Bilder oder Illustrationen von TBZ übernehmen.** Jede Grafik neu zeichnen, eigenständig gestaltet (nicht dieselbe Darstellung nachbauen), mit `tools/diagramme.py`. Bestehende Grafiken in `theorie/img/tbz/` werden nach und nach ersetzt.
+- **Keine Bilder oder Illustrationen von TBZ übernehmen.** Jede Grafik neu zeichnen, eigenständig gestaltet (nicht dieselbe Darstellung nachbauen), mit `tools/diagramme.py`.
 - **Eigene Diagramme** als SVG im PAT-Stil, erzeugt mit `tools/diagramme.py` (`python tools/diagramme.py theorie/img`; weisser Hintergrund, Markenfarben, blauer Balken unten). Vor dem Einbinden mit `tools/render.sh <ausgabeordner> <svg>…` (headless Chrome) als PNG rendern und visuell prüfen. PNGs nicht ins Repo.
 - Bilder von Microsoft Learn nicht kopieren, nur verlinken.
 
