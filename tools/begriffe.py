@@ -69,6 +69,8 @@ GLOSSAR = [
     (r"Priorität(?:en)?", "Priority"),
     (r"Redundanz", "Redundancy"),
     (r"Bereitstellung(?:en)?", "Deployment"),
+    (r"Datenfestplatte(?:n)?", "Data Disk"),
+    (r"[Vv]orläufige[sn]? Löschen", "Soft Delete"),
     (r"[Pp]rimäre[nr]? Endpunkts?", "Primary Endpoint"),
     (r"(?<!märer )(?<!mären )(?<!märe )Endpunkt(?:e|en|es|s)?", "Endpoint"),
 ]
@@ -100,6 +102,7 @@ MEHRZAHL = {
     "Priority": r"Prioritäten",
     "Deployment": r"Bereitstellungen",
     "Endpoint": r"Endpunkte(?:n)?",
+    "Data Disk": r"Datenfestplatten",
 }
 GENITIV = re.compile(r"(?:des|eines|deines|meines|seines|ihres|dieses)\s+$")
 

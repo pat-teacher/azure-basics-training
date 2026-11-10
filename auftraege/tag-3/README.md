@@ -12,5 +12,7 @@ Tagesplanung: [Tag 3](../../kurs/tag-3.md)
 | 3.4 | [Speicherkonto und Blob-Container, Dateien hochladen](3.4-speicherkonto-und-blob.md) | 40 Min. | Einzel |
 | 3.5 | [Statische Website im Speicherkonto](3.5-statische-website.md) | 30 Min. | Einzel |
 | ⭐ 3.6 | [Datei per SAS-Token zeitlich begrenzt teilen](3.6-sas-token.md) | 20 Min. | Einzel |
+| ⭐ 3.7 | [Herausforderung VM: Daten überleben die VM – mit einer Datenfestplatte](3.7-datenfestplatte.md) | ca. 60 Min. | Einzel |
+| ⭐ 3.8 | [Herausforderung Storage: Speicherkonto ganz mit der CLI](3.8-storage-mit-cli.md) | ca. 60 Min. | Einzel |
 
 Lösungen zum Vergleichen: [Lösungen Tag 3](../../loesungen/tag-3/README.md)

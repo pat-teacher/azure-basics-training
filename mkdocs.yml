@@ -113,6 +113,8 @@ nav:
           - 3.4 Speicherkonto und Blob: auftraege/tag-3/3.4-speicherkonto-und-blob.md
           - 3.5 Statische Website: auftraege/tag-3/3.5-statische-website.md
           - 3.6 SAS-Token ⭐: auftraege/tag-3/3.6-sas-token.md
+          - 3.7 Datenfestplatte ⭐: auftraege/tag-3/3.7-datenfestplatte.md
+          - 3.8 Storage mit der CLI ⭐: auftraege/tag-3/3.8-storage-mit-cli.md
   - Theorie:
       - theorie/README.md
       - 1 Virtualisierung: theorie/01-virtualisierung.md

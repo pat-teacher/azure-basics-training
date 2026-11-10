@@ -13,5 +13,7 @@
 | 3.4 | [Speicherkonto und Blob-Container, Dateien hochladen](3.4-speicherkonto-und-blob.md) |
 | 3.5 | [Statische Website im Speicherkonto](3.5-statische-website.md) |
 | ⭐ 3.6 | [Datei per SAS-Token zeitlich begrenzt teilen](3.6-sas-token.md) |
+| ⭐ 3.7 | [Herausforderung VM: Daten überleben die VM – mit einer Datenfestplatte](3.7-datenfestplatte.md) |
+| ⭐ 3.8 | [Herausforderung Storage: Speicherkonto ganz mit der CLI](3.8-storage-mit-cli.md) |
 
 Zurück zu den [Aufträgen Tag 3](../../auftraege/tag-3/README.md)

@@ -20,10 +20,10 @@ Heute erstellst du deine erste VM in Azure und meldest dich mit deinem SSH-Schl�
 | L1 | Rückblick Tag 2 | Quiz mit deinem Partner |
 | L1 | **Input:** Virtuelle Maschinen (Virtual Machines) in Azure | zuhören, mitschauen |
 | L2–L3 | Aufträge 3.1 und 3.2 | allein: VM im Portal erstellen, per SSH anmelden; mit Partner: Bestandteile untersuchen |
-| L3–L4 | Auftrag 3.3 (sobald 3.2 fertig ist) | allein: VM mit der Azure CLI, Webserver installieren |
+| L3–L4 | Auftrag 3.3 (sobald 3.2 fertig ist), ⭐ 3.7 | allein: VM mit der Azure CLI, Webserver installieren; Schnelle: Daten auf einer Datenfestplatte (Data Disk) |
 | L5 | **Input:** Azure Storage | zuhören, mitschauen |
 | L5–L6 | Auftrag 3.4 | allein: Speicherkonto (Storage Account), Dateien hochladen |
-| L6–L7 | Auftrag 3.5, ⭐ 3.6 | allein: statische Website (Static Website); Schnelle: Datei per Link teilen |
+| L6–L7 | Auftrag 3.5, ⭐ 3.6, ⭐ 3.8 | allein: statische Website (Static Website); Schnelle: Datei per Link teilen oder Speicherkonto (Storage Account) ganz mit der CLI |
 | L8 | Abschluss | aufräumen, Kosten von Tag 2 anschauen, Exit-Ticket |
 
 ## Deine Aufträge
@@ -36,6 +36,8 @@ Heute erstellst du deine erste VM in Azure und meldest dich mit deinem SSH-Schl�
 | ☐ | 3.4 | [Speicherkonto (Storage Account) und Blob-Container, Dateien hochladen](../auftraege/tag-3/3.4-speicherkonto-und-blob.md) | 40 Min. | allein |
 | ☐ | 3.5 | [Statische Website (Static Website) im Speicherkonto (Storage Account)](../auftraege/tag-3/3.5-statische-website.md) | 30 Min. | allein |
 | ☐ | ⭐ 3.6 | [Datei per SAS-Token zeitlich begrenzt teilen](../auftraege/tag-3/3.6-sas-token.md) | 20 Min. | allein, freiwillig |
+| ☐ | ⭐ 3.7 | [Herausforderung VM: Daten überleben die VM – mit einer Datenfestplatte](../auftraege/tag-3/3.7-datenfestplatte.md) | ca. 60 Min. | allein, freiwillig |
+| ☐ | ⭐ 3.8 | [Herausforderung Storage: Speicherkonto ganz mit der CLI](../auftraege/tag-3/3.8-storage-mit-cli.md) | ca. 60 Min. | allein, freiwillig |
 
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen (Resource Groups) von heute gelöscht – eine laufende VM kostet Guthaben (Credit).

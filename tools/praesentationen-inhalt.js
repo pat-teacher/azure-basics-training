@@ -259,8 +259,7 @@ const TAGE = [
           ["3.3", "Dieselbe VM mit der Azure CLI, Webserver von Hand installieren", "Einzel"],
           ["3.4", "Speicherkonto (Storage Account) und Blob-Container, Dateien hochladen", "Einzel"],
           ["3.5", "Statische Website (Static Website) im Speicherkonto (Storage Account)", "Einzel"],
-          ["⭐ 3.6", "Datei per SAS-Token zeitlich begrenzt teilen", "Einzel"],
-        ] },
+          ["⭐ 3.6", "Datei per SAS-Token zeitlich begrenzt teilen", "Einzel"],        ] },
         { type: "cards", title: "Kosten im Griff", cols: 3, items: [
           { icon: "FaMicrochip", h: "Kleine Grössen", t: "Nur Grössen mit «Für kostenlose Dienste berechtigt» (Free services eligible), z. B. Standard_B1s." },
           { icon: "FaServer", h: "Eine VM", t: "Nur eine VM gleichzeitig laufen lassen." },

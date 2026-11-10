@@ -79,7 +79,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L1, vor Auftrag 3.1 | Kosten im Griff: kleine Grössen, nur eine VM gleichzeitig, immer aufräumen | 3' | Tag 3, Folie 8 | Aufträge 3.1, 3.2 |
 | L3/L4, nach Auftrag 3.2 | Kurz im Plenum: «Beendet» oder «Beendet (Zuordnung aufgehoben)»? Was kostet was? (aus 3.2). Kontrolle, dass alle `rg-tag3-portal-…` gelöscht haben | 5' | Input 4, Folie 5 | Auftrag 3.3 |
 | L5, Beginn | Azure Storage: Speicherkonto (Storage Account) mit den vier Diensten Blob, Files, Queue, Table (nur Blob praktisch), Container und Blob, Redundanz (Redundancy), Zugriffsebenen (Access Tiers), Persistenz, Selbsttest | 15' | Input 5, Folien 1–11 | Auftrag 3.4, direkt danach 3.5 im selben Speicherkonto (Storage Account) |
-| L7, wenn die meisten 3.5 fertig haben | Kurz im Plenum: Vergleich VM mit nginx (3.3) und statische Website (Static Website) (3.5), Bezug zu IaaS/PaaS | 5' | Input 2 (Tag 2), Folie 6 «Merkhilfe Pizza» | ⭐ 3.6, aufräumen |
+| L7, wenn die meisten 3.5 fertig haben | Kurz im Plenum: Vergleich VM mit nginx (3.3) und statische Website (Static Website) (3.5), Bezug zu IaaS/PaaS | 5' | Input 2 (Tag 2), Folie 6 «Merkhilfe Pizza» | ⭐ 3.6 oder ⭐ 3.8, aufräumen |
 | L8 | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag3-…`. Kostenanalyse (Cost Analysis) anschauen (zeigt erst die Kosten von Tag 2, Verzögerung 8–24 Stunden), Exit-Ticket, Ausblick Tag 4 | 15' | Tag 3, Folien 9–10 | – |
 
 **Vorbereitung**
@@ -88,6 +88,11 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 - Lernende ohne SSH-Schlüssel von Tag 1 (Auftrag 1.6) vor L2 erfassen. Sie holen Schritt 1–2 von 1.6 in 5 Minuten nach.
 - Für die Demo in L1 den VM-Assistenten im Portal offen haben, aber nicht erstellen.
 - Zeitplan: 3.1 in L2, 3.2 zu zweit in L3, 3.3 in L3–L4. Nach Input 5 (L5) arbeiten alle allein: 3.4 in L5–L6 (40'), **direkt danach 3.5** in L6–L7 (30'). 3.5 baut auf dem Speicherkonto (Storage Account) aus 3.4 auf: Wer weitermacht, räumt in 3.4, Schritt 9 nicht auf. ⭐ 3.6 nur, wer 3.5 fertig hat; es braucht ebenfalls dasselbe Speicherkonto (Storage Account) mit `preisliste.txt`. Aufgeräumt wird erst nach 3.5 bzw. 3.6.
+- Herausforderungen für Lernstarke (je ca. 60', ohne Kosten von Bedeutung):
+  - ⭐ 3.7 (VM): Datenfestplatte (Data Disk) anhängen, VM ersetzen, Daten bleiben. Für alle, die 3.3 früh fertig haben. Nur starten, wenn keine andere VM läuft (vCPU-Kontingent). Verbindet Input 4 «Speicher der VM» mit Input 5 «Persistenz».
+  - ⭐ 3.8 (Storage): Speicherkonto (Storage Account) ganz mit der CLI, inkl. vorläufigem Löschen (Soft Delete) und SAS per CLI. Alternative zu ⭐ 3.6 in L7, eigenes Speicherkonto (Storage Account).
+  - Beide brauchen eher 60' als 45'. Wer am Ende der Lektion nicht fertig ist, räumt trotzdem auf (bei 3.7 kostet die laufende VM) und macht zu Hause oder am nächsten Kurstag neu.
+  - Vorab mit dem eigenen Konto testen: Gerätename der Datenfestplatte (Data Disk) (`sdc`), was nach `az vm delete` bleibt, Ausgabe von `blobTier` und `deleted` in `az storage blob list`, Zugriff per Schlüssel (`allowSharedKeyAccess`) im Student-Abo. <!-- prüfen -->
 
 **Wenn es klemmt**
 - Nur **eine VM gleichzeitig**: Das Kontingent an vCPUs (Quota) im Student-Abo ist klein. 3.2 endet mit dem Löschen der Portal-VM, 3.3 mit dem Löschen der CLI-VM.
