@@ -49,7 +49,8 @@ GLOSSAR = [
     (r"Host-Schlüssel", "Host Key"),
     (r"Fingerabdruck", "Fingerprint"),
     (r"Adressraum", "Address Space"),
-    (r"Standardregeln", "Default Rules"),
+    (r"Standardsicherheitsregel(?:n)?", "Default Security Rule"),
+    (r"Sicherheitsregel(?:n)?", "Security Rule"),  # Regel einer NSG
     (r"Diensttags?", "Service Tag"),
     (r"[Ss]tatische[n]? Website", "Static Website"),
     (r"Rollenzuweisung(?:en)?", "Role Assignment"),
@@ -103,6 +104,8 @@ MEHRZAHL = {
     "Deployment": r"Bereitstellungen",
     "Endpoint": r"Endpunkte(?:n)?",
     "Data Disk": r"Datenfestplatten",
+    "Security Rule": r"Sicherheitsregeln",
+    "Default Security Rule": r"Standardsicherheitsregeln",
 }
 GENITIV = re.compile(r"(?:des|eines|deines|meines|seines|ihres|dieses)\s+$")
 

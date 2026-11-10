@@ -10,7 +10,7 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 ## Am Ende des Tages kannst du …
 - einen Adressbereich in Subnetze (Subnets) aufteilen. (K3)
 - ein VNet mit mehreren Subnetzen (Subnets) bereitstellen und VMs darin platzieren. (K3)
-- mit NSG-Regeln festlegen, wer deine VM über welchen Port erreicht. (K3)
+- mit Sicherheitsregeln (Security Rules) einer NSG festlegen, wer deine VM über welchen Port erreicht. (K3)
 - mit einer Checkliste herausfinden, warum eine Verbindung blockiert wird. (K4)
 
 ## So läuft der Tag
@@ -23,7 +23,7 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 | L3 | Auftrag 4.2 | allein: VNet mit zwei Subnetzen (Subnets) |
 | L4 | **Input:** Netzwerksicherheitsgruppen (NSG) | zuhören, mitschauen |
 | L4–L5 | Auftrag 4.3 | mit Partner: zwei VMs im VNet, Verbindungen testen |
-| L6 | Auftrag 4.4 | mit Partner: NSG-Regeln einrichten |
+| L6 | Auftrag 4.4 | mit Partner: Sicherheitsregeln (Security Rules) der NSG einrichten |
 | L7 | Auftrag 4.5, ⭐ 4.6, ⭐ 4.7 | mit Partner: Fehlersuche; Schnelle: Network Watcher oder Challenge Lab |
 | L8 | Auftrag 4.8, Abschluss | allein: Azure CLI und VS Code für Tag 5 installieren; Netzplan zeichnen, aufräumen, Exit-Ticket |
 
@@ -34,9 +34,9 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 | ☐ | 4.1 | Subnetting-Training für die «Velo Zürich AG» *(folgt)* | Partner |
 | ☐ | 4.2 | VNet mit zwei Subnetzen (Subnets) *(folgt)* | allein |
 | ☐ | 4.3 | Zwei VMs im VNet, Verbindungen testen *(folgt)* | Partner |
-| ☐ | 4.4 | NSG-Regeln: Web für alle, SSH nur von der Schule *(folgt)* | Partner |
+| ☐ | 4.4 | Sicherheitsregeln (Security Rules) der NSG: Web für alle, SSH nur von der Schule *(folgt)* | Partner |
 | ☐ | 4.5 | Fehlersuche: «Warum komme ich nicht auf meine VM?» *(folgt)* | Partner |
-| ☐ | ⭐ 4.6 | Network Watcher und effektive Sicherheitsregeln *(folgt)* | allein, freiwillig |
+| ☐ | ⭐ 4.6 | Network Watcher und effektive Sicherheitsregeln (Effective Security Rules) *(folgt)* | allein, freiwillig |
 | ☐ | ⭐ 4.7 | Challenge Lab zu bedingtem Zugriff ([so geht's](organisation.md#themen-mit-microsoft-entra-id-challenge-labs)) | Partner, freiwillig |
 | ☐ | 4.8 | Werkzeuge für Tag 5: Azure CLI und Visual Studio Code installieren *(folgt)* | allein |
 
@@ -44,7 +44,7 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 - [ ] Alle Ressourcengruppen (Resource Groups) von heute gelöscht.
 - [ ] Auftrag 4.8 erledigt: `az account show --output table` zeigt auf deinem Laptop **Azure for Students**.
 - [ ] Lernjournal: Einträge zu allen Aufträgen von heute, dein Netzplan und deine Erkenntnisse in `tag-4/README.md`.
-- [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Regel 100 sagt Deny, Regel 200 sagt Allow für Port 80. Ist die Website erreichbar?»
+- [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Sicherheitsregel (Security Rule) 100 sagt Deny, Sicherheitsregel (Security Rule) 200 sagt Allow für Port 80. Ist die Website erreichbar?»
 
 ## Das brauchst du
 - dein Azure-for-Students-Konto

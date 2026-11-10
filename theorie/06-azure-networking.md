@@ -8,7 +8,7 @@ Gehört zu [Tag 4](../kurs/tag-4.md)
 - Du kannst die Begriffe VNet, Adressraum (Address Space), Subnetz (Subnet) und CIDR erklären. (K2)
 - Du kannst einen Adressraum (Address Space) in Subnetze (Subnets) aufteilen. (K3)
 - Du kannst private und öffentliche IP-Adressen (Public IP) in Azure unterscheiden. (K2)
-- Du kannst NSG-Regeln lesen, schreiben und ihre Wirkung vorhersagen. (K3)
+- Du kannst Sicherheitsregeln (Security Rules) einer NSG lesen, schreiben und ihre Wirkung vorhersagen. (K3)
 - Du kannst bei einem Verbindungsproblem mit einer Checkliste die Ursache finden. (K4)
 
 ## VNet und Subnetze
@@ -38,30 +38,30 @@ Die Zahl nach dem `/` sagt, wie viele Bits **fix** sind. Je grösser die Zahl, d
 | Typ | Erreichbar | Bemerkung |
 |-----|-----------|-----------|
 | **Private IP** | nur im VNet (und verbundenen Netzen) | kommt aus dem Subnetz (Subnet), bleibt bei Neustarts gleich |
-| **Öffentliche IP** (Standard-SKU) | aus dem Internet | eigene Ressource, statisch, kostet auch bei gestoppter VM. Standardmässig ist alles gesperrt, bis eine NSG-Regel Verkehr erlaubt. |
+| **Öffentliche IP** (Standard-SKU) | aus dem Internet | eigene Ressource, statisch, kostet auch bei gestoppter VM. Standardmässig ist alles gesperrt, bis eine Sicherheitsregel (Security Rule) der NSG Verkehr erlaubt. |
 
 <!-- prüfen: Stand 19.10.2026 – Seit 2026 sind neue Subnetze standardmässig «privat» (kein Standard-Internetzugang ausgehend). Eine VM ohne öffentliche IP kommt dann nicht ins Internet (z. B. für apt). Vor Tag 4/5 im Student-Abo testen. -->
 > **Achtung:** Eine VM **ohne** öffentliche IP (Public IP) kommt in neuen Subnetzen (Subnets) unter Umständen auch **nicht ins Internet**, z. B. für `apt install`. Für die Übungen gibst du der VM, die Pakete braucht, eine öffentliche IP (Public IP).
 
 ## Netzwerksicherheitsgruppen (NSG)
-Eine **Netzwerksicherheitsgruppe (Network Security Group, NSG)** ist eine Liste von Regeln, die Verkehr erlaubt oder blockiert. Du verknüpfst sie mit einem **Subnetz** (empfohlen) oder mit einer **NIC**.
+Eine **Netzwerksicherheitsgruppe (Network Security Group, NSG)** ist eine Liste von **Sicherheitsregeln (Security Rules)**, die Verkehr erlauben oder blockieren. Du verknüpfst sie mit einem **Subnetz** (empfohlen) oder mit einer **NIC**.
 
 > **Alltagsvergleich:** Ein Türsteher mit Gästeliste. Er geht die Liste von oben nach unten durch. Der erste Eintrag, der passt, entscheidet.
 
-Jede Regel hat:
+Jede Sicherheitsregel (Security Rule) hat:
 
 | Feld | Beispiel |
 |------|----------|
 | **Priorität** (Priority) | 100 (100–4096, kleine Zahl wird zuerst geprüft) |
-| **Quelle** | IP-Bereich, z. B. `203.0.113.10/32`, oder Diensttag (Service Tag) `Internet`, `VirtualNetwork` |
-| **Ziel** | meist `Any` oder ein Subnetz (Subnet) |
-| **Zielport** | 22, 80, 443 … |
-| **Protokoll** | TCP, UDP, ICMP, Any |
-| **Aktion** | Allow oder Deny |
+| **Quelle** (Source) | IP-Bereich, z. B. `203.0.113.10/32`, oder Diensttag (Service Tag) `Internet`, `VirtualNetwork` |
+| **Ziel** (Destination) | meist `Any` oder ein Subnetz (Subnet) |
+| **Zielport** (Destination Port) | 22, 80, 443 … |
+| **Protokoll** (Protocol) | TCP, UDP, ICMP, Any |
+| **Aktion** (Action) | Allow oder Deny |
 
-**Standardregeln** (können nicht gelöscht werden; eine eigene Regel mit **kleinerer Prioritätszahl** wird aber früher geprüft und übersteuert sie):
+**Standardsicherheitsregeln** (Default Security Rules) können nicht gelöscht werden. Eine eigene Sicherheitsregel (Security Rule) mit **kleinerer Prioritätszahl** (Priority) wird aber früher geprüft und übersteuert sie:
 
-| Richtung | Priorität (Priority) | Regel | Wirkung |
+| Richtung | Priorität (Priority) | Sicherheitsregel (Security Rule) | Wirkung |
 |----------|-----------|-------|---------|
 | eingehend | 65000 | AllowVnetInBound | Verkehr innerhalb des VNets erlaubt |
 | eingehend | 65001 | AllowAzureLoadBalancerInBound | Azure-Load-Balancer erlaubt |
@@ -71,7 +71,7 @@ Jede Regel hat:
 | ausgehend | 65500 | DenyAllOutBound | alles andere blockiert |
 
 Wichtig:
-- **NSGs sind zustandsbehaftet (stateful):** Ist eine eingehende Anfrage erlaubt, darf die Antwort automatisch zurück. Du brauchst dafür keine ausgehende Regel.
+- **NSGs sind zustandsbehaftet (stateful):** Ist eine eingehende Anfrage erlaubt, darf die Antwort automatisch zurück. Du brauchst dafür keine ausgehende Sicherheitsregel (Security Rule).
 - **Quelle einschränken:** SSH (Port 22) nie für `Any` öffnen, sondern nur für deine eigene IP.
 
 ### Wichtige Ports
@@ -89,7 +89,7 @@ Wichtig:
 
 Wenn «es nicht geht», prüfe die Stationen der Reihe nach:
 1. **Richtige IP?** Öffentliche IP (Public IP) im Portal nachschauen.
-2. **NSG am Subnetz:** Gibt es eine Allow-Regel für Port und Quelle? Hat sie eine **kleinere Prioritätszahl** (Priority) als jede passende Deny-Regel, wird also früher geprüft?
+2. **NSG am Subnetz:** Gibt es eine Sicherheitsregel (Security Rule) mit Allow für Port und Quelle (Source)? Hat sie eine **kleinere Prioritätszahl** (Priority) als jede passende Sicherheitsregel (Security Rule) mit Deny, wird also früher geprüft?
 3. **NSG an der NIC:** Falls vorhanden, muss sie den Verkehr **ebenfalls** erlauben.
 4. **Firewall im Betriebssystem:** bei Ubuntu in Azure meist aus (`sudo ufw status`).
 5. **Dienst:** Läuft er? (`systemctl status nginx`) Hört er auf dem richtigen Port? (`ss -tlnp`)
@@ -108,12 +108,12 @@ Im Portal hilft dir unter **VM > Netzwerk** (VM > Networking) die Ansicht **Effe
 Nein. Bei `/24` sind die ersten drei Oktette fix. 10.10.**2**.20 gehört zu 10.10.2.0/24.
 </details>
 
-<details><summary>3. Eine NSG hat Regel 100 «Deny TCP 80 von Any» und Regel 200 «Allow TCP 80 von Any». Ist die Website erreichbar?</summary>
+<details><summary>3. Eine NSG hat zwei Sicherheitsregeln (Security Rules): 100 «Deny TCP 80 von Any» und 200 «Allow TCP 80 von Any». Ist die Website erreichbar?</summary>
 
-Nein. Regel 100 wird zuerst geprüft und passt. Danach wird nicht weitergesucht.
+Nein. Die Sicherheitsregel (Security Rule) 100 wird zuerst geprüft und passt. Danach wird nicht weitergesucht.
 </details>
 
-<details><summary>4. Du hast keine ausgehende Regel erstellt. Kommt die Antwort des Webservers trotzdem beim Browser an?</summary>
+<details><summary>4. Du hast keine ausgehende Sicherheitsregel (Security Rule) erstellt. Kommt die Antwort des Webservers trotzdem beim Browser an?</summary>
 
 Ja. NSGs sind zustandsbehaftet: Die Antwort auf eine erlaubte Anfrage darf automatisch zurück.
 </details>

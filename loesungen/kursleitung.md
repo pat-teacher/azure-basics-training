@@ -109,7 +109,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L4, Beginn | Netzwerksicherheitsgruppen (NSG) | 15' | Input 6, Teil «NSG» |
 
 **Vorbereitung**
-- Öffentliche IP (Public IP) der Schule ermitteln (für die SSH-Regel in 4.4).
+- Öffentliche IP (Public IP) der Schule ermitteln (für die Sicherheitsregel (Security Rule) für SSH in 4.4).
 - Für 4.5: Umgebung mit vorbereiteten Fehlern bereitstellen.
 - Für ⭐ 4.7: passendes Challenge Lab wählen. <!-- prüfen -->
 - **Auftrag 4.8 (L8, ca. 20'):** Die Lernenden installieren Azure CLI und Visual Studio Code mit Bicep-Erweiterung für Tag 5, z. B. mit `winget install --exact --id Microsoft.AzureCLI` und `winget install --exact --id Microsoft.VisualStudioCode`. Adminrechte sind vorhanden (wie bei Multipass an Tag 1). Bewusst an Tag 4, damit Probleme bis Tag 5 gelöst werden können. Vor L8 kontrollieren, wer nicht fertig ist. <!-- prüfen: winget auf den Kurs-Laptops verfügbar, Installation im Schulnetz -->
