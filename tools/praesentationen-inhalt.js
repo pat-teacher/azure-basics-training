@@ -695,6 +695,15 @@ const INPUTS = [
           { icon: "FaCopy", h: "Für Übungen", t: "Standard_LRS, StorageV2 – günstig und reicht." },
         ] },
         { type: "diagram", title: "Redundanz: LRS, ZRS, GRS", img: "azure-redundanz-folie.png" },
+        { type: "stat", title: "Wie sicher sind die Daten? Die Neunen", stats: [
+          { n: "11", label: "Neunen bei LRS\n99,999999999 %" },
+          { n: "12", label: "Neunen bei ZRS\n99,9999999999 %" },
+          { n: "16", label: "Neunen bei GRS und GZRS\n99,99999999999999 %" },
+        ], points: [
+          "Dauerhaftigkeit (Durability): So wahrscheinlich ist es, dass eine Datei ein Jahr lang nicht verloren geht.",
+          "Beispiel mit 10 Mio. Dateien: Bei LRS geht statistisch 1 Datei in 10 000 Jahren verloren, bei GRS 1 Datei in 1 Milliarde Jahren.",
+          "Redundanz (Redundancy) ist kein Backup: Löschst du eine Datei, ist sie in allen Kopien weg.",
+        ], notes: "Rechnung: 11 Neunen = Verlustrisiko 1 : 100 Milliarden pro Datei und Jahr. 10 Mio. Dateien x 1 : 100 Mrd. = 1 : 10 000 pro Jahr, also 1 Datei in 10 000 Jahren. ZRS (12 Neunen): 1 in 100 000 Jahren. GRS (16 Neunen): 1 in 1 Milliarde Jahren. Achtung: Das oft zitierte Beispiel «10 Mio. Dateien, 10 000 Jahre» gilt für 11 Neunen (LRS), nicht für 16. GRS kopiert in eine zweite Region Hunderte Kilometer entfernt, aber asynchron: Fällt die Hauptregion aus, können die letzten Minuten fehlen. Dauerhaftigkeit (Durability) ist nicht Verfügbarkeit (Availability): Lesen und Schreiben sind zu mindestens 99,9 % verfügbar. Quelle: Microsoft Learn, Azure Storage-Redundanz." },
         { type: "table", title: "Zugriffsebenen (Access Tiers)", head: ["Ebene", "Zugriff", "Mindestdauer", "Speichern", "Lesen", "Beispiel"], colW: [1.4, 1.6, 1.7, 1.8, 2.2, 2.8], fontSize: 14, rows: [
           ["Hot", "häufig", "–", "am teuersten", "am günstigsten", "Website-Dateien"],
           ["Cool", "selten", "30 Tage", "günstiger", "teurer", "Backups der letzten Wochen"],

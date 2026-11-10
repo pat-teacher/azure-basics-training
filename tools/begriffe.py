@@ -69,6 +69,8 @@ GLOSSAR = [
     (r"Prioritätszahl(?:en)?", "Priority"),
     (r"Priorität(?:en)?", "Priority"),
     (r"Redundanz", "Redundancy"),
+    (r"Dauerhaftigkeit", "Durability"),
+    (r"Verfügbarkeit", "Availability"),  # nicht Verfügbarkeitszone (Wortgrenze)
     (r"Bereitstellung(?:en)?", "Deployment"),
     (r"Datenfestplatte(?:n)?", "Data Disk"),
     (r"[Vv]orläufige[sn]? Löschen", "Soft Delete"),

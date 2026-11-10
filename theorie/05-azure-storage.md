@@ -41,14 +41,28 @@ Im Kurs nutzt du den Blob-Speicher (Blob Storage). Files, Queue und Table musst 
 
 ![Redundanz LRS, ZRS, GRS](img/azure-redundanz.svg)
 
-| Option | Kopien | Schützt vor |
-|--------|--------|-------------|
-| **LRS** – lokal redundant (Locally Redundant Storage) | 3 in einem Rechenzentrum | Ausfall einer Festplatte oder eines Servers |
-| **ZRS** – zonenredundant (Zone-Redundant Storage) | 3 verteilt auf 3 Zonen | Ausfall eines Rechenzentrums |
-| **GRS** – georedundant (Geo-Redundant Storage) | 3 lokal + 3 in der gepaarten Region | Ausfall einer ganzen Region |
-| **GZRS** | ZRS + Kopie in der gepaarten Region | Kombination aus beiden |
+| Option | Kopien | Schützt vor | Dauerhaftigkeit (Durability) pro Jahr |
+|--------|--------|-------------|------------------|
+| **LRS** – lokal redundant (Locally Redundant Storage) | 3 in einem Rechenzentrum | Ausfall einer Festplatte oder eines Servers | 99,999999999 % (11 Neunen) |
+| **ZRS** – zonenredundant (Zone-Redundant Storage) | 3 verteilt auf 3 Zonen | Ausfall eines Rechenzentrums | 99,9999999999 % (12 Neunen) |
+| **GRS** – georedundant (Geo-Redundant Storage) | 3 lokal + 3 in der gepaarten Region | Ausfall einer ganzen Region | 99,99999999999999 % (16 Neunen) |
+| **GZRS** | ZRS + 3 in der gepaarten Region | Kombination aus beiden | 99,99999999999999 % (16 Neunen) |
 
 Für Übungen reicht **LRS**, es ist am günstigsten.
+
+### Was bedeuten die Neunen?
+Die **Dauerhaftigkeit (Durability)** sagt, wie wahrscheinlich eine Datei ein Jahr lang **nicht** verloren geht. Jede Neun mehr macht das Risiko zehnmal kleiner.
+
+| Beispiel: 10 Millionen Dateien | statistisch geht 1 Datei verloren in … |
+|-------------------------------|----------------------------------------|
+| LRS (11 Neunen) | 10 000 Jahren |
+| ZRS (12 Neunen) | 100 000 Jahren |
+| GRS (16 Neunen) | 1 Milliarde Jahren |
+
+Bei GRS liegt die zweite Region Hunderte Kilometer entfernt. Auch ein Erdbeben oder ein Hochwasser in der einen Region zerstört deine Daten darum nicht. Die Kopie in die zweite Region läuft aber **zeitversetzt** (asynchron). Fällt die Hauptregion aus, können die letzten Minuten fehlen.
+
+> [!IMPORTANT]
+> **Redundanz (Redundancy) ist kein Backup.** Alle Kopien sind immer gleich. Löschst oder überschreibst du eine Datei, passiert das sofort in allen Kopien. Gegen Fehler von Menschen hilft zum Beispiel das vorläufige Löschen (Soft Delete).
 
 ## Zugriffsebenen: Hot, Cool, Cold, Archive
 
@@ -98,6 +112,11 @@ Files (Azure Files). Es stellt ein Netzlaufwerk über SMB bereit, auf das viele 
 <details><summary>5. Was ist der Unterschied zwischen LRS und ZRS?</summary>
 
 Bei LRS liegen alle drei Kopien im selben Rechenzentrum. Bei ZRS sind sie auf drei Verfügbarkeitszonen (Availability Zones) verteilt und überleben so den Ausfall eines Rechenzentrums.
+</details>
+
+<details><summary>6. Jemand löscht versehentlich eine Datei in einem Speicherkonto mit GRS (16 Neunen). Ist die Datei in der zweiten Region noch da?</summary>
+
+Nein. Redundanz (Redundancy) schützt vor Hardware-Ausfällen, nicht vor Löschen. Das Löschen gilt für alle Kopien. Retten kann man die Datei nur mit vorläufigem Löschen (Soft Delete) oder einem Backup.
 </details>
 
 ## Quellen
