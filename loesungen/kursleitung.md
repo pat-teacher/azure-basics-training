@@ -103,15 +103,25 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 ## Tag 4: Azure Networking
 
-| Wann | Input | Dauer | Folien |
-|------|-------|-------|--------|
-| L1, nach Rückblick | VNet und Subnetze (Subnets), CIDR, IP-Adressen | 20' | Input 6, Teil «VNet» |
-| L4, Beginn | Netzwerksicherheitsgruppen (NSG) | 15' | Input 6, Teil «NSG» |
+| Wann | Input | Dauer | Folien | Danach |
+|------|-------|-------|--------|--------|
+| L1, Beginn | Rückblick-Quiz zu zweit | 5' | Tag 4, Folien 1–2 | Exit-Ticket |
+| L1, nach dem Quiz | Exit-Ticket Tag 3 («Nenne drei Ressourcen, die beim Erstellen einer VM zusätzlich entstehen»): zwei, drei Antworten aus der Klasse vorlesen, richtigstellen. Bezug zu heute: Netzwerkschnittstelle (Network Interface), VNet, öffentliche IP (Public IP) und NSG sind das Thema von Tag 4 | 5' | – | Ziele |
+| L1, nach dem Exit-Ticket | Ziele, Ablauf und Aufträge des Tages | 3' | Tag 4, Folien 3–5 | Input 6 |
+| L1, nach dem Einstieg | VNet und Subnetze (Subnets), CIDR, IP-Adressen | 20' | Input 6, Teil «VNet» | Auftrag 4.1 |
+| L4, Beginn | Netzwerksicherheitsgruppen (NSG) | 15' | Input 6, Teil «NSG» | Auftrag 4.3 |
+| L8, Beginn | Kurz im Plenum zu 4.5: Welche Station der Checkliste hat am meisten geholfen? Zeitüberschreitung oder «Verbindung abgelehnt»? | 5' | Input 6, Folie «Der Weg einer Anfrage» | Netzplan (4.5, Schritt 4), aufräumen, Auftrag 4.8 |
+| L8, Schluss | Aufräumkontrolle (`az group list --output table` ohne `rg-tag4-…`), Exit-Ticket, Ausblick Tag 5 | 10' | Tag 4, Folien 6–7 | – |
 
 **Vorbereitung**
-- Öffentliche IP (Public IP) der Schule ermitteln (für die Sicherheitsregel (Security Rule) für SSH in 4.4).
-- Für 4.5: Umgebung mit vorbereiteten Fehlern bereitstellen.
-- Für ⭐ 4.7: passendes Challenge Lab wählen. <!-- prüfen -->
+- Öffentliche IP (Public IP) der Schule ermitteln und an die Wandtafel schreiben (für die Sicherheitsregel (Security Rule) für SSH in 4.4). Hat die Schule mehrere öffentliche Adressen, mit einem Bereich arbeiten. <!-- prüfen -->
+- Zeitplan: 4.1 in L2, 4.2 in L3, 4.3 in L4–L5 (nach dem Input), 4.4 in L6, 4.5 (vier Runden) in L7, Netzplan (4.5, Schritt 4) und 4.8 in L8. 4.2 bis 4.5 bauen auf derselben Umgebung auf. Aufgeräumt wird nach dem Netzplan in L8 (oder nach ⭐ 4.6).
+- ⭐ 4.6 und ⭐ 4.7 nur für Teams, die 4.5 vor dem Ende von L7 fertig haben. 4.8 hat Vorrang.
+- Partnerarbeit als Tandem: In 4.3 und 4.4 baut jede Person im eigenen Abonnement (Subscription). Nur so hat in 4.5 jede Person eine eigene Umgebung, die der Partner «stören» kann.
+- Für 4.5 ist **keine** vorbereitete Umgebung nötig: Die Lernenden bauen sich gegenseitig Fehler mit vier Fehlerkarten ein (zusätzliche Deny-Sicherheitsregel (Security Rule), nginx gestoppt, leere NSG an der Netzwerkschnittstelle (Network Interface), falscher Port).
+- Kosten: Pro Person laufen in L4–L7 zwei `Standard_B1s` und eine öffentliche IP (Public IP). Vor einer langen Pause an `az vm deallocate` erinnern (steht in 4.3).
+- Mit dem eigenen Konto für Azure for Students vorab testen: zwei VMs gleichzeitig im vCPU-Kontingent, `--nsg ""` und `--public-ip-address ""`, `ssh -J` aus der Windows-PowerShell, Fehlercodes in 4.2, Schritt 5, Network Watcher und `test-ip-flow` (⭐ 4.6). <!-- prüfen -->
+- Für ⭐ 4.7: Bedingter Zugriff (Conditional Access) braucht Entra ID P1 und ist darum nur im Challenge Lab möglich. Passende Klasse (z. B. SC-300) und Lab im Microsoft Learn for Educators Portal wählen, Trainingsschlüssel im Kurskanal teilen. <!-- prüfen -->
 - **Auftrag 4.8 (L8, ca. 20'):** Die Lernenden installieren Azure CLI und Visual Studio Code mit Bicep-Erweiterung für Tag 5, z. B. mit `winget install --exact --id Microsoft.AzureCLI` und `winget install --exact --id Microsoft.VisualStudioCode`. Adminrechte sind vorhanden (wie bei Multipass an Tag 1). Bewusst an Tag 4, damit Probleme bis Tag 5 gelöst werden können. Vor L8 kontrollieren, wer nicht fertig ist. <!-- prüfen: winget auf den Kurs-Laptops verfügbar, Installation im Schulnetz -->
 
 **Planungsentscheid Werkzeuge:** Tag 2–4 arbeiten mit der Cloud Shell (keine Installation nötig). Ab Tag 5 arbeiten die Lernenden mit der lokal installierten Azure CLI im Terminal von Visual Studio Code. Grund: Bicep- und cloud-init-Dateien müssen gespeichert bleiben und ins Lernjournal. Die Cloud Shell ohne Speicherkonto (Storage Account) verliert Dateien beim Schliessen.
@@ -130,3 +140,5 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 ## Lösungen
 - [Lösungen Tag 1](tag-1/README.md)
 - [Lösungen Tag 2](tag-2/README.md)
+- [Lösungen Tag 3](tag-3/README.md)
+- [Lösungen Tag 4](tag-4/README.md)

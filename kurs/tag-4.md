@@ -29,21 +29,23 @@ Heute baust du ein eigenes Netzwerk in Azure. Du teilst es in Bereiche auf und l
 
 ## Deine Aufträge
 
-| ✓ | Nr. | Auftrag | Form |
-|---|-----|---------|------|
-| ☐ | 4.1 | Subnetting-Training für die «Velo Zürich AG» *(folgt)* | Partner |
-| ☐ | 4.2 | VNet mit zwei Subnetzen (Subnets) *(folgt)* | allein |
-| ☐ | 4.3 | Zwei VMs im VNet, Verbindungen testen *(folgt)* | Partner |
-| ☐ | 4.4 | Sicherheitsregeln (Security Rules) der NSG: Web für alle, SSH nur von der Schule *(folgt)* | Partner |
-| ☐ | 4.5 | Fehlersuche: «Warum komme ich nicht auf meine VM?» *(folgt)* | Partner |
-| ☐ | ⭐ 4.6 | Network Watcher und effektive Sicherheitsregeln (Effective Security Rules) *(folgt)* | allein, freiwillig |
-| ☐ | ⭐ 4.7 | Challenge Lab zu bedingtem Zugriff ([so geht's](organisation.md#themen-mit-microsoft-entra-id-challenge-labs)) | Partner, freiwillig |
-| ☐ | 4.8 | Werkzeuge für Tag 5: Azure CLI und Visual Studio Code installieren *(folgt)* | allein |
+| ✓ | Nr. | Auftrag | Zeit | Form |
+|---|-----|---------|------|------|
+| ☐ | 4.1 | [Subnetting-Training für die «Velo Zürich AG»](../auftraege/tag-4/4.1-subnetting.md) | 45 Min. | Partner |
+| ☐ | 4.2 | [VNet mit zwei Subnetzen (Subnets)](../auftraege/tag-4/4.2-vnet-mit-subnetzen.md) | 30 Min. | allein |
+| ☐ | 4.3 | [Zwei VMs im VNet, Verbindungen testen](../auftraege/tag-4/4.3-zwei-vms-im-vnet.md) | 60 Min. | Partner |
+| ☐ | 4.4 | [Sicherheitsregeln (Security Rules): Web für alle, SSH nur von der Schule](../auftraege/tag-4/4.4-sicherheitsregeln.md) | 45 Min. | Partner |
+| ☐ | 4.5 | [Fehlersuche: «Warum komme ich nicht auf meine VM?»](../auftraege/tag-4/4.5-fehlersuche.md) | 45 Min. + 10 Min. Netzplan | Partner |
+| ☐ | ⭐ 4.6 | [Network Watcher und effektive Sicherheitsregeln (Effective Security Rules)](../auftraege/tag-4/4.6-network-watcher.md) | 30 Min. | allein, freiwillig |
+| ☐ | ⭐ 4.7 | [Challenge Lab zu bedingtem Zugriff (Conditional Access)](../auftraege/tag-4/4.7-challenge-lab-bedingter-zugriff.md) | ca. 45 Min. | Partner, freiwillig |
+| ☐ | 4.8 | [Werkzeuge für Tag 5: Azure CLI und Visual Studio Code installieren](../auftraege/tag-4/4.8-werkzeuge-fuer-tag-5.md) | 20 Min. | allein |
+
+4.2 bis 4.5 bauen aufeinander auf. Du räumst erst am Ende von 4.5 auf (oder nach ⭐ 4.6).
 
 ## Bevor du gehst
 - [ ] Alle Ressourcengruppen (Resource Groups) von heute gelöscht.
 - [ ] Auftrag 4.8 erledigt: `az account show --output table` zeigt auf deinem Laptop **Azure for Students**.
-- [ ] Lernjournal: Einträge zu allen Aufträgen von heute, dein Netzplan und deine Erkenntnisse in `tag-4/README.md`.
+- [ ] Lernjournal: Einträge zu allen Aufträgen von heute, Erkenntnisse in `tag-4/README.md`.
 - [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Sicherheitsregel (Security Rule) 100 sagt Deny, Sicherheitsregel (Security Rule) 200 sagt Allow für Port 80. Ist die Website erreichbar?»
 
 ## Das brauchst du

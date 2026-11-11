@@ -24,7 +24,7 @@ Die Zahl nach dem `/` sagt, wie viele Bits **fix** sind. Je grösser die Zahl, d
 
 | CIDR | Adressen | in Azure nutzbar | Beispiel |
 |------|----------|------------------|----------|
-| `/16` | 65 536 | – (Adressraum) | `10.10.0.0/16` = 10.10.0.0 – 10.10.255.255 |
+| `/16` | 65 536 | 65 531 (meist als Adressraum (Address Space) verwendet) | `10.10.0.0/16` = 10.10.0.0 – 10.10.255.255 |
 | `/24` | 256 | 251 | `10.10.1.0/24` = 10.10.1.0 – 10.10.1.255 |
 | `/27` | 32 | 27 | `10.10.3.0/27` = 10.10.3.0 – 10.10.3.31 |
 | `/29` | 8 | 3 | kleinstes erlaubtes Subnetz (Subnet) |
@@ -94,7 +94,7 @@ Wenn «es nicht geht», prüfe die Stationen der Reihe nach:
 4. **Firewall im Betriebssystem:** bei Ubuntu in Azure meist aus (`sudo ufw status`).
 5. **Dienst:** Läuft er? (`systemctl status nginx`) Hört er auf dem richtigen Port? (`ss -tlnp`)
 
-Im Portal hilft dir unter **VM > Netzwerk** (VM > Networking) die Ansicht **Effektive Sicherheitsregeln** (Effective security rules).
+Im Portal hilft dir bei der VM unter **Netzwerkeinstellungen** (Network settings) die Ansicht **Effektive Sicherheitsregeln** (Effective security rules). Die **NIC** ist die Netzwerkschnittstelle (Network Interface) der VM.
 
 ## Selbsttest
 

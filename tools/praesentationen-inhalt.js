@@ -295,7 +295,7 @@ const TAGE = [
           { icon: "FaSitemap", h: "Subnetting (K3)", t: "Du teilst einen Adressraum (Address Space) in Subnetze (Subnets) auf." },
           { icon: "FaNetworkWired", h: "VNet (K3)", t: "Du stellst ein VNet mit mehreren Subnetzen (Subnets) bereit." },
           { icon: "FaShieldAlt", h: "NSG (K3)", t: "Du filterst Verkehr nach Port und IP-Adresse." },
-          { icon: "FaSearch", h: "Fehlersuche (K4)", t: "Du begründest, warum eine Verbindung klappt oder blockiert wird." },
+          { icon: "FaSearch", h: "Fehlersuche (K4)", t: "Du findest mit einer Checkliste heraus, warum eine Verbindung blockiert wird." },
         ] },
         { type: "table", title: "Ablauf", head: ["Lektion", "Phase", "Inhalt"], colW: [1.2, 2.2, 7.6], rows: [
           ["L1", "Einstieg, Input 1", "Rückblick · VNet und Subnetting"],
@@ -304,7 +304,7 @@ const TAGE = [
           ["L4–L5", "Input 2, Hands-on", "Netzwerksicherheitsgruppen (NSG) · Auftrag 4.3: Zwei VMs im VNet"],
           ["L6", "Hands-on", "Auftrag 4.4: Sicherheitsregeln (Security Rules)"],
           ["L7", "Hands-on", "Auftrag 4.5: Fehlersuche · ⭐ 4.6 Network Watcher · ⭐ 4.7 Challenge Lab"],
-          ["L8", "Abschluss", "Netzplan zeichnen · Aufräumen · Exit-Ticket"],
+          ["L8", "Abschluss", "Netzplan zeichnen · Aufräumen · Auftrag 4.8: Werkzeuge für Tag 5 · Exit-Ticket"],
         ] },
         { type: "table", title: "Deine Aufträge", head: ["Nr.", "Auftrag", "Form"], colW: [1.2, 8.0, 2.2], rows: [
           ["4.1", "Subnetting-Training für die «Velo Zürich AG»", "Partner"],
@@ -313,7 +313,8 @@ const TAGE = [
           ["4.4", "Sicherheitsregeln (Security Rules): HTTP für alle, SSH nur von der Schul-IP", "Partner"],
           ["4.5", "Fehlersuche: «Warum komme ich nicht auf meine VM?»", "Partner"],
           ["⭐ 4.6", "IP-Flussüberprüfung und effektive Sicherheitsregeln (Effective Security Rules)", "Einzel"],
-          ["⭐ 4.7", "Challenge Lab zu bedingtem Zugriff (Learn on Demand)", "Partner"],
+          ["⭐ 4.7", "Challenge Lab zu bedingtem Zugriff (Conditional Access)", "Partner"],
+          ["4.8", "Werkzeuge für Tag 5: Azure CLI und Visual Studio Code", "Einzel"],
         ] },
       ] },
       { title: "Abschluss", slides: [

@@ -115,6 +115,16 @@ nav:
           - 3.6 SAS-Token ⭐: auftraege/tag-3/3.6-sas-token.md
           - 3.7 Datenfestplatte ⭐: auftraege/tag-3/3.7-datenfestplatte.md
           - 3.8 Storage mit der CLI ⭐: auftraege/tag-3/3.8-storage-mit-cli.md
+      - Tag 4:
+          - auftraege/tag-4/README.md
+          - 4.1 Subnetting: auftraege/tag-4/4.1-subnetting.md
+          - 4.2 VNet mit Subnetzen: auftraege/tag-4/4.2-vnet-mit-subnetzen.md
+          - 4.3 Zwei VMs im VNet: auftraege/tag-4/4.3-zwei-vms-im-vnet.md
+          - 4.4 Sicherheitsregeln: auftraege/tag-4/4.4-sicherheitsregeln.md
+          - 4.5 Fehlersuche: auftraege/tag-4/4.5-fehlersuche.md
+          - 4.6 Network Watcher ⭐: auftraege/tag-4/4.6-network-watcher.md
+          - 4.7 Challenge Lab bedingter Zugriff ⭐: auftraege/tag-4/4.7-challenge-lab-bedingter-zugriff.md
+          - 4.8 Werkzeuge für Tag 5: auftraege/tag-4/4.8-werkzeuge-fuer-tag-5.md
   - Theorie:
       - theorie/README.md
       - 1 Virtualisierung: theorie/01-virtualisierung.md
