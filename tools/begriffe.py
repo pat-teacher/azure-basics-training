@@ -49,6 +49,8 @@ GLOSSAR = [
     (r"Host-Schlüssel", "Host Key"),
     (r"Fingerabdruck", "Fingerprint"),
     (r"Adressraum", "Address Space"),
+    (r"Subnetzmaske(?:n)?", "Subnet Mask"),
+    (r"Netzadresse(?:n)?", "Network Address"),
     (r"Standardsicherheitsregel(?:n)?", "Default Security Rule"),
     (r"Sicherheitsregel(?:n)?", "Security Rule"),  # Regel einer NSG
     (r"Diensttags?", "Service Tag"),
@@ -106,6 +108,8 @@ MEHRZAHL = {
     "Deployment": r"Bereitstellungen",
     "Endpoint": r"Endpunkte(?:n)?",
     "Data Disk": r"Datenfestplatten",
+    "Subnet Mask": r"Subnetzmasken",
+    "Network Address": r"Netzadressen",
     "Security Rule": r"Sicherheitsregeln",
     "Default Security Rule": r"Standardsicherheitsregeln",
 }

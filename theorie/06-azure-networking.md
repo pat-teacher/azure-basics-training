@@ -7,6 +7,7 @@ Gehört zu [Tag 4](../kurs/tag-4.md)
 ## Lernziele
 - Du kannst die Begriffe VNet, Adressraum (Address Space), Subnetz (Subnet) und CIDR erklären. (K2)
 - Du kannst einen Adressraum (Address Space) in Subnetze (Subnets) aufteilen. (K3)
+- Du kannst zu einer IP-Adresse mit Präfix die Netzadresse (Network Address) binär berechnen. (K3)
 - Du kannst private und öffentliche IP-Adressen (Public IP) in Azure unterscheiden. (K2)
 - Du kannst Sicherheitsregeln (Security Rules) einer NSG lesen, schreiben und ihre Wirkung vorhersagen. (K3)
 - Du kannst bei einem Verbindungsproblem mit einer Checkliste die Ursache finden. (K4)
@@ -19,8 +20,42 @@ Gehört zu [Tag 4](../kurs/tag-4.md)
 - **Adressraum:** der IP-Bereich des VNets, z. B. `10.10.0.0/16`. Verwende private Bereiche: `10.0.0.0/8`, `172.16.0.0/12` oder `192.168.0.0/16`.
 - **Subnetz:** ein Teilbereich des VNets, z. B. `10.10.1.0/24`. Jede NIC hängt in genau einem Subnetz (Subnet). Subnetze (Subnets) trennen Aufgaben, z. B. Webserver und Datenbanken.
 
-### CIDR in Kürze
-Die Zahl nach dem `/` sagt, wie viele Bits **fix** sind. Je grösser die Zahl, desto kleiner das Netz.
+### CIDR: Was heisst /27?
+Eine IPv4-Adresse besteht aus **32 Bits**, aufgeteilt in vier Oktette zu je 8 Bits. Die Zahl nach dem `/` sagt, wie viele Bits von links **zum Netz** gehören. Die restlichen Bits sind für die Geräte im Netz.
+
+Bei `/27` gehören 27 Bits zum Netz. Für die Geräte bleiben 32 − 27 = 5 Bits, also 2<sup>5</sup> = 32 Adressen. Je grösser die Zahl nach dem `/`, desto kleiner das Netz.
+
+### Die Netzadresse berechnen
+**Frage:** In welchem Subnetz (Subnet) liegt die Adresse `10.10.3.40/27`?
+
+**1. Das Präfix als Maske aufschreiben.** `/27` heisst: 27 Einsen, danach Nullen. Das ist die **Subnetzmaske** (Subnet Mask). In Oktetten: 8 + 8 + 8 + **3** Einsen.
+
+**2. Nur das Oktett rechnen, in dem die Grenze liegt.** Ein Oktett mit 8 Einsen (`11111111`) übernimmst du unverändert. Ein Oktett mit 8 Nullen wird `0`. Bei `/27` liegt die Grenze im 4. Oktett.
+
+**3. Die Zahl im 4. Oktett binär schreiben.** Zerlege sie in die Stellenwerte eines Oktetts:
+
+| Stellenwert | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|-------------|:---:|:--:|:--:|:--:|:-:|:-:|:-:|:-:|
+| 40 = 32 + 8 | 0 | 0 | **1** | 0 | **1** | 0 | 0 | 0 |
+
+**4. IP-Adresse und Maske Bit für Bit mit UND verknüpfen.** Regel: 1 und 1 = 1, sonst 0. Das Ergebnis ist die **Netzadresse** (Network Address).
+
+| | 1. Oktett | 2. Oktett | 3. Oktett | 4. Oktett |
+|---|:---:|:---:|:---:|:---:|
+| IP-Adresse | 10 | 10 | 3 | 40 |
+| binär | 00001010 | 00001010 | 00000011 | 00101000 |
+| Maske `/27` | 11111111 | 11111111 | 11111111 | **111**00000 |
+| Netzadresse (Network Address) binär | 00001010 | 00001010 | 00000011 | **001**00000 |
+| **Netzadresse** (Network Address) | **10** | **10** | **3** | **32** |
+
+**5. Die letzte Adresse finden.** Setze in der Netzadresse (Network Address) alle 5 Bits für die Geräte auf 1: `00100000` wird `00111111` = 63.
+
+**Ergebnis:** `10.10.3.40` liegt im Subnetz (Subnet) `10.10.3.32/27`. Es reicht von `10.10.3.32` bis `10.10.3.63`.
+
+> [!TIP]
+> **Abkürzung mit der Blockgrösse:** Ein `/27` hat 32 Adressen. Darum beginnen die Subnetze (Subnets) bei 0, 32, 64, 96 … Die 40 liegt zwischen 32 und 63, also im Block ab 32. Prüfe das Ergebnis immer auch mit der Rechnung oben.
+
+### Wie gross ist ein Subnetz?
 
 | CIDR | Adressen | in Azure nutzbar | Beispiel |
 |------|----------|------------------|----------|
@@ -121,6 +156,11 @@ Ja. NSGs sind zustandsbehaftet: Die Antwort auf eine erlaubte Anfrage darf autom
 <details><summary>5. Port 80 ist in der NSG erlaubt, trotzdem lädt die Website nicht. Was prüfst du als Nächstes?</summary>
 
 Ob eine NSG an der NIC den Verkehr blockiert, ob der Webserver läuft (`systemctl status nginx`) und ob du die richtige öffentliche IP (Public IP) verwendest.
+</details>
+
+<details><summary>6. In welchem Subnetz (Subnet) liegt die Adresse 10.10.5.70/26? Von wo bis wo reicht es?</summary>
+
+`/26` = 8 + 8 + 8 + **2** Einsen, Maske im 4. Oktett `11000000`. 70 = 64 + 4 + 2 = `01000110`. UND: `01000000` = 64. Das Subnetz (Subnet) ist `10.10.5.64/26`, es reicht von `10.10.5.64` bis `10.10.5.127` (`01111111`). Abkürzung: Blockgrösse 64, Blöcke bei 0, 64, 128, 192.
 </details>
 
 ## Quellen

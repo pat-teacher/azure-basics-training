@@ -285,10 +285,20 @@ const TAGE = [
       { title: "Start", slides: [
         { type: "title", title: "Tag 4: Azure Networking", sub: "Einführung in Cloud Computing mit Microsoft Azure" },
         { type: "quiz", title: "Rückblick Tag 3", lead: "Beantworte die Fragen mit deinem Partner – 5 Minuten.", qs: [
-          { h: "Kosten", q: "Du fährst die VM mit sudo poweroff herunter. Kostet sie noch etwas?" },
-          { h: "SSH", q: "Welchen Schlüssel brauchst du von einem Kollegen, damit er auf deine VM darf?" },
-          { h: "Storage", q: "Warum ist St-Tag3-MM kein gültiger Storage-Account-Name?" },
-        ], notes: "Ja, Compute läuft weiter (nicht deallocated). Seinen öffentlichen. Nur Kleinbuchstaben und Ziffern erlaubt." },
+          { h: "Kosten", q: "Du stoppst die VM im Portal mit Beenden (Stop). Was kostet danach noch Geld, was nicht?" },
+          { h: "Container und Blob", q: "Was davon ist wie ein Ordner, was wie eine Datei?" },
+          { h: "Infoseite", q: "Die Velo Zürich AG braucht eine einfache Infoseite ohne Login. VM mit nginx oder statische Website (Static Website)? Warum?" },
+        ], notes: "Kosten: Status «Beendet (Zuordnung aufgehoben)» (Stopped (deallocated)) – die Rechenleistung (CPU, RAM) kostet nichts mehr. Der OS-Datenträger (OS Disk) und die öffentliche IP (Public IP) kosten weiter (vgl. Auftrag 3.2, Schritt 5). Darum am Schluss immer die Ressourcengruppe (Resource Group) löschen. Container und Blob: Container = Ordner, Blob = Datei darin. Infoseite: statische Website im Speicherkonto (Storage Account) – kein Server zu installieren, zu aktualisieren und zu bezahlen (vgl. 3.3 und 3.5, IaaS gegenüber PaaS)." },
+        { type: "cards", title: "Exit-Ticket Tag 3: Was stimmt hier nicht?", lead: "Frage: Nenne drei Ressourcen, die beim Erstellen einer VM zusätzlich entstehen.", cols: 3, items: [
+          { icon: "FaQuestionCircle", h: "Antwort A", t: "«Disk für OS, Public IP Private IP, Netzwerkkarte»" },
+          { icon: "FaQuestionCircle", h: "Antwort B", t: "«IP-Adresse, VNet-Subnetz und temporärer Speicher»" },
+          { icon: "FaQuestionCircle", h: "Antwort C", t: "«1.Virtuelle Netzwerkkarte (Netzwerk) 2.Virtuelle Festplatte (Speicher) 3.IP-Adresse (Netzwerkadresse)»" },
+        ], notes: "Echte Antworten aus den Exit-Tickets, ohne Namen. Für jeden Kurs eigene Antworten mit Missverständnissen einsetzen. 2 Minuten zu zweit: Was stimmt bei A, B und C nicht? Dann 2–3 Paare fragen. Auflösung auf der nächsten Folie." },
+        { type: "cards", title: "Exit-Ticket Tag 3: die Auflösung", lead: "Richtig: «Virtuelles Netzwerk (VNet) für die Netzwerkkommunikation. Netzwerkschnittstelle (NIC) verbindet die VM mit dem Netzwerk. Betriebssystemdatenträger (OS-Disk) speichert das Betriebssystem der VM.»", cols: 3, items: [
+          { icon: "FaExclamationTriangle", h: "A: Private IP ist keine Ressource", t: "Die private IP ist eine Einstellung der Netzwerkschnittstelle (Network Interface). Eine eigene Ressource ist nur die öffentliche IP (Public IP)." },
+          { icon: "FaExclamationTriangle", h: "B: Temporärer Speicher ist keine Ressource", t: "Der temporäre Datenträger (Temporary Disk) liegt auf dem Host. Das Subnetz (Subnet) gehört zum VNet." },
+          { icon: "FaExclamationTriangle", h: "C: Welche IP-Adresse?", t: "Netzwerkkarte und Festplatte stimmen. Bei der IP fehlt: öffentlich. Die private IP kommt aus dem Subnetz (Subnet)." },
+        ], notes: "Die richtige Antwort oben stammt ebenfalls aus den Exit-Tickets. Vollständig sind es sechs Ressourcen: VM, OS-Datenträger (OS Disk), Netzwerkschnittstelle (Network Interface), VNet (mit Subnetz (Subnet)), öffentliche IP (Public IP) und NSG (vgl. Auftrag 3.2). Gut: Mehrere Lernende haben die NSG («Sicherheitsgruppen») genannt. Überleitung zu Tag 4: Heute schaust du dir den Netzwerkteil genauer an – VNet, Subnetze (Subnets), öffentliche IP (Public IP) und NSG." },
       ] },
       { title: "Heute", slides: [
         { type: "cards", title: "Deine Ziele heute", cols: 2, items: [
@@ -742,8 +752,21 @@ const INPUTS = [
           { icon: "FaMapMarkedAlt", h: "Adressraum (Address Space)", t: "IP-Bereich des VNets, z. B. 10.10.0.0/16. Nur private Bereiche verwenden." },
           { icon: "FaSitemap", h: "Subnetz (Subnet)", t: "Teil des VNets, z. B. 10.10.1.0/24 – ein Gebäude auf dem Gelände. Jede NIC hängt in genau einem." },
         ] },
-        { type: "table", title: "CIDR in Kürze", head: ["CIDR", "Adressen", "in Azure nutzbar", "Beispiel"], colW: [1.5, 2, 2.5, 5], rows: [
-          ["/16", "65 536", "– (Adressraum)", "10.10.0.0 – 10.10.255.255"],
+        { type: "cards", title: "CIDR: Was heisst /27?", lead: "Eine IPv4-Adresse hat 32 Bits: vier Oktette zu je 8 Bits.", cols: 3, items: [
+          { icon: "FaListOl", h: "1 · Präfix lesen", t: "/27: Die ersten 27 Bits gehören zum Netz. Für Geräte bleiben 5 Bits, also 2⁵ = 32 Adressen." },
+          { icon: "FaFilter", h: "2 · Maske bilden", t: "27 Einsen, dann Nullen. Nur im 4. Oktett liegt die Grenze: 11100000." },
+          { icon: "FaCalculator", h: "3 · UND rechnen", t: "IP und Maske Bit für Bit: 1 und 1 = 1, sonst 0. Ergebnis: die Netzadresse (Network Address)." },
+        ], notes: "Oktette mit 8 Einsen übernimmt man unverändert, Oktette mit 8 Nullen werden 0. Rechnen muss man nur im Oktett, in dem die Grenze liegt. Stellenwerte an die Wandtafel: 128 64 32 16 8 4 2 1." },
+        { type: "table", title: "Netzadresse berechnen: 10.10.3.40/27", head: ["", "1. Oktett", "2. Oktett", "3. Oktett", "4. Oktett"], colW: [3.4, 2, 2, 2, 2], center: true, rows: [
+          ["IP-Adresse", "10", "10", "3", "40"],
+          ["binär", "00001010", "00001010", "00000011", "00101000"],
+          ["Maske /27", "11111111", "11111111", "11111111", "11100000"],
+          ["UND-Ergebnis binär", "00001010", "00001010", "00000011", "00100000"],
+          ["Netzadresse (Network Address)", "10", "10", "3", "32"],
+        ], note: "Letzte Adresse: die 5 Gerätebits auf 1 → 00111111 = 63. Subnetz (Subnet): 10.10.3.32 – 10.10.3.63.",
+          notes: "Live an der Wandtafel rechnen: 40 = 32 + 8 = 00101000. Nur das 4. Oktett rechnen. Abkürzung danach zeigen: /27 = Blöcke zu 32 Adressen (0, 32, 64, 96 …), 40 liegt im Block 32–63. Passt zu Auftrag 4.1, Schritt 3d." },
+        { type: "table", title: "Wie gross ist ein Subnetz?", head: ["CIDR", "Adressen", "in Azure nutzbar", "Beispiel"], colW: [1.5, 2, 2.5, 5], rows: [
+          ["/16", "65 536", "65 531", "10.10.0.0 – 10.10.255.255"],
           ["/24", "256", "251", "10.10.1.0 – 10.10.1.255"],
           ["/27", "32", "27", "10.10.3.0 – 10.10.3.31"],
           ["/29", "8", "3", "kleinstes erlaubtes Subnetz (Subnet)"],

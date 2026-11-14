@@ -106,12 +106,12 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | Wann | Input | Dauer | Folien | Danach |
 |------|-------|-------|--------|--------|
 | L1, Beginn | Rückblick-Quiz zu zweit | 5' | Tag 4, Folien 1–2 | Exit-Ticket |
-| L1, nach dem Quiz | Exit-Ticket Tag 3 («Nenne drei Ressourcen, die beim Erstellen einer VM zusätzlich entstehen»): zwei, drei Antworten aus der Klasse vorlesen, richtigstellen. Bezug zu heute: Netzwerkschnittstelle (Network Interface), VNet, öffentliche IP (Public IP) und NSG sind das Thema von Tag 4 | 5' | – | Ziele |
-| L1, nach dem Exit-Ticket | Ziele, Ablauf und Aufträge des Tages | 3' | Tag 4, Folien 3–5 | Input 6 |
+| L1, nach dem Quiz | Exit-Ticket Tag 3: Die Lernenden finden zuerst selbst heraus, was an den drei Antworten A–C nicht stimmt. Danach kommt die Auflösung mit der richtigen Aussage. Bezug zu heute: VNet, Subnetz (Subnet), öffentliche IP (Public IP) und NSG | 7' | Tag 4, Folien 3–4 | Ziele |
+| L1, nach dem Exit-Ticket | Ziele, Ablauf und Aufträge des Tages | 3' | Tag 4, Folien 5–7 | Input 6 |
 | L1, nach dem Einstieg | VNet und Subnetze (Subnets), CIDR, IP-Adressen | 20' | Input 6, Teil «VNet» | Auftrag 4.1 |
 | L4, Beginn | Netzwerksicherheitsgruppen (NSG) | 15' | Input 6, Teil «NSG» | Auftrag 4.3 |
 | L8, Beginn | Kurz im Plenum zu 4.5: Welche Station der Checkliste hat am meisten geholfen? Zeitüberschreitung oder «Verbindung abgelehnt»? | 5' | Input 6, Folie «Der Weg einer Anfrage» | Netzplan (4.5, Schritt 4), aufräumen, Auftrag 4.8 |
-| L8, Schluss | Aufräumkontrolle (`az group list --output table` ohne `rg-tag4-…`), Exit-Ticket, Ausblick Tag 5 | 10' | Tag 4, Folien 6–7 | – |
+| L8, Schluss | Aufräumkontrolle (`az group list --output table` ohne `rg-tag4-…`), Exit-Ticket, Ausblick Tag 5 | 10' | Tag 4, Folien 8–9 | – |
 
 **Vorbereitung**
 - Öffentliche IP (Public IP) der Schule ermitteln und an die Wandtafel schreiben (für die Sicherheitsregel (Security Rule) für SSH in 4.4). Hat die Schule mehrere öffentliche Adressen, mit einem Bereich arbeiten. <!-- prüfen -->
