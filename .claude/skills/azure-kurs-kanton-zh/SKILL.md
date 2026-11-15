@@ -78,6 +78,7 @@ assets/branding/         Logo, Banner, Wolke
 - Pro Tag eine Präsentation (`praesentationen/tag-<n>-<thema>.pptx`): Titel, Rückblick-Quiz, Ziele, Ablauf, Aufträge, Abschluss mit Exit-Ticket, Ausblick.
 - Pro Theorie-Kapitel eine Input-Präsentation (`praesentationen/input-<nn>-<thema>.pptx`): Diagramme aus `theorie/img`, Alltagsvergleich, Selbsttest (Antworten in den Sprechernotizen), Quellen, «Jetzt du»-Folie.
 - Nie von Hand bearbeiten: Inhalte in `tools/praesentationen-inhalt.js` ändern und neu erzeugen (Anleitung `tools/README.md`). Danach PNG-Export mit PowerPoint und Sichtprüfung.
+- **Live-Demos:** Jede Live-Demo bekommt eine eigene Folie (Typ `demo`: Titel «Live-Demo: …», blaues Band mit Play-Symbol, Dauer und Werkzeug, darunter «Du siehst / Du tust / Danach»; Drehbuch in den Sprechernotizen). Sie steht direkt an der Stelle, an der die Demo beginnt, damit Kursleitung und Lernende wissen, dass jetzt vorgeführt wird.
 - Folienregeln: nur helle Folienhintergründe (auch Titel, Kapitel, Schluss), Titel links, keine Akzentlinien unter Titeln, Fliesstext mind. 16 pt, eine Botschaft pro Folie, Sprechernotizen für die Kursleitung.
 
 ## Branding PAT Cloud Solutions

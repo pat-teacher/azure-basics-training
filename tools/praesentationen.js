@@ -224,6 +224,20 @@ const builders = {
       { x: M, y: TOP + 3.5, w: CW, h: BOTTOM - TOP - 3.5, fontSize: 18, color: DARK, valign: "top", margin: 0, isTextBox: true });
     return sl;
   },
+  // Ankündigung einer Live-Demo: blaues Band mit Play-Symbol, Werkzeug und Dauer; darunter was man sieht, tut und was danach kommt
+  async demo(pres, s, d) {
+    const sl = pres.addSlide({ masterName: "INHALT", sectionTitle: d.section });
+    sl.addText("Live-Demo: " + s.title, { placeholder: "title" });
+    sl.addShape("roundRect", { x: M, y: TOP + 0.2, w: CW, h: 2.4, rectRadius: 0.15, fill: { color: BLUE }, line: { color: BLUE }, objectName: "demo-band" });
+    iconCircle(sl, "FaPlay", M + 0.5, TOP + 0.7, 1.4, DARK);
+    sl.addText([
+      { text: ["LIVE-DEMO", s.dauer, s.wo].filter(Boolean).join(" · "), options: { fontSize: 16, bold: true, color: LIGHT, breakLine: true } },
+      { text: s.quote, options: { fontSize: 24, color: WHITE } },
+    ], { x: M + 2.3, y: TOP + 0.4, w: CW - 2.7, h: 2.0, valign: "middle", margin: 0, isTextBox: true });
+    sl.addText(s.points.map((b, k) => ({ text: b, options: { bullet: true, breakLine: k < s.points.length - 1, paraSpaceAfter: 8 } })),
+      { x: M, y: TOP + 2.9, w: CW, h: BOTTOM - TOP - 2.9, fontSize: 18, color: DARK, valign: "top", margin: 0, isTextBox: true });
+    return sl;
+  },
   async stat(pres, s, d) {
     const sl = pres.addSlide({ masterName: "INHALT", sectionTitle: d.section });
     sl.addText(s.title, { placeholder: "title" });

@@ -15,9 +15,9 @@ Die Tagesplanungen unter [kurs/](../kurs/organisation.md) sind für die Lernende
 |------|-------|-------|--------|--------|
 | L1, Beginn | Kurseinführung: Vorstellungsrunde, Ziel des Kurses, Kursziele, Aufbau, Zusammenarbeit, Spielregeln | 20' | Kurseinführung (ganz) | Tag 1 |
 | L1, nach der Kurseinführung | Einstieg Tag 1: Vorwissen, Ziele und Ablauf des Tages | 5' | Tag 1, «Start» und «Heute» | Input 1 |
-| L1, nach dem Einstieg | Was ist Virtualisierung? Hardware, Hypervisor, VM, Typ 1/2 | 15' | Input 1, Folien 1–7 | Auftrag 1.0, 1.1 |
-| L3, nach Auftrag 1.1 | Live-Demo Multipass: `launch`, `list`, `shell`, `delete` | 10' | Input 1, «Multipass: eine VM mit einem Befehl» | Aufträge 1.2, 1.3 |
-| L5, nach Auftrag 1.4 | Automatisch statt von Hand: cloud-init. Einstieg: 2–3 gemessene Zeiten aus 1.4 abfragen und auf 10 Server hochrechnen | 15' | Input 1, «cloud-init» | Auftrag 1.5 |
+| L1, nach dem Einstieg | Was ist Virtualisierung? Hardware, Hypervisor, VM, Typ 1/2. Live-Demo Hyper-V-Manager (Folie 4) | 15' | Input 1, Folien 1–8 | Auftrag 1.0, 1.1 |
+| L3, nach Auftrag 1.1 | Live-Demo Multipass: `launch`, `list`, `shell`, `delete` | 10' | Input 1, «Multipass: eine VM mit einem Befehl» und «Live-Demo: Multipass» | Aufträge 1.2, 1.3 |
+| L5, nach Auftrag 1.4 | Automatisch statt von Hand: cloud-init. Einstieg: 2–3 gemessene Zeiten aus 1.4 abfragen und auf 10 Server hochrechnen | 15' | Input 1, «cloud-init» und «Live-Demo: cloud-init mit Multipass» | Auftrag 1.5 |
 | L7, nach Abschluss von 1.5 | SSH-Schlüssel: Schloss und Schlüssel | 5' | Input 1, «SSH-Schlüssel» | Auftrag 1.6, ⭐ 1.7 |
 | L8, Schluss | Ausblick (kein Input): «Was passiert, wenn man tausende Hypervisoren zusammenschaltet?» Frage stehen lassen, Antwort an Tag 2 | 3' | Tag 1, «Nächstes Mal: ab in die Cloud» | Aufräumen, Exit-Ticket |
 
@@ -43,10 +43,10 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L1, nach dem Exit-Ticket | Ziele, Ablauf und Aufträge des Tages | 3' | Tag 2, Folien 6–8 | Input 2 |
 | L1, nach dem Einstieg | Frage vom Schluss von Tag 1 «Was passiert, wenn man tausende Hypervisoren zusammenschaltet?» zu zweit vermuten lassen, Auflösung mit der nächsten Folie: Hyperscaler. Dann Cloud-Merkmale, Servicemodelle (Service Models) mit Pizza, öffentliche, private und hybride Cloud (Public, Private, Hybrid Cloud), geteilte Verantwortung (Shared Responsibility), Selbsttest | 25' | Input 2, Folien 1–13 | Auftrag 2.1 |
 | L2, nach Auftrag 2.1 | Besprechung 2.1: strittige Zeilen aus Schritt 1, 2–3 Empfehlungen aus Schritt 5 | 10' | Input 2, Folie 5 «Servicemodelle» | Lernjournal, ⭐ von 2.1 |
-| L3, Beginn | Aufbau von Azure: Regionen und Zonen, Hierarchie, Ressourcengruppe (Resource Group), Azure Resource Manager. Live-Demo Portal: Ressourcengruppe (Resource Group) bis Reiter Tags ausfüllen, nicht erstellen | 17' | Input 3, Folien 1–9 | Aufträge 2.2, 2.3 |
+| L3, Beginn | Aufbau von Azure: Regionen und Zonen, Hierarchie, Ressourcengruppe (Resource Group), Azure Resource Manager. Live-Demo «Rundgang durchs Portal»: Ressourcengruppe (Resource Group) bis Reiter Tags ausfüllen, nicht erstellen (Folie 7) | 17' | Input 3, Folien 1–9 | Aufträge 2.2, 2.3 |
 | L4, Beginn | Kursregion abfragen: «Wer hat Switzerland North nicht in der Liste?» Ersatzregionen an die Wandtafel | 5' | Input 3, Folie 9 | Auftrag 2.3 |
 | L4, Schluss | Aktivitätsprotokoll (Activity Log) zeigen: «Jede Aktion läuft über den Resource Manager.» | 5' | Portal | 2.2/2.3 fertig, aufräumen |
-| L5, Beginn | Werkzeuge: Live-Demo Cloud Shell (erster Start ohne Speicherkonto (Storage Account)) und Azure CLI (`az group create`, `list`, `delete`, `--help`, `-o table`). Ausblick RBAC in einem Satz, Selbsttest | 15' | Input 3, Folien 10–18 | Aufträge 2.4, 2.5 |
+| L5, Beginn | Werkzeuge: Live-Demo Cloud Shell (erster Start ohne Speicherkonto (Storage Account)) und Azure CLI (`az group create`, `list`, `delete`, `--help`, `-o table`). Ausblick RBAC in einem Satz, Selbsttest | 15' | Input 3, Folien 10–19 (Live-Demo: Folie 14) | Aufträge 2.4, 2.5 |
 | L7, Beginn | Challenge Labs erklären, Trainingsschlüssel teilen | 5' | Tag 2, Folie 9 | Puffer 2.1–2.5, ⭐ 2.6, ⭐ 2.7, ⭐ 2.8 |
 | L8, Beginn | Besprechung 2.5, Schritt 3 (Switzerland North: Schweiz und Zonen) | 10' | – | Aufräumkontrolle |
 | L8, Schluss | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag2-…`. Ausblick Tag 3: SSH-Schlüssel von Tag 1 bereithalten | 10' | Tag 2, Folien 10–11 | Lernjournal, Exit-Ticket |
@@ -75,10 +75,10 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L1, Beginn | Rückblick-Quiz zu zweit | 5' | Tag 3, Folien 1–2 | Exit-Ticket |
 | L1, nach dem Quiz | Exit-Ticket Tag 2: Die Lernenden finden zuerst selbst heraus, was an den drei Antworten A–C nicht stimmt. Danach kommt die Auflösung mit der richtigen Aussage | 7' | Tag 3, Folien 3–4 | Ziele |
 | L1, nach dem Exit-Ticket | Ziele, Ablauf und Aufträge des Tages | 3' | Tag 3, Folien 5–7 | Input 4 |
-| L1, nach dem Einstieg | Virtuelle Maschinen (Virtual Machines) in Azure: Bestandteile, Vergleich mit Tag 1, Grösse (Size), Status und Kosten, SSH-Schlüssel von Tag 1, Speicher der VM (OS-Datenträger (OS Disk), Datenfestplatte (Data Disk), temporärer Datenträger (Temporary Disk)), Selbsttest. Live-Demo: VM-Assistent im Portal bis **Überprüfen + erstellen** (Review + create) (nach Folie 7) | 20' | Input 4, Folien 1–12 | Kosten im Griff |
+| L1, nach dem Einstieg | Virtuelle Maschinen (Virtual Machines) in Azure: Bestandteile, Vergleich mit Tag 1, Grösse (Size), Status und Kosten, SSH-Schlüssel von Tag 1, Speicher der VM (OS-Datenträger (OS Disk), Datenfestplatte (Data Disk), temporärer Datenträger (Temporary Disk)), Selbsttest. Live-Demo: VM-Assistent im Portal bis **Überprüfen + erstellen** (Review + create) (Folie 8) | 20' | Input 4, Folien 1–13 | Kosten im Griff |
 | L1, vor Auftrag 3.1 | Kosten im Griff: kleine Grössen, nur eine VM gleichzeitig, immer aufräumen | 3' | Tag 3, Folie 8 | Aufträge 3.1, 3.2 |
 | L3/L4, nach Auftrag 3.2 | Kurz im Plenum: «Beendet» oder «Beendet (Zuordnung aufgehoben)»? Was kostet was? (aus 3.2). Kontrolle, dass alle `rg-tag3-portal-…` gelöscht haben | 5' | Input 4, Folie 5 | Auftrag 3.3 |
-| L5, Beginn | Azure Storage: Speicherkonto (Storage Account) mit den vier Diensten Blob, Files, Queue, Table (nur Blob praktisch), Container und Blob, Redundanz (Redundancy) mit Dauerhaftigkeit (Durability, «die Neunen»), Zugriffsebenen (Access Tiers), Persistenz, Selbsttest | 15' | Input 5, Folien 1–12 | Auftrag 3.4, direkt danach 3.5 im selben Speicherkonto (Storage Account) |
+| L5, Beginn | Azure Storage: Speicherkonto (Storage Account) mit den vier Diensten Blob, Files, Queue, Table (nur Blob praktisch), Container und Blob, Redundanz (Redundancy) mit Dauerhaftigkeit (Durability, «die Neunen»), Zugriffsebenen (Access Tiers), Persistenz, Selbsttest. Live-Demo Speicherkonto (Storage Account) und Blob (Folie 5) | 15' | Input 5, Folien 1–13 | Auftrag 3.4, direkt danach 3.5 im selben Speicherkonto (Storage Account) |
 | L7, wenn die meisten 3.5 fertig haben | Kurz im Plenum: Vergleich VM mit nginx (3.3) und statische Website (Static Website) (3.5), Bezug zu IaaS/PaaS | 5' | Input 2 (Tag 2), Folie 6 «Merkhilfe Pizza» | ⭐ 3.6 oder ⭐ 3.8, aufräumen |
 | L8 | Aufräumkontrolle: alle zeigen `az group list -o table` ohne `rg-tag3-…`. Kostenanalyse (Cost Analysis) anschauen (zeigt erst die Kosten von Tag 2, Verzögerung 8–24 Stunden), Exit-Ticket, Ausblick Tag 4 | 15' | Tag 3, Folien 9–10 | – |
 
@@ -109,7 +109,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L1, nach dem Quiz | Exit-Ticket Tag 3: Die Lernenden finden zuerst selbst heraus, was an den drei Antworten A–C nicht stimmt. Danach kommt die Auflösung mit der richtigen Aussage. Bezug zu heute: VNet, Subnetz (Subnet), öffentliche IP (Public IP) und NSG | 7' | Tag 4, Folien 3–4 | Ziele |
 | L1, nach dem Exit-Ticket | Ziele, Ablauf und Aufträge des Tages | 3' | Tag 4, Folien 5–7 | Input 6 |
 | L1, nach dem Einstieg | VNet und Subnetze (Subnets), CIDR, IP-Adressen | 20' | Input 6, Teil «VNet» | Auftrag 4.1 |
-| L4, Beginn | Netzwerksicherheitsgruppen (NSG) | 15' | Input 6, Teil «NSG» | Auftrag 4.3 |
+| L4, Beginn | Netzwerksicherheitsgruppen (NSG). Live-Demo NSG und Sicherheitsregel (Security Rule) | 15' | Input 6, Teil «NSG» | Auftrag 4.3 |
 | L8, Beginn | Kurz im Plenum zu 4.5: Welche Station der Checkliste hat am meisten geholfen? Zeitüberschreitung oder «Verbindung abgelehnt»? | 5' | Input 6, Folie «Der Weg einer Anfrage» | Netzplan (4.5, Schritt 4), aufräumen, Auftrag 4.8 |
 | L8, Schluss | Aufräumkontrolle (`az group list --output table` ohne `rg-tag4-…`), Exit-Ticket, Ausblick Tag 5 | 10' | Tag 4, Folien 8–9 | – |
 
@@ -130,7 +130,7 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 | Wann | Input | Dauer | Folien |
 |------|-------|-------|--------|
-| L1, nach Rückblick | Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init in Azure | 20' | Input 7 |
+| L1, nach Rückblick | Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init in Azure. Live-Demo Bicep bereitstellen | 20' | Input 7 |
 
 **Vorbereitung**
 - Zu Beginn kontrollieren: Bei allen zeigt `az account show --output table` im Terminal von Visual Studio Code **Azure for Students** (Auftrag 4.8). Wer nicht angemeldet ist: `az login`. Wer die Installation nicht geschafft hat, arbeitet mit dem Partner oder ausnahmsweise in der Cloud Shell und speichert die Dateien sofort im Lernjournal.
