@@ -24,7 +24,7 @@ const EINFUEHRUNG = [
           points: ["Du startest auf deinem eigenen Laptop und gehst Schritt für Schritt in die Cloud.",
             "Die fiktive Firma «Velo Zürich AG» begleitet dich durch den ganzen Kurs.",
             "An Tag 5 baust du das im Abschlussprojekt zu zweit und stellst es kurz vor."],
-          notes: "Das ist das Abschlussprojekt an Tag 5. Hier nur das Bild zeigen – Auftrag, Abgabe und Präsentation stehen in der Präsentation von Tag 5." },
+          notes: "Das ist das Abschlussprojekt an Tag 5. Hier nur das Bild zeigen – Auftrag, Dokumentation und das Zeigen der Lösungen stehen in der Präsentation von Tag 5." },
         { type: "cards", title: "Nach dem Kurs kannst du …", cols: 3, items: [
           { icon: "FaLayerGroup", h: "Virtualisierung (K2)", t: "Hypervisor und VM erklären und beschreiben, wie eine Cloud-Plattform funktioniert." },
           { icon: "FaCubes", h: "IaaS, PaaS, SaaS (K2)", t: "die Betriebsmodelle unterscheiden und Beispiele zuordnen." },
@@ -365,13 +365,13 @@ const TAGE = [
           ["L3", "Hands-on", "Auftrag 5.2: Erstes Bicep-File, ARM-Template vergleichen"],
           ["L4", "Hands-on", "Auftrag 5.3: Bicep für VNet, Subnetz (Subnet) und NSG"],
           ["L5–L7", "Abschlussprojekt", "Webserver der «Velo Zürich AG» komplett per Bicep"],
-          ["L8", "Abschluss", "Kurzpräsentationen · Feedback · Aufräumen"],
+          ["L8", "Abschluss", "Lösungen zeigen (freiwillig) · Feedback · Aufräumen"],
         ] },
         { type: "cards", title: "Abschlussprojekt: Webserver der «Velo Zürich AG»", cols: 3, items: [
           { icon: "FaFileCode", h: "Auftrag", t: "VNet, Subnetz (Subnet), NSG und VM mit cloud-init – alles in einer Bicep-Datei, mit einem Befehl bereitgestellt." },
-          { icon: "FaClipboardList", h: "Abgabe", t: "Bicep- und cloud-init-Datei, kurze Dokumentation, Screenshot der Website." },
-          { icon: "FaChartLine", h: "Präsentation", t: "4 Minuten pro Team: Architektur, Live-Demo, was ihr gelernt habt." },
-        ], notes: "Auftrag und Bewertungsraster: abschlussprojekt/auftrag.md und bewertungsraster.md. Teams zu zweit." },
+          { icon: "FaClipboardList", h: "Dokumentation", t: "Bicep- und cloud-init-Datei, Selbstkontrolle, Screenshot der Website." },
+          { icon: "FaChartLine", h: "Zeigen (freiwillig)", t: "Wer will, zeigt in 4 Minuten: Architektur, Live-Demo, was ihr gelernt habt." },
+        ], notes: "Auftrag: abschlussprojekt/auftrag.md. Teams zu zweit. Keine Bewertung mit Punkten, der Kurs ist freiwillig. Die Teams prüfen sich mit der Selbstkontrolle." },
       ] },
       { title: "Abschluss", slides: [
         { type: "cards", title: "Zum Schluss", cols: 3, items: [

@@ -5,7 +5,7 @@
 8 Lektionen
 
 ## Darum geht es heute
-Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebung in Dateien und stellst sie mit einem einzigen Befehl bereit. Am Nachmittag baust du im Abschlussprojekt den Webserver der «Velo Zürich AG» und stellst ihn kurz vor.
+Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebung in Dateien und stellst sie mit einem einzigen Befehl bereit. Am Nachmittag baust du im Abschlussprojekt den Webserver der «Velo Zürich AG». Wer will, zeigt die Lösung am Schluss der Klasse.
 
 ## Am Ende des Tages kannst du …
 - erklären, was «Infrastruktur als Code (Infrastructure as Code)» bedeutet. (K2)
@@ -23,7 +23,7 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 | L3 | Auftrag 5.2 | allein: erste Bicep-Datei |
 | L4 | Auftrag 5.3 | allein: Netzwerk von Tag 4 als Bicep (⭐ 5.4 Terraform: für Schnelle oder nach dem Kurs) |
 | L5–L7 | Abschlussprojekt | mit Partner: Webserver der «Velo Zürich AG» per Bicep |
-| L8 | Präsentationen und Abschluss | 4 Minuten präsentieren, Feedback geben, aufräumen |
+| L8 | Lösungen zeigen und Abschluss | wer will: Lösung in 4 Minuten zeigen; Feedback geben, aufräumen |
 
 ## Deine Aufträge
 
@@ -32,8 +32,8 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 | ☐ | 5.1 | [Ubuntu-VM mit cloud-init in Azure](../auftraege/tag-5/5.1-vm-mit-cloud-init.md) | 45 Min. | Partner |
 | ☐ | 5.2 | [Erste Bicep-Datei: Speicherkonto (Storage Account)](../auftraege/tag-5/5.2-erste-bicep-datei.md) | 45 Min. | allein |
 | ☐ | 5.3 | [Das Netzwerk von Tag 4 als Bicep](../auftraege/tag-5/5.3-netzwerk-als-bicep.md) | 45 Min. | allein |
-| ☐ | Projekt | [Abschlussprojekt: Webserver der «Velo Zürich AG»](../abschlussprojekt/auftrag.md) · [Bewertungsraster](../abschlussprojekt/bewertungsraster.md) | L5–L7 | Partner |
 | ☐ | ⭐ 5.4 | [Herausforderung: dieselbe Idee mit Terraform](../auftraege/tag-5/5.4-terraform.md) | ca. 60 Min. | allein, freiwillig |
+| ☐ | Projekt | [Abschlussprojekt: Webserver der «Velo Zürich AG»](../abschlussprojekt/auftrag.md) | L5–L7 | Partner |
 
 5.2 und 5.3 verwenden dieselbe Ressourcengruppe (Resource Group). Das Abschlussprojekt baut auf deinen Dateien aus 5.1 und 5.3 auf.
 

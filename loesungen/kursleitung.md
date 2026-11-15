@@ -134,14 +134,13 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L1, nach dem Quiz | Rückblick: «Was hast du im Kurs von Hand gemacht?» | 5' | Tag 5, Folien 1–2 | Ziele |
 | L1, nach dem Rückblick | Ziele, Ablauf, Abschlussprojekt kurz vorstellen | 3' | Tag 5, Folien 3–5 | Input 7 |
 | L1, nach dem Einstieg | Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init in Azure. Live-Demo Bicep bereitstellen | 20' | Input 7 | Auftrag 5.1 |
-| L5, Beginn | Abschlussprojekt: Auftrag, Bausteine, Bewertungsraster, Teams bilden | 10' | Tag 5, Folie 5 | Meilensteine 1–5 |
-| L8 | Kurzpräsentationen (4' pro Team plus 1' Wechsel), Aufräumkontrolle (5'), Exit-Ticket und Kursfeedback (5'). Bei mehr als 7 Teams das Kursfeedback nach dem Kurs | 45' | Tag 5, Folien 6–7 | – |
+| L5, Beginn | Abschlussprojekt: Auftrag, Bausteine, Selbstkontrolle, Teams bilden. Keine Bewertung mit Punkten, der Kurs ist freiwillig | 10' | Tag 5, Folie 5 | Meilensteine 1–5 |
+| L8 | Lösungen zeigen, freiwillig (4' pro Team plus 1' Wechsel, mit kurzem Feedback der Klasse: eine Sache, die gefallen hat, eine Frage), Aufräumkontrolle (5'), Exit-Ticket und Kursfeedback (5') | 45' | Tag 5, Folien 6–7 | – |
 
 **Vorbereitung**
 - Zu Beginn kontrollieren: Bei allen zeigt `az account show --output table` im Terminal von Visual Studio Code **Azure for Students** (Auftrag 4.8). Wer nicht angemeldet ist: `az login`. Wer die Installation nicht geschafft hat, arbeitet mit dem Partner oder ausnahmsweise in der Cloud Shell und speichert die Dateien sofort im Lernjournal.
-- Bewertungsraster für das Abschlussprojekt ausdrucken oder teilen.
-- Zeitplan für die Kurzpräsentationen (4' pro Team) festlegen.
-- Zeitplan: 5.1 in L2 (Tandem wie an Tag 4), 5.2 in L3, 5.3 in L4, Abschlussprojekt L5–L7, Präsentationen L8. 5.2 und 5.3 nutzen dieselbe Ressourcengruppe (Resource Group) `rg-tag5-<kuerzel>`, aufgeräumt wird am Ende von 5.3.
+- Vor L8 fragen, welche Teams ihre Lösung zeigen wollen, und die Reihenfolge festlegen (4' pro Team). Niemand muss zeigen.
+- Zeitplan: 5.1 in L2 (Tandem wie an Tag 4), 5.2 in L3, 5.3 in L4, Abschlussprojekt L5–L7, Lösungen zeigen in L8 (freiwillig). 5.2 und 5.3 nutzen dieselbe Ressourcengruppe (Resource Group) `rg-tag5-<kuerzel>`, aufgeräumt wird am Ende von 5.3.
 - Schul-IP wieder an die Wandtafel (für 5.3 und das Projekt).
 - ⭐ 5.4 Terraform ist nicht im Vertragsumfang: nur für Schnelle nach 5.3 oder nach dem Kurs, nicht während des Abschlussprojekts. Vorab testen: `winget install Hashicorp.Terraform`, Anmeldung von azurerm 4.x über die Azure CLI im Student-Abo. <!-- prüfen -->
 - Mit dem eigenen Konto vorab das Abschlussprojekt einmal komplett bereitstellen: Image-Referenz `Canonical/ubuntu-24_04-lts/server`, API-Versionen, `Standard_B1s` in der Kursregion. <!-- prüfen -->

@@ -47,7 +47,7 @@ theorie/             Theorie-Kapitel mit eigenen Grafiken (img/); keine Bilder v
 praesentationen/     PowerPoint: tag-<n>-*.pptx (Tagesablauf), input-<nn>-*.pptx (Theorie-Inputs); erzeugt mit tools/praesentationen.js
 auftraege/tag-<n>/   Aufträge für Lernende (hands-on)
 loesungen/tag-<n>/   Lösungen, getrennt von den Aufträgen
-abschlussprojekt/    Auftrag und Bewertungsraster
+abschlussprojekt/    Auftrag mit Selbstkontrolle (keine Punkte, Kurs ist freiwillig)
 assets/branding/     PAT-Cloud-Solutions-Branding
 mkdocs.yml           Website (GitHub Pages); neue Seiten unter nav eintragen, Build: tools/website/
 ```

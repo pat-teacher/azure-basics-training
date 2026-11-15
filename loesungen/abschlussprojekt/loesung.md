@@ -201,10 +201,10 @@ Erster what-if: `5 to create` (NSG, VNet, Public IP, NIC, VM). Zweiter what-if n
 | `ImageNotFound` | Image-Referenz falsch geschrieben | `Canonical` / `ubuntu-24_04-lts` / `server` |
 
 ## Hinweise für die Kursleitung
-- Zeitplan: L5 Meilenstein 1–2, L6 Meilenstein 2–3, L7 Meilenstein 4–5, L8 Präsentationen (4' pro Team plus 1' Wechsel, bei 8 Teams 40'). Bei mehr als 8 Teams das Kursfeedback als Aufgabe nach dem Kurs geben.
+- Zeitplan: L5 Meilenstein 1–2, L6 Meilenstein 2–3, L7 Meilenstein 4–5, L8 Lösungen zeigen (freiwillig, 4' pro Team plus 1' Wechsel). Es gibt keine Punkte und keine Noten, der Kurs ist freiwillig. Rückmeldung gibt die Kursleitung mündlich beim Coaching und beim Zeigen.
 - Teams, die nach L6 noch keine laufende VM haben: gemeinsam `what-if` lesen, notfalls den Baustein aus dem Auftrag nochmals vollständig kopieren lassen.
 - Es reicht, wenn **ein** Abonnement (Subscription) pro Team verwendet wird. Beide Personen legen die Dateien in ihr Lernjournal.
-- Kriterium D im Bewertungsraster streng prüfen: Kein privater Schlüssel (Private Key) im Lernjournal, auch nicht im Screenshot.
+- Beim Coaching darauf achten: Kein privater Schlüssel (Private Key) im Lernjournal, auch nicht im Screenshot (Selbstkontrolle M7).
 - Am Schluss Aufräumkontrolle für alle: `az group list --output table` zeigt höchstens `NetworkWatcherRG`.
 - Vorab mit dem eigenen Konto testen: Image-Referenz, API-Versionen, `B1s` in der Kursregion, Ausgabe von what-if beim zweiten Lauf. <!-- prüfen -->
 

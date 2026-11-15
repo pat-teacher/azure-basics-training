@@ -2,21 +2,22 @@
 
 # Abschlussprojekt: Webserver der «Velo Zürich AG»
 
-Zeit: L5–L7 (ca. 135 Min.) und 5 Min. Präsentation in L8 · Form: Partnerarbeit (Zweierteam)
+Zeit: L5–L7 (ca. 135 Min.), in L8 zeigen die Teams, die wollen, ihre Lösung · Form: Partnerarbeit (Zweierteam)
 
 ## Ziel
 - Ihr stellt eine vollständige Umgebung mit VNet, Subnetz (Subnet), NSG und VM mit **einem** Befehl aus Bicep bereit. (K3)
 - Die VM richtet sich beim ersten Start mit cloud-init selbst als Webserver ein. (K3)
-- Ihr dokumentiert eure Lösung und stellt sie in 5 Minuten vor. (K3)
+- Ihr dokumentiert eure Lösung so, dass ihr sie anderen zeigen könnt. (K3)
 
 ## Voraussetzungen
 - Aufträge 5.1 bis 5.3 erledigt. Ihr braucht `cloud-init.yaml` aus 5.1 und `network.bicep` aus 5.3.
 - Die öffentliche IP (Public IP) der Schule (Wandtafel)
-- Bewertungsraster: [bewertungsraster.md](bewertungsraster.md)
 - Lernjournal: Ordner `tag-5/abschlussprojekt` (bei beiden Personen)
 
 ## Ausgangslage
 Die Velo Zürich AG eröffnet ihren Webshop. Sie will den Webserver nicht von Hand aufsetzen, sondern so, dass jede Person im Team ihn jederzeit mit einem Befehl neu bauen kann, zum Beispiel für eine Testumgebung oder nach einem Fehler.
+
+Das Projekt wird nicht mit Punkten oder Noten bewertet. Ihr zeigt euch mit der Selbstkontrolle am Schluss selbst, was ihr geschafft habt. Wer will, zeigt die Lösung in L8 der Klasse.
 
 ![Architektur: main.bicep und cloud-init.yaml werden mit az deployment group create bereitgestellt. Im VNet vnet-projekt-<kuerzel> liegt snet-web mit der NSG nsg-web und der VM vm-web-<kuerzel> mit Public IP. cloud-init installiert nginx und die Startseite des Teams.](bilder/projekt-architektur.svg)
 
@@ -33,7 +34,7 @@ Die Velo Zürich AG eröffnet ihren Webshop. Sie will den Webserver nicht von Ha
 | M5 | cloud-init installiert nginx und schreibt eine Startseite mit dem Namen der Velo Zürich AG und euren Kürzeln. |
 | M6 | Ein `output` gibt die URL der Website aus. |
 | M7 | Kein privater Schlüssel (Private Key) und kein Passwort in den Dateien |
-| M8 | Dokumentation im Lernjournal (siehe «Abgabe») und Aufräumen nach der Präsentation |
+| M8 | Dokumentation im Lernjournal (siehe «Dokumentation») und Aufräumen am Schluss |
 
 **Kann** (für schnelle Teams, ⭐):
 
@@ -188,10 +189,10 @@ resource vm 'Microsoft.Compute/virtualMachines@2024-03-01' = {
 **Kontrolle:** Website mit euren Kürzeln, `status: done`, zweite Bereitstellung (Deployment) ohne Fehler.
 
 ### Meilenstein 4: Dokumentieren (ca. 30 Min.)
-Schreibt im Lernjournal `tag-5/abschlussprojekt/README.md` (siehe «Abgabe»). Zeichnet die Architektur als Bild, zum Beispiel mit [draw.io](https://app.diagrams.net/) oder von Hand mit einem Foto.
+Schreibt im Lernjournal `tag-5/abschlussprojekt/README.md` (siehe «Dokumentation»). Zeichnet die Architektur als Bild, zum Beispiel mit [draw.io](https://app.diagrams.net/) oder von Hand mit einem Foto.
 
-### Meilenstein 5: Präsentation vorbereiten (ca. 15 Min.)
-4 Minuten pro Team:
+### Meilenstein 5: Zeigen vorbereiten (freiwillig, ca. 15 Min.)
+In L8 können alle Teams, die wollen, ihre Lösung der Klasse zeigen. Ihr habt 4 Minuten:
 1. Architektur am Bild erklären (1 Min.)
 2. `main.bicep` und `cloud-init.yaml` kurz zeigen (1 Min.)
 3. Live: Website im Browser und `what-if` ohne Änderung (1 Min.). Der Befehl:
@@ -200,9 +201,24 @@ Schreibt im Lernjournal `tag-5/abschlussprojekt/README.md` (siehe «Abgabe»). Z
    ```
 4. Was war schwierig, was habt ihr gelernt? (1 Min.)
 
-Wer fertig ist, macht die Kann-Anforderungen.
+Die Zuschauenden geben kurz Feedback: eine Sache, die ihnen gefallen hat, und eine Frage.
 
-## Abgabe
+Wer nicht zeigen will oder schon fertig ist, macht die Kann-Anforderungen.
+
+## Selbstkontrolle
+Hakt im `README.md` ab, was ihr geschafft habt:
+- [ ] M1 Ein Befehl stellt alles bereit, `main.bicep` und `cloud-init.yaml` liegen im selben Ordner.
+- [ ] M2 VNet `10.10.0.0/16` und Subnetz (Subnet) `snet-web` `10.10.1.0/24`
+- [ ] M3 NSG am Subnetz (Subnet): Port 80 für alle, Port 22 nur von der Schul-IP
+- [ ] M4 VM mit Ubuntu 24.04, öffentlicher IP (Public IP) und Anmeldung nur mit SSH-Schlüssel
+- [ ] M5 Die Website zeigt die Velo Zürich AG und eure Kürzel, `cloud-init status` ist `done`.
+- [ ] M6 Der `output` zeigt die URL.
+- [ ] M7 Kein privater Schlüssel (Private Key) und kein Passwort in den Dateien und Screenshots
+- [ ] M8 Dokumentation vollständig, am Schluss aufgeräumt
+- [ ] Zweite Bereitstellung (Deployment) ohne Änderung (Idempotenz)
+- [ ] Kann-Anforderungen: ______
+
+## Dokumentation
 Im Lernjournal beider Personen, Ordner `tag-5/abschlussprojekt`:
 - `main.bicep` und `cloud-init.yaml`
 - `README.md` mit:
@@ -212,10 +228,11 @@ Im Lernjournal beider Personen, Ordner `tag-5/abschlussprojekt`:
   - Ausgabe von `what-if` beim zweiten Ausführen
   - Wer hat was gemacht? Was war schwierig? (3–5 Sätze)
   - erfüllte Kann-Anforderungen
-  - nach der Präsentation in L8 ergänzt: Nachweis des Aufräumens mit der Ausgabe von `az group list --output table`
+  - die Selbstkontrolle
+  - am Schluss ergänzt: Nachweis des Aufräumens mit der Ausgabe von `az group list --output table`
 
 ## Aufräumen
-Nach der Präsentation:
+Am Schluss, nach dem Zeigen in L8:
 ```powershell
 az group delete --name rg-projekt-<kuerzel> --yes --no-wait
 ```

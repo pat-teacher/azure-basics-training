@@ -58,7 +58,7 @@ kurs/                    organisation.md, tag-1.md … tag-5.md
 theorie/                 Kapitel 01–07 (zusammenfassend), img/ eigene Diagramme (aus tools/diagramme.py)
 auftraege/tag-<n>/       Aufträge für Lernende
 loesungen/tag-<n>/       Lösungen, gleiche Dateinamen wie Aufträge
-abschlussprojekt/        auftrag.md, bewertungsraster.md (Lösung unter loesungen/)
+abschlussprojekt/        auftrag.md mit Selbstkontrolle (Lösung unter loesungen/). Keine Bewertung mit Punkten oder Noten: Der Kurs ist freiwillig. Teams können ihre Lösung am Schluss zeigen.
 assets/branding/         Logo, Banner, Wolke
 ```
 - Dateinamen klein, Bindestriche, keine Umlaute (`ae`, `oe`, `ue`).

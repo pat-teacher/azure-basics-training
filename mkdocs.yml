@@ -131,9 +131,7 @@ nav:
           - 5.2 Erste Bicep-Datei: auftraege/tag-5/5.2-erste-bicep-datei.md
           - 5.3 Netzwerk als Bicep: auftraege/tag-5/5.3-netzwerk-als-bicep.md
           - 5.4 Terraform ⭐: auftraege/tag-5/5.4-terraform.md
-  - Abschlussprojekt:
-      - Auftrag: abschlussprojekt/auftrag.md
-      - Bewertungsraster: abschlussprojekt/bewertungsraster.md
+          - Abschlussprojekt: abschlussprojekt/auftrag.md
   - Theorie:
       - theorie/README.md
       - 1 Virtualisierung: theorie/01-virtualisierung.md
