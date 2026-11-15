@@ -41,6 +41,8 @@ az group delete --name <rg> --yes --no-wait
 ## Quellen
 ```
 
+**Illustration statt Textskizze:** Zeigt die Ausgangslage einen Aufbau (Netz, Ressourcen, Verbindungen, Zielbild), dann als eigene Grafik, nie als Text- oder ASCII-Skizze. Grafik in `tools/diagramme.py` ergänzen und mit `s.save("<name>.svg", "<Alt-Text>", "auftraege/tag-<n>/bilder")` direkt in den Bilderordner des Tages schreiben; einbinden mit `![Alt-Text](bilder/<name>.svg)`. Wie alle Diagramme: Fachbegriffe nur Englisch, vor dem Einbinden rendern und visuell prüfen.
+
 Jeder Auftrag endet mit **Erwartetes Ergebnis** (was ins Lernjournal gehört: Screenshot, Befehl, Antwort).
 
 ## Vorlage Lösung (`loesungen/tag-<n>/<n>.<m>-<kurzthema>.md`)

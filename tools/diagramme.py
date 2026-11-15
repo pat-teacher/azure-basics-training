@@ -40,14 +40,16 @@ class Svg:
         s = f' marker-start="url(#{mid})"' if both else ""
         self.parts.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="{sw}"{d}{s} marker-end="url(#{mid})"/>')
 
-    def save(self, name, aria):
+    def save(self, name, aria, ordner=None):
+        """ordner: Zielordner relativ zum Repo (z. B. auftraege/tag-4/bilder); sonst der Ordner aus dem Aufruf."""
         markers = "".join(
             f'<marker id="{i}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="{c}"/></marker>'
             for i, c in (("aD", DARK), ("aB", BLUE), ("aO", OK), ("aN", NO), ("aG", GREY)))
         svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.w} {self.h}" width="{self.w}" height="{self.h}" '
                f'font-family="{FONT}" role="img" aria-label="{esc(aria)}">\n<defs>{markers}</defs>\n'
                + "\n".join(self.parts) + "\n</svg>\n")
-        with open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
+        ziel = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ordner) if ordner else OUT
+        with open(os.path.join(ziel, name), "w", encoding="utf-8") as f:
             f.write(svg)
 
 
@@ -484,3 +486,33 @@ for k, (t, inhalt, ok, nachher) in enumerate(rows):
 s.text(500, 435, "Faustregel: Die VM ist ersetzbar. Daten gehören auf Speicher, der unabhängig von der VM existiert.", 14, DARK, "bold")
 s.text(500, 458, "✓ bleibt erhalten   ✗ ist weg", 12, GREY)
 s.save("persistenz.svg", "Beim Ersetzen der VM gehen OS Disk und Temporary Disk verloren, Data Disk und Blob Storage bleiben")
+
+# 18 Auftrag 4.3: Zielbild zwei VMs im VNet ---------------------------------
+s = Svg(1000, 600, "Auftrag 4.3: zwei VMs im VNet")
+s.label(60, 50, 220, 56, ["Dein Laptop", "PowerShell · ssh"], LIGHT2, BLUE)
+s.label(395, 140, 210, 46, ["Public IP", "z. B. 20.208.51.90"], WHITE, BLUE)
+s.box(20, 215, 960, 330, BG, GREY, dash=True)
+s.text(35, 238, "VNet vnet-tag4-<kuerzel> · Address Space 10.10.0.0/16", 13, DARK, "bold", "start")
+# Subnet snet-web mit NSG
+s.box(40, 255, 440, 270, LIGHT, DARK)
+s.text(55, 278, "Subnet snet-web · 10.10.1.0/24", 13, DARK, "bold", "start")
+s.box(60, 292, 400, 62, WHITE, BLUE, 2)
+s.text(75, 315, "NSG nsg-web", 13, BLUE, "bold", "start")
+s.text(75, 338, "1000  Allow  TCP 22 (SSH) von *", 12, OK, "bold", "start")
+s.label(150, 405, 220, 80, ["vm-web-<kuerzel>", "10.10.1.4", "mit Public IP"], DARK, DARK, WHITE)
+# Subnet snet-intern ohne NSG
+s.box(520, 255, 440, 270, LIGHT, DARK)
+s.text(535, 278, "Subnet snet-intern · 10.10.2.0/24", 13, DARK, "bold", "start")
+s.text(740, 330, "keine NSG", 12, GREY)
+s.label(630, 405, 220, 80, ["vm-intern-<kuerzel>", "10.10.2.4", "keine Public IP"], DARK, DARK, WHITE)
+# Verbindungen
+s.arrow(230, 106, 420, 140, OK)
+s.text(285, 136, "ssh ✓", 12, OK, "bold")
+s.arrow(500, 186, 300, 403, OK)
+s.arrow(372, 432, 628, 432, OK, both=True)
+s.label(415, 446, 170, 28, ["ping ✓ · ssh -J ✓"], WHITE, OK, OK, size=12)
+s.parts.append(f'<polyline points="280,78 910,78 910,380" fill="none" stroke="{NO}" stroke-width="2" stroke-dasharray="7 5"/>')
+s.arrow(910, 380, 852, 405, NO, dash=True)
+s.text(700, 68, "direkt vom Laptop auf 10.10.2.4 ✗", 12, NO, "bold")
+s.text(500, 570, "vm-intern erreichst du nur über vm-web (Jump Host). Die private IP 10.10.2.4 gibt es nur im VNet.", 13, DARK)
+s.save("tag4-zwei-vms-im-vnet.svg", "VNet mit Subnet snet-web (vm-web mit Public IP und NSG) und Subnet snet-intern (vm-intern ohne Public IP); Laptop erreicht vm-intern nur über vm-web", "auftraege/tag-4/bilder")
