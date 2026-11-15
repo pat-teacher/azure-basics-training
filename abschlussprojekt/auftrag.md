@@ -31,7 +31,7 @@ Das Projekt wird nicht mit Punkten oder Noten bewertet. Ihr zeigt euch mit der S
 | M2 | VNet `vnet-projekt-<kuerzel>` mit `10.10.0.0/16` und Subnetz (Subnet) `snet-web` mit `10.10.1.0/24` |
 | M3 | NSG `nsg-web` am Subnetz (Subnet): Port 80 für alle (`Internet`), Port 22 nur von der Schul-IP |
 | M4 | VM `vm-web-<kuerzel>`: Ubuntu 24.04, `Standard_B1s`, öffentliche IP (Public IP), Anmeldung nur mit SSH-Schlüssel |
-| M5 | cloud-init installiert nginx und schreibt eine Startseite mit dem Namen der Velo Zürich AG und euren Kürzeln. |
+| M5 | cloud-init installiert nginx und schreibt eine Startseite mit dem Firmennamen und euren Kürzeln. In `cloud-init.yaml` keine Umlaute: «Velo Zuerich AG». |
 | M6 | Ein `output` gibt die URL der Website aus. |
 | M7 | Kein privater Schlüssel (Private Key) und kein Passwort in den Dateien |
 | M8 | Dokumentation im Lernjournal (siehe «Dokumentation») und Aufräumen am Schluss |

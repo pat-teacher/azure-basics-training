@@ -888,7 +888,7 @@ const INPUTS = [
       { title: "cloud-init", slides: [
         { type: "divider", title: "cloud-init", sub: "Die VM beim ersten Start einrichten" },
         { type: "code", title: "cloud-init: Datei für den ersten Start", codeW: 6.8, codeSize: 15,
-          code: "#cloud-config\npackage_update: true\npackages:\n  - nginx\nwrite_files:\n  - path: /var/www/html/index.html\n    content: |\n      <meta charset=\"utf-8\">\n      <h1>Velo Zürich AG</h1>",
+          code: "#cloud-config\npackage_update: true\npackages:\n  - nginx\nwrite_files:\n  - path: /var/www/html/index.html\n    content: |\n      <meta charset=\"utf-8\">\n      <h1>Velo Zuerich AG</h1>",
           side: [
             { h: "#cloud-config", t: "muss die erste Zeile sein – sonst wird alles still ignoriert" },
             { h: "packages", t: "Pakete installieren" },

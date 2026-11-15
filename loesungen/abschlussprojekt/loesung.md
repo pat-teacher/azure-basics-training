@@ -159,7 +159,7 @@ write_files:
   - path: /var/www/html/index.html
     content: |
       <meta charset="utf-8">
-      <h1>Velo Zürich AG – Webshop</h1>
+      <h1>Velo Zuerich AG - Webshop</h1>
       <p>Team mm und ab, bereitgestellt mit Bicep und cloud-init</p>
 ```
 

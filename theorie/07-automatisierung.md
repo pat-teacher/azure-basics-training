@@ -81,7 +81,7 @@ write_files:
   - path: /var/www/html/index.html
     content: |
       <meta charset="utf-8">
-      <h1>Velo Zürich AG</h1>
+      <h1>Velo Zuerich AG</h1>
       <p>Bereitgestellt mit cloud-init</p>
 ```
 
@@ -101,6 +101,7 @@ write_files:
   sudo cat /var/log/cloud-init-output.log
   ```
 - Häufige Fehler: `#cloud-config` fehlt, Einrückung falsch (YAML braucht Leerzeichen, keine Tabs).
+- Keine Umlaute in cloud-init-Dateien: «Zuerich» statt «Zürich». Sonderzeichen können beim Übertragen an die VM kaputtgehen.
 
 ## Welches Werkzeug wofür?
 
