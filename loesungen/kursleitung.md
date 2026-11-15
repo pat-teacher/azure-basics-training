@@ -128,17 +128,27 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 ## Tag 5: Automatisierung mit Bicep und cloud-init
 
-| Wann | Input | Dauer | Folien |
-|------|-------|-------|--------|
-| L1, nach Rückblick | Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init in Azure. Live-Demo Bicep bereitstellen | 20' | Input 7 |
+| Wann | Input | Dauer | Folien | Danach |
+|------|-------|-------|--------|--------|
+| L1, Beginn | Rückblick-Quiz zu Tag 4 zu zweit, danach Exit-Ticket Tag 4 auflösen (Sicherheitsregel (Security Rule) 100 Deny, 200 Allow: Website nicht erreichbar). Folien dazu wie an Tag 3/4 ergänzen, sobald die Antworten vorliegen | 7' | – | Rückblick Kurs |
+| L1, nach dem Quiz | Rückblick: «Was hast du im Kurs von Hand gemacht?» | 5' | Tag 5, Folien 1–2 | Ziele |
+| L1, nach dem Rückblick | Ziele, Ablauf, Abschlussprojekt kurz vorstellen | 3' | Tag 5, Folien 3–5 | Input 7 |
+| L1, nach dem Einstieg | Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init in Azure. Live-Demo Bicep bereitstellen | 20' | Input 7 | Auftrag 5.1 |
+| L5, Beginn | Abschlussprojekt: Auftrag, Bausteine, Bewertungsraster, Teams bilden | 10' | Tag 5, Folie 5 | Meilensteine 1–5 |
+| L8 | Kurzpräsentationen (4' pro Team plus 1' Wechsel), Aufräumkontrolle (5'), Exit-Ticket und Kursfeedback (5'). Bei mehr als 7 Teams das Kursfeedback nach dem Kurs | 45' | Tag 5, Folien 6–7 | – |
 
 **Vorbereitung**
 - Zu Beginn kontrollieren: Bei allen zeigt `az account show --output table` im Terminal von Visual Studio Code **Azure for Students** (Auftrag 4.8). Wer nicht angemeldet ist: `az login`. Wer die Installation nicht geschafft hat, arbeitet mit dem Partner oder ausnahmsweise in der Cloud Shell und speichert die Dateien sofort im Lernjournal.
 - Bewertungsraster für das Abschlussprojekt ausdrucken oder teilen.
-- Zeitplan für die Kurzpräsentationen (5' pro Team) festlegen.
+- Zeitplan für die Kurzpräsentationen (4' pro Team) festlegen.
+- Zeitplan: 5.1 in L2 (Tandem wie an Tag 4), 5.2 in L3, 5.3 in L4, Abschlussprojekt L5–L7, Präsentationen L8. 5.2 und 5.3 nutzen dieselbe Ressourcengruppe (Resource Group) `rg-tag5-<kuerzel>`, aufgeräumt wird am Ende von 5.3.
+- Schul-IP wieder an die Wandtafel (für 5.3 und das Projekt).
+- ⭐ 5.4 Terraform ist nicht im Vertragsumfang: nur für Schnelle nach 5.3 oder nach dem Kurs, nicht während des Abschlussprojekts. Vorab testen: `winget install Hashicorp.Terraform`, Anmeldung von azurerm 4.x über die Azure CLI im Student-Abo. <!-- prüfen -->
+- Mit dem eigenen Konto vorab das Abschlussprojekt einmal komplett bereitstellen: Image-Referenz `Canonical/ubuntu-24_04-lts/server`, API-Versionen, `Standard_B1s` in der Kursregion. <!-- prüfen -->
 
 ## Lösungen
 - [Lösungen Tag 1](tag-1/README.md)
 - [Lösungen Tag 2](tag-2/README.md)
 - [Lösungen Tag 3](tag-3/README.md)
 - [Lösungen Tag 4](tag-4/README.md)
+- [Lösungen Tag 5](tag-5/README.md) · [Abschlussprojekt](abschlussprojekt/loesung.md)

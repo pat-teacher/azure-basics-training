@@ -370,8 +370,8 @@ const TAGE = [
         { type: "cards", title: "Abschlussprojekt: Webserver der «Velo Zürich AG»", cols: 3, items: [
           { icon: "FaFileCode", h: "Auftrag", t: "VNet, Subnetz (Subnet), NSG und VM mit cloud-init – alles in einer Bicep-Datei, mit einem Befehl bereitgestellt." },
           { icon: "FaClipboardList", h: "Abgabe", t: "Bicep- und cloud-init-Datei, kurze Dokumentation, Screenshot der Website." },
-          { icon: "FaChartLine", h: "Präsentation", t: "5 Minuten pro Team: Architektur, Live-Demo, was ihr gelernt habt." },
-        ], notes: "Bewertungsraster folgt unter abschlussprojekt/. Teams zu zweit." },
+          { icon: "FaChartLine", h: "Präsentation", t: "4 Minuten pro Team: Architektur, Live-Demo, was ihr gelernt habt." },
+        ], notes: "Auftrag und Bewertungsraster: abschlussprojekt/auftrag.md und bewertungsraster.md. Teams zu zweit." },
       ] },
       { title: "Abschluss", slides: [
         { type: "cards", title: "Zum Schluss", cols: 3, items: [

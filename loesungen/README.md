@@ -15,4 +15,4 @@ Input-Zeitpunkte und Vorbereitung pro Tag: [Hinweise für die Kursleitung](kursl
 | 2 | [tag-2/](tag-2/) |
 | 3 | [tag-3/](tag-3/) |
 | 4 | [tag-4/](tag-4/) |
-| 5 | folgt |
+| 5 | [tag-5/](tag-5/) · [Abschlussprojekt](abschlussprojekt/loesung.md) |

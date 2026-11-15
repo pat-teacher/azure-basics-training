@@ -125,6 +125,15 @@ nav:
           - 4.6 Network Watcher ⭐: auftraege/tag-4/4.6-network-watcher.md
           - 4.7 Challenge Lab bedingter Zugriff ⭐: auftraege/tag-4/4.7-challenge-lab-bedingter-zugriff.md
           - 4.8 Werkzeuge für Tag 5: auftraege/tag-4/4.8-werkzeuge-fuer-tag-5.md
+      - Tag 5:
+          - auftraege/tag-5/README.md
+          - 5.1 VM mit cloud-init: auftraege/tag-5/5.1-vm-mit-cloud-init.md
+          - 5.2 Erste Bicep-Datei: auftraege/tag-5/5.2-erste-bicep-datei.md
+          - 5.3 Netzwerk als Bicep: auftraege/tag-5/5.3-netzwerk-als-bicep.md
+          - 5.4 Terraform ⭐: auftraege/tag-5/5.4-terraform.md
+  - Abschlussprojekt:
+      - Auftrag: abschlussprojekt/auftrag.md
+      - Bewertungsraster: abschlussprojekt/bewertungsraster.md
   - Theorie:
       - theorie/README.md
       - 1 Virtualisierung: theorie/01-virtualisierung.md

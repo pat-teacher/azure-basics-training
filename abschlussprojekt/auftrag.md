@@ -1,0 +1,240 @@
+<sub>PAT Cloud Solutions · Einführung in Cloud Computing mit Microsoft Azure · Tag 5</sub>
+
+# Abschlussprojekt: Webserver der «Velo Zürich AG»
+
+Zeit: L5–L7 (ca. 135 Min.) und 5 Min. Präsentation in L8 · Form: Partnerarbeit (Zweierteam)
+
+## Ziel
+- Ihr stellt eine vollständige Umgebung mit VNet, Subnetz (Subnet), NSG und VM mit **einem** Befehl aus Bicep bereit. (K3)
+- Die VM richtet sich beim ersten Start mit cloud-init selbst als Webserver ein. (K3)
+- Ihr dokumentiert eure Lösung und stellt sie in 5 Minuten vor. (K3)
+
+## Voraussetzungen
+- Aufträge 5.1 bis 5.3 erledigt. Ihr braucht `cloud-init.yaml` aus 5.1 und `network.bicep` aus 5.3.
+- Die öffentliche IP (Public IP) der Schule (Wandtafel)
+- Bewertungsraster: [bewertungsraster.md](bewertungsraster.md)
+- Lernjournal: Ordner `tag-5/abschlussprojekt` (bei beiden Personen)
+
+## Ausgangslage
+Die Velo Zürich AG eröffnet ihren Webshop. Sie will den Webserver nicht von Hand aufsetzen, sondern so, dass jede Person im Team ihn jederzeit mit einem Befehl neu bauen kann, zum Beispiel für eine Testumgebung oder nach einem Fehler.
+
+![Architektur: main.bicep und cloud-init.yaml werden mit az deployment group create bereitgestellt. Im VNet vnet-projekt-<kuerzel> liegt snet-web mit der NSG nsg-web und der VM vm-web-<kuerzel> mit Public IP. cloud-init installiert nginx und die Startseite des Teams.](bilder/projekt-architektur.svg)
+
+## Anforderungen
+
+**Muss** (alle erfüllen):
+
+| Nr. | Anforderung |
+|-----|-------------|
+| M1 | Alle Ressourcen stehen in **einer** Datei `main.bicep` (dazu kommt `cloud-init.yaml`) und werden mit **einem** Befehl `az deployment group create` bereitgestellt. |
+| M2 | VNet `vnet-projekt-<kuerzel>` mit `10.10.0.0/16` und Subnetz (Subnet) `snet-web` mit `10.10.1.0/24` |
+| M3 | NSG `nsg-web` am Subnetz (Subnet): Port 80 für alle (`Internet`), Port 22 nur von der Schul-IP |
+| M4 | VM `vm-web-<kuerzel>`: Ubuntu 24.04, `Standard_B1s`, öffentliche IP (Public IP), Anmeldung nur mit SSH-Schlüssel |
+| M5 | cloud-init installiert nginx und schreibt eine Startseite mit dem Namen der Velo Zürich AG und euren Kürzeln. |
+| M6 | Ein `output` gibt die URL der Website aus. |
+| M7 | Kein privater Schlüssel (Private Key) und kein Passwort in den Dateien |
+| M8 | Dokumentation im Lernjournal (siehe «Abgabe») und Aufräumen nach der Präsentation |
+
+**Kann** (für schnelle Teams, ⭐):
+
+| Nr. | Anforderung |
+|-----|-------------|
+| K1 | Tags `kurs`, `tag`, `owner` auf allen Ressourcen |
+| K2 | Zweites Subnetz (Subnet) `snet-intern` mit einer zweiten VM **ohne** öffentliche IP (Public IP) und ohne Website. Ihr zeigt mit `ssh -J` über `vm-web`, dass sie erreichbar ist (Auftrag 4.3). |
+| K3 | Grösse der VM als `param` mit Standardwert `Standard_B1s` |
+| K4 | Die Startseite zeigt den Namen der VM. Tipp: `runcmd` mit `hostname`. |
+
+## Die Bausteine
+Ihr müsst nicht bei null beginnen. Drei Bausteine habt ihr schon, einer kommt neu dazu:
+
+| Baustein | Woher |
+|----------|-------|
+| NSG und VNet | `network.bicep` aus Auftrag 5.3. Namen anpassen, `snet-intern` und `snet-admin` dürfen weg. |
+| cloud-init | `cloud-init.yaml` aus Auftrag 5.1. Startseite anpassen. |
+| `param` und Bereitstellen | wie in Auftrag 5.2 und 5.3 |
+| Öffentliche IP (Public IP), Netzwerkschnittstelle (Network Interface) und VM | **neu**, siehe unten |
+
+Diesen Baustein hängt ihr unten an eure `main.bicep` an. Er braucht eine zusätzliche `param`-Zeile oben in der Datei:
+```bicep
+param adminPublicKey string
+```
+
+```bicep
+resource pip 'Microsoft.Network/publicIPAddresses@2023-09-01' = {
+  name: 'pip-web-${kuerzel}'
+  location: location
+  sku: {
+    name: 'Standard'
+  }
+  properties: {
+    publicIPAllocationMethod: 'Static'
+  }
+}
+
+resource nic 'Microsoft.Network/networkInterfaces@2023-09-01' = {
+  name: 'nic-web-${kuerzel}'
+  location: location
+  properties: {
+    ipConfigurations: [
+      {
+        name: 'ipconfig1'
+        properties: {
+          subnet: {
+            id: vnet.properties.subnets[0].id
+          }
+          privateIPAllocationMethod: 'Dynamic'
+          publicIPAddress: {
+            id: pip.id
+          }
+        }
+      }
+    ]
+  }
+}
+
+resource vm 'Microsoft.Compute/virtualMachines@2024-03-01' = {
+  name: 'vm-web-${kuerzel}'
+  location: location
+  properties: {
+    hardwareProfile: {
+      vmSize: 'Standard_B1s'
+    }
+    osProfile: {
+      computerName: 'vm-web-${kuerzel}'
+      adminUsername: 'azureuser'
+      customData: loadFileAsBase64('cloud-init.yaml')
+      linuxConfiguration: {
+        disablePasswordAuthentication: true
+        ssh: {
+          publicKeys: [
+            {
+              path: '/home/azureuser/.ssh/authorized_keys'
+              keyData: adminPublicKey
+            }
+          ]
+        }
+      }
+    }
+    storageProfile: {
+      imageReference: {
+        publisher: 'Canonical'
+        offer: 'ubuntu-24_04-lts'
+        sku: 'server'
+        version: 'latest'
+      }
+      osDisk: {
+        createOption: 'FromImage'
+        deleteOption: 'Delete'
+      }
+    }
+    networkProfile: {
+      networkInterfaces: [
+        {
+          id: nic.id
+        }
+      ]
+    }
+  }
+}
+```
+<!-- prüfen: Stand 15.11.2026 – Image-Referenz Canonical/ubuntu-24_04-lts/server und API-Versionen im Student-Abo -->
+
+| Stelle | Bedeutung |
+|--------|-----------|
+| `vnet.properties.subnets[0].id` | das erste Subnetz (Subnet) im VNet, also `snet-web` |
+| `loadFileAsBase64('cloud-init.yaml')` | liest eure cloud-init-Datei beim Bereitstellen ein. Sie muss im selben Ordner liegen wie `main.bicep`. |
+| `disablePasswordAuthentication: true` | Anmeldung nur mit SSH-Schlüssel |
+| `keyData: adminPublicKey` | euer öffentlicher Schlüssel (Public Key), beim Bereitstellen als `param` übergeben |
+
+## Vorgehen
+
+### Meilenstein 1: Projekt einrichten (ca. 15 Min.)
+1. Lege den Ordner `azure-tag5\projekt` an. Kopiert `network.bicep` aus 5.3 als `main.bicep` und `cloud-init.yaml` aus 5.1 in diesen Ordner.
+2. Passt die Namen an die Anforderungen M2 und M3 an. Entscheidet, wessen Abonnement (Subscription) ihr verwendet. Als `<kuerzel>` nehmt ihr das Kürzel dieser Person. Eine Person tippt, die andere liest mit und prüft. Nach jedem Meilenstein wechselt ihr.
+3. Erstellt die Ressourcengruppe (Resource Group):
+   ```powershell
+   az group create --name rg-projekt-<kuerzel> --location <region> --tags kurs=azure-basics tag=5 owner=<kuerzel>
+   ```
+
+4. Prüft die Datei mit `what-if`:
+   ```powershell
+   az deployment group what-if --resource-group rg-projekt-<kuerzel> --template-file main.bicep --parameters kuerzel=<kuerzel> schulIp=<schul-ip>
+   ```
+
+**Kontrolle:** `what-if` zeigt zwei Ressourcen mit `+`: NSG und VNet.
+
+### Meilenstein 2: VM und cloud-init dazu (ca. 40 Min.)
+1. Hängt den Baustein für öffentliche IP (Public IP), Netzwerkschnittstelle (Network Interface) und VM an. Ergänzt `param adminPublicKey string` oben.
+2. Ergänzt am Schluss einen `output` für die URL (M6):
+   ```bicep
+   output url string = 'http://${pip.properties.ipAddress}'
+   ```
+3. Passt die Startseite in `cloud-init.yaml` an (M5).
+4. Lest euren öffentlichen Schlüssel (Public Key) in eine Variable und stellt bereit:
+   ```powershell
+   $KEY = Get-Content $HOME\.ssh\id_ed25519.pub
+   az deployment group create --resource-group rg-projekt-<kuerzel> --template-file main.bicep --parameters kuerzel=<kuerzel> schulIp=<schul-ip> "adminPublicKey=$KEY" --query properties.outputs
+   ```
+   `$KEY = …` speichert den Schlüssel in einer PowerShell-Variablen. Die Anführungszeichen um `"adminPublicKey=$KEY"` sorgen dafür, dass der Schlüssel mit seinen Leerzeichen als **ein** Wert ankommt.
+
+**Kontrolle:** Die Ausgabe zeigt `url` mit `http://<öffentliche-ip>`.
+
+### Meilenstein 3: Testen (ca. 20 Min.)
+1. Öffnet die URL nach 2–3 Minuten im Browser.
+2. Meldet euch per SSH an und prüft `cloud-init status --long`.
+3. Führt den Befehl aus Meilenstein 2 nochmals aus: Nichts darf sich ändern (Idempotenz).
+4. Prüft mit dem Partner-Laptop: Lädt die Website auch dort?
+
+**Kontrolle:** Website mit euren Kürzeln, `status: done`, zweite Bereitstellung (Deployment) ohne Fehler.
+
+### Meilenstein 4: Dokumentieren (ca. 30 Min.)
+Schreibt im Lernjournal `tag-5/abschlussprojekt/README.md` (siehe «Abgabe»). Zeichnet die Architektur als Bild, zum Beispiel mit [draw.io](https://app.diagrams.net/) oder von Hand mit einem Foto.
+
+### Meilenstein 5: Präsentation vorbereiten (ca. 15 Min.)
+4 Minuten pro Team:
+1. Architektur am Bild erklären (1 Min.)
+2. `main.bicep` und `cloud-init.yaml` kurz zeigen (1 Min.)
+3. Live: Website im Browser und `what-if` ohne Änderung (1 Min.). Der Befehl:
+   ```powershell
+   az deployment group what-if --resource-group rg-projekt-<kuerzel> --template-file main.bicep --parameters kuerzel=<kuerzel> schulIp=<schul-ip> "adminPublicKey=$KEY"
+   ```
+4. Was war schwierig, was habt ihr gelernt? (1 Min.)
+
+Wer fertig ist, macht die Kann-Anforderungen.
+
+## Abgabe
+Im Lernjournal beider Personen, Ordner `tag-5/abschlussprojekt`:
+- `main.bicep` und `cloud-init.yaml`
+- `README.md` mit:
+  - Architekturbild
+  - dem Befehl für die Bereitstellung (Deployment), **ohne** euren Schlüssel (schreibt `"adminPublicKey=$KEY"`)
+  - Screenshot der Website und der Ausgabe von `cloud-init status --long`
+  - Ausgabe von `what-if` beim zweiten Ausführen
+  - Wer hat was gemacht? Was war schwierig? (3–5 Sätze)
+  - erfüllte Kann-Anforderungen
+  - nach der Präsentation in L8 ergänzt: Nachweis des Aufräumens mit der Ausgabe von `az group list --output table`
+
+## Aufräumen
+Nach der Präsentation:
+```powershell
+az group delete --name rg-projekt-<kuerzel> --yes --no-wait
+```
+Danach löscht ihr **alle** übrigen Ressourcengruppen (Resource Groups) aus dem Kurs. `NetworkWatcherRG` darf bleiben.
+
+**Kontrolle:** `az group list --output table` zeigt höchstens noch `NetworkWatcherRG`.
+
+## Wenn etwas nicht klappt
+
+| Problem | Lösung |
+|---------|--------|
+| `loadFileAsBase64` findet die Datei nicht | `cloud-init.yaml` liegt nicht im selben Ordner wie `main.bicep`, oder der Name ist anders geschrieben. |
+| `InvalidParameter` bei `keyData` | Schlüssel nicht vollständig. `$KEY` muss mit `ssh-ed25519 AAAA` beginnen: `echo $KEY` |
+| `SkuNotAvailable` | `Standard_B1s` in der Region nicht verfügbar. `Standard_B2ats_v2` verwenden, das gilt für M4 als erfüllt. |
+| `QuotaExceeded` | Es läuft noch eine andere VM: `az vm list --output table`, alte Ressourcengruppen (Resource Groups) löschen. |
+| Website lädt nicht | cloud-init noch nicht fertig (2–3 Minuten warten) oder Fehler in `cloud-init.yaml` (5.1, «Wenn etwas nicht klappt»). |
+| `ssh` hängt | Schul-IP falsch übergeben. Mit `az network nsg rule list … --output table` prüfen. |
+
+## Quellen
+- Microsoft Learn: [Schnellstart: Erstellen einer Ubuntu-Linux-VM mit Bicep](https://learn.microsoft.com/de-de/azure/virtual-machines/linux/quick-create-bicep)
+- Microsoft Learn: [Bicep-Dateifunktionen: loadFileAsBase64](https://learn.microsoft.com/de-de/azure/azure-resource-manager/bicep/bicep-functions-files)
+- Microsoft Learn: [Microsoft.Compute virtualMachines (Bicep)](https://learn.microsoft.com/de-de/azure/templates/microsoft.compute/virtualmachines)

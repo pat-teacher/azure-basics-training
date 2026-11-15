@@ -5,7 +5,7 @@
 Gehört zu [Tag 5](../kurs/tag-5.md)
 
 ## Lernziele
-- Du kannst erklären, was Infrastruktur als Code (IaC) ist und welche Vorteile es hat. (K2)
+- Du kannst erklären, was Infrastruktur als Code (Infrastructure as Code, IaC) ist und welche Vorteile es hat. (K2)
 - Du kannst imperatives und deklaratives Vorgehen unterscheiden. (K2)
 - Du kannst eine einfache Bicep-Datei lesen und bereitstellen. (K3)
 - Du kannst eine VM mit cloud-init beim ersten Start automatisch einrichten. (K3)
@@ -63,9 +63,8 @@ output blobUrl string = st.properties.primaryEndpoints.blob
 | `output` | Wert, der nach der Bereitstellung (Deployment) ausgegeben wird |
 
 Bereitstellen:
-```bash
-az deployment group create --resource-group rg-tag5-<kuerzel> \
-  --template-file main.bicep --parameters kuerzel=<kuerzel>
+```powershell
+az deployment group create --resource-group rg-tag5-<kuerzel> --template-file main.bicep --parameters kuerzel=<kuerzel>
 ```
 
 Tipp: Mit `az deployment group what-if …` (gleiche Parameter wie `create`) siehst du vorher, was sich ändern würde.

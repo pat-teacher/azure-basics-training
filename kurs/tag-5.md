@@ -17,26 +17,30 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 
 | Lektion | Was passiert | Was du tust |
 |---------|--------------|-------------|
-| L1 | Rückblick auf den Kurs | sammeln: Was hast du von Hand gemacht? |
+| L1 | Rückblick Tag 4 und auf den Kurs | Quiz mit deinem Partner; sammeln: Was hast du von Hand gemacht? |
 | L1 | **Input:** Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init | zuhören, mitschauen |
 | L2 | Auftrag 5.1 | mit Partner: VM mit cloud-init in Azure |
 | L3 | Auftrag 5.2 | allein: erste Bicep-Datei |
-| L4 | Auftrag 5.3 | allein: Netzwerk von Tag 4 als Bicep |
+| L4 | Auftrag 5.3 | allein: Netzwerk von Tag 4 als Bicep (⭐ 5.4 Terraform: für Schnelle oder nach dem Kurs) |
 | L5–L7 | Abschlussprojekt | mit Partner: Webserver der «Velo Zürich AG» per Bicep |
-| L8 | Präsentationen und Abschluss | 5 Minuten präsentieren, Feedback geben, aufräumen |
+| L8 | Präsentationen und Abschluss | 4 Minuten präsentieren, Feedback geben, aufräumen |
 
 ## Deine Aufträge
 
-| ✓ | Nr. | Auftrag | Form |
-|---|-----|---------|------|
-| ☐ | 5.1 | Ubuntu-VM mit cloud-init in Azure *(folgt)* | Partner |
-| ☐ | 5.2 | Erste Bicep-Datei: Speicherkonto (Storage Account) *(folgt)* | allein |
-| ☐ | 5.3 | Bicep für VNet, Subnetz (Subnet) und NSG *(folgt)* | allein |
-| ☐ | Projekt | Webserver der «Velo Zürich AG» *(folgt)* | Partner |
+| ✓ | Nr. | Auftrag | Zeit | Form |
+|---|-----|---------|------|------|
+| ☐ | 5.1 | [Ubuntu-VM mit cloud-init in Azure](../auftraege/tag-5/5.1-vm-mit-cloud-init.md) | 45 Min. | Partner |
+| ☐ | 5.2 | [Erste Bicep-Datei: Speicherkonto (Storage Account)](../auftraege/tag-5/5.2-erste-bicep-datei.md) | 45 Min. | allein |
+| ☐ | 5.3 | [Das Netzwerk von Tag 4 als Bicep](../auftraege/tag-5/5.3-netzwerk-als-bicep.md) | 45 Min. | allein |
+| ☐ | Projekt | [Abschlussprojekt: Webserver der «Velo Zürich AG»](../abschlussprojekt/auftrag.md) · [Bewertungsraster](../abschlussprojekt/bewertungsraster.md) | L5–L7 | Partner |
+| ☐ | ⭐ 5.4 | [Herausforderung: dieselbe Idee mit Terraform](../auftraege/tag-5/5.4-terraform.md) | ca. 60 Min. | allein, freiwillig |
+
+5.2 und 5.3 verwenden dieselbe Ressourcengruppe (Resource Group). Das Abschlussprojekt baut auf deinen Dateien aus 5.1 und 5.3 auf.
 
 ## Bevor du gehst
-- [ ] **Alle** Ressourcengruppen (Resource Groups) des Kurses gelöscht: `az group list -o table` ist leer.
-- [ ] Lernjournal: Einträge zu allen Aufträgen von heute; in `tag-5/README.md` drei Sätze: Was nimmst du aus diesem Kurs mit?
+- [ ] **Alle** Ressourcengruppen (Resource Groups) des Kurses gelöscht: `az group list --output table` zeigt höchstens noch `NetworkWatcherRG`.
+- [ ] Lernjournal: Einträge zu allen Aufträgen von heute, Erkenntnisse in `tag-5/README.md`.
+- [ ] [Exit-Ticket](organisation.md#exit-ticket) ausgefüllt: «Was nimmst du aus diesem Kurs mit? Schreibe drei Sätze.»
 - [ ] Kursfeedback ausgefüllt.
 
 ## Das brauchst du
