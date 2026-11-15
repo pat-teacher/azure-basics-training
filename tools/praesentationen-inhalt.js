@@ -801,6 +801,10 @@ const INPUTS = [
           right: { icon: "FaGlobeEurope", h: "Öffentliche IP (Public IP)", points: ["eigene Ressource, statisch (Standard-SKU)", "kostet auch bei gestoppter VM", "gesperrt, bis eine Sicherheitsregel (Security Rule) erlaubt"] },
           note: "Achtung: Eine VM ohne öffentliche IP (Public IP) kommt in neuen Subnetzen (Subnets) evtl. nicht ins Internet (z. B. apt).",
           notes: "Seit 2026 sind neue Subnetze (Subnets) standardmässig privat (kein Default Outbound Access). Vor dem Kurs im Student-Abo testen." },
+        ende("Jetzt du", "Aufträge 4.1 und 4.2", [
+          { icon: "FaSitemap", h: "4.1 · Subnetting-Training", t: "Zu zweit, 45 Min. · Auf Papier rechnen, noch kein Azure" },
+          { icon: "FaBuilding", h: "4.2 · VNet mit zwei Subnetzen (Subnets)", t: "Einzel, 30 Min. · vnet-tag4-<kuerzel> mit der CLI. Noch nicht aufräumen!" },
+        ]),
       ] },
       { title: "NSG", slides: [
         { type: "divider", title: "Netzwerksicherheitsgruppen", sub: "Network Security Groups (NSG) · Input 2 · Tag 4" },
@@ -836,7 +840,11 @@ const INPUTS = [
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Was ist Azure Virtual Network? · Netzwerksicherheitsgruppen (Network Security Groups)" },
           { icon: "FaBook", h: "TBZ M346", t: "Netzwerk und Sicherheit (Struktur und Texte, für Azure angepasst)" },
         ]),
-        ende("Jetzt du", "Auftrag 4.1: Subnetting · Auftrag 4.3: Zwei VMs im VNet"),
+        ende("Jetzt du", "Aufträge 4.3, 4.4 und 4.5", [
+          { icon: "FaServer", h: "4.3 · Zwei VMs im VNet", t: "Zu zweit, 60 Min. (L4–L5) · NSG am Subnetz (Subnet), Ping und SSH zwischen den VMs" },
+          { icon: "FaShieldAlt", h: "4.4 und 4.5 · Regeln und Fehlersuche", t: "Zu zweit, je 45 Min. · L6 Sicherheitsregeln (Security Rules), L7 Fehlersuche mit Fehlerkarten" },
+          { icon: "FaStar", h: "Fertig?", t: "⭐ 4.6 Network Watcher oder ⭐ 4.7 Challenge Lab. Danach aufräumen" },
+        ]),
       ] },
     ],
   },

@@ -108,8 +108,10 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L1, Beginn | Rückblick-Quiz zu zweit | 5' | Tag 4, Folien 1–2 | Exit-Ticket |
 | L1, nach dem Quiz | Exit-Ticket Tag 3: Die Lernenden finden zuerst selbst heraus, was an den drei Antworten A–C nicht stimmt. Danach kommt die Auflösung mit der richtigen Aussage. Bezug zu heute: VNet, Subnetz (Subnet), öffentliche IP (Public IP) und NSG | 7' | Tag 4, Folien 3–4 | Ziele |
 | L1, nach dem Exit-Ticket | Ziele, Ablauf und Aufträge des Tages | 3' | Tag 4, Folien 5–7 | Input 6 |
-| L1, nach dem Einstieg | VNet und Subnetze (Subnets), CIDR, IP-Adressen | 20' | Input 6, Teil «VNet» | Auftrag 4.1 |
-| L4, Beginn | Netzwerksicherheitsgruppen (NSG). Live-Demo NSG und Sicherheitsregel (Security Rule) | 15' | Input 6, Teil «NSG» | Auftrag 4.3 |
+| L1, nach dem Einstieg | VNet und Subnetze (Subnets), CIDR mit Netzadresse (Network Address) binär, IP-Adressen | 20' | Input 6, Folien 1–8 (Teil «VNet» bis «Jetzt du») | Auftrag 4.1 (L2), danach 4.2 (L3) |
+| L4, Beginn | Netzwerksicherheitsgruppen (NSG). Live-Demo NSG und Sicherheitsregel (Security Rule) | 15' | Input 6, Folien 9–18 (Teil «NSG» bis «Jetzt du») | Auftrag 4.3 (L4–L5) |
+| L6, Beginn | Kurz: Schul-IP an der Wandtafel zeigen, Vorhersagen in 4.4 erklären (Partner sagt voraus, dann testen) | 3' | – | Auftrag 4.4 |
+| L7, Beginn | Spielregeln für 4.5: Aufgaben «Störung» und «Support», Fehlerkarten nicht lesen, Station – Befund – Ursache laut sagen. Wer 4.5 vor Ende L7 fertig hat: ⭐ 4.6 Network Watcher oder ⭐ 4.7 Challenge Lab | 5' | Input 6, Folie «Der Weg einer Anfrage» | Auftrag 4.5, ⭐ 4.6, ⭐ 4.7 |
 | L8, Beginn | Kurz im Plenum zu 4.5: Welche Station der Checkliste hat am meisten geholfen? Zeitüberschreitung oder «Verbindung abgelehnt»? | 5' | Input 6, Folie «Der Weg einer Anfrage» | Netzplan (4.5, Schritt 4), aufräumen, Auftrag 4.8 |
 | L8, Schluss | Aufräumkontrolle (`az group list --output table` ohne `rg-tag4-…`), Exit-Ticket, Ausblick Tag 5 | 10' | Tag 4, Folien 8–9 | – |
 
