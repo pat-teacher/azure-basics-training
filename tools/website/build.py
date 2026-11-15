@@ -7,7 +7,7 @@ import shutil
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 OUT = ROOT / "_website"
-ORDNER = ["kurs", "theorie", "auftraege", "loesungen", "praesentationen", "assets"]
+ORDNER = ["kurs", "theorie", "auftraege", "abschlussprojekt", "loesungen", "praesentationen", "assets"]
 
 if OUT.exists():
     shutil.rmtree(OUT)
