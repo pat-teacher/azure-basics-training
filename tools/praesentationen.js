@@ -121,6 +121,14 @@ const builders = {
     const sl = pres.addSlide({ masterName: "ENDE", sectionTitle: d.section });
     sl.addText(s.title, { placeholder: "title" });
     if (s.sub) sl.addText(s.sub, { placeholder: "body" });
+    if (s.spruch) {
+      // Abschluss-Spruch in heller Akzentfläche: [Zeile 1 (blau, fett), Zeile 2]
+      sl.addText([
+        { text: s.spruch[0], options: { fontSize: 30, bold: true, color: BLUE, breakLine: true } },
+        { text: s.spruch[1], options: { fontSize: 22, color: DARK } },
+      ], { x: M, y: 4.17, w: 7.78, h: 1.56, shape: "roundRect", rectRadius: 0.19, fill: { color: LIGHT }, line: { color: LIGHT },
+        valign: "middle", margin: [14, 24, 14, 24], fontFace: "Calibri", objectName: "spruch" });
+    }
     if (s.items) {
       const cells = grid(s.items.length, s.items.length, 3.8, 6.4, 0.3, 2.3);
       s.items.forEach((it, i) => {
