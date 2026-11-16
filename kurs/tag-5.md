@@ -21,7 +21,7 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 | L1 | **Input:** Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init | zuhören, mitschauen |
 | L2 | Auftrag 5.1 | mit Partner: VM mit cloud-init in Azure |
 | L3 | Auftrag 5.2 | allein: erste Bicep-Datei |
-| L4 | Auftrag 5.3 | allein: Netzwerk von Tag 4 als Bicep (⭐ 5.4 Terraform: für Schnelle oder nach dem Kurs) |
+| L4 | Auftrag 5.3 | allein: Netzwerk von Tag 4 als Bicep (⭐ 5.4 OpenTofu: für Schnelle oder nach dem Kurs) |
 | L5–L7 | Abschlussprojekt | mit Partner: Webserver der «Velo Zürich AG» per Bicep |
 | L8 | Lösungen zeigen und Abschluss | wer will: Lösung in 4 Minuten zeigen; Feedback geben, aufräumen |
 
@@ -32,7 +32,7 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 | ☐ | 5.1 | [Ubuntu-VM mit cloud-init in Azure](../auftraege/tag-5/5.1-vm-mit-cloud-init.md) | 45 Min. | Partner |
 | ☐ | 5.2 | [Erste Bicep-Datei: Speicherkonto (Storage Account)](../auftraege/tag-5/5.2-erste-bicep-datei.md) | 45 Min. | allein |
 | ☐ | 5.3 | [Das Netzwerk von Tag 4 als Bicep](../auftraege/tag-5/5.3-netzwerk-als-bicep.md) | 45 Min. | allein |
-| ☐ | ⭐ 5.4 | [Herausforderung: dieselbe Idee mit Terraform](../auftraege/tag-5/5.4-terraform.md) | ca. 60 Min. | allein, freiwillig |
+| ☐ | ⭐ 5.4 | [Herausforderung: dieselbe Idee mit OpenTofu (Terraform)](../auftraege/tag-5/5.4-opentofu.md) | ca. 60 Min. | allein, freiwillig |
 | ☐ | Projekt | [Abschlussprojekt: Webserver der «Velo Zürich AG»](../abschlussprojekt/auftrag.md) | L5–L7 | Partner |
 
 5.2 und 5.3 verwenden dieselbe Ressourcengruppe (Resource Group). Das Abschlussprojekt baut auf deinen Dateien aus 5.1 und 5.3 auf.

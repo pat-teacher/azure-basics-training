@@ -144,7 +144,8 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 - Vor L8 fragen, welche Teams ihre Lösung zeigen wollen, und die Reihenfolge festlegen (4' pro Team). Niemand muss zeigen.
 - Zeitplan: 5.1 in L2 (Tandem wie an Tag 4), 5.2 in L3, 5.3 in L4, Abschlussprojekt L5–L7, Lösungen zeigen in L8 (freiwillig). 5.2 und 5.3 nutzen dieselbe Ressourcengruppe (Resource Group) `rg-tag5-<kuerzel>`, aufgeräumt wird am Ende von 5.3.
 - Schul-IP wieder an die Wandtafel (für 5.3 und das Projekt).
-- ⭐ 5.4 Terraform ist nicht im Vertragsumfang: nur für Schnelle nach 5.3 oder nach dem Kurs, nicht während des Abschlussprojekts. Vorab testen: `winget install Hashicorp.Terraform`, Anmeldung von azurerm 4.x über die Azure CLI im Student-Abo. <!-- prüfen -->
+- ⭐ 5.4 OpenTofu (Open-Source-Abspaltung von Terraform, keine Lizenzfragen) ist nicht im Vertragsumfang: nur für Schnelle nach 5.3 oder nach dem Kurs, nicht während des Abschlussprojekts. Vorab testen: `winget install --exact --id OpenTofu.Tofu`, Anmeldung von azurerm 4.x über die Azure CLI im Student-Abo. <!-- prüfen -->
+- Bei Interesse im Plenum: Input 7, Anhang ⭐ «Ausblick: Terraform und OpenTofu» (nach der Folie «Jetzt du»). Nur zeigen, wenn Fragen kommen oder Zeit bleibt.
 - Mit dem eigenen Konto vorab das Abschlussprojekt einmal komplett bereitstellen: Image-Referenz `Canonical/ubuntu-24_04-lts/server`, API-Versionen, `Standard_B1s` in der Kursregion. <!-- prüfen -->
 
 ## Lösungen

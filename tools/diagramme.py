@@ -573,17 +573,17 @@ s.arrow(690, 448, 690, 418, BLUE)
 s.text(500, 592, "Ein Befehl erstellt alles. Beim ersten Start richtet cloud-init den Webserver ein.", 13, DARK)
 s.save("projekt-architektur.svg", "Architektur des Abschlussprojekts: main.bicep und cloud-init.yaml werden bereitgestellt; VNet mit snet-web, NSG und VM mit Public IP; cloud-init installiert nginx", "abschlussprojekt/bilder")
 
-# 21 Auftrag 5.4: Terraform-Ablauf ------------------------------------------
-s = Svg(1000, 470, "Auftrag 5.4: der Ablauf mit Terraform")
-steps = [("main.tf", "Zielzustand in HCL"), ("terraform init", "lädt Provider azurerm"), ("terraform plan", "zeigt + ~ −, ändert nichts"),
-         ("terraform apply", "führt den Plan aus"), ("terraform destroy", "löscht alles im State")]
+# 21 Auftrag 5.4: OpenTofu-Ablauf ------------------------------------------
+s = Svg(1000, 470, "Auftrag 5.4: der Ablauf mit OpenTofu")
+steps = [("main.tf", "Zielzustand in HCL"), ("tofu init", "lädt Provider azurerm"), ("tofu plan", "zeigt + ~ −, ändert nichts"),
+         ("tofu apply", "führt den Plan aus"), ("tofu destroy", "löscht alles im State")]
 for i, (h, t) in enumerate(steps):
     x = 25 + i * 195
     s.label(x, 70, 170, 72, [h, t], LIGHT2 if i == 0 else WHITE, NO if i == 4 else BLUE, size=14)
     if i < 4:
         s.arrow(x + 172, 106, x + 193, 106, BLUE)
-s.label(215, 255, 260, 90, ["terraform.tfstate", "State: was Terraform", "erstellt hat"], WHITE, GREY, dash=True)
-s.label(560, 255, 280, 90, ["Azure", "rg-tag5-tf-<kuerzel>", "Storage Account"], DARK, DARK, WHITE)
+s.label(215, 255, 260, 90, ["terraform.tfstate", "State: was OpenTofu", "erstellt hat"], WHITE, GREY, dash=True)
+s.label(560, 255, 280, 90, ["Azure", "rg-tag5-tofu-<kuerzel>", "Storage Account"], DARK, DARK, WHITE)
 s.arrow(500, 145, 380, 253, GREY, dash=True)
 s.text(475, 205, "vergleicht", 12, GREY, "bold", "start")
 s.arrow(695, 145, 695, 253, OK)
@@ -592,5 +592,5 @@ s.arrow(890, 145, 830, 253, NO, dash=True)
 s.text(880, 225, "löscht", 12, NO, "bold", "start")
 s.arrow(477, 300, 558, 300, GREY, both=True, dash=True)
 s.text(500, 400, "Bicep braucht keinen State: Azure selbst ist der Zustand.", 13, DARK)
-s.text(500, 425, "Terraform merkt sich den Zustand in terraform.tfstate. Diese Datei gehört nie ins Git.", 13, DARK)
-s.save("tag5-terraform-ablauf.svg", "Terraform-Ablauf: main.tf, init, plan, apply, destroy; plan vergleicht mit terraform.tfstate, apply ändert Azure, destroy löscht", "auftraege/tag-5/bilder")
+s.text(500, 425, "OpenTofu merkt sich den Zustand in terraform.tfstate. Diese Datei gehört nie ins Git.", 13, DARK)
+s.save("tag5-opentofu-ablauf.svg", "OpenTofu-Ablauf: main.tf, init, plan, apply, destroy; plan vergleicht mit terraform.tfstate, apply ändert Azure, destroy löscht", "auftraege/tag-5/bilder")

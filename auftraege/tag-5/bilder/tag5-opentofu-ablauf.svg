@@ -1,34 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="Terraform-Ablauf: main.tf, init, plan, apply, destroy; plan vergleicht mit terraform.tfstate, apply ändert Azure, destroy löscht">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="'Segoe UI', Arial, Helvetica, sans-serif" role="img" aria-label="OpenTofu-Ablauf: main.tf, init, plan, apply, destroy; plan vergleicht mit terraform.tfstate, apply ändert Azure, destroy löscht">
 <defs><marker id="aD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#27303A"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#006FAD"/></marker><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2E7D32"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B3261E"/></marker><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6F6F6F"/></marker></defs>
 <rect width="1000" height="470" fill="#FFFFFF"/>
 <rect x="0" y="465" width="1000" height="5" fill="#006FAD"/>
-<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Auftrag 5.4: der Ablauf mit Terraform</text>
+<text x="20" y="30" font-size="18" fill="#27303A" font-weight="bold" text-anchor="start">Auftrag 5.4: der Ablauf mit OpenTofu</text>
 <rect x="25" y="70" width="170" height="72" rx="8" fill="#D5D8F4" stroke="#006FAD" stroke-width="1.5"/>
 <text x="110.0" y="101.16666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">main.tf</text>
 <text x="110.0" y="120.16666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">Zielzustand in HCL</text>
 <line x1="197" y1="106" x2="218" y2="106" stroke="#006FAD" stroke-width="2" marker-end="url(#aB)"/>
 <rect x="220" y="70" width="170" height="72" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="1.5"/>
-<text x="305.0" y="101.16666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">terraform init</text>
+<text x="305.0" y="101.16666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">tofu init</text>
 <text x="305.0" y="120.16666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">lädt Provider azurerm</text>
 <line x1="392" y1="106" x2="413" y2="106" stroke="#006FAD" stroke-width="2" marker-end="url(#aB)"/>
 <rect x="415" y="70" width="170" height="72" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="1.5"/>
-<text x="500.0" y="101.16666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">terraform plan</text>
+<text x="500.0" y="101.16666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">tofu plan</text>
 <text x="500.0" y="120.16666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">zeigt + ~ −, ändert nichts</text>
 <line x1="587" y1="106" x2="608" y2="106" stroke="#006FAD" stroke-width="2" marker-end="url(#aB)"/>
 <rect x="610" y="70" width="170" height="72" rx="8" fill="#FFFFFF" stroke="#006FAD" stroke-width="1.5"/>
-<text x="695.0" y="101.16666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">terraform apply</text>
+<text x="695.0" y="101.16666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">tofu apply</text>
 <text x="695.0" y="120.16666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">führt den Plan aus</text>
 <line x1="782" y1="106" x2="803" y2="106" stroke="#006FAD" stroke-width="2" marker-end="url(#aB)"/>
 <rect x="805" y="70" width="170" height="72" rx="8" fill="#FFFFFF" stroke="#B3261E" stroke-width="1.5"/>
-<text x="890.0" y="101.16666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">terraform destroy</text>
+<text x="890.0" y="101.16666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">tofu destroy</text>
 <text x="890.0" y="120.16666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">löscht alles im State</text>
 <rect x="215" y="255" width="260" height="90" rx="8" fill="#FFFFFF" stroke="#6F6F6F" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="345.0" y="285.6666666666667" font-size="14" fill="#27303A" font-weight="bold" text-anchor="middle">terraform.tfstate</text>
-<text x="345.0" y="304.6666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">State: was Terraform</text>
+<text x="345.0" y="304.6666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">State: was OpenTofu</text>
 <text x="345.0" y="323.6666666666667" font-size="12" fill="#27303A" font-weight="normal" text-anchor="middle">erstellt hat</text>
 <rect x="560" y="255" width="280" height="90" rx="8" fill="#27303A" stroke="#27303A" stroke-width="1.5"/>
 <text x="700.0" y="285.6666666666667" font-size="14" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Azure</text>
-<text x="700.0" y="304.6666666666667" font-size="12" fill="#FFFFFF" font-weight="normal" text-anchor="middle">rg-tag5-tf-&lt;kuerzel&gt;</text>
+<text x="700.0" y="304.6666666666667" font-size="12" fill="#FFFFFF" font-weight="normal" text-anchor="middle">rg-tag5-tofu-&lt;kuerzel&gt;</text>
 <text x="700.0" y="323.6666666666667" font-size="12" fill="#FFFFFF" font-weight="normal" text-anchor="middle">Storage Account</text>
 <line x1="500" y1="145" x2="380" y2="253" stroke="#6F6F6F" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#aG)"/>
 <text x="475" y="205" font-size="12" fill="#6F6F6F" font-weight="bold" text-anchor="start">vergleicht</text>
@@ -38,5 +38,5 @@
 <text x="880" y="225" font-size="12" fill="#B3261E" font-weight="bold" text-anchor="start">löscht</text>
 <line x1="477" y1="300" x2="558" y2="300" stroke="#6F6F6F" stroke-width="2" stroke-dasharray="7 5" marker-start="url(#aG)" marker-end="url(#aG)"/>
 <text x="500" y="400" font-size="13" fill="#27303A" font-weight="normal" text-anchor="middle">Bicep braucht keinen State: Azure selbst ist der Zustand.</text>
-<text x="500" y="425" font-size="13" fill="#27303A" font-weight="normal" text-anchor="middle">Terraform merkt sich den Zustand in terraform.tfstate. Diese Datei gehört nie ins Git.</text>
+<text x="500" y="425" font-size="13" fill="#27303A" font-weight="normal" text-anchor="middle">OpenTofu merkt sich den Zustand in terraform.tfstate. Diese Datei gehört nie ins Git.</text>
 </svg>

@@ -130,7 +130,7 @@ nav:
           - 5.1 VM mit cloud-init: auftraege/tag-5/5.1-vm-mit-cloud-init.md
           - 5.2 Erste Bicep-Datei: auftraege/tag-5/5.2-erste-bicep-datei.md
           - 5.3 Netzwerk als Bicep: auftraege/tag-5/5.3-netzwerk-als-bicep.md
-          - 5.4 Terraform ⭐: auftraege/tag-5/5.4-terraform.md
+          - 5.4 OpenTofu ⭐: auftraege/tag-5/5.4-opentofu.md
           - Abschlussprojekt: abschlussprojekt/auftrag.md
   - Theorie:
       - theorie/README.md
