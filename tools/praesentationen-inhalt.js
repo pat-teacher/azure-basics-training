@@ -345,6 +345,16 @@ const TAGE = [
     sections: [
       { title: "Start", slides: [
         { type: "title", title: "Tag 5: Automatisierung mit Bicep und cloud-init", sub: "Einführung in Cloud Computing mit Microsoft Azure" },
+        { type: "cards", title: "Exit-Ticket Tag 4: Was stimmt hier nicht?", lead: "Frage: Sicherheitsregel (Security Rule) 100 sagt Deny, Sicherheitsregel (Security Rule) 200 sagt Allow für Port 80. Ist die Website erreichbar?", cols: 3, items: [
+          { icon: "FaQuestionCircle", h: "Antwort A", t: "«Nein, die Website ist nicht erreichbar, sofern die Firewall-Regeln von oben nach unten ausgewertet werden.»" },
+          { icon: "FaQuestionCircle", h: "Antwort B", t: "«Nein, Die regeln werden von oben anach unten geprüft und die deny regel ist tiefer als die allow regel + -»" },
+          { icon: "FaQuestionCircle", h: "Antwort C", t: "«Nein, die Website ist nicht erreichbar. Azure prüft die Sicherheitsregeln nach Prio, da Deny 100 gesetzt wurde wird Regel 200 nicht mehr in Kraft gesetzt und fehlt aus.»" },
+        ], notes: "Echte Antworten aus den Exit-Tickets, ohne Namen. Alle haben richtig mit «Nein» geantwortet, die Begründungen sind aber unterschiedlich genau. 2 Minuten zu zweit: Was stimmt bei A, B und C nicht? Dann 2–3 Paare fragen. Auflösung auf der nächsten Folie." },
+        { type: "cards", title: "Exit-Ticket Tag 4: die Auflösung", lead: "Richtig: «Nein, die Website ist nicht erreichbar, weil die Regel 100 zuerst geprüft wird und Port 80 blockiert. Die Regel 200 wird deshalb nicht mehr geprüft.»", cols: 3, items: [
+          { icon: "FaExclamationTriangle", h: "A: Nicht oben nach unten, sondern nach Priorität", t: "Azure prüft nach der Prioritätsnummer, die kleinste Zahl zuerst. Die Position in der Liste zählt nicht. «Sofern» braucht es nicht." },
+          { icon: "FaExclamationTriangle", h: "B: «Tiefer» ist unklar", t: "Die Deny-Regel hat die kleinere Zahl (100) und damit die höhere Priorität. Darum wird sie zuerst geprüft." },
+          { icon: "FaExclamationTriangle", h: "C: Regel 200 fällt nicht aus", t: "Sie bleibt aktiv. Azure stoppt bei der ersten passenden Regel, darum wird Regel 200 für diese Verbindung nicht mehr erreicht." },
+        ], notes: "Die richtige Antwort oben stammt ebenfalls aus den Exit-Tickets. Kernaussage: Azure prüft die Sicherheitsregeln (Security Rules) nach Priorität (kleinste Zahl zuerst) und stoppt bei der ersten Regel, die passt. Häufigstes Missverständnis: «von oben nach unten» – das stimmt nur, wenn die Liste nach Priorität sortiert ist. Überleitung zu Tag 5: Heute beschreibst du VNet, NSG und Sicherheitsregeln (Security Rules) in einer Datei und stellst alles mit einem Befehl bereit." },
         { type: "points", title: "Was hast du im Kurs von Hand gemacht?", items: [
           { icon: "FaServer", h: "VMs erstellt", t: "lokal und in Azure – wie viele Klicks waren das?" },
           { icon: "FaNetworkWired", h: "Netzwerke gebaut", t: "VNet, Subnetze (Subnets), Sicherheitsregeln (Security Rules)" },

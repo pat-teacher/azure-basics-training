@@ -132,12 +132,12 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 
 | Wann | Input | Dauer | Folien | Danach |
 |------|-------|-------|--------|--------|
-| L1, Beginn | Rückblick-Quiz zu Tag 4 zu zweit, danach Exit-Ticket Tag 4 auflösen (Sicherheitsregel (Security Rule) 100 Deny, 200 Allow: Website nicht erreichbar). Folien dazu wie an Tag 3/4 ergänzen, sobald die Antworten vorliegen | 7' | – | Rückblick Kurs |
-| L1, nach dem Quiz | Rückblick: «Was hast du im Kurs von Hand gemacht?» | 5' | Tag 5, Folien 1–2 | Ziele |
-| L1, nach dem Rückblick | Ziele, Ablauf, Abschlussprojekt kurz vorstellen | 3' | Tag 5, Folien 3–5 | Input 7 |
+| L1, Beginn | Rückblick-Quiz zu Tag 4 zu zweit, danach Exit-Ticket Tag 4 auflösen (Sicherheitsregel (Security Rule) 100 Deny, 200 Allow: Website nicht erreichbar). Drei unpräzise Begründungen aus den Exit-Tickets besprechen | 7' | Tag 5, Folien 1–3 | Rückblick Kurs |
+| L1, nach dem Quiz | Rückblick: «Was hast du im Kurs von Hand gemacht?» | 5' | Tag 5, Folie 4 | Ziele |
+| L1, nach dem Rückblick | Ziele, Ablauf, Abschlussprojekt kurz vorstellen | 3' | Tag 5, Folien 5–7 | Input 7 |
 | L1, nach dem Einstieg | Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init in Azure. Live-Demo Bicep bereitstellen | 20' | Input 7 | Auftrag 5.1 |
-| L5, Beginn | Abschlussprojekt: Auftrag, Bausteine, Selbstkontrolle, Teams bilden. Keine Bewertung mit Punkten, der Kurs ist freiwillig | 10' | Tag 5, Folie 5 | Meilensteine 1–5 |
-| L8 | Lösungen zeigen, freiwillig (4' pro Team plus 1' Wechsel, mit kurzem Feedback der Klasse: eine Sache, die gefallen hat, eine Frage), Aufräumkontrolle (5'), Exit-Ticket und Kursfeedback (5') | 45' | Tag 5, Folien 6–7 | – |
+| L5, Beginn | Abschlussprojekt: Auftrag, Bausteine, Selbstkontrolle, Teams bilden. Keine Bewertung mit Punkten, der Kurs ist freiwillig | 10' | Tag 5, Folie 7 | Meilensteine 1–5 |
+| L8 | Lösungen zeigen, freiwillig (4' pro Team plus 1' Wechsel, mit kurzem Feedback der Klasse: eine Sache, die gefallen hat, eine Frage), Aufräumkontrolle (5'), Exit-Ticket und Kursfeedback (5') | 45' | Tag 5, Folien 8–9 | – |
 
 **Vorbereitung**
 - Zu Beginn kontrollieren: Bei allen zeigt `az account show --output table` im Terminal von Visual Studio Code **Azure for Students** (Auftrag 4.8). Wer nicht angemeldet ist: `az login`. Wer die Installation nicht geschafft hat, arbeitet mit dem Partner oder ausnahmsweise in der Cloud Shell und speichert die Dateien sofort im Lernjournal.
