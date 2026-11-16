@@ -915,7 +915,11 @@ const INPUTS = [
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Einführung in Infrastructure as Code mit Bicep · cloud-init in Azure" },
           { icon: "FaBook", h: "TBZ M346", t: "Infrastructure as Code, Cloud-init (Kapitelnamen; Texte übernommen, für Azure angepasst)" },
         ]),
-        ende("Jetzt du", "Auftrag 5.1: VM mit cloud-init · danach Bicep"),
+        ende("Jetzt du", "5.1 → 5.2 → 5.3 → Abschlussprojekt · ⭐ 5.4 Terraform, wenn Zeit bleibt", [
+          { icon: "FaRocket", h: "5.1 · cloud-init", t: "Zu zweit, 45 Min. (L2) · VM als Webserver einrichten, Website im Browser prüfen" },
+          { icon: "FaFileCode", h: "5.2 und 5.3 · Bicep", t: "Einzel, je 45 Min. (L3–L4) · Speicherkonto (Storage Account), dann das Netzwerk von Tag 4" },
+          { icon: "FaClipboardList", h: "Abschlussprojekt", t: "Zu zweit, L5–L7 · VM mit cloud-init in einer Bicep-Datei. In L8 zeigen (freiwillig)" },
+        ]),
       ] },
     ],
   },
