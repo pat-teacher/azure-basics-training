@@ -45,9 +45,9 @@ Azure hat weltweit über 60 Regionen. <!-- prüfen: Stand 19.10.2026 -->
 - **Verwaltungsgruppen (Management Groups):** fassen in grossen Firmen mehrere Abonnements (Subscriptions) zusammen, damit Regeln für alle gleichzeitig gelten. Im Kurs brauchst du sie nicht.
 - **Abonnement (Subscription):** Hierüber wird abgerechnet. Es setzt auch Grenzen, z. B. wie viele vCPUs du pro Region nutzen darfst (Quota). Dein Abonnement (Subscription) heisst **Azure for Students**.
 - **Ressourcengruppe (Resource Group):** Ein Behälter für Ressourcen, die zusammengehören und gemeinsam leben und sterben.
-  - Jede Ressource gehört zu **genau einer** Ressourcengruppe (Resource Group).
-  - Löschst du die Ressourcengruppe (Resource Group), ist **alles darin weg**. Genau das nutzt du am Ende jedes Labs zum Aufräumen.
-  - Die Ressourcengruppe (Resource Group) hat selbst eine Region (für ihre Metadaten). Die Ressourcen darin dürfen in anderen Regionen liegen.
+    - Jede Ressource gehört zu **genau einer** Ressourcengruppe (Resource Group).
+    - Löschst du die Ressourcengruppe (Resource Group), ist **alles darin weg**. Genau das nutzt du am Ende jedes Labs zum Aufräumen.
+    - Die Ressourcengruppe (Resource Group) hat selbst eine Region (für ihre Metadaten). Die Ressourcen darin dürfen in anderen Regionen liegen.
 - **Ressource:** Ein einzelner Dienst, z. B. eine VM, ein Speicherkonto (Storage Account), ein VNet.
 
 **Tags** sind Etiketten mit Name und Wert, z. B. `kurs=azure-basics`. Damit findest und filterst du Ressourcen und siehst in der Kostenanalyse (Cost Analysis), was wofür ausgegeben wurde.

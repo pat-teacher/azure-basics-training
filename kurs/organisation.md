@@ -25,9 +25,9 @@ Jeder Tag hat 8 Lektionen à 45 Minuten. Ungefähr so verteilt:
 - Du arbeitest mit deinem **Azure-for-Students-Abonnement**.
 - Für einzelne Aufträge setzt die Kursleitung zusätzlich **Labs im Azure Education Hub** ein. Du bekommst dafür eine Einladung per E-Mail.
 - Das Guthaben ist begrenzt. Deshalb gilt in jedem Azure-Auftrag:
-  - VM-Grösse aus der Liste «Für kostenlose Dienste berechtigt» (Free services eligible) wählen, z. B. `Standard_B1s` oder `Standard_B2ats_v2`. <!-- prüfen: Stand 19.10.2026, Liste im Portal kontrollieren -->
-  - Nur eine VM gleichzeitig laufen lassen.
-  - Am Ende jedes Auftrags die Ressourcengruppe (Resource Group) löschen.
+    - VM-Grösse aus der Liste «Für kostenlose Dienste berechtigt» (Free services eligible) wählen, z. B. `Standard_B1s` oder `Standard_B2ats_v2`. <!-- prüfen: Stand 19.10.2026, Liste im Portal kontrollieren -->
+    - Nur eine VM gleichzeitig laufen lassen.
+    - Am Ende jedes Auftrags die Ressourcengruppe (Resource Group) löschen.
 
 ## Themen mit Microsoft Entra ID: Challenge Labs
 Mit Azure for Students hast du keine Rechte in Microsoft Entra ID. Themen wie **Rollenbasierte Zugriffssteuerung (RBAC)** oder **bedingter Zugriff (Conditional Access)** übst du deshalb in den **Challenge Labs** von Microsoft Learn for Educators (Plattform [Learn on Demand / Skillable](https://msle.learnondemand.net/)):

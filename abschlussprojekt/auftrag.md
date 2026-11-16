@@ -236,14 +236,14 @@ Hakt im `README.md` ab, was ihr geschafft habt:
 Im Lernjournal beider Personen, Ordner `tag-5/abschlussprojekt`:
 - `main.bicep` und `cloud-init.yaml`
 - `README.md` mit:
-  - Architekturbild
-  - dem Befehl für die Bereitstellung (Deployment), **ohne** euren Schlüssel (schreibt `"adminPublicKey=$KEY"`)
-  - Screenshot der Website und der Ausgabe von `cloud-init status --long`
-  - Ausgabe von `what-if` beim zweiten Ausführen
-  - Wer hat was gemacht? Was war schwierig? (3–5 Sätze)
-  - erfüllte Kann-Anforderungen
-  - die Selbstkontrolle
-  - am Schluss ergänzt: Nachweis des Aufräumens mit der Ausgabe von `az group list --output table`
+    - Architekturbild
+    - dem Befehl für die Bereitstellung (Deployment), **ohne** euren Schlüssel (schreibt `"adminPublicKey=$KEY"`)
+    - Screenshot der Website und der Ausgabe von `cloud-init status --long`
+    - Ausgabe von `what-if` beim zweiten Ausführen
+    - Wer hat was gemacht? Was war schwierig? (3–5 Sätze)
+    - erfüllte Kann-Anforderungen
+    - die Selbstkontrolle
+    - am Schluss ergänzt: Nachweis des Aufräumens mit der Ausgabe von `az group list --output table`
 
 ## Aufräumen
 Am Schluss, nach dem Zeigen in L8:
