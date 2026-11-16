@@ -55,10 +55,24 @@ Ihr müsst nicht bei null beginnen. Drei Bausteine habt ihr schon, einer kommt n
 | `param` und Bereitstellen | wie in Auftrag 5.2 und 5.3 |
 | Öffentliche IP (Public IP), Netzwerkschnittstelle (Network Interface) und VM | **neu**, siehe unten |
 
-Diesen Baustein hängt ihr unten an eure `main.bicep` an. Er braucht eine zusätzliche `param`-Zeile oben in der Datei:
+Oben in eurer `main.bicep` stehen die Parameter (`param`). Drei habt ihr schon aus `network.bicep` (Auftrag 5.3), einer kommt für die VM dazu:
 ```bicep
-param adminPublicKey string
+param location string = resourceGroup().location
+param kuerzel string
+param schulIp string          // aus 5.3: Quelle für SSH in der Sicherheitsregel (Security Rule) (M3)
+param adminPublicKey string   // neu: euer öffentlicher Schlüssel (Public Key) für die VM
 ```
+
+| Parameter | Wert beim Bereitstellen | Wo verwendet |
+|-----------|------------------------|--------------|
+| `location` | keiner nötig, Standardwert ist die Region der Ressourcengruppe (Resource Group) | bei jeder Ressource |
+| `kuerzel` | `kuerzel=<kuerzel>` | in allen Namen |
+| `schulIp` | `schulIp=<schul-ip>`, ohne `/32` | Sicherheitsregel (Security Rule) für SSH: `sourceAddressPrefix: '${schulIp}/32'` |
+| `adminPublicKey` | `"adminPublicKey=$KEY"` | VM: `keyData: adminPublicKey` |
+
+Jeder `param` ohne Standardwert muss beim Bereitstellen mit `--parameters` übergeben werden. Umgekehrt muss jeder Wert, den ihr mit `--parameters` übergebt, in der Datei als `param` stehen.
+
+Den folgenden Baustein hängt ihr unten an eure `main.bicep` an:
 
 ```bicep
 resource pip 'Microsoft.Network/publicIPAddresses@2023-09-01' = {
@@ -151,7 +165,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2024-03-01' = {
 
 ### Meilenstein 1: Projekt einrichten (ca. 15 Min.)
 1. Lege den Ordner `azure-tag5\projekt` an. Kopiert `network.bicep` aus 5.3 als `main.bicep` und `cloud-init.yaml` aus 5.1 in diesen Ordner.
-2. Passt die Namen an die Anforderungen M2 und M3 an. Entscheidet, wessen Abonnement (Subscription) ihr verwendet. Als `<kuerzel>` nehmt ihr das Kürzel dieser Person. Eine Person tippt, die andere liest mit und prüft. Nach jedem Meilenstein wechselt ihr.
+2. Passt die Namen an die Anforderungen M2 und M3 an. Kontrolliert, dass oben `param kuerzel string` und `param schulIp string` stehen (siehe «Die Bausteine»). Entscheidet, wessen Abonnement (Subscription) ihr verwendet. Als `<kuerzel>` nehmt ihr das Kürzel dieser Person. Eine Person tippt, die andere liest mit und prüft. Nach jedem Meilenstein wechselt ihr.
 3. Erstellt die Ressourcengruppe (Resource Group):
    ```powershell
    az group create --name rg-projekt-<kuerzel> --location <region> --tags kurs=azure-basics tag=5 owner=<kuerzel>
@@ -244,6 +258,7 @@ Danach löscht ihr **alle** übrigen Ressourcengruppen (Resource Groups) aus dem
 
 | Problem | Lösung |
 |---------|--------|
+| Fehler, dass ein Parameter fehlt oder nicht im Template steht (z. B. `schulIp`) | `param`-Zeile fehlt oben in `main.bicep`, oder der Name ist anders geschrieben als bei `--parameters`. Gross- und Kleinschreibung beachten: `schulIp`. <!-- prüfen: genauer Fehlertext der Azure CLI --> |
 | `loadFileAsBase64` findet die Datei nicht | `cloud-init.yaml` liegt nicht im selben Ordner wie `main.bicep`, oder der Name ist anders geschrieben. |
 | `InvalidParameter` bei `keyData` | Schlüssel nicht vollständig. `$KEY` muss mit `ssh-ed25519 AAAA` beginnen: `echo $KEY` |
 | `SkuNotAvailable` | `Standard_B1s` in der Region nicht verfügbar. `Standard_B2ats_v2` verwenden, das gilt für M4 als erfüllt. |
