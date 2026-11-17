@@ -138,9 +138,15 @@ az vm create --resource-group rg-tag5-<kuerzel> --name vm-web-<kuerzel> \
   --generate-ssh-keys --custom-data cloud-init.yaml --public-ip-sku Standard
 az vm open-port --resource-group rg-tag5-<kuerzel> --name vm-web-<kuerzel> --port 80
 ```
-Dann dieselbe Infrastruktur (VNet, NSG, VM) als `main.bicep`; Cloud-Init über `customData: loadFileAsBase64('cloud-init.yaml')`. ARM-Template mit `az bicep build` zeigen, um Bicep und ARM zu vergleichen.
+Dann dieselbe Infrastruktur (VNet, NSG, VM) in Bicep; Cloud-Init über `customData: loadFileAsBase64('cloud-init.yaml')`. ARM-Template mit `az bicep build` zeigen, um Bicep und ARM zu vergleichen.
+
+Bereitstellen: In Auftrag 5.2 zuerst mit `az deployment group` (Ressourcengruppe vorher von Hand mit `az group create`), damit der zusätzliche Schritt sichtbar wird. Danach alles löschen und mit `az deployment sub` neu bereitstellen. **Ab 5.3 und im Abschlussprojekt nur noch `az deployment sub`:** `main.bicep` mit `targetScope = 'subscription'` erstellt die Ressourcengruppe und ruft die Ressourcen-Datei als `module` mit `scope: rg` auf (`storage.bicep`, `network.bicep`, `webserver.bicep`).
 ```bash
-az deployment group create --resource-group rg-tag5-<kuerzel> --template-file main.bicep \
+# nur 5.2, erster Teil
+az deployment group create --resource-group rg-tag5-<kuerzel> --template-file storage.bicep \
+  --parameters kuerzel=<kuerzel>
+# ab 5.2, zweiter Teil
+az deployment sub create --location <region> --template-file main.bicep \
   --parameters kuerzel=<kuerzel>
 ```
 

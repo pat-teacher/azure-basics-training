@@ -69,6 +69,42 @@ az deployment group create --resource-group rg-tag5-<kuerzel> --template-file ma
 
 Tipp: Mit `az deployment group what-if …` (gleiche Parameter wie `create`) siehst du vorher, was sich ändern würde.
 
+`az deployment group` stellt in eine Ressourcengruppe (Resource Group) bereit, die **schon existiert**. Du brauchst also vorher `az group create`, einen zusätzlichen Schritt von Hand. Mit `az deployment sub` stellst du im Abonnement (Subscription) bereit. Dann kann die Bicep-Datei auch die Ressourcengruppe (Resource Group) erstellen:
+
+```bicep
+targetScope = 'subscription'
+
+param location string = deployment().location
+param kuerzel string
+
+resource rg 'Microsoft.Resources/resourceGroups@2022-09-01' = {
+  name: 'rg-tag5-${kuerzel}'
+  location: location
+}
+
+module storage 'storage.bicep' = {   // die Datei von oben, als storage.bicep gespeichert
+  name: 'storage-${kuerzel}'
+  scope: rg
+  params: {
+    location: location
+    kuerzel: kuerzel
+  }
+}
+```
+
+```powershell
+az deployment sub create --location <region> --template-file main.bicep --parameters kuerzel=<kuerzel>
+```
+
+| | `az deployment group` | `az deployment sub` |
+|---|---|---|
+| Wo wird bereitgestellt? | in einer Ressourcengruppe (Resource Group) | im Abonnement (Subscription) |
+| Ressourcengruppe (Resource Group) | vorher mit `az group create` | steht in der Bicep-Datei |
+| Angabe im Befehl | `--resource-group` | `--location` |
+| Erste Zeile der Datei | – | `targetScope = 'subscription'` |
+
+`module` ruft eine andere Bicep-Datei auf, `scope: rg` legt fest, in welche Ressourcengruppe (Resource Group) sie bereitgestellt wird. In Auftrag 5.2 lernst du zuerst `az deployment group`, danach `az deployment sub`. Ab Auftrag 5.3 verwendest du nur noch `az deployment sub`.
+
 ## cloud-init: die VM beim ersten Start einrichten
 Bicep oder CLI erstellen die VM. Doch wer installiert den Webserver darauf? Das macht **cloud-init**. Du gibst der VM beim Erstellen eine YAML-Datei mit (in Azure: **benutzerdefinierte Daten** (Custom Data), `--custom-data`). Beim **ersten** Start arbeitet cloud-init sie ab.
 
@@ -140,9 +176,15 @@ Es übersetzt die Bicep-Datei in ein ARM-Template (`main.json`). Das ist die For
 Dafür gibt es den Block `packages`. Er ist lesbarer und läuft an der richtigen Stelle des Startvorgangs.
 </details>
 
+<details><summary>6. Was brauchst du vor `az deployment group create`, aber nicht vor `az deployment sub create`?</summary>
+
+Eine bestehende Ressourcengruppe (Resource Group), also vorher `az group create`. Bei `az deployment sub` steht die Ressourcengruppe (Resource Group) in der Bicep-Datei (`targetScope = 'subscription'`).
+</details>
+
 ## Quellen
 - TBZ M346: [Infrastructure as Code](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/InfrastructureAsCode.md), [Cloud-init](https://gitlab.com/ch-tbz-it/Stud/m346/m346/-/blob/main/Theorie/CloudInit.md) (Texte übernommen und für Azure angepasst)
 - Microsoft Learn: [Einführung in die Infrastruktur als Code mit Bicep](https://learn.microsoft.com/de-de/training/modules/introduction-to-infrastructure-as-code-using-bicep/)
 - Microsoft Learn: [Was ist Bicep?](https://learn.microsoft.com/de-de/azure/azure-resource-manager/bicep/overview)
+- Microsoft Learn: [Bereitstellungen im Abonnementbereich mit Bicep-Dateien](https://learn.microsoft.com/de-de/azure/azure-resource-manager/bicep/deploy-to-subscription)
 - Microsoft Learn: [cloud-init-Unterstützung für VMs in Azure](https://learn.microsoft.com/de-de/azure/virtual-machines/linux/using-cloud-init)
 - cloud-init: [Dokumentation und Beispiele](https://cloudinit.readthedocs.io/en/latest/reference/examples.html)

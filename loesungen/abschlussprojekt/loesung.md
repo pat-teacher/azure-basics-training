@@ -2,9 +2,44 @@
 
 # Lösung Abschlussprojekt: Webserver der «Velo Zürich AG»
 
-Musterlösung für die Muss-Anforderungen M1–M8, Team mit den Kürzeln `mm` und `ab`, Bereitstellung (Deployment) im Abonnement (Subscription) von `mm`.
+Musterlösung für die Muss-Anforderungen M1–M8, Team mit den Kürzeln `mm` und `ab`, Bereitstellung (Deployment) im Abonnement (Subscription) von `mm`, Region `switzerlandnorth`.
+
+Im Ordner `projekt` liegen drei Dateien: `main.bicep`, `webserver.bicep` und `cloud-init.yaml`.
 
 ## main.bicep
+```bicep
+targetScope = 'subscription'
+
+param location string = deployment().location
+param kuerzel string
+param schulIp string
+param adminPublicKey string
+
+resource rg 'Microsoft.Resources/resourceGroups@2022-09-01' = {
+  name: 'rg-projekt-${kuerzel}'
+  location: location
+  tags: {
+    kurs: 'azure-basics'
+    tag: '5'
+    owner: kuerzel
+  }
+}
+
+module webserver 'webserver.bicep' = {
+  name: 'webserver-${kuerzel}'
+  scope: rg
+  params: {
+    location: location
+    kuerzel: kuerzel
+    schulIp: schulIp
+    adminPublicKey: adminPublicKey
+  }
+}
+
+output url string = webserver.outputs.url
+```
+
+## webserver.bicep
 ```bicep
 param location string = resourceGroup().location
 param kuerzel string
@@ -165,10 +200,9 @@ write_files:
 
 ## Bereitstellen
 ```powershell
-az group create --name rg-projekt-mm --location switzerlandnorth --tags kurs=azure-basics tag=5 owner=mm
 $KEY = Get-Content $HOME\.ssh\id_ed25519.pub
-az deployment group what-if --resource-group rg-projekt-mm --template-file main.bicep --parameters kuerzel=mm schulIp=198.51.100.23 "adminPublicKey=$KEY"
-az deployment group create --resource-group rg-projekt-mm --template-file main.bicep --parameters kuerzel=mm schulIp=198.51.100.23 "adminPublicKey=$KEY" --query properties.outputs
+az deployment sub what-if --location switzerlandnorth --template-file main.bicep --parameters kuerzel=mm schulIp=198.51.100.23 "adminPublicKey=$KEY"
+az deployment sub create --location switzerlandnorth --template-file main.bicep --parameters kuerzel=mm schulIp=198.51.100.23 "adminPublicKey=$KEY" --query properties.outputs
 ```
 ```json
 {
@@ -178,11 +212,11 @@ az deployment group create --resource-group rg-projekt-mm --template-file main.b
   }
 }
 ```
-Erster what-if: `5 to create` (NSG, VNet, Public IP, NIC, VM). Zweiter what-if nach dem Bereitstellen: keine Änderung (einzelne Eigenschaften können als `~` mit nur angezeigten Standardwerten erscheinen, «noise»). <!-- prüfen: what-if-Ausgabe beim zweiten Lauf, insbesondere bei der VM -->
+Erster what-if: `6 to create` (Ressourcengruppe (Resource Group), NSG, VNet, Public IP, NIC, VM). Zweiter what-if nach dem Bereitstellen: keine Änderung (einzelne Eigenschaften können als `~` mit nur angezeigten Standardwerten erscheinen, «noise»). <!-- prüfen: what-if-Ausgabe beim zweiten Lauf, insbesondere bei der VM -->
 
 ## Kann-Anforderungen (Auszug)
-- **K1 Tags:** bei jeder Ressource `tags: { kurs: 'azure-basics', tag: '5', owner: kuerzel }`, oder einmal als `var tags = {…}` und dann `tags: tags`.
-- **K3 Grösse:** `param vmSize string = 'Standard_B1s'` und `vmSize: vmSize`.
+- **K1 Tags:** Die Ressourcengruppe (Resource Group) hat sie schon in `main.bicep`. In `webserver.bicep` bei jeder Ressource `tags: { kurs: 'azure-basics', tag: '5', owner: kuerzel }`, oder einmal als `var tags = {…}` und dann `tags: tags`.
+- **K3 Grösse:** in `webserver.bicep` `param vmSize string = 'Standard_B1s'` und `vmSize: vmSize`. Weil der Parameter einen Standardwert hat, muss `main.bicep` ihn nicht weitergeben.
 - **K4 Hostname:** in cloud-init einen Block `runcmd` ergänzen. Den Befehl in einfache Anführungszeichen setzen, sonst liest YAML den Doppelpunkt mit Leerzeichen als Zuordnung:
   ```yaml
   runcmd:
@@ -195,13 +229,17 @@ Erster what-if: `5 to create` (NSG, VNet, Public IP, NIC, VM). Zweiter what-if n
 |---------|---------|--------|
 | `subnets[0]` zeigt auf das falsche Subnetz (Subnet) | `snet-intern` steht vor `snet-web` | Reihenfolge prüfen oder `snet-web` an erste Stelle |
 | `adminPublicKey` leer oder zerschnitten | ohne Anführungszeichen übergeben | `"adminPublicKey=$KEY"` |
-| `loadFileAsBase64` scheitert | Datei in anderem Ordner | beide Dateien im Projektordner |
-| VM ohne Website | YAML-Fehler, siehe Lösung 5.1 | Log lesen, Ressourcengruppe (Resource Group) löschen, neu |
+| `loadFileAsBase64` scheitert | Datei in anderem Ordner | alle drei Dateien im Projektordner |
+| `adminPublicKey` kommt in `webserver.bicep` nicht an | in `main.bicep` nicht unter `params` weitergegeben | `adminPublicKey: adminPublicKey` ergänzen |
+| `outputs.url` fehlt | `output url` nur in `webserver.bicep` oder nur in `main.bicep` | in beiden Dateien: `webserver.bicep` gibt ihn an `main.bicep` weiter |
+| `webserver.bicep` mit `az deployment sub` | `resourceGroup()` gibt es auf Ebene Abonnement (Subscription) nicht | `--template-file main.bicep` |
+| VM ohne Website | YAML-Fehler, siehe Lösung 5.1 | Log lesen, Ressourcengruppe (Resource Group) löschen, mit demselben Befehl neu bereitstellen |
 | Zweite Bereitstellung (Deployment) ändert die VM | `customData` geändert: Azure kann es bei bestehender VM nicht ändern | VM löschen und neu bereitstellen |
 | `ImageNotFound` | Image-Referenz falsch geschrieben | `Canonical` / `ubuntu-24_04-lts` / `server` |
 
 ## Hinweise für die Kursleitung
 - Zeitplan: L5 Meilenstein 1–2, L6 Meilenstein 2–3, L7 Meilenstein 4–5, L8 Lösungen zeigen (freiwillig, 4' pro Team plus 1' Wechsel). Es gibt keine Punkte und keine Noten, der Kurs ist freiwillig. Rückmeldung gibt die Kursleitung mündlich beim Coaching und beim Zeigen.
+- Bereitgestellt wird nur noch mit `az deployment sub` (eingeführt in 5.2, Schritte 8–10). Häufigster Stolperstein: ein Parameter steht in `main.bicep`, wird aber nicht unter `params` an `webserver.bicep` weitergegeben.
 - Teams, die nach L6 noch keine laufende VM haben: gemeinsam `what-if` lesen, notfalls den Baustein aus dem Auftrag nochmals vollständig kopieren lassen.
 - Es reicht, wenn **ein** Abonnement (Subscription) pro Team verwendet wird. Beide Personen legen die Dateien in ihr Lernjournal.
 - Beim Coaching darauf achten: Kein privater Schlüssel (Private Key) im Lernjournal, auch nicht im Screenshot (Selbstkontrolle M7).
@@ -209,4 +247,5 @@ Erster what-if: `5 to create` (NSG, VNet, Public IP, NIC, VM). Zweiter what-if n
 - Vorab mit dem eigenen Konto testen: Image-Referenz, API-Versionen, `B1s` in der Kursregion, Ausgabe von what-if beim zweiten Lauf. <!-- prüfen -->
 
 ## Quellen
+- Microsoft Learn: [Bereitstellungen im Abonnementbereich mit Bicep-Dateien](https://learn.microsoft.com/de-de/azure/azure-resource-manager/bicep/deploy-to-subscription)
 - Microsoft Learn: [Schnellstart: Erstellen einer Ubuntu-Linux-VM mit Bicep](https://learn.microsoft.com/de-de/azure/virtual-machines/linux/quick-create-bicep)

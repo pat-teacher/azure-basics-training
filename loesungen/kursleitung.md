@@ -136,8 +136,8 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 | L1, nach dem Quiz | Rückblick: «Was hast du im Kurs von Hand gemacht?» | 5' | Tag 5, Folie 4 | Ziele |
 | L1, nach dem Rückblick | Ziele, Ablauf, Abschlussprojekt kurz vorstellen | 3' | Tag 5, Folien 5–7 | Input 7 |
 | L1, nach dem Einstieg | Teil 1: cloud-init in Azure – Datei für den ersten Start, `#cloud-config`, Log lesen | 10' | Input 7, Folien 1–5 (bis «Jetzt du: Auftrag 5.1») | Auftrag 5.1 (L2) |
-| L3, Beginn | Teil 2: Infrastruktur als Code (Infrastructure as Code), imperativ und deklarativ, Bicep, ARM-Template. Live-Demo Bicep bereitstellen (Folie 11), Werkzeugvergleich Bicep und cloud-init, Selbsttest | 15' | Input 7, Folien 6–16 | Auftrag 5.2 (L3), 5.3 (L4) |
-| bei Interesse | ⭐ Ausblick Terraform und OpenTofu, Live-Demo OpenTofu (Folie 21) | 10' | Input 7, Folien 17–21 | – |
+| L3, Beginn | Teil 2: Infrastruktur als Code (Infrastructure as Code), imperativ und deklarativ, Bicep, ARM-Template. Live-Demo Bicep bereitstellen (Folie 11), `az deployment group` und `az deployment sub` (Folien 12–13), Werkzeugvergleich Bicep und cloud-init, Selbsttest | 15' | Input 7, Folien 6–17 | Auftrag 5.2 (L3), 5.3 (L4) |
+| bei Interesse | ⭐ Ausblick Terraform und OpenTofu, Live-Demo OpenTofu (Folie 22) | 10' | Input 7, Folien 18–22 | – |
 | L5, Beginn | Abschlussprojekt: Auftrag, Bausteine, Selbstkontrolle, Teams bilden. Keine Bewertung mit Punkten, der Kurs ist freiwillig | 10' | Tag 5, Folie 7 | Meilensteine 1–5 |
 | L8 | Lösungen zeigen, freiwillig (4' pro Team plus 1' Wechsel, mit kurzem Feedback der Klasse: eine Sache, die gefallen hat, eine Frage), Aufräumkontrolle (5'), Exit-Ticket und Kursfeedback (5') | 45' | Tag 5, Folien 8–9 | – |
 
@@ -145,10 +145,11 @@ Drei Präsentationen, in dieser Reihenfolge: **Tag 2** (`tag-2-azure-grundlagen.
 - Zu Beginn kontrollieren: Bei allen zeigt `az account show --output table` im Terminal von Visual Studio Code **Azure for Students** (Auftrag 4.8). Wer nicht angemeldet ist: `az login`. Wer die Installation nicht geschafft hat, arbeitet mit dem Partner oder ausnahmsweise in der Cloud Shell und speichert die Dateien sofort im Lernjournal.
 - Vor L8 fragen, welche Teams ihre Lösung zeigen wollen, und die Reihenfolge festlegen (4' pro Team). Niemand muss zeigen.
 - Zeitplan: 5.1 in L2 (Tandem wie an Tag 4), 5.2 in L3, 5.3 in L4, Abschlussprojekt L5–L7, Lösungen zeigen in L8 (freiwillig). 5.2 und 5.3 nutzen dieselbe Ressourcengruppe (Resource Group) `rg-tag5-<kuerzel>`, aufgeräumt wird am Ende von 5.3.
+- Bereitstellen: In 5.2 zuerst `az deployment group` mit der Ressourcengruppe (Resource Group) von Hand, dann alles löschen und mit `az deployment sub` neu (Schritte 8–10). Ab 5.3 und im Abschlussprojekt nur noch `az deployment sub`: `main.bicep` erstellt die Ressourcengruppe (Resource Group) und ruft eine zweite Datei mit den Ressourcen auf. 5.2 wird dadurch länger (Löschen dauert 1–3 Minuten). Wer knapp ist, lässt Schritt 7 (ARM-Template) aus.
 - Schul-IP wieder an die Wandtafel (für 5.3 und das Projekt).
 - ⭐ 5.4 OpenTofu (Open-Source-Abspaltung von Terraform, keine Lizenzfragen) ist nicht im Vertragsumfang: nur für Schnelle nach 5.3 oder nach dem Kurs, nicht während des Abschlussprojekts. Vorab testen: `winget install --exact --id OpenTofu.Tofu`, Anmeldung von azurerm 4.x über die Azure CLI im Student-Abo. <!-- prüfen -->
 - Input 7 ist zweigeteilt: Teil 1 (cloud-init) vor Auftrag 5.1, Teil 2 (Infrastruktur als Code und Bicep) zu Beginn von L3. Grund: Auftrag 5.1 braucht nur cloud-init, Bicep wird erst ab 5.2 gebraucht.
-- Bei Interesse im Plenum: Input 7, Anhang ⭐ «Ausblick: Terraform und OpenTofu» (Folien 17–21). Nur zeigen, wenn Fragen kommen oder Zeit bleibt.
+- Bei Interesse im Plenum: Input 7, Anhang ⭐ «Ausblick: Terraform und OpenTofu» (Folien 18–22). Nur zeigen, wenn Fragen kommen oder Zeit bleibt.
 - Mit dem eigenen Konto vorab das Abschlussprojekt einmal komplett bereitstellen: Image-Referenz `Canonical/ubuntu-24_04-lts/server`, API-Versionen, `Standard_B1s` in der Kursregion. <!-- prüfen -->
 
 ## Lösungen
