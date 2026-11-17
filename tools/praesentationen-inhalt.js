@@ -370,9 +370,9 @@ const TAGE = [
           { icon: "FaStar", h: "Bicep und ARM (K2)", t: "Du zeigst, dass aus einer Bicep-Datei ein ARM-Template entsteht." },
         ] },
         { type: "table", title: "Ablauf", head: ["Lektion", "Phase", "Inhalt"], colW: [1.2, 2.2, 7.6], rows: [
-          ["L1", "Einstieg, Input 1", "Rückblick auf den Kurs · Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init"],
+          ["L1", "Einstieg, Input", "Rückblick auf den Kurs · Input: cloud-init"],
           ["L2", "Hands-on", "Auftrag 5.1: Ubuntu-VM mit cloud-init"],
-          ["L3", "Hands-on", "Auftrag 5.2: Erstes Bicep-File, ARM-Template vergleichen"],
+          ["L3", "Input, Hands-on", "Input: Infrastruktur als Code (Infrastructure as Code) und Bicep · Auftrag 5.2: Erstes Bicep-File"],
           ["L4", "Hands-on", "Auftrag 5.3: Bicep für VNet, Subnetz (Subnet) und NSG"],
           ["L5–L7", "Abschlussprojekt", "Webserver der «Velo Zürich AG» komplett per Bicep"],
           ["L8", "Abschluss", "Lösungen zeigen (freiwillig) · Feedback · Aufräumen"],
@@ -863,8 +863,31 @@ const INPUTS = [
   {
     file: "input-07-automatisierung.pptx", title: "Input: Automatisierung",
     sections: [
-      { title: "IaC", slides: [
+      { title: "cloud-init", slides: [
         { type: "title", title: "Automatisierung: Bicep und cloud-init", sub: "Input 1 · Tag 5", notes: "Theorie: theorie/07-automatisierung.md" },
+        { type: "divider", title: "cloud-init", sub: "Die VM beim ersten Start einrichten" },
+        { type: "code", title: "cloud-init: Datei für den ersten Start", codeW: 6.8, codeSize: 15,
+          code: "#cloud-config\npackage_update: true\npackages:\n  - nginx\nwrite_files:\n  - path: /var/www/html/index.html\n    content: |\n      <meta charset=\"utf-8\">\n      <h1>Velo Zuerich AG</h1>",
+          side: [
+            { h: "#cloud-config", t: "muss die erste Zeile sein – sonst wird alles still ignoriert" },
+            { h: "packages", t: "Pakete installieren" },
+            { h: "write_files", t: "Dateien mit Inhalt anlegen" },
+            { h: "runcmd", t: "Befehle – nur, wenn kein anderer Block passt" },
+          ], notes: "In Azure: --custom-data cloud-init.yaml bzw. customData in Bicep." },
+        { type: "cards", title: "Wichtig bei cloud-init", cols: 3, items: [
+          { icon: "FaRocket", h: "Nur beim ersten Start", t: "Änderungen? Neue VM erstellen." },
+          { icon: "FaExclamationTriangle", h: "Scheitert still", t: "Die VM startet, aber die Einrichtung fehlt." },
+          { icon: "FaSearch", h: "Log lesen", t: "cloud-init status --long · /var/log/cloud-init-output.log" },
+        ] },
+        { ...ende("Jetzt du", "Auftrag 5.1, danach geht es mit Bicep weiter", [
+          { icon: "FaRocket", h: "5.1 · cloud-init", t: "Zu zweit, 45 Min. · VM als Webserver einrichten, Website im Browser prüfen" },
+          { icon: "FaFileCode", h: "Deine Datei", t: "cloud-init.yaml gut aufbewahren: Du brauchst sie wieder im Abschlussprojekt." },
+          { icon: "FaClipboardList", h: "Fertig?", t: "Aufräumen wie in 5.1 beschrieben. Danach Input: Infrastruktur als Code und Bicep." },
+        ]), notes: "Erster Teil von Input 7 fertig. Die Lernenden setzen Auftrag 5.1 um (L2). Danach geht es mit dem zweiten Teil weiter: Infrastruktur als Code und Bicep (ab der nächsten Folie)." },
+      ] },
+      { title: "IaC", slides: [
+        { type: "divider", title: "Infrastruktur als Code", sub: "Infrastruktur in Dateien beschreiben – mit Bicep",
+          notes: "Zweiter Teil von Input 7, nach Auftrag 5.1 (Beginn L3). cloud-init kennen die Lernenden jetzt; Bicep baut die Infrastruktur, in die cloud-init die VM einrichtet." },
         { type: "cards", title: "Infrastruktur als Code (Infrastructure as Code)", lead: "Infrastruktur in Textdateien beschreiben statt zusammenklicken.", cols: 3, items: [
           { icon: "FaRedo", h: "Wiederholbar", t: "Gleiche Datei, gleiche Umgebung – für 1 oder 10 Lernende." },
           { icon: "FaTrashAlt", h: "Wegwerfbar", t: "Kaputt? Löschen und in Minuten neu bauen." },
@@ -886,7 +909,7 @@ const INPUTS = [
           ], notes: "Aufbau der Datei erklären. Die Live-Demo folgt auf der nächsten Folie." },
         { type: "demo", title: "Bicep bereitstellen", dauer: "ca. 5 Min.", wo: "Terminal in Visual Studio Code",
           quote: "Schau zu, wie aus einer Bicep-Datei ein Speicherkonto (Storage Account) entsteht – und was beim zweiten Mal passiert.",
-          points: ["Du siehst: az deployment group create mit main.bicep, danach derselbe Befehl nochmals", "Du tust: sag voraus, was beim zweiten Ausführen passiert", "Danach: Bereitstellen, dann die Aufträge von Tag 5"],
+          points: ["Du siehst: az deployment group create mit main.bicep, danach derselbe Befehl nochmals", "Du tust: sag voraus, was beim zweiten Ausführen passiert", "Danach: Bereitstellen, dann Aufträge 5.2 und 5.3"],
           notes: "Drehbuch: Vorbereitung: main.bicep von dieser Folie in Visual Studio Code, Ressourcengruppe (Resource Group) rg-demo vorhanden. 1. Datei zeigen, Bicep-Erweiterung färbt ein. 2. az deployment group create --resource-group rg-demo --template-file main.bicep --parameters kuerzel=demo. 3. Im Portal das Speicherkonto zeigen. 4. Denselben Befehl nochmals: keine Änderung, keine Fehlermeldung (idempotent). 5. az group delete --name rg-demo --yes --no-wait." },
         { type: "code", title: "Bereitstellen", codeW: 8.0, codeSize: 14,
           code: "# Vorschau: Was würde sich ändern?\naz deployment group what-if \\\n  --resource-group rg-tag5-<kuerzel> \\\n  --template-file main.bicep \\\n  --parameters kuerzel=<kuerzel>\n\n# Bereitstellen\naz deployment group create \\\n  --resource-group rg-tag5-<kuerzel> \\\n  --template-file main.bicep \\\n  --parameters kuerzel=<kuerzel>",
@@ -895,22 +918,6 @@ const INPUTS = [
             { h: "create", t: "stellt bereit – idempotent" },
             { h: "ARM-Template ansehen", t: "az bicep build --file main.bicep" },
           ] },
-      ] },
-      { title: "cloud-init", slides: [
-        { type: "divider", title: "cloud-init", sub: "Die VM beim ersten Start einrichten" },
-        { type: "code", title: "cloud-init: Datei für den ersten Start", codeW: 6.8, codeSize: 15,
-          code: "#cloud-config\npackage_update: true\npackages:\n  - nginx\nwrite_files:\n  - path: /var/www/html/index.html\n    content: |\n      <meta charset=\"utf-8\">\n      <h1>Velo Zuerich AG</h1>",
-          side: [
-            { h: "#cloud-config", t: "muss die erste Zeile sein – sonst wird alles still ignoriert" },
-            { h: "packages", t: "Pakete installieren" },
-            { h: "write_files", t: "Dateien mit Inhalt anlegen" },
-            { h: "runcmd", t: "Befehle – nur, wenn kein anderer Block passt" },
-          ], notes: "In Azure: --custom-data cloud-init.yaml bzw. customData in Bicep." },
-        { type: "cards", title: "Wichtig bei cloud-init", cols: 3, items: [
-          { icon: "FaRocket", h: "Nur beim ersten Start", t: "Änderungen? Neue VM erstellen." },
-          { icon: "FaExclamationTriangle", h: "Scheitert still", t: "Die VM startet, aber die Einrichtung fehlt." },
-          { icon: "FaSearch", h: "Log lesen", t: "cloud-init status --long · /var/log/cloud-init-output.log" },
-        ] },
         { type: "table", title: "Welches Werkzeug wofür?", head: ["Werkzeug", "Ebene", "Frage", "Moment"], colW: [2.2, 2.2, 4.4, 2.6], rows: [
           ["Bicep / ARM", "Infrastruktur", "Welche Ressourcen gibt es?", "vor dem ersten Start"],
           ["cloud-init", "Ersteinrichtung", "Wie richtet sich die VM ein?", "beim ersten Start"],
@@ -926,11 +933,11 @@ const INPUTS = [
           { icon: "FaGraduationCap", h: "Microsoft Learn", t: "Einführung in Infrastructure as Code mit Bicep · cloud-init in Azure" },
           { icon: "FaBook", h: "TBZ M346", t: "Infrastructure as Code, Cloud-init (Kapitelnamen; Texte übernommen, für Azure angepasst)" },
         ]),
-        ende("Jetzt du", "5.1 → 5.2 → 5.3 → Abschlussprojekt · ⭐ 5.4 OpenTofu, wenn Zeit bleibt", [
-          { icon: "FaRocket", h: "5.1 · cloud-init", t: "Zu zweit, 45 Min. (L2) · VM als Webserver einrichten, Website im Browser prüfen" },
-          { icon: "FaFileCode", h: "5.2 und 5.3 · Bicep", t: "Einzel, je 45 Min. (L3–L4) · Speicherkonto (Storage Account), dann das Netzwerk von Tag 4" },
+        { ...ende("Jetzt du", "5.2 → 5.3 → Abschlussprojekt · ⭐ 5.4 OpenTofu, wenn Zeit bleibt", [
+          { icon: "FaFileCode", h: "5.2 · Erstes Bicep", t: "Einzel, 45 Min. (L3) · ein Speicherkonto (Storage Account), what-if und Idempotenz" },
+          { icon: "FaSitemap", h: "5.3 · Netzwerk als Bicep", t: "Einzel, 45 Min. (L4) · VNet, Subnetze (Subnets) und NSG von Tag 4 in einer Datei" },
           { icon: "FaClipboardList", h: "Abschlussprojekt", t: "Zu zweit, L5–L7 · VM mit cloud-init in einer Bicep-Datei. In L8 zeigen (freiwillig)" },
-        ]),
+        ]), notes: "Nach dem zweiten Teil: Aufträge 5.2 (L3) und 5.3 (L4), danach Abschlussprojekt (L5–L7). Der Anhang ⭐ Terraform und OpenTofu folgt nach dieser Folie und ist optional." },
       ] },
       { title: "⭐ OpenTofu", slides: [
         { type: "divider", title: "⭐ Ausblick: Terraform und OpenTofu", sub: "Nur bei Interesse – nicht Teil des Kursinhalts",

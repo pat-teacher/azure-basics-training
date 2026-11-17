@@ -18,9 +18,9 @@ Im Kurs hast du vieles von Hand gemacht. Heute beschreibst du eine ganze Umgebun
 | Lektion | Was passiert | Was du tust |
 |---------|--------------|-------------|
 | L1 | Rückblick Tag 4 und auf den Kurs | Quiz mit deinem Partner; sammeln: Was hast du von Hand gemacht? |
-| L1 | **Input:** Infrastruktur als Code (Infrastructure as Code), Bicep, cloud-init | zuhören, mitschauen |
+| L1 | **Input:** cloud-init | zuhören, mitschauen |
 | L2 | Auftrag 5.1 | mit Partner: VM mit cloud-init in Azure |
-| L3 | Auftrag 5.2 | allein: erste Bicep-Datei |
+| L3 | **Input:** Infrastruktur als Code (Infrastructure as Code) und Bicep, danach Auftrag 5.2 | zuhören, mitschauen; allein: erste Bicep-Datei |
 | L4 | Auftrag 5.3 | allein: Netzwerk von Tag 4 als Bicep (⭐ 5.4 OpenTofu: für Schnelle oder nach dem Kurs) |
 | L5–L7 | Abschlussprojekt | mit Partner: Webserver der «Velo Zürich AG» per Bicep |
 | L8 | Lösungen zeigen und Abschluss | wer will: Lösung in 4 Minuten zeigen; Feedback geben, aufräumen |
