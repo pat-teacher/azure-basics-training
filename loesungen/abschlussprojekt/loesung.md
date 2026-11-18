@@ -4,7 +4,7 @@
 
 Musterlösung für die Muss-Anforderungen M1–M8, Team mit den Kürzeln `mm` und `ab`, Bereitstellung (Deployment) im Abonnement (Subscription) von `mm`, Region `switzerlandnorth`.
 
-Im Ordner `projekt` liegen drei Dateien: `main.bicep`, `webserver.bicep` und `cloud-init.yaml`.
+Im Ordner `projekt` liegen drei Dateien: `main.bicep`, `webserver.bicep` und `cloud-init.yaml`. Fertige Dateien zum Bereitstellen: [projekt/main.bicep](projekt/main.bicep), [projekt/webserver.bicep](projekt/webserver.bicep), [projekt/cloud-init.yaml](projekt/cloud-init.yaml). Vor dem Bereitstellen in `cloud-init.yaml` die Kürzel des Teams eintragen.
 
 ## main.bicep
 ```bicep
